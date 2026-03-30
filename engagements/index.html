@@ -170,23 +170,13 @@ body {
 
 /* WHAT'S INCLUDED */
 .includes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 3rem;
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem;
 }
-.includes-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 3rem;
-  margin-bottom: 0.75rem;
-}
-.includes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 3rem;
-}
-.include-row {
-  display: contents;
-}
+.includes-col {}
 .include-item {
   display: flex;
   gap: 0.75rem;
@@ -197,7 +187,7 @@ body {
   color: var(--body);
   line-height: 1.5;
 }
-.include-item:nth-last-child(-n+2) { border-bottom: none; }
+.includes-col .include-item:last-child { border-bottom: none; }
 .include-marker {
   color: var(--maroon);
   font-weight: 500;
@@ -314,16 +304,17 @@ body {
   }
 
   /* Includes stacks */
-  .includes-header {
-    display: none;
-  }
-  .includes-grid {
+  .includes {
     grid-template-columns: 1fr;
+    gap: 0;
   }
-  .include-item:nth-last-child(-n+2) {
+  .includes-col + .includes-col {
+    margin-top: 1.5rem;
+  }
+  .includes-col .include-item:last-child {
     border-bottom: 1px solid var(--rule);
   }
-  .include-item:last-child {
+  .includes-col:last-child .include-item:last-child {
     border-bottom: none;
   }
 }
@@ -400,18 +391,18 @@ body {
 
 <!-- WHAT'S ALWAYS INCLUDED -->
 <div class="includes">
-  <div class="includes-header">
+  <div class="includes-col">
     <div class="section-label">Always Included</div>
-    <div class="section-label">How I Work</div>
-  </div>
-  <div class="includes-grid">
     <div class="include-item"><div class="include-marker">+</div><div>Honest assessment of what's actually happening — including what nobody else is saying</div></div>
-    <div class="include-item"><div class="include-marker">—</div><div>No retainer until we've had a real conversation about fit</div></div>
     <div class="include-item"><div class="include-marker">+</div><div>Systems built around how your business works, not a standard playbook</div></div>
-    <div class="include-item"><div class="include-marker">—</div><div>Pricing above is a range — scope drives the number, not a menu</div></div>
     <div class="include-item"><div class="include-marker">+</div><div>Executive-level communication throughout — no translation layer needed</div></div>
-    <div class="include-item"><div class="include-marker">—</div><div>I take a limited number of engagements at a time</div></div>
     <div class="include-item"><div class="include-marker">+</div><div>Clean handoff — your team operates independently when I leave</div></div>
+  </div>
+  <div class="includes-col">
+    <div class="section-label">How I Work</div>
+    <div class="include-item"><div class="include-marker">—</div><div>No retainer until we've had a real conversation about fit</div></div>
+    <div class="include-item"><div class="include-marker">—</div><div>Pricing above is a range — scope drives the number, not a menu</div></div>
+    <div class="include-item"><div class="include-marker">—</div><div>I take a limited number of engagements at a time</div></div>
     <div class="include-item"><div class="include-marker">—</div><div>Most engagements start with the Diagnostic</div></div>
   </div>
 </div>
