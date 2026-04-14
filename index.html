@@ -148,13 +148,13 @@ nav {
 .hero-actions { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; position: relative; }
 .hero-note { font-size: 0.78rem; color: var(--subtle); position: relative; }
 
-/* Hero right — dark panel */
+/* Hero right — light panel */
 .hero-right {
-  background: var(--off-black);
+  background: var(--off);
   padding: 10rem 3.5rem 6rem;
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
   gap: 0;
-  border-left: 1px solid rgba(255,255,255,0.06);
+  border-left: 1px solid var(--rule);
 }
 
 .hero-right-label {
@@ -487,7 +487,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   .nav-right .nav-link { display: none; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 8rem 1.5rem 3rem; }
-  .hero-right { padding: 3rem 1.5rem; border-left: none; border-top: 1px solid var(--rule-dark); }
+  .hero-right { padding: 3rem 1.5rem; border-left: none; border-top: 1px solid var(--rule); }
   .jobs-section, .visual-section, .offer, .about-section, .chaos-tax, .cta-final, .ai-section, .playbook-section { padding: 4rem 1.5rem; }
   .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-boxes, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
   .chaos-row, .chaos-total, .chaos-hire, .filter-callout, .vis-header { grid-template-columns: 1fr; }
@@ -531,8 +531,8 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
     <div class="hero-ai-pill">Now includes AI governance — keep reading</div>
   </div>
 
-  <div class="hero-right" aria-label="Left Brain Consulting" style="background:var(--off);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--rule);">
-    <img src="logo.svg" alt="Left Brain Consulting" style="width:140px;height:auto;opacity:0.85;">
+  <div class="hero-right" aria-label="Left Brain Consulting">
+    <img src="logo.svg" alt="Left Brain Consulting" style="width:140px;height:auto;opacity:0.7;">
   </div>
 </section>
 
@@ -965,7 +965,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <section class="about-section" id="about" aria-labelledby="about-heading">
   <div class="about-row">
     <div class="about-photo-wrap">
-      <img src="nathan.jpg" alt="Nathan Harris" class="about-photo"
+      <img src="NHeadshot.jpeg" alt="Nathan Harris" class="about-photo"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="about-photo-placeholder"><span>NH</span></div>
     </div>
