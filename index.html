@@ -429,7 +429,7 @@ nav {
 /* ── PROOF / ABOUT ── */
 .about-section { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); }
 .about-row { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start; margin-bottom: 4rem; }
-.about-photo { width: 260px; height: 260px; object-fit: cover; object-position: top; display: block; border-top: 4px solid var(--maroon); }
+.about-photo { width: 260px; height: 260px; object-fit: cover; object-position: top; display: block; border-radius: 50%; border: 4px solid var(--maroon); }
 .about-photo-placeholder { width: 260px; height: 260px; background: var(--off); border-top: 4px solid var(--maroon); border: 1px solid var(--rule); display: none; align-items: center; justify-content: center; }
 .about-photo-placeholder span { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--maroon); }
 .about-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--off-black); margin-bottom: 0.75rem; line-height: 1.1; }
@@ -488,7 +488,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   .nav-right .nav-link { display: none; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 8rem 1.5rem 3rem; }
-  .hero-right { padding: 3rem 1.5rem; border-left: none; border-top: 1px solid var(--rule); }
+  .hero-right { display: none; }
   .jobs-section, .visual-section, .offer, .about-section, .chaos-tax, .cta-final, .ai-section, .playbook-section { padding: 4rem 1.5rem; }
   .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-boxes, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
   .chaos-row, .chaos-total, .chaos-hire, .filter-callout, .vis-header { grid-template-columns: 1fr; }
@@ -891,14 +891,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <section class="offer" id="offer" aria-labelledby="offer-heading">
   <div class="label">How to Implement</div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin-bottom:-1px;">
-    <div></div>
-    <div style="background:var(--maroon);padding:0.4rem 1rem;text-align:center;">
-      <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#FFE4E9;">Most Popular</span>
-    </div>
-    <div></div>
-  </div>
-
   <div class="tiers">
     <div class="tier">
       <div class="tier-name">The Playbook</div>
@@ -955,7 +947,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   </div>
 
   <div class="tiers-note">
-    <p>We don't add to your tool stack. We build inside what you already use if we can.</p>
     <p>Not sure where to start? Most clients begin with The Install. Book a call and we'll figure out what's right for your situation.</p>
     <div class="tiers-cta">
       <a href="#book" class="btn large">Book a Call — 30 Minutes</a>
