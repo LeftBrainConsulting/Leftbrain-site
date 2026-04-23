@@ -542,7 +542,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   <div class="label">The Problem</div>
   <h2 id="jobs-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;color:var(--off-black);margin-bottom:1.25rem;">Every company has <span style="color:var(--maroon);">two jobs.</span></h2>
  
-  <div class="jobs">
+  <div class="jobs" style="grid-template-columns:1fr 1fr 1fr;">
     <div class="job-card">
       <div class="job-label">Job 1 — Always Wins</div>
       <div class="job-title">Keep the lights on.</div>
@@ -555,9 +555,11 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
     </div>
     <div class="job-card result">
       <div class="job-label light">The result</div>
-      <span class="job-result">Smart teams. Plenty of ideas. Real ambition.<br><em>No system to decide what gets resourced first.</em><br> So the best ideas stall, the loudest ones win, and every decision is a political negotiation.</div>
-  </span>
+      <span class="job-result">Smart teams. Plenty of ideas. Real ambition.<br><em>No system to decide what gets resourced first.</em></span>
     </div>
+  </div>
+  <div style="padding:2.5rem 4rem 0;text-align:center;">
+    <span style="font-size:1.25rem;line-height:1.7;color:var(--off-black);font-style:italic;font-weight:600;">So the best ideas stall, the loudest ones win, and every decision becomes a political negotiation.</span>
   </div>
 </section>
 
@@ -653,8 +655,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   </div>
 </section>
 
-<!-- ── CASE STUDY ── -->
-
 <!-- ── CHAOS TAX ── -->
 <section class="chaos-tax" aria-labelledby="chaos-heading">
   <div class="label light">The Chaos Tax</div>
@@ -731,56 +731,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
     <div class="chaos-closer">The system pays for itself the second you make one better decision from it. For most clients, that happens by week 2 or 3 of the install.</div>
   </div>
 </section>
-<section class="about-section" id="about" aria-labelledby="about-heading">
-  <div class="label">Key Case Study</div>
-  <div class="proof-case">
-    <div class="proof-case-label">$100M ARR Enterprise</div>
-    <h3>Brought in to fix dashboards.<br>Fixed the system feeding them instead.</h3>
-    <p>A 1,000-person organization. Work entering through dozens of uncoordinated paths. 25%+ of effort duplicated across teams. Strategic initiatives stalled. I reframed the engagement — fixed the execution pipeline, built centralized intake, and stood up a decision cadence that leadership could actually run. Two years later the system is still running. The dashboards finally had something true to show.</p>
-    <div class="proof-stats">
-      <div class="proof-stat"><div class="n">25%+</div><div class="l">Wasted or duplicated effort eliminated</div></div>
-      <div class="proof-stat"><div class="n">397</div><div class="l">Ideas through one system</div></div>
-      <div class="proof-stat"><div class="n">1,000</div><div class="l">Person organization</div></div>
-      <div class="proof-stat"><div class="n">2yr+ later</div><div class="l">System is still running</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── AI SECTION ── -->
-<section class="ai-section" aria-labelledby="ai-heading">
-  <div class="ai-left">
-    <div class="label">AI Governance</div>
-    <h2 id="ai-heading">The Filter is how <span class="accent">AI actually sticks.</span></h2>
-    <p>AI doesn't fail because of the model. It fails because nobody decided what to build first, in what order, with whose resources. That's the same problem The Filter already solves.</p>
-    <p>Every company has AI happening in three places simultaneously — and nobody has a single view of it. IT is evaluating vendors. Marketing is using tools nobody approved. Engineering is running experiments. The CEO just committed to the board that "we're implementing AI across operations."</p>
-    <p>None of them have a delivery lead. None have a definition of done. None are being reviewed on a cadence. And they're all competing against each other.</p>
-    <p><strong>That's not an AI problem. It's an execution infrastructure problem.</strong></p>
-    <p>The Filter routes every change initiative — including AI — through the same prioritization and release system. No new tools. No new overhead.</p>
-  </div>
-  <div class="ai-right">
-    <div class="ai-card">
-      <div class="ai-card-num">01</div>
-      <h4>Full portfolio visibility</h4>
-      <p>Every improvement initiative on one list. Including AI. Scored. Owned. Visible. You can't manage what you can't see.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">02</div>
-      <h4>Honest ROI tracking</h4>
-      <p>Did the estimated $200K efficiency gain actually materialize? Now you know.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">03</div>
-      <h4>Change management built in</h4>
-      <p>Change doesn't stick when it comes from all directions. Centralized releases to staff through the cadence fixes that structurally.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">04</div>
-      <h4>AI-enabled decisions</h4>
-      <p>The 🤖 AI Insight column collapses every row of signal into one executive-ready decision line. The system reads the noise so you don't have to.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ── PRICING ── -->
 <section class="offer" id="offer" aria-labelledby="offer-heading">
   <div class="label">Your Options</div>
@@ -844,6 +794,82 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 
   <div class="tiers-note">
     <p>We build this inside your existing stack if we can. We prefer no new tools. No new logins. No new overhead.</p>
+  </div>
+</section>
+
+<section class="about-section" id="about" aria-labelledby="about-heading">
+  <div class="label">Key Case Study</div>
+  <div class="proof-case">
+    <div class="proof-case-label">$100M ARR Enterprise</div>
+    <h3>Brought in to fix dashboards.<br>Fixed the system feeding them instead.</h3>
+    <p>A 1,000-person organization. Work entering through dozens of uncoordinated paths. 25%+ of effort duplicated across teams. Strategic initiatives stalled. I reframed the engagement — fixed the execution pipeline, built centralized intake, and stood up a decision cadence that leadership could actually run. Two years later the system is still running. The dashboards finally had something true to show.</p>
+    <div class="proof-stats">
+      <div class="proof-stat"><div class="n">25%+</div><div class="l">Wasted or duplicated effort eliminated</div></div>
+      <div class="proof-stat"><div class="n">397</div><div class="l">Ideas through one system</div></div>
+      <div class="proof-stat"><div class="n">1,000</div><div class="l">Person organization</div></div>
+      <div class="proof-stat"><div class="n">2yr+ later</div><div class="l">System is still running</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── AI SECTION ── -->
+<section class="ai-section" aria-labelledby="ai-heading">
+  <div class="ai-left">
+    <div class="label">AI Governance</div>
+    <h2 id="ai-heading">The Filter is how <span class="accent">AI actually sticks.</span></h2>
+    <p>AI doesn't fail because of the model. It fails because nobody decided what to build first, in what order, with whose resources.</p>
+    <p>Every company has AI happening in three places at once. IT is evaluating vendors. Marketing is using tools nobody approved. Engineering is running experiments. None of them have a delivery lead, a definition of done, or a shared cadence. And they're all competing for the same resources — while the people expected to absorb it all are already at capacity.</p>
+    <p><strong>That's not an AI problem. It's an execution infrastructure problem.</strong> The Filter routes every initiative — including AI — through the same system. Scored. Owned. Visible.</p>
+  </div>
+  <div class="ai-right">
+    <div class="ai-card">
+      <div class="ai-card-num">01</div>
+      <h4>Full portfolio visibility</h4>
+      <p>Every improvement initiative on one list. Including AI. Scored. Owned. Visible. You can't manage what you can't see.</p>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-num">02</div>
+      <h4>Honest ROI tracking</h4>
+      <p>Did the estimated $200K efficiency gain actually materialize? Now you know.</p>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-num">03</div>
+      <h4>Change management built in</h4>
+      <p>Change doesn't stick when it comes from all directions. Centralized releases to staff through the cadence fixes that structurally.</p>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-num">04</div>
+      <h4>AI-enabled decisions</h4>
+      <p>The 🤖 AI Insight column collapses every row of signal into one executive-ready decision line. The system reads the noise so you don't have to.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about-section" id="about-bio" aria-labelledby="about-heading">
+  <div class="about-row">
+    <div class="about-photo-wrap">
+      <img src="NHeadshot.jpeg" alt="Nathan Harris" class="about-photo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="about-photo-placeholder"><span>NH</span></div>
+    </div>
+    <div class="about-bio">
+      <div class="about-name" id="about-heading">Nathan Harris.<br><span class="accent">The operator behind the strategy.</span></div>
+<p>I have witnessed <strong>thousands of strategy decisions</strong> get made live in the room.</p>
+<p>EVPs running $2B+ ARR business units. Managers just trying to hold a team accountable. Hundreds of decision makers in between.</p>
+<p>Decisions that made people quit. Decisions that got people promoted. Political decisions that protected someone's "kingdom" at the expense of the business. Decisions that led to health events — from those making them, and from those on the receiving end.</p>
+<p>I was at the center of all of it. Trying to positively influence where I could.</p>
+<p>The pattern I kept seeing: <strong>decision making is the most emotional part of running a business.</strong> When decisions touch culture, careers, politics, and money — emotion wins more than it should.</p>
+<p><Strong>I took everything I watched and built a system to change that. The Filter.</Strong></p>
+<p>Ideas get ranked by impact, urgency, who they affect, and what happens if you do nothing. One hour a week to maintain it. The pressure moves off the authority in the room and onto the framework.</p>
+<p>This isn't about removing emotion from your business. <strong>It's about making sure emotion isn't the only thing making your decisions.</strong></p>
+      <div class="creds">
+        <div class="cred"><span class="cred-mark">—</span><span><strong>MetLife + IQVIA</strong> — Three promotions at MetLife, two at IQVIA. Associate Director at a Fortune 500 by 25.</span></div>
+        <div class="cred"><span class="cred-mark">—</span><span><strong>EY (Big 4 Client Side)</strong> — Only non-EY operator on a $200M investment to modernize a $2B ARR business unit. Built the operating layer across business, IT, and audit <strong>that became the origin of The Filter.</strong> Principles of system still in use at EY Insurance Advisory.</span></div>
+        <div class="cred"><span class="cred-mark">—</span><span><strong>20+ lines of business</strong> — Same system. From 10 people to 1,000. Still running.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -952,33 +978,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
         }
       });
     </script>
-  </div>
-</section>
-
-<!-- ── ABOUT ── -->
-<section class="about-section" id="about-bio" aria-labelledby="about-heading">
-  <div class="about-row">
-    <div class="about-photo-wrap">
-      <img src="NHeadshot.jpeg" alt="Nathan Harris" class="about-photo"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="about-photo-placeholder"><span>NH</span></div>
-    </div>
-    <div class="about-bio">
-      <div class="about-name" id="about-heading">Nathan Harris.<br><span class="accent">The operator behind the strategy.</span></div>
-<p>I have witnessed <strong>thousands of strategy decisions</strong> get made live in the room.</p>
-<p>EVPs running $2B+ ARR business units. Managers just trying to hold a team accountable. Hundreds of decision makers in between.</p>
-<p>Decisions that made people quit. Decisions that got people promoted. Political decisions that protected someone's "kingdom" at the expense of the business. Decisions that led to health events — from those making them, and from those on the receiving end.</p>
-<p>I was at the center of all of it. Trying to positively influence where I could.</p>
-<p>The pattern I kept seeing: <strong>decision making is the most emotional part of running a business.</strong> When decisions touch culture, careers, politics, and money — emotion wins more than it should.</p>
-<p><Strong>I took everything I watched and built a system to change that. The Filter.</Strong></p>
-<p>Ideas get ranked by impact, urgency, who they affect, and what happens if you do nothing. One hour a week to maintain it. The pressure moves off the authority in the room and onto the framework.</p>
-<p>This isn't about removing emotion from your business. <strong>It's about making sure emotion isn't the only thing making your decisions.</strong></p>
-      <div class="creds">
-        <div class="cred"><span class="cred-mark">—</span><span><strong>MetLife + IQVIA</strong> — Three promotions at MetLife, two at IQVIA. Associate Director at a Fortune 500 by 25.</span></div>
-        <div class="cred"><span class="cred-mark">—</span><span><strong>EY (Big 4 Client Side)</strong> — Only non-EY operator on a $200M investment to modernize a $2B ARR business unit. Built the operating layer across business, IT, and audit <strong>that became the origin of The Filter.</strong> Principles of system still in use at EY Insurance Advisory.</span></div>
-        <div class="cred"><span class="cred-mark">—</span><span><strong>20+ lines of business</strong> — Same system. From 10 people to 1,000. Still running.</span></div>
-      </div>
-    </div>
   </div>
 </section>
 
