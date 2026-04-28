@@ -494,6 +494,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-boxes, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
   [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:1fr auto"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:auto 1fr auto"] { grid-template-columns: 1fr !important; }
   .chaos-row, .chaos-total, .chaos-hire, .filter-callout, .vis-header { grid-template-columns: 1fr; }
   .chaos-hire-right { text-align: left; }
   .about-row { grid-template-columns: 1fr; gap: 2rem; }
@@ -526,7 +527,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   <div class="hero-left">
     <div class="hero-eyebrow">The Filter — A Prioritization System for Growing Companies</div>
     <h1>Your team isn't short on strategy. <span class="accent">It's short on a system to decide what gets worked on first.</span></h1>
-    <p class="hero-sub">The best ideas are buried behind the loudest ones — and for a 50-person company, that costs at least $322,000 a year. The Filter makes the right work obvious.</p>
+    <p class="hero-sub">The best ideas are buried behind the loudest ones. Without a system to cut through that, a 50-person company loses at least $322,000 a year to the wrong priorities. The Filter fixes that and the right work becomes obvious.</p>
     <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:2.5rem;max-width:480px;line-height:1.7;">Built across 20+ lines of business in Fortune 500 and enterprise settings — now available for $20M–$500M companies that want to make better decisions, faster, with less friction.</p>
     <div class="hero-actions">
       <a href="#book" class="btn large">Book a Call</a>
@@ -738,32 +739,41 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <section class="offer" id="offer" aria-labelledby="offer-heading">
   <div class="label">How to Eliminate The Chaos Tax</div>
 
-  <!-- Main install card -->
-  <div style="border:1px solid var(--rule);background:var(--white);padding:3.5rem;margin-bottom:1.5rem;">
-    <div style="display:grid;grid-template-columns:1fr auto;align-items:start;gap:2rem;margin-bottom:2rem;">
-      <div>
-        <div class="tier-badge" style="background:var(--subtle);margin-bottom:1.25rem;">Stack Install</div>
-        <div class="tier-name" style="margin-bottom:0;">Install The Filter.</div>
-      </div>
-      <a href="#book" class="btn large" style="white-space:nowrap;align-self:flex-end;">Let's Talk</a>
+  <!-- Main install card — horizontal compact -->
+  <div style="border:1px solid var(--rule);background:var(--white);margin-bottom:1.5rem;display:grid;grid-template-columns:auto 1fr auto;gap:0;align-items:stretch;">
+
+    <!-- Left: label + name -->
+    <div style="padding:2.5rem 3rem;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center;min-width:260px;">
+      <div class="tier-badge" style="background:var(--subtle);margin-bottom:1rem;display:inline-block;width:fit-content;">Stack Install</div>
+      <div class="tier-name" style="margin:0;line-height:1;">Install<br>The Filter.</div>
     </div>
-    <p style="font-size:1rem;line-height:1.85;color:var(--body);max-width:680px;margin:0;">Approx. ~10hrs to install over 4 weeks. Each week builds on the last. By the time Nathan's gone, the system doesn't feel installed. It feels like yours. That's the point.</p>
+
+    <!-- Middle: copy -->
+    <div style="padding:2.5rem 3rem;display:flex;align-items:center;">
+      <p style="font-size:0.95rem;line-height:1.85;color:var(--body);margin:0;">Approx. ~10hrs to install over 4 weeks. Each week builds on the last. By the time Nathan's gone, the system doesn't feel installed. It feels like yours. That's the point.</p>
+    </div>
+
+    <!-- Right: CTA -->
+    <div style="padding:2.5rem 3rem;border-left:1px solid var(--rule);display:flex;align-items:center;justify-content:center;">
+      <a href="#book" class="btn large" style="white-space:nowrap;">Let's Talk</a>
+    </div>
+
   </div>
 
   <!-- On-site + Guarantee side by side -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;align-items:stretch;">
 
-    <!-- On-site pill -->
-    <div style="background:#FDF5F7;border:1px solid rgba(139,26,46,0.2);padding:2rem;display:flex;gap:1rem;align-items:start;">
-      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:0.15rem;"><path d="M16 3L4 8V16C4 22.627 9.373 28 16 28C22.627 28 28 22.627 28 16V8L16 3Z" stroke="var(--maroon)" stroke-width="2" stroke-linejoin="round"/><path d="M11 16.5L14.5 20L21 13" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <!-- On-site -->
+    <div style="background:#FDF5F7;border:1px solid rgba(139,26,46,0.2);padding:2rem 2.25rem;display:flex;gap:1.25rem;align-items:start;">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:0.2rem;"><path d="M16 3L4 8V16C4 22.627 9.373 28 16 28C22.627 28 28 22.627 28 16V8L16 3Z" stroke="var(--maroon)" stroke-width="2" stroke-linejoin="round"/><path d="M11 16.5L14.5 20L21 13" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div>
-        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.4rem;">On-Site Workshop Available</div>
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.5rem;">On-Site Workshop Available</div>
         <p style="font-size:0.88rem;line-height:1.75;color:var(--body);margin:0;">For teams already operating in person — Nathan comes to you for the portfolio review and decision workshop. Everything else runs the same.</p>
       </div>
     </div>
 
-    <!-- Guarantee box -->
-    <div style="background:var(--maroon-deep);border:1px solid var(--maroon);padding:2rem;">
+    <!-- Guarantee -->
+    <div style="background:var(--maroon-deep);border:1px solid var(--maroon);padding:2rem 2.25rem;">
       <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.5rem;">The Guarantee</div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.02em;line-height:1.15;color:var(--white);margin-bottom:0.75rem;">A running system by Week 4 — or your money back.</div>
       <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.65);margin:0;">Full initiative inventory captured, scored, and sequenced. Trained internal operator. A decision cadence your leadership has already run. If it isn't done, you get a full refund. The only requirement is that your team shows up.</p>
