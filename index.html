@@ -491,6 +491,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   .hero-right { display: none; }
   .jobs-section, .visual-section, .offer, .about-section, .chaos-tax, .cta-final, .ai-section, .playbook-section { padding: 4rem 1.5rem; }
   .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-boxes, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   .chaos-row, .chaos-total, .chaos-hire, .filter-callout, .vis-header { grid-template-columns: 1fr; }
   .chaos-hire-right { text-align: left; }
   .about-row { grid-template-columns: 1fr; gap: 2rem; }
@@ -509,7 +510,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
     <img src="logo.svg" alt="Left Brain Consulting">LEFT BRAIN CONSULTING
   </a>
   <div class="nav-right">
-    <a href="#offer" class="nav-link">Pricing</a>
+    <a href="#offer" class="nav-link">How It Works</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#playbook" class="nav-link">Free Playbook</a>
     <a href="#book" class="nav-cta">Book a Call</a>
@@ -522,8 +523,8 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <section class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">The Filter — A Prioritization System for Growing Companies</div>
-    <h1>You have more improvement work than capacity to run it. <span class="italic">This is the system that decides what moves first.</span></h1>
-    <p class="hero-sub">A structured intake, scoring, and decision cadence — built into your team in 4 weeks — so leadership stops debating priorities and the right work actually gets done.</p>
+    <h1>Your team isn't short on strategy. <span class="accent">It's short on a system to decide what gets worked on first.</span></h1>
+    <p class="hero-sub">The best ideas are buried behind the loudest ones — and for a 50-person company, that costs at least $322,000 a year. The Filter makes the right work obvious.</p>
     <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:2.5rem;max-width:480px;line-height:1.7;">Built across 20+ lines of business in Fortune 500 and enterprise settings — now available for $20M–$500M companies that want to make better decisions, faster, with less friction.</p>
     <div class="hero-actions">
       <a href="#book" class="btn large">Book a Call</a>
@@ -723,87 +724,220 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
       </div>
       <div class="chaos-box-vs">vs</div>
       <div class="chaos-box win">
-        <div class="chaos-box-label">Done With You</div>
-        <div class="chaos-box-val">$35K</div>
-        <div class="chaos-box-note">One time. Payback in weeks.</div>
+        <div class="chaos-box-label">The Fix</div>
+        <div class="chaos-box-val" style="font-size:1.6rem;line-height:1.2;">A fraction<br>of this.</div>
+        <div class="chaos-box-note">Fixed price. Four weeks. Done.</div>
       </div>
     </div>
-    <div class="chaos-closer">The system pays for itself the second you make one better decision from it. For most clients, that happens by week 2 or 3 of the install.</div>
+    <div class="chaos-closer">The system pays for itself the second you make one better decision from it. For most clients, that happens by week 2 or 3 of the install. It only has to work once.</div>
   </div>
 </section>
-<!-- ── PRICING ── -->
+<!-- ── HOW TO INSTALL ── -->
 <section class="offer" id="offer" aria-labelledby="offer-heading">
-  <div class="label">Your Options</div>
+  <div class="label">How to Install</div>
   <div style="max-width:680px;margin-bottom:3rem;">
-    <p style="font-size:1.15rem;font-weight:600;color:var(--off-black);line-height:1.6;margin-bottom:0.75rem;">Three ways to get The Filter running — from fully self-serve to fully embedded.</p>
-    <p style="font-size:0.95rem;color:var(--body);line-height:1.75;">Every option gives you the same prioritization system. The difference is who builds it, who runs it, and how fast your team owns it independently. The goal in every case is the same: a decision cadence that moves your business forward with less friction and more work.</p>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--off-black);line-height:1.6;margin-bottom:0.75rem;">One process. Four weeks. Clean handoff.</p>
+    <p style="font-size:0.95rem;color:var(--body);line-height:1.75;">Nathan exits at Week 4. The system doesn't.</p>
   </div>
 
-  <div class="tiers">
-    <div class="tier">
-      <div class="tier-name">The Playbook</div>
-      <div class="tier-tag">The complete system, free. You build and run it yourself.</div>
-      <div class="tier-price">$0</div>
-      <div class="tier-price-note">Free · Instant access · DIY</div>
-      <hr>
-      <ul>
-        <li>Complete intake system, scoring model, and rules document</li>
-        <li>Full operating cadence — weekly, monthly, quarterly</li>
-        <li>Six-week setup guide and itemized project plan, step by step</li>
-        <li>AI governance framework included</li>
-        <li>The Filter spreadsheet — intake, scoring, dashboard</li>
-        <li>Right for teams with a strong internal operator ready to run it alone</li>
-      </ul>
-      <a href="#playbook" class="btn ghost" style="text-align:center;width:100%;">Get the Free Playbook</a>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;">
+
+    <div style="border:1px solid var(--rule);background:var(--white);padding:3rem;">
+      <div class="tier-badge" style="background:var(--subtle);margin-bottom:1.25rem;">Stack Install</div>
+      <div class="tier-name" style="margin-bottom:1rem;">Install<br>The Filter.</div>
+      <p style="font-size:1rem;line-height:1.85;color:var(--body);margin-bottom:2rem;">Four weeks. Each one builds on the last — and in between, your team runs it without a safety net. That's the point. By the time Nathan's gone, the system doesn't feel installed. It feels like yours.</p>
+
+      <div style="border-top:1px solid var(--rule);padding-top:1.75rem;margin-bottom:2rem;">
+        <div style="display:inline-flex;align-items:center;gap:0.75rem;background:#FDF5F7;border:1px solid rgba(139,26,46,0.2);padding:0.85rem 1.25rem;">
+          <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M16 3L4 8V16C4 22.627 9.373 28 16 28C22.627 28 28 22.627 28 16V8L16 3Z" stroke="var(--maroon)" stroke-width="2" stroke-linejoin="round"/><path d="M11 16.5L14.5 20L21 13" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:0.82rem;color:var(--off-black);line-height:1.5;"><strong>On-site workshop available.</strong> For teams that make faster decisions in a room together — Nathan comes to you for the portfolio review. Everything else runs the same.</span>
+        </div>
+      </div>
+
+      <a href="#book" class="btn large" style="display:inline-block;">Let's Talk</a>
     </div>
 
-<div class="tier featured" style="background:var(--maroon-deep);border-top:3px solid var(--maroon);">
-  <div class="tier-name" style="color:var(--white);">Done With You</div>
-  <div class="tier-tag" style="color:rgba(255,255,255,0.6);">Four weeks. I build it with your team, run the first cycles, and hand it off. Your team makes better decisions.</div>
-  <div class="tier-price" style="color:#F9A8B8;">$35,000</div>
-  <div class="tier-price-note" style="color:rgba(255,255,255,0.4);">4 weeks until this is just how you operate.</div>
-  <hr style="border-top-color:rgba(255,255,255,0.1);">
-  <ul>
-    <li style="color:rgba(255,255,255,0.8);">Full team lead interviews and initiative mapping</li>
-    <li style="color:rgba(255,255,255,0.8);">Leadership workshop — ranked list, one meeting, decisions made</li>
-    <li style="color:rgba(255,255,255,0.8);">Live prioritization cycle with new intake vs. in-flight work</li>
-    <li style="color:rgba(255,255,255,0.8);">Trained internal owner who runs it after I leave</li>
-    <li style="color:rgba(255,255,255,0.8);">Neutral third party absorbs the political friction</li>
-    <li style="color:rgba(255,255,255,0.8);">AI governance layer configured into your business</li>
-    <li style="color:rgba(255,255,255,0.8);">On-site intensive available for qualifying engagements.</li>
-  </ul>
-  <p style="font-size:0.78rem;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Hands-on. Not delegated. Limited availability.</p>
-  <a href="#book" class="btn large" style="text-align:center;width:100%;display:block;background:var(--maroon);border-color:var(--maroon);">Stop the Chaos Tax</a>
-</div>
-    
-    <div class="tier">
-      <div class="tier-name">Done For You</div>
-      <div class="tier-tag">I build the system with your team, then stay on as your embedded operator.</div>
-      <div class="tier-price">Custom</div>
-      <div class="tier-price-note">Scoped to your situation · Inquire</div>
-      <hr>
-      <ul>
-        <li>Everything in Done With You</li>
-        <li>I continue to run the Filter cadences and hold the system honest</li>
-        <li>Personally PM the highest-priority initiatives through delivery</li>
-        <li>Build project management &amp; implementation standards your team keeps after I'm gone</li>
-        <li>Neutral third-party facilitation in every decision — no political stake</li>
-      </ul>
-      <a href="#book" class="btn" style="text-align:center;width:100%;display:block;">Let's Talk Scope</a>
+    <div style="position:sticky;top:7rem;">
+      <div class="guarantee-label" style="margin-bottom:0.75rem;">The Guarantee</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.02em;line-height:1.1;color:var(--off-black);margin-bottom:1rem;">A running system by Week 4 — or your money back.</div>
+      <p style="font-size:0.88rem;line-height:1.85;color:var(--body);margin-bottom:1.5rem;">If you don't have a live prioritization system — with your full initiative inventory captured, scored, and sequenced, a trained internal operator running it, and a decision cadence your leadership team has already used — by the end of the 4-week engagement, you get a full refund. No partial credit. No conditions.</p>
+      <p style="font-size:0.78rem;color:var(--subtle);line-height:1.7;">The only ask is that your team shows up for the work.</p>
+    </div>
+
+  </div>
+
+  <!-- Accordion FAQ -->
+  <div style="margin-top:3rem;border-top:1px solid var(--rule);padding-top:3rem;">
+    <div class="label">Common Questions</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          We don't have time for this.
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>That's the symptom. When everything is a priority, the loudest voice wins and nothing moves. ~10 hours over 4 weeks is the full cost of fixing that permanently.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          We already have a process.
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Most teams do — in theory. The question is whether it's producing decisions or producing meetings. If the backlog is still full, the process isn't working.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Why not just do it ourselves?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>The playbook is free and it will work. The system doesn't fail because it's incomplete — it fails the first time a senior leader's pet project scores a 4.2 and someone has to hold the line. That's easier when it's not your job on the line. That's what you're hiring.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What happens when you leave?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>That's the whole design. A trained internal operator runs it from Week 5. The system, rules, and cadence stay. Nathan exits. The capability doesn't.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How much of our team's time does this actually take?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>About 10 hours over the 4-week engagement — spread across the full team. One kickoff session, one workshop, one BAU call, one monthly review. In between, your team uses The Filter in the conversations they're already having. There are no extra meetings. The system runs inside the work, not on top of it.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do we need to change our tools or tech stack?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>No. The Filter is built inside your existing stack wherever possible — no new software, no new logins, no new overhead. If you already live in Google Sheets, Notion, or a project management tool, that's where it lives. The system is the structure, not the software.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <div class="tiers-note">
-    <p>We build this inside your existing stack if we can. We prefer no new tools. No new logins. No new overhead.</p>
+    <p>Built inside your existing stack. No new tools. No new logins. No new overhead.</p>
+    <div class="tiers-cta">
+      <a href="#book" class="btn large">Book 30 Minutes</a>
+      <a href="#playbook" class="btn ghost large">Get the Free Playbook</a>
+    </div>
   </div>
+
+  <style>
+  /* ── FAQ ACCORDION ── */
+  .faq-list { border: 1px solid var(--rule); }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    width: 100%; background: var(--white); border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 2rem; text-align: left; gap: 1.5rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+    color: var(--off-black); transition: background 0.15s;
+  }
+  .faq-q:hover { background: var(--off); }
+  .faq-q[aria-expanded="true"] { background: var(--off); color: var(--maroon); }
+  .faq-icon {
+    flex-shrink: 0; width: 18px; height: 18px; position: relative;
+    transition: transform 0.25s ease;
+  }
+  .faq-icon::before,
+  .faq-icon::after {
+    content: ''; position: absolute; background: var(--maroon);
+    border-radius: 1px; transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .faq-icon::before { width: 2px; height: 18px; left: 8px; top: 0; }
+  .faq-icon::after  { width: 18px; height: 2px; top: 8px; left: 0; }
+  .faq-q[aria-expanded="true"] .faq-icon::before { transform: rotate(90deg); opacity: 0; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+    padding: 0 2rem;
+  }
+  .faq-a.open { max-height: 400px; padding: 0 2rem 1.5rem; }
+  .faq-a p { font-size: 0.9rem; line-height: 1.8; color: var(--body); }
+
+  /* ── GUARANTEE ── */
+  .guarantee-block {
+    margin-top: 2.5rem;
+    border: 1.5px solid var(--maroon);
+    background: #FDF5F7;
+  }
+  .guarantee-inner {
+    padding: 2.25rem 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.75rem;
+    align-items: start;
+  }
+  .guarantee-icon { padding-top: 0.2rem; }
+  .guarantee-label {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--maroon); margin-bottom: 0.4rem;
+  }
+  .guarantee-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; letter-spacing: 0.03em; line-height: 1.1;
+    color: var(--off-black); margin-bottom: 0.75rem;
+  }
+  .guarantee-copy {
+    font-size: 0.88rem; line-height: 1.8; color: var(--body);
+  }
+  @media (max-width: 900px) {
+    .faq-q { padding: 1.25rem 1.25rem; }
+    .faq-a { padding: 0 1.25rem; }
+    .faq-a.open { padding: 0 1.25rem 1.25rem; }
+    .guarantee-inner { grid-template-columns: 1fr; gap: 1rem; }
+    .guarantee-icon { display: none; }
+  }
+  </style>
+
+  <script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // close all
+      document.querySelectorAll('.faq-q').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      // open this one if it was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    });
+  });
+  </script>
 </section>
 
 <section class="about-section" id="about" aria-labelledby="about-heading">
   <div class="label">Key Case Study</div>
   <div class="proof-case">
     <div class="proof-case-label">$100M ARR Enterprise</div>
-    <h3>Brought in to fix dashboards.<br>Fixed the system feeding them instead.</h3>
-    <p>A 1,000-person organization. Work entering through dozens of uncoordinated paths. 25%+ of effort duplicated across teams. Strategic initiatives stalled. I reframed the engagement — fixed the execution pipeline, built centralized intake, and stood up a decision cadence that leadership could actually run. Two years later the system is still running. The dashboards finally had something true to show.</p>
+    <h3>Work was entering from everywhere.<br>Nothing was getting finished.</h3>
+    <p>A 1,000-person organization. Dozens of uncoordinated intake paths. 25%+ of effort duplicated across teams. Strategic initiatives stalled mid-flight. Leadership making decisions in meetings that got unmade in the next one.</p>
+    <p>The Filter got installed. One intake system. Every initiative scored, sequenced, and owned. A weekly cadence that forced the decisions leadership had been deferring for months. Within weeks, the noise stopped competing with the work — because the work finally had a rank order everyone had agreed to.</p>
+    <p>Two years later, the system is still running without Nathan. That's the whole point.</p>
     <div class="proof-stats">
       <div class="proof-stat"><div class="n">25%+</div><div class="l">Wasted or duplicated effort eliminated</div></div>
       <div class="proof-stat"><div class="n">397</div><div class="l">Ideas through one system</div></div>
@@ -813,39 +947,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   </div>
 </section>
 
-
-<!-- ── AI SECTION ── -->
-<section class="ai-section" aria-labelledby="ai-heading">
-  <div class="ai-left">
-    <div class="label">AI Governance</div>
-    <h2 id="ai-heading">The Filter is how <span class="accent">AI actually sticks.</span></h2>
-    <p>AI doesn't fail because of the model. It fails because nobody decided what to build first, in what order, with whose resources.</p>
-    <p>Every company has AI happening in three places at once. IT is evaluating vendors. Marketing is using tools nobody approved. Engineering is running experiments. None of them have a delivery lead, a definition of done, or a shared cadence. And they're all competing for the same resources — while the people expected to absorb it all are already at capacity.</p>
-    <p><strong>That's not an AI problem. It's an execution infrastructure problem.</strong> The Filter routes every initiative — including AI — through the same system. Scored. Owned. Visible.</p>
-  </div>
-  <div class="ai-right">
-    <div class="ai-card">
-      <div class="ai-card-num">01</div>
-      <h4>Full portfolio visibility</h4>
-      <p>Every improvement initiative on one list. Including AI. Scored. Owned. Visible. You can't manage what you can't see.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">02</div>
-      <h4>Honest ROI tracking</h4>
-      <p>Did the estimated $200K efficiency gain actually materialize? Now you know.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">03</div>
-      <h4>Change management built in</h4>
-      <p>Change doesn't stick when it comes from all directions. Centralized releases to staff through the cadence fixes that structurally.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">04</div>
-      <h4>AI-enabled decisions</h4>
-      <p>The 🤖 AI Insight column collapses every row of signal into one executive-ready decision line. The system reads the noise so you don't have to.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ── ABOUT ── -->
 <section class="about-section" id="about-bio" aria-labelledby="about-heading">
@@ -979,6 +1080,38 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
         }
       });
     </script>
+  </div>
+</section>
+
+<!-- ── AI SECTION ── -->
+<section class="ai-section" aria-labelledby="ai-heading">
+  <div class="ai-left">
+    <div class="label light">Added Bonus</div>
+    <h2 id="ai-heading">The Filter is also how <span class="accent">AI actually sticks.</span></h2>
+    <p>Most companies don't have an AI problem. They have a prioritization problem — and AI is just the latest thing caught in it. IT evaluating vendors. Marketing using tools nobody approved. Engineering running experiments. All competing for the same resources, with no shared cadence and no definition of done.</p>
+    <p><strong>The Filter doesn't care if it's an AI initiative or a rebrand.</strong> Everything goes through the same system. Scored. Owned. Visible. That's what makes AI governable — not a separate framework, just the same discipline applied to one more category of work.</p>
+  </div>
+  <div class="ai-right">
+    <div class="ai-card">
+      <div class="ai-card-num">01</div>
+      <h4>Full portfolio visibility</h4>
+      <p>Every improvement initiative on one list. Including AI. Scored. Owned. Visible. You can't manage what you can't see.</p>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-num">02</div>
+      <h4>Honest ROI tracking</h4>
+      <p>Did the estimated $200K efficiency gain actually materialize? Now you know.</p>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-num">03</div>
+      <h4>Change management built in</h4>
+      <p>Change doesn't stick when it comes from all directions. Centralized releases to staff through the cadence fixes that structurally.</p>
+    </div>
+    <div class="ai-card">
+      <div class="ai-card-num">04</div>
+      <h4>AI-enabled decisions</h4>
+      <p>The AI Insight column collapses every row of signal into one executive-ready decision line. The system reads the noise so you don't have to.</p>
+    </div>
   </div>
 </section>
 
