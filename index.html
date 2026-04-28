@@ -493,6 +493,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   .jobs-section, .visual-section, .offer, .about-section, .chaos-tax, .cta-final, .ai-section, .playbook-section { padding: 4rem 1.5rem; }
   .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-boxes, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
   [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:1fr auto"] { grid-template-columns: 1fr !important; }
   .chaos-row, .chaos-total, .chaos-hire, .filter-callout, .vis-header { grid-template-columns: 1fr; }
   .chaos-hire-right { text-align: left; }
   .about-row { grid-template-columns: 1fr; gap: 2rem; }
@@ -737,26 +738,35 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <section class="offer" id="offer" aria-labelledby="offer-heading">
   <div class="label">How to Install</div>
 
-    <div style="border:1px solid var(--rule);background:var(--white);padding:3rem;">
-      <div class="tier-badge" style="background:var(--subtle);margin-bottom:1.25rem;">Stack Install</div>
-      <div class="tier-name" style="margin-bottom:1rem;">Install<br>The Filter.</div>
-      <p style="font-size:1rem;line-height:1.85;color:var(--body);margin-bottom:2rem;">Four weeks. Each one builds on the last — and in between, your team runs it without a safety net. That's the point. By the time Nathan's gone, the system doesn't feel installed. It feels like yours.</p>
-
-      <div style="border-top:1px solid var(--rule);padding-top:1.75rem;margin-bottom:2rem;">
-        <div style="display:inline-flex;align-items:center;gap:0.75rem;background:#FDF5F7;border:1px solid rgba(139,26,46,0.2);padding:0.85rem 1.25rem;">
-          <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M16 3L4 8V16C4 22.627 9.373 28 16 28C22.627 28 28 22.627 28 16V8L16 3Z" stroke="var(--maroon)" stroke-width="2" stroke-linejoin="round"/><path d="M11 16.5L14.5 20L21 13" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span style="font-size:0.82rem;color:var(--off-black);line-height:1.5;"><strong>On-site workshop available.</strong> For teams already operating in person together — Nathan comes to you for the portfolio review. Everything else runs the same.</span>
-        </div>
+  <!-- Main install card -->
+  <div style="border:1px solid var(--rule);background:var(--white);padding:3.5rem;margin-bottom:1.5rem;">
+    <div style="display:grid;grid-template-columns:1fr auto;align-items:start;gap:2rem;margin-bottom:2rem;">
+      <div>
+        <div class="tier-badge" style="background:var(--subtle);margin-bottom:1.25rem;">Stack Install</div>
+        <div class="tier-name" style="margin-bottom:0;">Install The Filter.</div>
       </div>
+      <a href="#book" class="btn large" style="white-space:nowrap;align-self:flex-end;">Let's Talk</a>
+    </div>
+    <p style="font-size:1rem;line-height:1.85;color:var(--body);max-width:680px;margin:0;">Approx. ~10hrs to install over 4 weeks. Each week builds on the last. By the time Nathan's gone, the system doesn't feel installed. It feels like yours. That's the point.</p>
+  </div>
 
-      <a href="#book" class="btn large" style="display:inline-block;">Let's Talk</a>
+  <!-- On-site + Guarantee side by side -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;align-items:stretch;">
+
+    <!-- On-site pill -->
+    <div style="background:#FDF5F7;border:1px solid rgba(139,26,46,0.2);padding:2rem;display:flex;gap:1rem;align-items:start;">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:0.15rem;"><path d="M16 3L4 8V16C4 22.627 9.373 28 16 28C22.627 28 28 22.627 28 16V8L16 3Z" stroke="var(--maroon)" stroke-width="2" stroke-linejoin="round"/><path d="M11 16.5L14.5 20L21 13" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.4rem;">On-Site Workshop Available</div>
+        <p style="font-size:0.88rem;line-height:1.75;color:var(--body);margin:0;">For teams already operating in person — Nathan comes to you for the portfolio review and decision workshop. Everything else runs the same.</p>
+      </div>
     </div>
 
-    <div style="position:sticky;top:7rem;">
-      <div class="guarantee-label" style="margin-bottom:0.75rem;">The Guarantee</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.02em;line-height:1.1;color:var(--off-black);margin-bottom:1rem;">A running system by Week 4 — or your money back.</div>
-      <p style="font-size:0.88rem;line-height:1.85;color:var(--body);margin-bottom:1.5rem;">If you don't have a live prioritization system — with your full initiative inventory captured, scored, and sequenced, a trained internal operator running it, and a decision cadence your leadership team has already used — by the end of the 4-week engagement, you get a full refund. No partial credit. No conditions.</p>
-      <p style="font-size:0.78rem;color:var(--subtle);line-height:1.7;">The only ask is that your team shows up for the work.</p>
+    <!-- Guarantee box -->
+    <div style="background:var(--maroon-deep);border:1px solid var(--maroon);padding:2rem;">
+      <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.5rem;">The Guarantee</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.02em;line-height:1.15;color:var(--white);margin-bottom:0.75rem;">A running system by Week 4 — or your money back.</div>
+      <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.65);margin:0;">Full initiative inventory captured, scored, and sequenced. Trained internal operator. A decision cadence your leadership has already run. If it isn't done, you get a full refund. The only requirement is that your team shows up.</p>
     </div>
 
   </div>
