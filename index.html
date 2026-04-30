@@ -289,59 +289,21 @@ nav {
 
 /* ── CHAOS TAX ── */
 .chaos-tax {
-  padding: 6rem 4rem; border-bottom: 1px solid var(--rule);
-  background: var(--off-black);
+  padding: 4rem 4rem; border-bottom: 1px solid var(--rule);
+  background: var(--white);
 }
-.chaos-tax .label { color: #F9A8B8; }
-.chaos-tax .label::after { background: var(--rule-dark); }
-.chaos-tax h2 { color: var(--white); }
-
-.chaos-intro { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.6); max-width: 620px; margin-bottom: 3rem; }
-
-.chaos-calc { border: 1px solid var(--rule-dark); }
-.chaos-rows { display: flex; flex-direction: column; gap: 1px; background: var(--rule-dark); }
-.chaos-row { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; padding: 1.5rem 2rem; background: rgba(255,255,255,0.02); }
-.chaos-row:nth-child(even) { background: rgba(255,255,255,0.04); }
-.chaos-row-label { font-size: 0.98rem; font-weight: 500; color: var(--white); margin-bottom: 0.3rem; }
-.chaos-row-math { font-size: 0.8rem; color: rgba(255,255,255,0.3); font-style: italic; }
-.chaos-row-value { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--maroon); letter-spacing: 0.04em; white-space: nowrap; }
-.chaos-total { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 1.5rem 2rem; background: var(--maroon); gap: 2rem; }
+.chaos-tax .label { color: var(--maroon); }
+.chaos-tax h2 { color: var(--off-black); }
+.chaos-intro { font-size: 1rem; line-height: 1.8; color: var(--body); max-width: 100%; margin-bottom: 2rem; }
+.chaos-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 1px; }
+.chaos-card { background: var(--white); padding: 2rem 1.75rem; }
+.chaos-card-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--maroon); letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.4rem; }
+.chaos-card-label { font-size: 0.88rem; font-weight: 600; color: var(--off-black); margin-bottom: 0.6rem; line-height: 1.4; }
+.chaos-card-math { font-size: 0.75rem; color: var(--subtle); font-style: italic; line-height: 1.6; padding-top: 0.6rem; border-top: 1px solid var(--rule); }
+.chaos-total { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 1.25rem 1.75rem; background: var(--maroon); gap: 2rem; }
 .chaos-total-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #FFE4E9; }
-.chaos-total-value { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--white); letter-spacing: 0.04em; }
-
-.chaos-people { padding: 2rem 2rem 0; }
-.chaos-people-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
-.chaos-people-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.25rem; }
-.chaos-person { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.chaos-person.ok { background: rgba(255,255,255,0.06); }
-.chaos-person.wrong { background: rgba(139,26,46,0.35); border: 1px solid rgba(139,26,46,0.6); }
-.chaos-person svg { width: 20px; height: 20px; }
-.chaos-people-caption { font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.6); padding-bottom: 2rem; border-bottom: 1px solid var(--rule-dark); }
-.chaos-people-caption strong { color: var(--white); }
-
-.chaos-hire { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; padding: 1.75rem 2rem; background: rgba(74,222,128,0.05); border-top: 1px solid rgba(74,222,128,0.12); border-left: 4px solid #4ADE80; }
-.chaos-hire-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #4ADE80; margin-bottom: 0.5rem; }
-.chaos-hire-left p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
-.chaos-hire-left p strong { color: var(--white); }
-.chaos-hire-right { text-align: right; flex-shrink: 0; }
-.chaos-hire-stat-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #4ADE80; margin-bottom: 0.2rem; }
-.chaos-hire-stat { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: #4ADE80; letter-spacing: 0.04em; line-height: 1; }
-.chaos-hire-stat-note { font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-top: 0.2rem; }
-
-.chaos-section-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 1rem; margin-top: 0.25rem; padding: 0 2rem; }
-.chaos-boxes { display: grid; grid-template-columns: 1fr 1fr auto 1fr; gap: 1px; background: var(--rule-dark); }
-.chaos-box { padding: 1.5rem 2rem; }
-.chaos-box.loss { background: rgba(139,26,46,0.2); }
-.chaos-box.win { background: rgba(74,222,128,0.08); }
-.chaos-box-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; }
-.chaos-box.loss .chaos-box-label { color: #F9A8B8; }
-.chaos-box.win .chaos-box-label { color: #4ADE80; }
-.chaos-box-val { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; letter-spacing: 0.04em; line-height: 1; margin-bottom: 0.3rem; }
-.chaos-box.loss .chaos-box-val { color: var(--white); }
-.chaos-box.win .chaos-box-val { color: #4ADE80; }
-.chaos-box-note { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
-.chaos-box-vs { display: flex; align-items: center; justify-content: center; padding: 1.5rem 1.25rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.01); }
-.chaos-closer { padding: 1.25rem 2rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: 0.04em; color: var(--white); background: var(--maroon); text-align: center; }
+.chaos-total-value { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--white); letter-spacing: 0.04em; }
+.chaos-closer { margin-top: 1.5rem; font-size: 0.95rem; color: var(--body); line-height: 1.75; max-width: 620px; }
 
 /* ── AI SECTION ── */
 .ai-section {
@@ -491,7 +453,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   .hero-left { padding: 8rem 1.5rem 3rem; }
   .hero-right { display: none; }
   .jobs-section, .visual-section, .offer, .about-section, .chaos-tax, .cta-final, .ai-section, .playbook-section { padding: 4rem 1.5rem; }
-  .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-boxes, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
+  .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-cards, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
   [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:1fr auto"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:auto 1fr auto"] { grid-template-columns: 1fr !important; }
@@ -526,8 +488,9 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <section class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">The Filter — A Prioritization System for Growing Companies</div>
-    <h1>Your team isn't short on strategy. <span class="accent">It's short on a system to decide what gets worked on first.</span></h1>
-    <p class="hero-sub">The best ideas are buried behind the loudest ones. Without a lightweight system to cut through that, a 50-person company loses at least $322,000 a year to the wrong priorities. The Filter fixes that and the right work becomes obvious.</p>
+    <h1>Too many priorities. <span class="accent">No shared way to choose.</span></h1>
+    <p class="hero-sub">Your team isn't short on strategy. It's short on a system for deciding what gets worked on first.</p>
+    <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:0.75rem;max-width:480px;line-height:1.7;">The best ideas get buried behind the loudest ones — and for a 50-person company, that costs at least $322,000 a year in misdirected effort. The Filter turns competing opinions into one ranked list everyone has agreed to.</p>
     <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:2.5rem;max-width:480px;line-height:1.7;">Built across 20+ lines of business in Fortune 500 and enterprise settings — now available for $20M–$500M companies that want to make better decisions, faster, with less friction.</p>
     <div class="hero-actions">
       <a href="#book" class="btn large">Book a Call</a>
@@ -561,9 +524,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
       <div class="job-label light">The result</div>
       <span class="job-result">Smart teams. Plenty of ideas. Real ambition.<br><em>No system to decide what gets resourced first.</em></span>
     </div>
-  </div>
-  <div style="padding:2.5rem 4rem 0;text-align:center;">
-    <span style="font-size:1.25rem;line-height:1.7;color:var(--maroon);font-style:italic;font-weight:600;">And without a system to decide what gets resourced first, the best ideas stall, the loudest ones win, and every decision becomes a negotiation.</span>
   </div>
 </section>
 
@@ -605,7 +565,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
       <div class="gap-item exec">Daily standups</div>
     </div>
   </div>
-  <div class="gap-caption">Strategy and execution exist. The connection between them doesn't. And it's costing you more than you think.</div>
+  <div class="gap-caption">The gap is not a lack of ideas. It is the absence of a trusted decision system.</div>
 
   <!-- The Filter solution -->
   <div style="margin-top:4rem;">
@@ -661,78 +621,35 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 
 <!-- ── CHAOS TAX ── -->
 <section class="chaos-tax" aria-labelledby="chaos-heading">
-  <div class="label light">The Chaos Tax</div>
-  <h2 id="chaos-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;color:var(--white);margin-bottom:1.25rem;">What the gap <span style="color:#F9A8B8;">costs you.</span></h2>
-  <p class="chaos-intro">For a 50-person company — $322,000 a year. The money isn't missing. It's just pointed at the wrong things.</p>
+  <div class="label">The Chaos Tax</div>
+  <h2 id="chaos-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1.25rem;">What the gap <span style="color:var(--maroon);">costs you.</span></h2>
+  <p class="chaos-intro">For a 50-person company — at least $322,000 a year. The money isn't missing. It's just pointed at the wrong things.</p>
 
-  <div class="chaos-calc">
+  <div class="chaos-cards">
+    <div class="chaos-card">
+      <div class="chaos-card-num">$150K</div>
+      <div class="chaos-card-label">Wasted effort on wrong priorities</div>
+      <div class="chaos-card-math">10 people × $75K loaded cost × 20% on misaligned work</div>
+    </div>
+    <div class="chaos-card">
+      <div class="chaos-card-num">$112K</div>
+      <div class="chaos-card-label">Leadership time spent trying to agree on what matters most</div>
+      <div class="chaos-card-math">5 leaders × 3 hrs/week × $150/hr × 50 weeks</div>
+    </div>
+    <div class="chaos-card">
+      <div class="chaos-card-num">$60K</div>
+      <div class="chaos-card-label">Abandoned initiatives that never should have started</div>
+      <div class="chaos-card-math">2 per year × 3 people-months × $10K/month</div>
+    </div>
+  </div>
 
-    <div class="chaos-people">
-      <div class="chaos-people-label">What it looks like on your team</div>
-      <div class="chaos-people-row">
-        <div class="chaos-person ok"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person ok"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person ok"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person ok"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person ok"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person ok"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person ok"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person ok"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person wrong"><svg viewBox="0 0 24 24" fill="none" stroke="#F9A8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="chaos-person wrong"><svg viewBox="0 0 24 24" fill="none" stroke="#F9A8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-      </div>
-      <p class="chaos-people-caption"><strong>2 out of every 10 people are working on the wrong things.</strong> Fully paid. Fully busy. Pointed in the wrong direction. That's not a people problem — it's a targeting problem. And recapturing that 20% is worth 2 FTEs you don't have to hire.</p>
-    </div>
+  <div class="chaos-total">
+    <div class="chaos-total-label">Annual Chaos Tax — 50-person company</div>
+    <div class="chaos-total-value">$322,000</div>
+  </div>
 
-    <div class="chaos-section-label" style="padding-top:1.5rem;">Where the $322K goes</div>
-    <div class="chaos-rows">
-      <div class="chaos-row">
-        <div>
-          <div class="chaos-row-label">Wasted effort on wrong priorities</div>
-          <div class="chaos-row-math">10 people × $75K loaded cost × 20% on misaligned work</div>
-        </div>
-        <div class="chaos-row-value">$150,000</div>
-      </div>
-      <div class="chaos-row">
-        <div>
-          <div class="chaos-row-label">Leadership spending 3 hours a week trying to agree on what matters most</div>
-          <div class="chaos-row-math">5 leaders × 3 hrs/week × $150/hr × 50 weeks</div>
-        </div>
-        <div class="chaos-row-value">$112,000</div>
-      </div>
-      <div class="chaos-row">
-        <div>
-          <div class="chaos-row-label">Abandoned initiatives that never should have started</div>
-          <div class="chaos-row-math">2 per year × 3 people-months × $10K/month</div>
-        </div>
-        <div class="chaos-row-value">$60,000</div>
-      </div>
-    </div>
-    <div class="chaos-total">
-      <div class="chaos-total-label">Annual Chaos Tax — 50-person company</div>
-      <div class="chaos-total-value">$322,000</div>
-    </div>
-
-    <div class="chaos-section-label" style="margin-top:2rem;">The math is simple</div>
-    <div class="chaos-boxes">
-      <div class="chaos-box loss">
-        <div class="chaos-box-label">Annual chaos tax</div>
-        <div class="chaos-box-val">$322K</div>
-        <div class="chaos-box-note">Every year. Without a system.</div>
-      </div>
-      <div class="chaos-box loss">
-        <div class="chaos-box-label">Wrong hire cost</div>
-        <div class="chaos-box-val">$75K</div>
-        <div class="chaos-box-note">To fill a gap that didn't need to exist.</div>
-      </div>
-      <div class="chaos-box-vs">vs</div>
-      <div class="chaos-box win">
-        <div class="chaos-box-label">The Fix</div>
-        <div class="chaos-box-val" style="font-size:1.6rem;line-height:1.2;">A fraction<br>of this.</div>
-        <div class="chaos-box-note">Fixed price. Four weeks. Done.</div>
-      </div>
-    </div>
-    <div class="chaos-closer">The system pays for itself the second you make one better decision from it. For most, that happens by week 2 or 3 of the installation process.</div>
+  <div style="margin-top:1.5rem;border-left:3px solid var(--maroon);padding:1rem 1.5rem;background:var(--off);">
+    <p style="font-size:0.95rem;color:var(--off-black);line-height:1.75;margin:0;font-weight:500;">The system pays for itself the second you make one better decision from it. For most, that happens by week 2 or 3 of the installation process.</p>
   </div>
 </section>
 <!-- ── HOW TO INSTALL ── -->
