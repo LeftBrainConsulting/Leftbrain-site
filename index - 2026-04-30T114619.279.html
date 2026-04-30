@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Filter — Left Brain Consulting</title>
+<meta name="description" content="The operating system between strategy and execution. Installed in 20+ teams. Now built for growing companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<style>
+:root {
+  --maroon: #8B1A2E;
+  --maroon-dark: #701525;
+  --maroon-deep: #4A0D1A;
+  --maroon-glow: rgba(139,26,46,0.15);
+  --black: #0D0D0D;
+  --off-black: #111111;
+  --body: #374151;
+  --subtle: #6B7280;
+  --rule: #E5E7EB;
+  --rule-dark: rgba(255,255,255,0.08);
+  --off: #F8F7F5;
+  --cream: #FAF9F7;
+  --white: #FFFFFF;
+  --green: #16A34A;
+  --green-light: rgba(22,163,74,0.1);
+  --indigo: #4F46E5;
+  --indigo-light: #EEF2FF;
+  --amber: #D97706;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--off-black);
+  overflow-x: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── SKIP + FOCUS ── */
+.skip-link { position: absolute; top: -100%; left: 1rem; background: var(--maroon); color: #fff; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 600; text-decoration: none; z-index: 1000; }
+.skip-link:focus { top: 1rem; }
+:focus-visible { outline: 3px solid var(--maroon); outline-offset: 3px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 1400px; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.1rem 4rem;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem;
+  letter-spacing: 0.08em; color: var(--off-black); text-decoration: none;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.nav-logo img { height: 28px; width: auto; object-fit: contain; }
+@media (max-width: 900px) { .nav-logo img { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-link { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--subtle); text-decoration: none; transition: color 0.15s; }
+.nav-link:hover { color: var(--off-black); }
+.nav-cta { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.55rem 1.4rem; background: var(--maroon); color: var(--white); text-decoration: none; transition: background 0.15s; }
+.nav-cta:hover { background: var(--maroon-dark); }
+
+/* ── SHARED ── */
+.label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--maroon);
+  display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+}
+.label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+.label.light::after { background: var(--rule-dark); }
+.label.light { color: #F9A8B8; }
+
+.btn {
+  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.9rem 2.2rem; background: var(--maroon); color: var(--white);
+  text-decoration: none; display: inline-block; transition: all 0.15s;
+  border: 1.5px solid var(--maroon);
+}
+.btn:hover { background: var(--maroon-dark); border-color: var(--maroon-dark); }
+.btn.ghost { background: transparent; color: var(--maroon); }
+.btn.ghost:hover { background: var(--maroon); color: var(--white); }
+.btn.ghost.light { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2); }
+.btn.ghost.light:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+.btn.large { font-size: 0.85rem; padding: 1.1rem 2.6rem; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1.85fr 1fr;
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  background: var(--off);
+}
+
+.hero-left {
+  padding: 10rem 4rem 6rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative;
+}
+
+.hero-left::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 79px,
+    var(--rule) 79px,
+    var(--rule) 80px
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--maroon); margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 0.75rem;
+  position: relative;
+}
+.hero-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--maroon); display: block; }
+
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.2rem, 5.5vw, 6.2rem);
+  line-height: 0.9; letter-spacing: 0.01em;
+  color: var(--off-black); margin-bottom: 1.5rem;
+  position: relative;
+}
+.hero h1 .accent { color: var(--maroon); }
+.hero h1 .italic { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.85em; color: var(--maroon); }
+
+.hero-sub {
+  font-size: 1.05rem; line-height: 1.8; color: var(--body);
+  max-width: 480px; margin-bottom: 2.5rem; position: relative;
+}
+
+.hero-actions { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; position: relative; }
+.hero-note { font-size: 0.78rem; color: var(--subtle); position: relative; }
+
+/* Hero right — light panel */
+.hero-right {
+  background: var(--off);
+  padding: 10rem 3.5rem 6rem;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  gap: 0;
+  border-left: 1px solid var(--rule);
+}
+
+.hero-right-label {
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.9); margin-bottom: 2rem;
+  padding-bottom: 1rem; border-bottom: 1px solid var(--rule-dark);
+}
+
+.hero-stat {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rule-dark);
+  display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center;
+}
+.hero-stat:last-of-type { border-bottom: none; }
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; line-height: 1; color: var(--white);
+  white-space: nowrap;
+}
+.hero-stat-num sup { font-size: 1.6rem; color: var(--maroon); }
+.hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.9); line-height: 1.5; }
+
+.hero-ai-pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(139,26,46,0.08); border: 1px solid rgba(139,26,46,0.25);
+  padding: 0.5rem 1rem; margin-top: 2.5rem;
+  font-size: 0.78rem; color: var(--off-black); letter-spacing: 0.04em;
+}
+.hero-ai-pill::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--maroon); display: block; flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* ── PROOF STRIP ── */
+.proof-strip {
+  padding: 1.25rem 4rem; border-bottom: 1px solid var(--rule);
+  background: var(--off); display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+}
+.proof-strip-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--subtle); white-space: nowrap; }
+.proof-strip-sep { width: 1px; height: 1.25rem; background: var(--rule); flex-shrink: 0; }
+.proof-strip-items { display: flex; gap: 2rem; flex-wrap: wrap; }
+.proof-strip-item { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 0.06em; color: var(--off-black); }
+.proof-strip-item span { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; color: var(--subtle); display: block; }
+
+/* ── TWO JOBS ── */
+.jobs-section { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); }
+.jobs-intro { font-size: 1.05rem; line-height: 1.8; color: var(--body); max-width: 560px; margin-bottom: 3rem; }
+
+.jobs {
+  display: grid; grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+}
+.job-card { background: var(--white); padding: 2.75rem; }
+.job-card.result { background: var(--off-black); }
+.job-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.6rem; }
+.job-label.light { color: rgba(255,255,255,0.35); }
+.job-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.03em; line-height: 1; margin-bottom: 0.75rem; color: var(--off-black); }
+.job-card p { font-size: 0.9rem; line-height: 1.7; color: var(--body); }
+.job-result { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.02em; line-height: 1.2; color: var(--white); display: block; }
+.job-result em { font-family: 'Playfair Display', serif; font-style: italic; color: #F9A8B8; font-size: 0.9em; }
+
+/* ── THE GAP ── */
+.visual-section { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); }
+.visual-section.tinted { background: var(--off); }
+
+.vis-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3rem; }
+.vis-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  line-height: 0.95; letter-spacing: 0.02em; color: var(--off-black);
+}
+.vis-headline .accent { color: var(--maroon); }
+.vis-sub { font-size: 0.95rem; line-height: 1.75; color: var(--body); }
+
+.gap-diagram { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.gap-col { padding: 2rem; }
+.gap-col.strategy { background: var(--indigo-light); }
+.gap-col.gap-zone { background: #FFF5F5; }
+.gap-col.execution { background: #F0FDF4; }
+.gap-col-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.25rem; }
+.gap-col-label.s { color: var(--indigo); }
+.gap-col-label.g { color: var(--maroon); }
+.gap-col-label.e { color: var(--green); }
+.gap-item { padding: 0.6rem 0.85rem; margin-bottom: 0.45rem; border-radius: 3px; font-size: 0.85rem; }
+.gap-item.strat { background: var(--white); border: 1px solid #C7D2FE; border-left: 3px solid var(--indigo); color: var(--off-black); font-weight: 500; }
+.gap-item.exec { background: var(--white); border: 1px solid #BBF7D0; border-left: 3px solid var(--green); color: var(--off-black); font-weight: 500; }
+.gap-item.chaos-red { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; font-size: 0.8rem; text-decoration: line-through; }
+.gap-item.chaos-yellow { background: #FEF9C3; border: 1px solid #FDE047; color: #78350F; font-size: 0.8rem; }
+.gap-item.chaos-gray { background: #F3F4F6; border: 1px solid #D1D5DB; color: var(--subtle); font-size: 0.8rem; text-decoration: line-through; }
+.gap-pain-bar { background: #FEE2E2; border-top: 1px solid #FECACA; padding: 0.7rem 0.85rem; font-size: 0.75rem; color: var(--maroon); font-style: italic; text-align: center; margin-top: 0.5rem; }
+.gap-caption { background: #FEE2E2; border: 1px solid #FECACA; border-top: none; padding: 1.25rem 2rem; font-size: 0.92rem; font-style: italic; color: var(--maroon); text-align: center; }
+
+/* The Filter diagram */
+.filter-diagram { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 3rem; }
+.filter-col { padding: 2rem; }
+.filter-col.strategy { background: var(--indigo-light); }
+.filter-col.stack { background: var(--off-black); padding: 0; }
+.filter-col.execution { background: #F0FDF4; }
+.filter-col-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.25rem; }
+.filter-col-label.s { color: var(--indigo); }
+.filter-col-label.e { color: var(--green); }
+.filter-stack-header { padding: 1.5rem 1.75rem 0.75rem; border-bottom: 1px solid var(--rule-dark); }
+.filter-stack-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #F9A8B8; }
+.filter-ranks { padding: 1rem 1.75rem; }
+.rank-item { padding: 0.5rem 0.85rem; margin-bottom: 0.3rem; font-size: 0.85rem; background: rgba(255,255,255,0.95); border-left: 3px solid var(--maroon); color: var(--off-black); }
+.rank-1 { font-weight: 700; opacity: 1; }
+.rank-2 { font-weight: 600; opacity: 0.95; }
+.rank-3 { font-weight: 400; opacity: 0.82; border-left-color: #B52D45; }
+.rank-4 { font-weight: 400; opacity: 0.6; font-size: 0.8rem; border-left-color: #C9A8B2; }
+.rank-5 { font-weight: 400; opacity: 0.4; font-size: 0.76rem; border-left-color: #C9A8B2; }
+.capacity-bar-wrap { padding: 0.75rem 1.75rem 1.5rem; }
+.capacity-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #F9A8B8; margin-bottom: 0.4rem; }
+.capacity-track { background: rgba(255,255,255,0.1); height: 5px; border-radius: 2px; overflow: hidden; margin-bottom: 0.3rem; }
+.capacity-fill { background: #4ADE80; height: 100%; width: 60%; }
+.capacity-note { font-size: 0.7rem; color: rgba(255,255,255,0.4); font-style: italic; }
+.filter-exec-item { padding: 0.6rem 0.85rem; margin-bottom: 0.45rem; background: var(--white); border: 1px solid #BBF7D0; border-left: 3px solid var(--green); font-size: 0.85rem; font-weight: 500; color: var(--off-black); }
+.filter-exec-item.blocked { opacity: 0.3; border-left-color: var(--rule); border-color: var(--rule); font-weight: 400; }
+
+.filter-callout {
+  background: var(--off-black); border-left: 4px solid #4ADE80;
+  padding: 1.75rem 2rem; margin-top: 1px;
+  display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center;
+}
+.filter-callout-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.35rem; }
+.filter-callout-text p { font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.55); }
+.filter-callout-stat .n { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: #4ADE80; line-height: 1; }
+.filter-callout-stat .l { font-size: 0.7rem; color: var(--subtle); }
+
+/* ── CHAOS TAX ── */
+.chaos-tax {
+  padding: 4rem 4rem; border-bottom: 1px solid var(--rule);
+  background: var(--white);
+}
+.chaos-tax .label { color: var(--maroon); }
+.chaos-tax h2 { color: var(--off-black); }
+.chaos-intro { font-size: 1rem; line-height: 1.8; color: var(--body); max-width: 100%; margin-bottom: 2rem; }
+.chaos-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 1px; }
+.chaos-card { background: var(--white); padding: 2rem 1.75rem; }
+.chaos-card-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--maroon); letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.4rem; }
+.chaos-card-label { font-size: 0.88rem; font-weight: 600; color: var(--off-black); margin-bottom: 0.6rem; line-height: 1.4; }
+.chaos-card-math { font-size: 0.75rem; color: var(--subtle); font-style: italic; line-height: 1.6; padding-top: 0.6rem; border-top: 1px solid var(--rule); }
+.chaos-total { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 1.25rem 1.75rem; background: var(--maroon); gap: 2rem; }
+.chaos-total-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #FFE4E9; }
+.chaos-total-value { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--white); letter-spacing: 0.04em; }
+.chaos-closer { margin-top: 1.5rem; font-size: 0.95rem; color: var(--body); line-height: 1.75; max-width: 620px; }
+
+/* ── AI SECTION ── */
+.ai-section {
+  padding: 6rem 4rem; border-bottom: 1px solid var(--rule);
+  background: var(--cream);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+}
+.ai-left h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); line-height: 0.95; letter-spacing: 0.02em; color: var(--off-black); margin-bottom: 1.25rem; }
+.ai-left h2 .accent { color: var(--maroon); }
+.ai-left p { font-size: 0.95rem; line-height: 1.8; color: var(--body); margin-bottom: 1rem; }
+.ai-left p strong { color: var(--off-black); }
+.ai-right { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.ai-card { background: var(--white); padding: 1.5rem 2rem; border-left: 3px solid transparent; transition: border-color 0.15s; }
+.ai-card:hover { border-left-color: var(--maroon); }
+.ai-card-num { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--maroon); margin-bottom: 0.35rem; }
+.ai-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.04em; color: var(--off-black); margin-bottom: 0.35rem; }
+.ai-card p { font-size: 0.85rem; line-height: 1.6; color: var(--body); }
+
+/* ── FREE PLAYBOOK ── */
+.playbook-section {
+  padding: 6rem 4rem; border-bottom: 1px solid var(--rule);
+  background: var(--off-black);
+}
+.playbook-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.playbook-left h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 4vw, 3.8rem); line-height: 0.9; letter-spacing: 0.01em; color: var(--white); margin-bottom: 1.25rem; }
+.playbook-left h2 .accent { color: #F9A8B8; }
+.playbook-left p { font-size: 0.98rem; line-height: 1.8; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+.playbook-left .kicker {
+  display: inline-block; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  background: rgba(139,26,46,0.2); color: #F9A8B8;
+  border: 1px solid rgba(139,26,46,0.3);
+  padding: 0.35rem 0.85rem; margin-bottom: 1.5rem;
+}
+.playbook-contents { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
+.playbook-item { display: flex; gap: 0.75rem; font-size: 0.88rem; color: rgba(255,255,255,0.65); align-items: flex-start; line-height: 1.5; }
+.playbook-item::before { content: '—'; color: #F9A8B8; flex-shrink: 0; margin-top: 0.05rem; }
+.playbook-note { font-size: 0.82rem; color: rgba(255,255,255,0.35); font-style: italic; }
+
+.playbook-right { background: rgba(255,255,255,0.04); border: 1px solid var(--rule-dark); padding: 2.5rem; }
+.form-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.35rem; }
+.form-sub { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-bottom: 2rem; }
+.form-field { margin-bottom: 1rem; }
+.form-field label { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.4rem; }
+.form-field input, .form-field select {
+  width: 100%; padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+  outline: none; transition: border-color 0.15s;
+}
+.form-field input::placeholder { color: rgba(255,255,255,0.2); }
+.form-field input:focus, .form-field select:focus { border-color: rgba(255,255,255,0.35); }
+.form-field select option { background: var(--off-black); }
+.form-submit {
+  width: 100%; padding: 0.9rem; background: var(--maroon); color: var(--white);
+  border: none; font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+  font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.15s; margin-top: 0.5rem;
+}
+.form-submit:hover { background: var(--maroon-dark); }
+.form-disclaimer { font-size: 0.7rem; color: rgba(255,255,255,0.25); margin-top: 0.75rem; }
+
+/* ── PRICING ── */
+.offer { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); background: var(--off); }
+.offer-intro { font-size: 1rem; line-height: 1.8; color: var(--body); max-width: 580px; margin-bottom: 3rem; }
+
+.tiers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.tier { background: var(--white); padding: 3rem; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.tier.featured { border-top: 3px solid var(--maroon); }
+.tier-badge { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); background: var(--maroon); padding: 0.2rem 0.65rem; display: inline-block; margin-bottom: 1rem; }
+.tier-name { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: 0.03em; color: var(--off-black); line-height: 1; margin-bottom: 0.35rem; }
+.tier-tag { font-size: 0.88rem; font-style: italic; color: var(--subtle); margin-bottom: 1.5rem; line-height: 1.5; }
+.tier-price { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--maroon); line-height: 1; }
+.tier-price-note { font-size: 0.72rem; color: var(--subtle); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2rem; margin-top: 0.2rem; }
+.tier hr { border: none; border-top: 1px solid var(--rule); margin-bottom: 1.5rem; }
+.tier ul { list-style: none; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+.tier ul li { display: flex; gap: 0.75rem; font-size: 0.88rem; line-height: 1.5; color: var(--body); }
+.tier ul li::before { content: '—'; color: var(--maroon); flex-shrink: 0; }
+.tier-guarantee { padding: 1.25rem; background: var(--off); border: 1px solid var(--rule); border-left: 3px solid var(--maroon); font-size: 0.85rem; line-height: 1.65; color: var(--body); }
+.tier-guarantee-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--maroon); margin-bottom: 0.5rem; }
+
+.tiers-note { margin-top: 2rem; text-align: center; }
+.tiers-note p { font-size: 0.82rem; color: var(--subtle); margin-bottom: 1rem; }
+.tiers-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── PROOF / ABOUT ── */
+.about-section { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); }
+.about-row { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start; margin-bottom: 4rem; }
+.about-photo { width: 260px; height: 260px; object-fit: cover; object-position: top; display: block; border-radius: 50%; border: 4px solid var(--maroon); }
+.about-photo-placeholder { width: 260px; height: 260px; background: var(--off); border-top: 4px solid var(--maroon); border: 1px solid var(--rule); display: none; align-items: center; justify-content: center; }
+.about-photo-placeholder span { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--maroon); }
+.about-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--off-black); margin-bottom: 0.75rem; line-height: 1.1; }
+.about-name .accent { color: var(--maroon); }
+.about-bio p { font-size: 0.92rem; line-height: 1.8; color: var(--body); margin-bottom: 0.75rem; }
+.about-bio p strong { color: var(--off-black); font-weight: 600; }
+.creds { margin-top: 1.5rem; border-top: 1px solid var(--rule); }
+.cred { display: flex; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--rule); font-size: 0.85rem; line-height: 1.5; color: var(--body); }
+.cred-mark { color: var(--maroon); flex-shrink: 0; font-family: 'Bebas Neue', sans-serif; }
+.cred strong { color: var(--off-black); font-weight: 600; }
+
+.proof-divider { height: 1px; background: var(--rule); margin-bottom: 3rem; }
+.proof-case { border-left: 3px solid var(--maroon); padding-left: 2rem; margin-bottom: 3rem; }
+.proof-case-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--maroon); margin-bottom: 0.75rem; }
+.proof-case h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.02em; color: var(--off-black); line-height: 1.1; margin-bottom: 0.75rem; }
+.proof-case p { font-size: 0.92rem; line-height: 1.75; color: var(--body); max-width: 680px; margin-bottom: 1.75rem; }
+.proof-stats { display: flex; gap: 3rem; flex-wrap: wrap; }
+.proof-stat .n { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--off-black); line-height: 1; }
+.proof-stat .l { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); margin-top: 0.2rem; }
+
+.proof-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 3rem; }
+.proof-card { background: var(--white); padding: 2rem; border-top: 3px solid transparent; transition: border-color 0.15s; }
+.proof-card:hover { border-color: var(--maroon); }
+.proof-card-org { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--maroon); margin-bottom: 0.75rem; }
+.proof-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.03em; color: var(--off-black); line-height: 1.1; margin-bottom: 0.6rem; }
+.proof-card p { font-size: 0.85rem; line-height: 1.65; color: var(--body); }
+
+/* ── FINAL CTA ── */
+.cta-final {
+  padding: 7rem 4rem; background: var(--off-black); text-align: center;
+  border-bottom: 1px solid var(--rule-dark); position: relative; overflow: hidden;
+}
+.cta-final::before {
+  content: 'THE FILTER';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: 'Bebas Neue', sans-serif; font-size: 18vw; letter-spacing: -0.02em;
+  color: rgba(255,255,255,0.02); white-space: nowrap; pointer-events: none;
+  user-select: none;
+}
+.cta-final h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 5vw, 5rem); line-height: 0.9; letter-spacing: 0.01em; color: var(--white); margin-bottom: 1.25rem; position: relative; }
+.cta-final h2 .accent { color: #F9A8B8; }
+.cta-final > p { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 2.5rem; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.75; position: relative; }
+.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; position: relative; }
+.cta-note { font-size: 0.78rem; color: rgba(255,255,255,0.25); position: relative; }
+
+/* ── FOOTER ── */
+footer { padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 0.1em; color: var(--off-black); }
+.footer-copy { font-size: 0.72rem; color: var(--subtle); }
+.footer-link { font-size: 0.72rem; color: var(--subtle); text-decoration: none; transition: color 0.15s; }
+.footer-link:hover { color: var(--maroon); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav, footer { padding: 1rem 1.5rem; }
+  .nav-right .nav-link { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 8rem 1.5rem 3rem; }
+  .hero-right { display: none; }
+  .jobs-section, .visual-section, .offer, .about-section, .chaos-tax, .cta-final, .ai-section, .playbook-section { padding: 4rem 1.5rem; }
+  .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-cards, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:1fr auto"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:auto 1fr auto"] { grid-template-columns: 1fr !important; }
+  .chaos-row, .chaos-total, .chaos-hire, .filter-callout, .vis-header { grid-template-columns: 1fr; }
+  .chaos-hire-right { text-align: left; }
+  .about-row { grid-template-columns: 1fr; gap: 2rem; }
+  .about-photo, .about-photo-placeholder { width: 100px; height: 100px; }
+  .about-photo-placeholder span { font-size: 2rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .proof-strip { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav role="navigation" aria-label="Main navigation">
+  <a href="https://leftbrainconsult.com" class="nav-logo">
+    <img src="logo.svg" alt="Left Brain Consulting">LEFT BRAIN CONSULTING
+  </a>
+  <div class="nav-right">
+    <a href="#offer" class="nav-link">How It Works</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#playbook" class="nav-link">Free Playbook</a>
+    <a href="#founding" class="nav-cta">Apply — Founding Install</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">The Filter — A Prioritization System for Growing Companies</div>
+    <h1>Too many priorities. <span class="accent">No shared way to choose.</span></h1>
+    <p class="hero-sub">Your team isn't short on strategy. It's short on a system for deciding what gets worked on first.</p>
+    <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:0.75rem;max-width:480px;line-height:1.7;">The best ideas get buried behind the loudest ones — and for a 50-person company, that costs at least $322,000 a year in misdirected effort. The Filter turns competing opinions into one ranked list everyone has agreed to.</p>
+    <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:2.5rem;max-width:480px;line-height:1.7;">Built across 20+ lines of business in Fortune 500 and enterprise settings — now available for $20M–$500M companies that want to make better decisions, faster, with less friction.</p>
+    <div class="hero-actions">
+      <a href="#founding" class="btn large">Apply — Founding Install</a>
+      <a href="#playbook" class="btn ghost large">Get the Free Playbook</a>
+    </div>
+    <div class="hero-ai-pill">3 founding slots open · $17K · Full install + bonuses</div>
+  </div>
+
+  <div class="hero-right" aria-label="Left Brain Consulting">
+    <img src="logo.svg" alt="Left Brain Consulting" style="width:140px;height:auto;">
+  </div>
+</section>
+
+<!-- ── TWO JOBS ── -->
+<section class="jobs-section" aria-labelledby="jobs-heading">
+  <div class="label">The Problem</div>
+  <h2 id="jobs-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;color:var(--off-black);margin-bottom:1.25rem;">Every company has <span style="color:var(--maroon);">two jobs.</span></h2>
+ 
+  <div class="jobs" style="grid-template-columns:1fr 1fr 1fr;">
+    <div class="job-card">
+      <div class="job-label">Job 1 — Always Wins</div>
+      <div class="job-title">Keep the lights on.</div>
+      <p>Delivery. Customer commitments. Day-to-day operations. Loud, urgent, never stops demanding attention.</p>
+    </div>
+    <div class="job-card">
+      <div class="job-label">Job 2 — Always Loses</div>
+      <div class="job-title">Improve the business.</div>
+      <p>AI implementation. Better systems. Process upgrades. Always important, but lost in the stack of other important ideas.</p>
+    </div>
+    <div class="job-card result">
+      <div class="job-label light">The result</div>
+      <span class="job-result">Smart teams. Plenty of ideas. Real ambition.<br><em>No system to decide what gets resourced first.</em></span>
+    </div>
+  </div>
+</section>
+
+<!-- ── NATHAN STORY (moved up — why this exists) ── -->
+<section id="about" style="padding:6rem 4rem;border-bottom:1px solid var(--rule);background:var(--off-black);" aria-labelledby="story-heading">
+  <div style="display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:start;max-width:1000px;">
+    <div>
+      <img src="NHeadshot.jpeg" alt="Nathan Harris" class="about-photo" style="border-color:#F9A8B8;"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="about-photo-placeholder" style="border-color:#F9A8B8;background:rgba(255,255,255,0.04);"><span style="color:#F9A8B8;">NH</span></div>
+      <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);border-top:1px solid rgba(255,255,255,0.08);padding-top:1rem;">Credentials</div>
+        <div style="font-size:0.8rem;line-height:1.6;color:rgba(255,255,255,0.5);">MetLife + IQVIA — Three promotions. Associate Director at a Fortune 500 by 25.</div>
+        <div style="font-size:0.8rem;line-height:1.6;color:rgba(255,255,255,0.5);">EY Big 4 — Only non-EY operator on a $200M investment. Built the operating layer that became The Filter.</div>
+        <div style="font-size:0.8rem;line-height:1.6;color:rgba(255,255,255,0.5);">20+ lines of business. 10 people to 1,000. Still running.</div>
+      </div>
+    </div>
+    <div>
+      <div class="label light">Why This Exists</div>
+      <div id="story-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);letter-spacing:0.03em;color:var(--white);line-height:1.05;margin-bottom:1.5rem;">I watched decisions destroy people.<br><span style="font-family:'Playfair Display',serif;font-style:italic;color:#F9A8B8;font-size:0.85em;">Then I built a system to stop that.</span></div>
+      <p style="font-size:0.95rem;line-height:1.85;color:rgba(255,255,255,0.65);margin-bottom:1rem;">I have witnessed thousands of strategy decisions get made live in the room. From EVPs running $2B+ ARR business units to managers just trying to hold a team accountable.</p>
+      <p style="font-size:0.95rem;line-height:1.85;color:rgba(255,255,255,0.65);margin-bottom:1rem;">Decisions that made people quit. Decisions that got people promoted. Political decisions that protected someone's kingdom at the expense of the business. <strong style="color:var(--white);">Decisions that led to health events</strong> — from those making them, and from those on the receiving end.</p>
+      <p style="font-size:0.95rem;line-height:1.85;color:rgba(255,255,255,0.65);margin-bottom:1rem;">I was at the center of all of it. The pattern I kept seeing: <strong style="color:var(--white);">decision making is the most emotional part of running a business.</strong> When decisions touch culture, careers, politics, and money — emotion wins more than it should.</p>
+      <p style="font-size:0.95rem;line-height:1.85;color:rgba(255,255,255,0.65);margin-bottom:1.75rem;">I took everything I watched and built a system to change that. Ideas get ranked by impact, urgency, who they affect, and what happens if you do nothing. The pressure moves off the authority in the room and onto the framework. <strong style="color:var(--white);">This isn't about removing emotion from your business. It's about making sure emotion isn't the only thing making your decisions.</strong></p>
+      <div style="border-left:3px solid #F9A8B8;padding:1rem 1.5rem;background:rgba(255,255,255,0.03);">
+        <p style="font-size:0.88rem;line-height:1.75;color:rgba(255,255,255,0.5);margin:0;font-style:italic;">Nathan Harris · Founder, Left Brain Consulting · Westminster, CO</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE GAP ── -->
+<section class="visual-section tinted" aria-labelledby="gap-heading">
+  <div class="vis-header">
+    <div>
+      <div class="label">The Problem — Visualized</div>
+      <div class="vis-headline" id="gap-heading">Strategy and execution exist.<br><span class="accent">The connection doesn't.</span></div>
+    </div>
+    <p class="vis-sub">Strategy lives in decks. Execution lives in tools. The improvement work that should connect them lives in a pile of competing opinions that nobody can prioritize without starting an argument.</p>
+  </div>
+
+  <div class="gap-diagram">
+    <div class="gap-col strategy">
+      <div class="gap-col-label s">Strategy</div>
+      <div class="gap-item strat">Annual goals</div>
+      <div class="gap-item strat">OKRs</div>
+      <div class="gap-item strat">Board priorities</div>
+      <div class="gap-item strat">Vision deck</div>
+    </div>
+    <div class="gap-col gap-zone">
+      <div class="gap-col-label g">The Gap</div>
+      <div class="gap-item chaos-red">AI chatbot</div>
+      <div class="gap-item chaos-gray">Upgrade CRM</div>
+      <div class="gap-item chaos-yellow">Fix onboarding</div>
+      <div class="gap-item chaos-red">New dashboard</div>
+      <div class="gap-item chaos-gray">SOC 2 compliance</div>
+      <div class="gap-item chaos-yellow">Expand capacity</div>
+      <div class="gap-item chaos-red">Automate reporting</div>
+      <div class="gap-item chaos-gray">Customer portal</div>
+      <div class="gap-pain-bar">abandoned · relitigated · stalled · nobody owns it · started twice</div>
+    </div>
+    <div class="gap-col execution">
+      <div class="gap-col-label e">Execution</div>
+      <div class="gap-item exec">Engineering team</div>
+      <div class="gap-item exec">Weekly sprints</div>
+      <div class="gap-item exec">PM tools</div>
+      <div class="gap-item exec">Daily standups</div>
+    </div>
+  </div>
+  <div class="gap-caption">The gap is not a lack of ideas. It is the absence of a trusted decision system.</div>
+
+  <!-- The Filter solution -->
+  <div style="margin-top:4rem;">
+    <div class="label">The Solution — Visualized</div>
+    <div class="vis-headline">The Filter bridges the gap. <span class="accent">Here's how it works.</span></div>
+    <p class="vis-sub" style="margin-top:0.75rem;margin-bottom:0;">Every improvement idea — AI projects, system upgrades, process changes — gets submitted to a single intake system, scored against the same criteria, and ranked by the model. The ranked list starts the conversation. Leadership finishes it in one meeting. Only what the team can actually absorb gets activated.</p>
+    <p class="vis-sub" style="margin-top:0.75rem;margin-bottom:0;"><strong>AI governance is a byproduct, not an add-on.</strong> The Filter doesn't care if it's an AI initiative or a rebrand. Everything goes through the same system — scored, owned, visible. IT evaluating vendors, marketing using unapproved tools, engineering running experiments: all of it enters one intake, gets ranked by the same criteria, and competes on merit. That's what makes AI governable — not a separate framework, just the same discipline applied to one more category of work.</p>
+  </div>
+
+  <div class="filter-diagram">
+    <div class="filter-col strategy">
+      <div class="filter-col-label s">Strategy</div>
+      <div class="gap-item strat">Annual goals</div>
+      <div class="gap-item strat">OKRs</div>
+      <div class="gap-item strat">Board priorities</div>
+      <div class="gap-item strat">Vision</div>
+    </div>
+    <div class="filter-col stack">
+      <div class="filter-stack-header">
+        <div class="filter-stack-title">The Filter — Priority Stack</div>
+      </div>
+      <div class="filter-ranks">
+        <div class="rank-item rank-1">9.2 &nbsp; AI implementation</div>
+        <div class="rank-item rank-2">8.7 &nbsp; Fix onboarding</div>
+        <div class="rank-item rank-3">7.1 &nbsp; Upgrade CRM</div>
+        <div class="rank-item rank-4">5.5 &nbsp; New dashboard</div>
+        <div class="rank-item rank-5">3.2 &nbsp; Rebrand</div>
+      </div>
+      <div class="capacity-bar-wrap">
+        <div class="capacity-label">Capacity check</div>
+        <div class="capacity-track"><div class="capacity-fill"></div></div>
+        <div class="capacity-note">Available bandwidth vs. already allocated</div>
+      </div>
+    </div>
+    <div class="filter-col execution">
+      <div class="filter-col-label e">Execution</div>
+      <div class="filter-exec-item">✓ &nbsp;Right work activated</div>
+      <div class="filter-exec-item">✓ &nbsp;PM tools get fed</div>
+      <div class="filter-exec-item blocked">· &nbsp;Queued — no bandwidth</div>
+      <div class="filter-exec-item blocked">· &nbsp;Deferred — scored lower</div>
+    </div>
+  </div>
+  <div class="filter-callout">
+    <div class="filter-callout-text">
+      <h3>Capacity-aware by design.</h3>
+      <p>A high score doesn't mean it starts Monday. The Filter only activates what the team can actually absorb. A 5.5 that fits right now beats a 9.2 that requires six months of prep. That's not a bug — that's the system working.</p>
+    </div>
+    <div class="filter-callout-stat">
+      <div class="n">1hr</div>
+      <div class="l">per week to run it</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CHAOS TAX ── -->
+<section class="chaos-tax" aria-labelledby="chaos-heading">
+  <div class="label">The Chaos Tax</div>
+  <h2 id="chaos-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1.25rem;">What the gap <span style="color:var(--maroon);">costs you.</span></h2>
+  <p class="chaos-intro">For a 50-person company — at least $322,000 a year. The money isn't missing. It's just pointed at the wrong things.</p>
+
+  <div class="chaos-cards">
+    <div class="chaos-card">
+      <div class="chaos-card-num">$150K</div>
+      <div class="chaos-card-label">Wasted effort on wrong priorities</div>
+      <div class="chaos-card-math">10 people × $75K loaded cost × 20% on misaligned work</div>
+    </div>
+    <div class="chaos-card">
+      <div class="chaos-card-num">$112K</div>
+      <div class="chaos-card-label">Leadership time spent trying to agree on what matters most</div>
+      <div class="chaos-card-math">5 leaders × 3 hrs/week × $150/hr × 50 weeks</div>
+    </div>
+    <div class="chaos-card">
+      <div class="chaos-card-num">$60K</div>
+      <div class="chaos-card-label">Abandoned initiatives that never should have started</div>
+      <div class="chaos-card-math">2 per year × 3 people-months × $10K/month</div>
+    </div>
+  </div>
+
+  <div class="chaos-total">
+    <div class="chaos-total-label">Annual Chaos Tax — 50-person company</div>
+    <div class="chaos-total-value">$322,000</div>
+  </div>
+
+  <div style="margin-top:1.5rem;border-left:3px solid var(--maroon);padding:1rem 1.5rem;background:var(--off);">
+    <p style="font-size:0.95rem;color:var(--off-black);line-height:1.75;margin:0;font-weight:500;">The system pays for itself the second you make one better decision from it. For most, that happens by week 2 or 3 of the installation process.</p>
+  </div>
+</section>
+<!-- ── HOW TO INSTALL ── -->
+<section class="offer" id="offer" aria-labelledby="offer-heading">
+  <div class="label">How to Eliminate The Chaos Tax</div>
+
+  <!-- ── FOUNDING CLIENT SECTION ── -->
+  <div id="founding" style="margin-bottom:2rem;border:2px solid var(--maroon);background:var(--off-black);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;right:0;background:var(--maroon);padding:0.4rem 1.25rem;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);">3 of 3 slots remaining</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;">
+
+      <!-- Left: offer framing -->
+      <div style="padding:3rem;border-right:1px solid rgba(255,255,255,0.08);">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.75rem;">Founding Client Install</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:0.03em;color:var(--white);line-height:1.05;margin-bottom:1rem;">The full install.<br><span style="color:#F9A8B8;">At founding pricing.</span></div>
+        <p style="font-size:0.92rem;line-height:1.8;color:rgba(255,255,255,0.6);margin-bottom:1.5rem;">I'll be direct about what this is: I built The Filter inside Fortune 500 organizations as an operator. These three installs are how I convert that internal track record into independent case studies — with your company and your name on them, if you're willing.</p>
+        <p style="font-size:0.92rem;line-height:1.8;color:rgba(255,255,255,0.6);margin-bottom:1.5rem;">You get the full engagement — every deliverable, every week, the same guarantee — at $17,000 instead of $35,000. When it works, I ask for a written case study and a reference call if one exists. That's the deal.</p>
+        <div style="background:rgba(139,26,46,0.2);border:1px solid rgba(139,26,46,0.4);padding:1rem 1.25rem;margin-bottom:1.5rem;">
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.4rem;">The Guarantee Still Applies</div>
+          <p style="font-size:0.82rem;line-height:1.7;color:rgba(255,255,255,0.6);margin:0;">A running system by Week 4 — or a full refund. Founding pricing doesn't change the outcome standard.</p>
+        </div>
+        <a href="https://calendly.com/nathan-leftbrainconsult" class="btn large" style="background:#F9A8B8;border-color:#F9A8B8;color:var(--off-black);">Apply for a Founding Install</a>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.25);margin-top:0.75rem;">30-minute conversation. No commitment required to apply.</div>
+      </div>
+
+      <!-- Right: what's included + bonuses -->
+      <div style="padding:3rem;">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;">What's Included — Full Engagement</div>
+
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem;">
+          <div style="display:flex;gap:0.75rem;font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.5;"><span style="color:#F9A8B8;flex-shrink:0;">—</span>Full 4-week install — intake system, scoring model, cadence</div>
+          <div style="display:flex;gap:0.75rem;font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.5;"><span style="color:#F9A8B8;flex-shrink:0;">—</span>Trained internal operator — the system runs without Nathan from Week 5</div>
+          <div style="display:flex;gap:0.75rem;font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.5;"><span style="color:#F9A8B8;flex-shrink:0;">—</span>Built inside your existing stack — no new software, no new logins</div>
+          <div style="display:flex;gap:0.75rem;font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.5;"><span style="color:#F9A8B8;flex-shrink:0;">—</span>First live decision cadence run during the engagement</div>
+        </div>
+
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1rem;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.25rem;">Included Bonuses</div>
+
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-left:3px solid #F9A8B8;padding:0.85rem 1rem;">
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.25rem;">On-Site Portfolio Workshop <span style="color:rgba(255,255,255,0.25);font-weight:400;">— optional add-on, client covers travel</span></div>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin:0;line-height:1.6;">Nathan comes to you for the Week 2 ranking session. The hardest meeting in most organizations — live facilitated. Travel and accommodation at client cost; everything else runs the same.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-left:3px solid #F9A8B8;padding:0.85rem 1rem;">
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.25rem;">AI Governance Framework <span style="color:rgba(255,255,255,0.25);font-weight:400;">— included</span></div>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin:0;line-height:1.6;">Every AI initiative runs through the same system. No separate framework. Governance is a byproduct of the install.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-left:3px solid #F9A8B8;padding:0.85rem 1rem;">
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.25rem;">30-Day Operator Check-In <span style="color:rgba(255,255,255,0.25);font-weight:400;">— included</span></div>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin:0;line-height:1.6;">One structured call with the process owner and CEO at the 30-day mark. Is the cadence holding? Any edge cases? Plus 24-hour email support from the day Nathan exits through that call — so the first time something unexpected comes up, there's someone to ask.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;padding:0.85rem 1rem;background:rgba(139,26,46,0.12);border:1px solid rgba(139,26,46,0.25);">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white);letter-spacing:0.04em;">$17,000 <span style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.35);font-weight:400;letter-spacing:0;text-transform:none;">founding price · 3 slots · $35K standard rate resumes after</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main standard install card -->
+  <div style="border:1px solid var(--rule);background:var(--white);margin-bottom:1.5rem;display:grid;grid-template-columns:auto 1fr auto;gap:0;align-items:stretch;">
+    <div style="padding:2.5rem 3rem;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center;min-width:260px;">
+      <div class="tier-badge" style="background:var(--subtle);margin-bottom:1rem;display:inline-block;width:fit-content;">Stack Install</div>
+      <div class="tier-name" style="margin:0;line-height:1;">Install<br>The Filter.</div>
+      <div style="font-size:0.72rem;color:var(--subtle);margin-top:0.5rem;letter-spacing:0.04em;">Standard rate · Contact for pricing</div>
+    </div>
+    <div style="padding:2.5rem 3rem;display:flex;align-items:center;">
+      <p style="font-size:0.95rem;line-height:1.85;color:var(--body);margin:0;">Approx. ~10hrs to install over 4 weeks. Each week builds on the last. By the time the engagement is done, the system doesn't feel installed. It is just how you now operate.</p>
+    </div>
+    <div style="padding:2.5rem 3rem;border-left:1px solid var(--rule);display:flex;align-items:center;justify-content:center;">
+      <a href="#book" class="btn large" style="white-space:nowrap;">Let's Talk</a>
+    </div>
+  </div>
+
+  <!-- Guarantee -->
+  <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem;">
+    <div style="background:var(--maroon-deep);border:1px solid var(--maroon);padding:2rem 2.25rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;">
+      <div>
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.5rem;">The Guarantee</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.02em;line-height:1.15;color:var(--white);margin-bottom:0.5rem;">A running system by Week 4 — or your money back.</div>
+        <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.55);margin:0;">Full initiative inventory captured, scored, and sequenced. Trained internal operator. A decision cadence your leadership has already run. Applies to founding and standard installs equally.</p>
+      </div>
+      <div style="text-align:right;white-space:nowrap;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#F9A8B8;line-height:1;">100%</div>
+        <div style="font-size:0.68rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;">Refund if not done</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion FAQ -->
+  <div style="margin-top:3rem;border-top:1px solid var(--rule);padding-top:3rem;">
+    <div class="label">Common Questions</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          We don't have time for this.
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>That's the symptom. When everything is a priority, the loudest voice wins and nothing moves. ~10 hours over 4 weeks is the full cost of fixing that permanently.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          We already have a process.
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Every team does already — in theory. The question is whether it's producing decisions or producing meetings. If figuring out how to solve for agreed upon strategy is chaotic, that process isn't working.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Why not just do it ourselves?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>The playbook is free and it will work. The system doesn't fail because it's incomplete — it fails the first time a senior leader's pet project scores a 4.2 and someone has to tell them that is not the best use of company time. That's easier when it's not your job on the line. What you're hiring is neutrality.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What happens when you leave?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>That's the whole design. A trained internal operator runs it from Week 5. The system, rules, and cadence stay. Nathan exits. The capability doesn't.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How much of our team's time does this actually take?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>About 10 hours over the 4-week engagement. One kickoff session, one workshop, one business as usual cadence, one monthly review. In between, your team uses The Filter in the conversations they're already having. These 10 hours usually replace other meetings with similar agendas. The system runs inside the work, not on top of it.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do we need to change our tools or tech stack?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>No. The Filter is built inside your existing stack wherever possible — no new software, no new logins, no new overhead. If you already live in Google Sheets, Notion, or a project management tool, that's where it lives. The system is the structure, not the software it sits on top of.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tiers-note">
+    <div class="tiers-cta">
+      <a href="#founding" class="btn large">Apply — Founding Install · $17K · 3 slots</a>
+      <a href="#playbook" class="btn ghost large">Get the Free Playbook</a>
+    </div>
+  </div>
+
+  <style>
+  /* ── FAQ ACCORDION ── */
+  .faq-list { border: 1px solid var(--rule); }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    width: 100%; background: var(--white); border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 2rem; text-align: left; gap: 1.5rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+    color: var(--off-black); transition: background 0.15s;
+  }
+  .faq-q:hover { background: var(--off); }
+  .faq-q[aria-expanded="true"] { background: var(--off); color: var(--maroon); }
+  .faq-icon {
+    flex-shrink: 0; width: 18px; height: 18px; position: relative;
+    transition: transform 0.25s ease;
+  }
+  .faq-icon::before,
+  .faq-icon::after {
+    content: ''; position: absolute; background: var(--maroon);
+    border-radius: 1px; transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .faq-icon::before { width: 2px; height: 18px; left: 8px; top: 0; }
+  .faq-icon::after  { width: 18px; height: 2px; top: 8px; left: 0; }
+  .faq-q[aria-expanded="true"] .faq-icon::before { transform: rotate(90deg); opacity: 0; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+    padding: 0 2rem;
+  }
+  .faq-a.open { max-height: 400px; padding: 0 2rem 1.5rem; }
+  .faq-a p { font-size: 0.9rem; line-height: 1.8; color: var(--body); }
+
+  /* ── GUARANTEE ── */
+  .guarantee-block {
+    margin-top: 2.5rem;
+    border: 1.5px solid var(--maroon);
+    background: #FDF5F7;
+  }
+  .guarantee-inner {
+    padding: 2.25rem 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.75rem;
+    align-items: start;
+  }
+  .guarantee-icon { padding-top: 0.2rem; }
+  .guarantee-label {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--maroon); margin-bottom: 0.4rem;
+  }
+  .guarantee-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; letter-spacing: 0.03em; line-height: 1.1;
+    color: var(--off-black); margin-bottom: 0.75rem;
+  }
+  .guarantee-copy {
+    font-size: 0.88rem; line-height: 1.8; color: var(--body);
+  }
+  @media (max-width: 900px) {
+    .faq-q { padding: 1.25rem 1.25rem; }
+    .faq-a { padding: 0 1.25rem; }
+    .faq-a.open { padding: 0 1.25rem 1.25rem; }
+    .guarantee-inner { grid-template-columns: 1fr; gap: 1rem; }
+    .guarantee-icon { display: none; }
+  }
+  </style>
+
+  <script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // close all
+      document.querySelectorAll('.faq-q').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      // open this one if it was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    });
+  });
+  </script>
+</section>
+
+<section class="about-section" id="about" aria-labelledby="about-heading">
+  <div class="label">Key Case Study</div>
+  <div class="proof-case">
+    <div class="proof-case-label">$100M ARR Enterprise</div>
+    <h3>Work was entering from everywhere.<br>Nothing was getting finished.</h3>
+    <p>A 1,000-person organization. Dozens of uncoordinated intake paths. 25%+ of effort duplicated across teams. Strategic initiatives stalled mid-flight. Leadership making decisions in meetings that got unmade in the next one.</p>
+    <p>The Filter got installed. One intake system. Every initiative scored, sequenced, and owned. A weekly cadence that forced the decisions leadership had been deferring for months. Within weeks, the noise stopped competing with the work — because the work finally had a rank order everyone had agreed to.</p>
+    <p>Two years later, the system is still running without Nathan. That's the whole point.</p>
+    <div class="proof-stats">
+      <div class="proof-stat"><div class="n">25%+</div><div class="l">Wasted or duplicated effort eliminated</div></div>
+      <div class="proof-stat"><div class="n">397</div><div class="l">Ideas through one system</div></div>
+      <div class="proof-stat"><div class="n">1,000</div><div class="l">Person organization</div></div>
+      <div class="proof-stat"><div class="n">2yr+ later</div><div class="l">System is still running</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ABOUT BIO moved to top of page, after Two Jobs section ── -->
+
+<!-- ── FREE PLAYBOOK ── -->
+<section class="playbook-section" id="playbook" aria-labelledby="playbook-heading">
+  <div class="playbook-inner">
+    <div class="playbook-left">
+      <span class="kicker">Free — No catch</span>
+      <div class="label light">The Playbook</div>
+      <h2 id="playbook-heading">The full system.<br><span class="accent">On us.</span></h2>
+      <p>Most systems like this cost thousands before you see a single document. We give you the whole thing upfront — free, no strings.</p>
+      <p>The playbook is complete and it will work. What it can't give you is a neutral operator in the room. The system doesn't fail because it's incomplete — it fails the first time a senior leader's pet project scores a 4.2 and someone has to hold the line. That's a lot easier when it's not your job on the line. That's the part you hire.</p>
+      <div class="playbook-contents">
+        <div class="playbook-item">The intake system, scoring model, and full rules document</div>
+        <div class="playbook-item">The operating cadence — weekly, monthly, quarterly</div>
+        <div class="playbook-item">Setup guide — six weeks, step by step</div>
+        <div class="playbook-item">The pre-engagement briefing — what you're actually signing up for</div>
+        <div class="playbook-item">AI governance framework — how The Filter makes AI stick</div>
+        <div class="playbook-item">The Filter spreadsheet — intake, scoring, dashboard, ROI</div>
+      </div>
+    </div>
+    <div class="playbook-right">
+      <div class="form-title" id="playbook-form-title">Get the Playbook</div>
+      <div class="form-sub" id="playbook-form-sub">Free. Instant access.</div>
+      <div id="playbook-form">
+        <div class="form-field">
+          <label for="pb-first-name">First name</label>
+          <input id="pb-first-name" type="text" placeholder="Nathan" autocomplete="given-name" aria-label="First name">
+        </div>
+        <div class="form-field">
+          <label for="pb-email">Work email</label>
+          <input id="pb-email" type="email" placeholder="nathan@company.com" autocomplete="email" aria-label="Work email">
+        </div>
+        <div class="form-field">
+          <label for="pb-company-size">Company size</label>
+          <select id="pb-company-size" aria-label="Company size">
+            <option value="" disabled selected>Select one</option>
+            <option>Under 20 people</option>
+            <option>20–50 people</option>
+            <option>50–150 people</option>
+            <option>150–500 people</option>
+            <option>500+ people</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="pb-challenge">What's the main problem you're solving?</label>
+          <select id="pb-challenge" aria-label="Primary challenge">
+            <option value="" disabled selected>Select one</option>
+            <option>Too many priorities, not enough clarity</option>
+            <option>AI initiatives not moving</option>
+            <option>Leadership can't agree on what to work on</option>
+            <option>Work starts and never finishes</option>
+            <option>Just exploring</option>
+          </select>
+        </div>
+        <div id="pb-error" style="display:none;font-size:0.75rem;color:#F87171;margin-bottom:0.75rem;"></div>
+        <button id="pb-submit" class="form-submit" type="button">Send Me the Playbook</button>
+        <div class="form-disclaimer">No spam. Just the playbook.</div>
+      </div>
+      <div id="playbook-success" style="display:none;padding:1.5rem 0;">
+        <p style="font-size:1rem;font-weight:600;color:#FFFFFF;margin:0 0 0.5rem;">Check your inbox.</p>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.5);margin:0;">The playbook is on its way.</p>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('pb-submit').addEventListener('click', async function () {
+        const btn = this;
+        const firstName = document.getElementById('pb-first-name').value.trim();
+        const email = document.getElementById('pb-email').value.trim();
+        const companySize = document.getElementById('pb-company-size').value;
+        const challenge = document.getElementById('pb-challenge').value;
+        const errorEl = document.getElementById('pb-error');
+
+        errorEl.style.display = 'none';
+
+        if (!firstName) { errorEl.textContent = 'Please enter your first name.'; errorEl.style.display = 'block'; return; }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.style.display = 'block'; return; }
+
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+
+        try {
+          const res = await fetch('/api/subscribe-playbook', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ firstName, email, companySize, challenge }),
+          });
+
+          if (res.ok) {
+            document.getElementById('playbook-form').style.display = 'none';
+            document.getElementById('playbook-form-sub').style.display = 'none';
+            document.getElementById('playbook-form-title').textContent = 'You\'re in.';
+            document.getElementById('playbook-success').style.display = 'block';
+          } else {
+            errorEl.textContent = 'Something went wrong. Please try again.';
+            errorEl.style.display = 'block';
+            btn.textContent = 'Send Me the Playbook';
+            btn.disabled = false;
+          }
+        } catch (e) {
+          errorEl.textContent = 'Network error. Please try again.';
+          errorEl.style.display = 'block';
+          btn.textContent = 'Send Me the Playbook';
+          btn.disabled = false;
+        }
+      });
+    </script>
+  </div>
+</section>
+
+<!-- ── AI SECTION REMOVED — folded into Filter solution narrative above ── -->
+
+<!-- ── FINAL CTA ── -->
+<section class="cta-final" id="book">
+  <h2>3 founding slots.<br>Full install. <span class="accent">$17,000.</span></h2>
+  <p style="font-size:1rem;color:rgba(255,255,255,0.5);margin-bottom:2.5rem;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.75;position:relative;">Roughly half price in exchange for the case study when it works. $35K standard rate resumes after all three are filled. 30-minute conversation to apply — no commitment required.</p>
+  <div class="cta-actions">
+    <a href="https://calendly.com/nathan-leftbrainconsult" class="btn large">Apply — Founding Install</a>
+    <a href="mailto:Nathan@leftbrainconsult.com" class="btn ghost light large">Email Nathan</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-logo">Left Brain Consulting</div>
+  <div class="footer-copy">©Left Brain Consulting LLC · Based in Colorado</div>
+  <a href="mailto:Nathan@leftbrainconsult.com" class="footer-link">Nathan@leftbrainconsult.com</a>
+</footer>
+</body>
+</html>
