@@ -151,12 +151,12 @@ nav {
 .hero-actions { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; position: relative; }
 .hero-note { font-size: 0.78rem; color: var(--subtle); position: relative; }
 
-/* Hero right — light panel */
+/* Hero right — credibility panel */
 .hero-right {
   background: var(--off);
-  padding: 10rem 3.5rem 6rem;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  gap: 0;
+  padding: 4rem 3.5rem;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  gap: 2.5rem;
   border-left: 1px solid var(--rule);
 }
 
@@ -480,7 +480,8 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 
 <nav role="navigation" aria-label="Main navigation">
   <a href="https://leftbrainconsult.com" class="nav-logo">
-    <img src="logo.svg" alt="Left Brain Consulting">LEFT BRAIN CONSULTING
+    <img src="logo.svg" alt="Left Brain Consulting" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span style="display:none;">LEFT BRAIN CONSULTING</span>
   </a>
   <div class="nav-right">
     <a href="#offer" class="nav-link">How It Works</a>
@@ -496,18 +497,36 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <section class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">The Filter — Left Brain Consulting</div>
-    <h1>Every fire you're fighting<br><span class="accent">is yesterday's decision.</span></h1>
-    <p class="hero-sub">Wrong priorities are a capital problem. The Filter installs a scored intake, simple ranking, and weekly decision cadence in 4 weeks — so your people work the right things, EBITDA is protected, and every decision is documented and defensible.</p>
-    <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:2.5rem;max-width:480px;line-height:1.7;">I built this inside a Fortune 50 transformation ($200M, EY engagement). Productized it as post-ERP governance across a $15B ARR enterprise. Formalized and proven permanent across a four-company integration — $5M reallocated, still running two years later without me.</p>
+    <h1>Your calendar is full.<br>Your people are busy.<br><span class="accent">Your biggest initiatives are still waiting.</span></h1>
+    <p class="hero-sub">Great companies don't lack ideas. They lack the institutional discipline to choose between them. And wrong priorities are a capital problem. The Filter installs a scored intake, capacity check, and weekly decision cadence in 4 weeks — so your leadership team stops debating and starts delivering.</p>
     <div class="hero-actions">
       <a href="#book" class="btn large">Book a Call</a>
       <a href="#playbook" class="btn ghost large">Get the Free Playbook</a>
     </div>
-
+    <div class="hero-ai-pill">4-Week Setup · Money-Back Guarantee</div>
   </div>
 
-  <div class="hero-right" aria-label="Left Brain Consulting">
-    <img src="logo.svg" alt="Left Brain Consulting" style="width:140px;height:auto;">
+  <div class="hero-right">
+    <div style="width:100%;display:flex;justify-content:center;margin-bottom:0.5rem;">
+      <img src="logo.svg" alt="Left Brain Consulting" style="width:110px;height:auto;opacity:0.85;">
+    </div>
+    <div style="border-top:1px solid var(--rule);padding-top:2rem;width:100%;">
+      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--maroon);margin-bottom:1.25rem;">Track Record</div>
+      <div style="display:flex;flex-direction:column;gap:1.25rem;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span style="color:var(--maroon);font-size:0.9rem;flex-shrink:0;margin-top:0.1rem;">—</span>
+          <p style="font-size:0.88rem;line-height:1.7;color:var(--body);margin:0;">Built inside a <strong>Fortune 50 transformation</strong> — $200M investment, EY engagement, VP-level decision governance.</p>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span style="color:var(--maroon);font-size:0.9rem;flex-shrink:0;margin-top:0.1rem;">—</span>
+          <p style="font-size:0.88rem;line-height:1.7;color:var(--body);margin:0;">Productized as <strong>post-ERP governance</strong> across a $15B ARR enterprise.</p>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span style="color:var(--maroon);font-size:0.9rem;flex-shrink:0;margin-top:0.1rem;">—</span>
+          <p style="font-size:0.88rem;line-height:1.7;color:var(--body);margin:0;">Proven permanent across a <strong>four-company integration</strong> — $5M reallocated, still running two years later without me.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
