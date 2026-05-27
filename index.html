@@ -392,7 +392,7 @@ nav {
 
 /* ── PROOF / ABOUT ── */
 .about-section { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); }
-.about-row { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start; margin-bottom: 4rem; }
+.about-row { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem; }
 .about-photo { width: 260px; height: 260px; object-fit: cover; object-position: top; display: block; border-radius: 50%; border: 4px solid var(--maroon); }
 .about-photo-placeholder { width: 260px; height: 260px; background: var(--off); border-top: 4px solid var(--maroon); border: 1px solid var(--rule); display: none; align-items: center; justify-content: center; }
 .about-photo-placeholder span { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--maroon); }
@@ -957,42 +957,155 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 </section>
 
 <!-- ── CASE STUDIES ── -->
-<section class="about-section" id="about" aria-labelledby="about-heading">
+<section class="about-section" id="about" aria-labelledby="timeline-heading">
   <div class="label">Where The Filter Came From</div>
+  <h2 id="timeline-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,3.5vw,3.2rem);line-height:0.95;letter-spacing:0.02em;color:var(--off-black);margin-bottom:3rem;">Three significant engagements.<br><span style="color:var(--maroon);">One system created.</span></h2>
 
-  <!-- Case Study 1: MetLife -->
-  <div class="proof-case" style="margin-bottom:4rem;">
-    <div class="proof-case-label">Chapter 01 · MetLife · Fortune 50 · The Origin</div>
-    <h3>The concept was born inside<br>a $200M Fortune 50 transformation.</h3>
-    <p>MetLife committed $200M to modernize a $2B ARR line of business. EY ran the engagement. I was the only MetLife FTE embedded on the team — my functional boss was an EY Senior Manager, my HR boss was the Head of IT for the transformation. Every request, every scope decision, every cross-functional dependency had to move through one operating system. A VP of Business and a VP of IT Delivery were both running decisions through it.</p>
-    <p>1,000+ requests. A governance model with clear intake rules, scoring criteria, decision authority structure, and a weekly cadence. The system held. The transformation delivered. The concept that would become The Filter had its first proof of life.</p>
-    <p style="font-style:italic;color:var(--subtle);">The governance principles from that engagement are still in use at EY Insurance Advisory.</p>
-    
+  <!-- Timeline nodes -->
+  <div class="timeline">
+    <div class="timeline-track">
+      <button class="timeline-node active" data-target="tl-01" aria-expanded="true">
+        <div class="tl-num">01</div>
+        <div class="tl-company">MetLife</div>
+        <div class="tl-tag">The Origin</div>
+      </button>
+      <div class="timeline-line"></div>
+      <button class="timeline-node" data-target="tl-02" aria-expanded="false">
+        <div class="tl-num">02</div>
+        <div class="tl-company">IQVIA ERP</div>
+        <div class="tl-tag">The Product</div>
+      </button>
+      <div class="timeline-line"></div>
+      <button class="timeline-node" data-target="tl-03" aria-expanded="false">
+        <div class="tl-num">03</div>
+        <div class="tl-company">IQVIA 100M</div>
+        <div class="tl-tag">The Proof</div>
+      </button>
+    </div>
+
+    <!-- Panel 01 -->
+    <div class="tl-panel open" id="tl-01">
+      <div class="tl-panel-inner">
+        <div class="tl-panel-meta">Fortune 50 · $200M Investment · $2B ARR Line of Business</div>
+        <h3>Operating infrastructure for a $200M investment to modernize a $2B ARR line of business — with EY running the engagement.</h3>
+        <p>MetLife committed $200M to modernize a $2B ARR line of business. EY ran the engagement. I was the only MetLife FTE embedded on the team — my functional boss was an EY Senior Manager, my HR boss was the Head of IT for the transformation. Every request, every scope decision, every cross-functional dependency had to move through one operating system. A VP of Business and a VP of IT Delivery were both running decisions through it.</p>
+        <p>1,000+ requests. A governance model with clear intake rules, scoring criteria, decision authority structure, and a weekly cadence. The system held. The transformation delivered. The concept that would become The Filter had its first proof of life.</p>
+        <p class="tl-closer">The governance principles from that engagement are still in use at EY Insurance Advisory.</p>
+      </div>
+    </div>
+
+    <!-- Panel 02 -->
+    <div class="tl-panel" id="tl-02">
+      <div class="tl-panel-inner">
+        <div class="tl-panel-meta">Fortune 275 · $15B ARR Enterprise · ERP Migration & Post-Cutover Governance</div>
+        <h3>ERP migration across a $15B ARR enterprise — then installed as the governance layer for FP&A and operations after cutovers.</h3>
+        <p>At IQVIA, I led finance and procurement ERP migrations and cutovers across a $15B ARR enterprise. When those systems went live, the real problem started: hundreds of product owners, finance leads, procurement heads, and business stakeholders all now operating on shared infrastructure — with no common governance layer to manage priorities, resolve conflicts, or sequence the inevitable backlog of post-go-live work.</p>
+        <p>I installed The Filter as the operating system for that environment. Not as a consulting deliverable — as the actual mechanism those teams used to run business-as-usual on a live ERP. Intake rules, decision authority, scored sequencing, weekly cadence. Every team running through the same system.</p>
+        <p class="tl-closer">This is where the system stopped being a governance concept and became a repeatable operating product.</p>
+      </div>
+    </div>
+
+    <!-- Panel 03 -->
+    <div class="tl-panel" id="tl-03">
+      <div class="tl-panel-inner">
+        <div class="tl-panel-meta">$100M ARR · 1,000-Person Org · Four Acquisitions · $50M Expense Base</div>
+        <h3>Four acquisitions brought together under The Filter as the common operating layer. $5M reallocated. Still running.</h3>
+        <p>Four acquisitions, never properly integrated. A combined org of 1,000 people on $50M in annual expense. Dozens of uncoordinated intake paths, duplicated work across legacy teams that had never been asked to operate as one, and strategic initiatives stalling mid-flight. Leadership reversing decisions from one meeting to the next with no shared record of why.</p>
+        <p>I took The Filter — the product I'd built and proven across MetLife and the IQVIA ERP environment — and installed it as the common operating layer across all four entities. One intake, one ranked list, one decision cadence that crossed every old company line. $5M of duplicative labor identified, sequenced out, and reallocated to protect the remaining $45M of productive capacity. The operating story got clean. The number moved.</p>
+        <p class="tl-closer">It's their core way of working — despite me not having been in the room for over a year. That is the whole design.</p>
+      </div>
+    </div>
   </div>
 
-  <div style="height:1px;background:var(--rule);margin-bottom:4rem;"></div>
+  <style>
+  .timeline { margin-top: 1rem; }
+  .timeline-track {
+    display: flex; align-items: center; gap: 0; margin-bottom: 0;
+  }
+  .timeline-line {
+    flex: 1; height: 2px; background: var(--rule);
+  }
+  .timeline-node {
+    display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+    background: none; border: none; cursor: pointer; padding: 0 1.5rem;
+    position: relative; transition: all 0.2s;
+  }
+  .tl-num {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 2px solid var(--rule); background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1rem;
+    letter-spacing: 0.08em; color: var(--subtle);
+    transition: all 0.2s;
+  }
+  .timeline-node.active .tl-num {
+    border-color: var(--maroon); background: var(--maroon); color: var(--white);
+  }
+  .tl-company {
+    font-size: 0.78rem; font-weight: 700; color: var(--off-black);
+    letter-spacing: 0.04em; white-space: nowrap;
+  }
+  .tl-tag {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--subtle);
+  }
+  .timeline-node.active .tl-tag { color: var(--maroon); }
+  .timeline-node:hover .tl-num { border-color: var(--maroon); color: var(--maroon); }
 
-  <!-- Case Study 2: IQVIA ERP -->
-  <div class="proof-case" style="margin-bottom:4rem;">
-    <div class="proof-case-label">Chapter 02 · IQVIA · Fortune 275 · $15B ARR Enterprise · The Product</div>
-    <h3>Delivered the ERP migrations.<br>Then installed The Filter for everyone who had to live on them.</h3>
-    <p>At IQVIA, I led finance and procurement ERP migrations and cutovers across a $15B ARR enterprise. When those systems went live, the real problem started: hundreds of product owners, finance leads, procurement heads, and business stakeholders across the enterprise all now operating on shared infrastructure — with no common governance layer to manage priorities, resolve conflicts, or sequence the inevitable backlog of post-go-live work.</p>
-    <p>I installed The Filter as the operating system for that environment. Not as a consulting deliverable — as the actual mechanism those teams used to run business-as-usual on a live ERP. Intake rules, decision authority, scored sequencing, weekly cadence. Every team running through the same system. This is where the concept became a product.</p>
-    <p style="font-style:italic;color:var(--subtle);">This is where the system stopped being a governance concept and became a repeatable operating product.</p>
-    
-  </div>
+  .tl-panel {
+    display: none; border: 1px solid var(--rule);
+    border-top: 3px solid var(--rule); margin-top: 0;
+    background: var(--white);
+  }
+  .tl-panel.open { display: block; border-top-color: var(--maroon); }
+  .tl-panel-inner { padding: 2.5rem 3rem; }
+  .tl-panel-meta {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--maroon); margin-bottom: 1rem;
+  }
+  .tl-panel h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+    letter-spacing: 0.02em; line-height: 1.05;
+    color: var(--off-black); margin-bottom: 1.25rem;
+  }
+  .tl-panel p {
+    font-size: 0.92rem; line-height: 1.8; color: var(--body);
+    max-width: 720px; margin-bottom: 1.25rem;
+  }
+  .tl-closer {
+    font-style: italic; color: var(--subtle) !important;
+    border-left: 3px solid var(--maroon); padding-left: 1rem;
+    margin-top: 1.5rem !important;
+  }
+  @media (max-width: 900px) {
+    .timeline-track { flex-direction: column; align-items: stretch; gap: 0; }
+    .timeline-line { width: 2px; height: 1.5rem; flex: none; align-self: center; background: var(--rule); }
+    .timeline-node { flex-direction: row; padding: 0.75rem 0; gap: 1rem; align-items: center; justify-content: flex-start; }
+    .tl-num { width: 36px; height: 36px; font-size: 0.88rem; flex-shrink: 0; }
+    .tl-company { font-size: 0.9rem; }
+    .tl-tag { font-size: 0.65rem; }
+    .tl-panel-inner { padding: 1.5rem 1.25rem; }
+    .tl-panel h3 { font-size: 1.4rem; }
+    .tl-panel p { font-size: 0.88rem; }
+  }
+  </style>
 
-  <div style="height:1px;background:var(--rule);margin-bottom:4rem;"></div>
-
-  <!-- Case Study 3: IQVIA 100M org -->
-  <div class="proof-case" style="margin-bottom:0;">
-    <div class="proof-case-label">Chapter 03 · IQVIA · $100M ARR Operating Division · 1,000-Person Org · The Proof</div>
-    <h3>Four poorly merged companies.<br>One operating system.<br>Still running two years later.</h3>
-    <p>Four acquisitions, never properly integrated. A combined org of 1,000 people on $50M in annual expense. Dozens of uncoordinated intake paths, duplicated work across legacy teams that had never been asked to operate as one, and strategic initiatives stalling mid-flight. Leadership reversing decisions from one meeting to the next with no shared record of why.</p>
-    <p>I took The Filter — the product I'd built and proven across MetLife and the IQVIA ERP environment — and installed it as the common operating layer across all four entities. One intake, one ranked list, one decision cadence that crossed every old company line. $5M of duplicative labor identified, sequenced out, and reallocated to protect the remaining $45M of productive capacity. The operating story got clean. The number moved.</p>
-    <p style="font-style:italic;color:var(--subtle);">It's their core way of working — despite me not having been in the room for over a year. That is the whole design.</p>
-    
-  </div>
+  <script>
+  document.querySelectorAll('.timeline-node').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      document.querySelectorAll('.timeline-node').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-expanded', 'false');
+      });
+      document.querySelectorAll('.tl-panel').forEach(p => p.classList.remove('open'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+      document.getElementById(target).classList.add('open');
+    });
+  });
+  </script>
 
 </section>
 
