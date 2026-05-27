@@ -459,6 +459,12 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:1fr auto"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:auto 1fr auto"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(4"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:1fr 1fr;"] { grid-template-columns: 1fr !important; }
+  [style*="padding:6rem 4rem"] { padding: 4rem 1.5rem !important; }
   .chaos-row, .chaos-total, .chaos-hire, .filter-callout, .vis-header { grid-template-columns: 1fr; }
   .chaos-hire-right { text-align: left; }
   .about-row { grid-template-columns: 1fr; gap: 2rem; }
@@ -1136,7 +1142,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <section class="cta-final" id="book">
   <div style="position:relative;z-index:1;">
     <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(249,168,184,0.7);margin-bottom:2rem;">Left Brain Consulting · The Filter</div>
-    <h2>The math already closed.<br><span class="accent">The only question is how long<br>the current system runs.</span></h2>
+    <h2>The math already closed.<br><span class="accent">The only question is how long<br>the current system keeps running.</span></h2>
     <p>$35,000. Installed in 4 weeks. A running decision cadence your leadership team keeps without you, without me, without anyone holding it together. The same system that governed a $200M Fortune 50 transformation — available to any company willing to run it.</p>
     <div class="cta-actions">
       <a href="https://calendly.com/nathan-leftbrainconsult" class="btn large">Book 30 Minutes</a>
