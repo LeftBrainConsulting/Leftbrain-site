@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
 :root {
   --maroon: #8B1A2E;
@@ -407,11 +408,12 @@ nav {
 .proof-divider { height: 1px; background: var(--rule); margin-bottom: 3rem; }
 .proof-case { border-left: 3px solid var(--maroon); padding-left: 2rem; margin-bottom: 3rem; }
 .proof-case-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--maroon); margin-bottom: 0.75rem; }
-.proof-case h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.02em; color: var(--off-black); line-height: 1.1; margin-bottom: 0.75rem; }
+.proof-case h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 3.5vw, 3.4rem); letter-spacing: 0.02em; color: var(--off-black); line-height: 1; margin-bottom: 0.75rem; }
 .proof-case p { font-size: 0.92rem; line-height: 1.75; color: var(--body); max-width: 680px; margin-bottom: 1.75rem; }
-.proof-stats { display: flex; gap: 3rem; flex-wrap: wrap; }
+.proof-stats { display: flex; gap: 3rem; flex-wrap: wrap; margin-top: 0.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
 .proof-stat .n { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--off-black); line-height: 1; }
-.proof-stat .l { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); margin-top: 0.2rem; }
+.proof-stat:first-child .n { font-size: 3.4rem; color: var(--maroon); }
+.proof-stat .l { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); margin-top: 0.2rem; max-width: 160px; line-height: 1.5; }
 
 .proof-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 3rem; }
 .proof-card { background: var(--white); padding: 2rem; border-top: 3px solid transparent; transition: border-color 0.15s; }
@@ -487,16 +489,15 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">The Filter — A Prioritization System for Growing Companies</div>
-    <h1>Too many priorities. <span class="accent">No shared way to choose.</span></h1>
-    <p class="hero-sub">Your team isn't short on strategy. It's short on a system for deciding what gets worked on first — and making sure what gets chosen actually gets done.</p>
-    <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:0.75rem;max-width:480px;line-height:1.7;">The best ideas get buried behind the loudest ones — and for a 50-person company, that costs at least $322,000 a year in misdirected effort. The Filter turns competing opinions into one ranked list everyone has agreed to.</p>
-    <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:2.5rem;max-width:480px;line-height:1.7;">Built across 20+ lines of business in Fortune 500 and enterprise settings — now available for $20M–$500M companies that want to make better decisions, faster, with less friction.</p>
+    <div class="hero-eyebrow">The Filter — Left Brain Consulting</div>
+    <h1>Every fire you're fighting<br><span class="accent">is yesterday's decision.</span></h1>
+    <p class="hero-sub">Wrong priorities are a capital problem. The Filter installs a scored intake, forced ranking, and weekly decision cadence in 4 weeks — so your people work the right things, EBITDA is protected, and every decision is documented and defensible.</p>
+    <p class="hero-note" style="font-size:0.88rem;color:var(--subtle);margin-bottom:2.5rem;max-width:480px;line-height:1.7;">I built this inside a Fortune 50 transformation ($200M, EY engagement). Productized it as post-ERP governance across a $15B ARR enterprise. Formalized and proven permanent across a four-company integration — $5M reallocated, still running two years later without me.</p>
     <div class="hero-actions">
       <a href="#book" class="btn large">Book a Call</a>
       <a href="#playbook" class="btn ghost large">Get the Free Playbook</a>
     </div>
-    <div class="hero-ai-pill">Now includes AI governance</div>
+
   </div>
 
   <div class="hero-right" aria-label="Left Brain Consulting">
@@ -622,37 +623,122 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 
 <!-- ── CHAOS TAX ── -->
 <section class="chaos-tax" aria-labelledby="chaos-heading">
-  <div class="label">The Chaos Tax</div>
-  <h2 id="chaos-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1.25rem;">What the gap <span style="color:var(--maroon);">costs you.</span></h2>
-  <p class="chaos-intro">For a 50-person company — at least $322,000 a year. The money isn't missing. It's just pointed at the wrong things.</p>
+  <div class="label">What Misalignment Actually Costs</div>
+  <h2 id="chaos-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1.25rem;">The quiet tax on a<br><span style="color:var(--maroon);">$50M business.</span></h2>
+  <p class="chaos-intro">These numbers use conservative assumptions. The real cost is usually higher — because misaligned priorities don't just waste time, they delay the work that actually moves the number. <strong>Every quarter this runs unaddressed is a quarter of execution capacity you don't get back.</strong></p>
 
   <div class="chaos-cards">
     <div class="chaos-card">
-      <div class="chaos-card-num">$150K</div>
-      <div class="chaos-card-label">Wasted effort on wrong priorities</div>
-      <div class="chaos-card-math">10 people × $75K loaded cost × 20% on misaligned work</div>
+      <div class="chaos-card-num">$780K</div>
+      <div class="chaos-card-label">Leadership time spent on the wrong priorities</div>
+      <div class="chaos-card-math">6 leaders × $250K loaded cost × 20% of time on low-ranked work = $300K direct cost. Add 3 hrs/week per leader in meetings that replay decisions already made: another $480K annually.</div>
     </div>
     <div class="chaos-card">
-      <div class="chaos-card-num">$112K</div>
-      <div class="chaos-card-label">Leadership time spent trying to agree on what matters most</div>
-      <div class="chaos-card-math">5 leaders × 3 hrs/week × $150/hr × 50 weeks</div>
+      <div class="chaos-card-num">$420K</div>
+      <div class="chaos-card-label">Sunk cost on initiatives that start and never finish</div>
+      <div class="chaos-card-math">Industry average: 30–40% of strategic initiatives abandoned mid-cycle. At $50M revenue, that's ~$1.4M of initiative spend. 30% abandoned = $420K in partial work that produced nothing.</div>
     </div>
     <div class="chaos-card">
-      <div class="chaos-card-num">$60K</div>
-      <div class="chaos-card-label">Abandoned initiatives that never should have started</div>
-      <div class="chaos-card-math">2 per year × 3 people-months × $10K/month</div>
+      <div class="chaos-card-num">$650K</div>
+      <div class="chaos-card-label">Delayed revenue from initiatives that should have been prioritized sooner</div>
+      <div class="chaos-card-math">One high-impact initiative deferred one quarter. Conservative $2.6M ARR impact × 25% delayed = $650K of revenue that started later than it had to.</div>
     </div>
   </div>
 
   <div class="chaos-total">
-    <div class="chaos-total-label">Annual Chaos Tax — 50-person company</div>
-    <div class="chaos-total-value">$322,000</div>
+    <div class="chaos-total-label">Estimated annual cost of misalignment</div>
+    <div class="chaos-total-value">$1.85M<sup style="font-size:1.4rem;color:var(--maroon);">+</sup></div>
   </div>
 
-  <div style="margin-top:1.5rem;border-left:3px solid var(--maroon);padding:1rem 1.5rem;background:var(--off);">
-    <p style="font-size:0.95rem;color:var(--off-black);line-height:1.75;margin:0;font-weight:500;">The system pays for itself the second you make one better decision from it. For most, that happens by week 2 or 3 of the installation process.</p>
-  </div>
+  <p class="chaos-closer" style="margin-top:1.5rem;">The Filter costs $35,000 and installs in 4 weeks. <strong>The math isn't complicated.</strong> What's complicated is being the person in the room who makes a senior leader's pet project wait because the score says so. That's the part you hire me for.</p>
 </section>
+<!-- ── HOW IT WORKS ── -->
+<section style="padding:6rem 4rem;border-bottom:1px solid var(--rule);background:var(--off);" id="system" aria-labelledby="system-heading">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem;">
+    <div>
+      <div class="label">The Filter · How It Works</div>
+      <h2 id="system-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.6rem);line-height:0.92;letter-spacing:0.01em;color:var(--off-black);margin-bottom:0;">
+        One intake. One list.<br><span style="color:var(--maroon);">One hour a week.</span>
+      </h2>
+    </div>
+    <p style="font-size:0.98rem;line-height:1.85;color:var(--body);margin:0;">A quality input system — not a decision-making system. The Decision Authority still decides. Intuition and judgment still matter. The Filter ensures that when a decision gets made, it's made on structured, shared understanding — not a hallway conversation or whoever asked loudest.</p>
+  </div>
+
+  <!-- 4-stage flow -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1px;">
+    <div style="background:var(--white);padding:2.25rem 2rem;border-top:2px solid var(--maroon);">
+      <div style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.6rem;font-weight:600;">01 — Intake</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--off-black);margin-bottom:0.3rem;line-height:1;">Capture</div>
+      <div style="font-size:0.78rem;color:var(--subtle);line-height:1.5;margin-bottom:1.25rem;">Everything enters through one door. No side channels.</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Standardized form — title, description, scoring rationale</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Active work and pipeline on the same list</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Incomplete submissions returned immediately</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Golden rule: if it's not on the list, it doesn't exist</div>
+      </div>
+    </div>
+    <div style="background:var(--white);padding:2.25rem 2rem;border-top:2px solid var(--maroon);">
+      <div style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.6rem;font-weight:600;">02 — Prioritize</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--off-black);margin-bottom:0.3rem;line-height:1;">Score & Rank</div>
+      <div style="font-size:0.78rem;color:var(--subtle);line-height:1.5;margin-bottom:1.25rem;">Every idea evaluated against the same criteria.</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Impact × Urgency × Audience weighted scoring</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Ranked list surfaces at the weekly forum</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Score is input, not verdict — leadership still decides</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Capacity check before anything activates</div>
+      </div>
+    </div>
+    <div style="background:var(--white);padding:2.25rem 2rem;border-top:2px solid var(--maroon);">
+      <div style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.6rem;font-weight:600;">03 — Activate</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--off-black);margin-bottom:0.3rem;line-height:1;">Own & Deliver</div>
+      <div style="font-size:0.78rem;color:var(--subtle);line-height:1.5;margin-bottom:1.25rem;">Only what the team can actually absorb gets started.</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Named owner assigned at activation</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Definition of done agreed before work begins</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Weekly status: green / at risk / off track</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>WIP limits enforced — active list stays honest</div>
+      </div>
+    </div>
+    <div style="background:var(--white);padding:2.25rem 2rem;border-top:2px solid var(--maroon);">
+      <div style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.6rem;font-weight:600;">04 — Release</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--off-black);margin-bottom:0.3rem;line-height:1;">Land & Stick</div>
+      <div style="font-size:0.78rem;color:var(--subtle);line-height:1.5;margin-bottom:1.25rem;">Done isn't done until the organization has absorbed it.</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Demo at monthly forum — show the work to the room</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Centralized communication through the cadence</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>ROI check — did the estimated value materialize?</div>
+        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Change management built into the release step</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Infrastructure row -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-top:none;margin-bottom:2rem;">
+    <div style="background:var(--white);padding:1.75rem 2rem;">
+      <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.4rem;">The Spreadsheet</div>
+      <div style="font-weight:600;font-size:0.9rem;color:var(--off-black);margin-bottom:0.5rem;">Single Source of Truth</div>
+      <div style="font-size:0.8rem;line-height:1.65;color:var(--body);">Intake tab, scoring model, exec dashboard, ROI calculator. One list. Everything active, scored, owned, and visible. Lives in your existing stack — no new tools.</div>
+    </div>
+    <div style="background:var(--white);padding:1.75rem 2rem;">
+      <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.4rem;">The Decision Log</div>
+      <div style="font-weight:600;font-size:0.9rem;color:var(--off-black);margin-bottom:0.5rem;">Institutional Memory</div>
+      <div style="font-size:0.8rem;line-height:1.65;color:var(--body);">Every activation, deferral, and kill documented with reasoning. No silent decisions. The log is what makes the system defensible six months later — and in a data room.</div>
+    </div>
+    <div style="background:var(--white);padding:1.75rem 2rem;">
+      <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.4rem;">The Fast Track Protocol</div>
+      <div style="font-weight:600;font-size:0.9rem;color:var(--off-black);margin-bottom:0.5rem;">For Genuine Urgency</div>
+      <div style="font-size:0.8rem;line-height:1.65;color:var(--body);">Three-question test → 15-min Decision Authority sync → named displacement. Nothing bypasses the system. It moves through it faster.</div>
+    </div>
+  </div>
+
+  <!-- Golden rule -->
+  <div style="text-align:center;padding-top:2.5rem;border-top:1px solid var(--rule);">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:0.03em;line-height:1;color:var(--off-black);margin-bottom:0.75rem;">If it's not on the list,<br><span style="color:var(--maroon);">it doesn't exist.</span></div>
+    <div style="font-size:0.82rem;color:var(--subtle);max-width:480px;margin:0 auto;line-height:1.7;">This is the single rule that makes everything else work. Every bypass is a test of whether the system is real or performative. Hold it every session, every cycle.</div>
+  </div>
+
+</section>
+
 <!-- ── HOW TO INSTALL ── -->
 <section class="offer" id="offer" aria-labelledby="offer-heading">
   <div class="label">How to Eliminate The Chaos Tax</div>
@@ -740,7 +826,7 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-a">
-          <p>That's the whole design. A trained internal operator runs it from Week 5. The system, rules, and cadence stay. Nathan exits. The capability doesn't.</p>
+          <p>That's the whole design. A trained internal operator runs it from Week 5. The system, rules, and cadence stay. I exit. The capability doesn't.</p>
         </div>
       </div>
 
@@ -863,23 +949,59 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   </script>
 </section>
 
+<!-- ── CASE STUDIES ── -->
 <section class="about-section" id="about" aria-labelledby="about-heading">
-  <div class="label">Key Case Study</div>
-  <div class="proof-case">
-    <div class="proof-case-label">$100M ARR Enterprise</div>
-    <h3>Work was entering from everywhere.<br>Nothing was getting finished.</h3>
-    <p>Dozens of uncoordinated intake paths. 25%+ of effort duplicated across teams. Strategic initiatives stalled mid-flight. Leadership making decisions in meetings that got unmade in the next one.</p>
-    <p>The Filter got installed. One intake system. Every initiative scored, sequenced, and owned. A weekly cadence that forced the decisions leadership had been deferring for months. Within weeks, the noise stopped competing with the work — because the work finally had a rank order everyone had agreed to.</p>
-    <p>Two years later, the system is still running without Nathan. That's the whole point.</p>
+  <div class="label">Where The Filter Came From</div>
+
+  <!-- Case Study 1: MetLife -->
+  <div class="proof-case" style="margin-bottom:4rem;">
+    <div class="proof-case-label">Chapter 01 · MetLife · Fortune 50 · The Origin</div>
+    <h3>The concept was born inside<br>a $200M Fortune 50 transformation.</h3>
+    <p>MetLife committed $200M to modernize a $2B ARR line of business. EY ran the engagement. I was the only MetLife FTE embedded on the team — my functional boss was an EY Senior Manager, my HR boss was the Head of IT for the transformation. Every request, every scope decision, every cross-functional dependency had to move through one operating system. A VP of Business and a VP of IT Delivery were both running decisions through it.</p>
+    <p>1,000+ requests. A governance model with clear intake rules, scoring criteria, decision authority structure, and a weekly cadence. The system held. The transformation delivered. The concept that would become The Filter had its first proof of life.</p>
+    <p style="font-style:italic;color:var(--subtle);">The governance principles from that engagement are still in use at EY Insurance Advisory.</p>
     <div class="proof-stats">
-      <div class="proof-stat"><div class="n">25%+</div><div class="l">Wasted or duplicated effort eliminated</div></div>
-      <div class="proof-stat"><div class="n">397</div><div class="l">Ideas through one system</div></div>
-      <div class="proof-stat"><div class="n">~20</div><div class="l">Leaders running the system — across a 1,000-person org</div></div>
-      <div class="proof-stat"><div class="n">2yr+ later</div><div class="l">System still running without Nathan</div></div>
+      <div class="proof-stat"><div class="n">$200M</div><div class="l">Transformation investment governed through one system</div></div>
+      <div class="proof-stat"><div class="n">$2B</div><div class="l">ARR line of business being modernized</div></div>
+      <div class="proof-stat"><div class="n">1,000+</div><div class="l">Requests reviewed at VP level through one intake</div></div>
+      <div class="proof-stat"><div class="n">Still runs</div><div class="l">Governance principles in use at EY Insurance Advisory</div></div>
     </div>
   </div>
-</section>
 
+  <div style="height:1px;background:var(--rule);margin-bottom:4rem;"></div>
+
+  <!-- Case Study 2: IQVIA ERP -->
+  <div class="proof-case" style="margin-bottom:4rem;">
+    <div class="proof-case-label">Chapter 02 · IQVIA · Fortune 275 · $15B ARR Enterprise · The Product</div>
+    <h3>Delivered the ERP migrations.<br>Then installed The Filter for everyone who had to live on them.</h3>
+    <p>At IQVIA, I led finance and procurement ERP migrations and cutovers across a $15B ARR enterprise. When those systems went live, the real problem started: hundreds of product owners, finance leads, procurement heads, and business stakeholders across the enterprise all now operating on shared infrastructure — with no common governance layer to manage priorities, resolve conflicts, or sequence the inevitable backlog of post-go-live work.</p>
+    <p>I installed The Filter as the operating system for that environment. Not as a consulting deliverable — as the actual mechanism those teams used to run business-as-usual on a live ERP. Intake rules, decision authority, scored sequencing, weekly cadence. Every team running through the same system. This is where the concept became a product.</p>
+    <p style="font-style:italic;color:var(--subtle);">This is where the system stopped being a governance concept and became a repeatable operating product.</p>
+    <div class="proof-stats">
+      <div class="proof-stat"><div class="n">$15B</div><div class="l">ARR enterprise — The Filter as post-ERP governance layer</div></div>
+      <div class="proof-stat"><div class="n">Multi-dept</div><div class="l">Finance, procurement, and business heads aligned under one cadence</div></div>
+      <div class="proof-stat"><div class="n">Live infra</div><div class="l">Decisions made in real time on systems where failure had immediate consequences</div></div>
+    </div>
+  </div>
+
+  <div style="height:1px;background:var(--rule);margin-bottom:4rem;"></div>
+
+  <!-- Case Study 3: IQVIA 100M org -->
+  <div class="proof-case" style="margin-bottom:0;">
+    <div class="proof-case-label">Chapter 03 · IQVIA · $100M ARR Operating Division · 1,000-Person Org · The Proof</div>
+    <h3>Four poorly merged companies.<br>One operating system.<br>Still running two years later.</h3>
+    <p>Four acquisitions, never properly integrated. A combined org of 1,000 people on $50M in annual expense. Dozens of uncoordinated intake paths, duplicated work across legacy teams that had never been asked to operate as one, and strategic initiatives stalling mid-flight. Leadership reversing decisions from one meeting to the next with no shared record of why.</p>
+    <p>I took The Filter — the product I'd built and proven across MetLife and the IQVIA ERP environment — and installed it as the common operating layer across all four entities. One intake, one ranked list, one decision cadence that crossed every old company line. $5M of duplicative labor identified, sequenced out, and reallocated to protect the remaining $45M of productive capacity. The operating story got clean. The number moved.</p>
+    <p style="font-style:italic;color:var(--subtle);">Two years later, the system is still running. I haven't been in the building in over a year. That is the whole design.</p>
+    <div class="proof-stats">
+      <div class="proof-stat"><div class="n">$5M+</div><div class="l">Duplicative labor reallocated to protect $45M in productive capacity</div></div>
+      <div class="proof-stat"><div class="n">397</div><div class="l">Initiatives processed through one system — scored, owned, visible</div></div>
+      <div class="proof-stat"><div class="n">~20</div><div class="l">Leaders running the cadence across all four legacy entities</div></div>
+      <div class="proof-stat"><div class="n">2yr+</div><div class="l">Still running. I haven't been in the building in over a year.</div></div>
+    </div>
+  </div>
+
+</section>
 
 <!-- ── ABOUT ── -->
 <section class="about-section" id="about-bio" aria-labelledby="about-heading">
@@ -890,20 +1012,15 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
       <div class="about-photo-placeholder"><span>NH</span></div>
     </div>
     <div class="about-bio">
-      <div class="about-name" id="about-heading">Nathan Harris.<br><span class="accent">The operator behind the strategy.</span></div>
-<p>I have witnessed <strong>thousands of strategy decisions</strong> get made live in the room.</p>
-<p>From EVPs running $2B+ ARR business units. Managers just trying to hold a team accountable. Hundreds of decision makers in between.</p>
-<p>Decisions that made people quit. Decisions that got people promoted. Political decisions that protected someone's "kingdom" at the expense of the business. Decisions that led to health events — from those making them, and from those on the receiving end.</p>
-<p>I was at the center of all of it. Trying to positively influence where I could.</p>
-<p>The pattern I kept seeing: <strong>decision making is the most emotional part of running a business.</strong> When decisions touch culture, careers, politics, and money — emotion wins more than it should.</p>
-<p><Strong>I took everything I watched and built a system to change that. The Filter.</Strong></p>
-<p>Ideas get ranked by impact, urgency, who they affect, and what happens if you do nothing. One hour a week to maintain it. The pressure moves off the authority in the room and onto the framework.</p>
-<p>This isn't about removing emotion from your business. <strong>It's about making sure emotion isn't the only thing making your decisions.</strong></p>
+      <div class="about-name" id="about-heading">Nathan Harris.<br><span class="accent">Real operator. Real system.</span></div>
+      <p>I spent a decade inside large organizations watching what happens when companies scale without a decision system. The Filter is what I extracted from that — stripped of the bureaucracy, built to run lean. It's now available to growing companies who want the outcome without the overhead.</p>
+      <p>I install it, train someone to own it, and leave. That's the whole model.</p>
       <div class="creds">
-        <div class="cred"><span class="cred-mark">—</span><span><strong>MetLife + IQVIA</strong> — Three promotions at MetLife, two at IQVIA. Associate Director at a Fortune 500 by 25.</span></div>
-        <div class="cred"><span class="cred-mark">—</span><span><strong>EY (Big 4 Client Side)</strong> — Only non-EY operator on a $200M investment to modernize a $2B ARR business unit. Built the operating layer across business, IT, and audit <strong>that became the origin of The Filter.</strong> Principles of system still in use at EY Insurance Advisory.</span></div>
-        <div class="cred"><span class="cred-mark">—</span><span><strong>20+ lines of business</strong> — Same system. From 10 people to 1,000. Still running.</span></div>
+        <div class="cred"><span class="cred-mark">—</span><span><strong>MetLife (Fortune 50)</strong> — Only internal FTE on a full EY engagement. Built the governance system for a $200M investment modernizing a $2B ARR business unit. Five promotions in five years. Associate Director by 25.</span></div>
+        <div class="cred"><span class="cred-mark">—</span><span><strong>IQVIA (Fortune 275)</strong> — Delivered ERP migrations across a $15B ARR enterprise. Installed The Filter as the operating layer for every team that had to live on what was built. Then: four-company integration, $5M reallocated, still running two years later.</span></div>
+        <div class="cred"><span class="cred-mark">—</span><span><strong>20+ lines of business</strong> — Same system. 10 people to 1,000. It keeps running after I leave. That's the point.</span></div>
       </div>
+      <p style="margin-top:1.75rem;font-size:0.88rem;color:var(--subtle);line-height:1.75;">Outside of work: competing in jiu jitsu, exploring Colorado with my wife, son, and dogs, and trying to be present for all of it.</p>
     </div>
   </div>
 </section>
@@ -915,14 +1032,13 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
       <span class="kicker">Free — No catch</span>
       <div class="label light">The Playbook</div>
       <h2 id="playbook-heading">The full system.<br><span class="accent">On us.</span></h2>
-      <p>Most systems like this cost thousands before you see a single document. We give you the whole thing upfront — free, no strings.</p>
-      <p>The playbook is complete and it will work. What it can't give you is a neutral operator in the room. The system doesn't fail because it's incomplete — it fails the first time a senior leader's pet project scores a 4.2 and someone has to hold the line. That's a lot easier when it's not your job on the line. That's the part you hire.</p>
+      <p>Most systems like this cost thousands before you see a single document. I give you the whole thing upfront — free, no strings.</p>
+      <p>The playbook is complete and it will work. What it can't give you is a neutral operator in the room. The system doesn't fail because it's incomplete — it fails the first time a senior leader's pet project scores a 4.2 and someone has to hold the line. That's a lot easier when it's not your job on the line. That's the part you hire me for.</p>
       <div class="playbook-contents">
         <div class="playbook-item">The intake system, scoring model, and full rules document</div>
         <div class="playbook-item">The operating cadence — weekly, monthly, quarterly</div>
         <div class="playbook-item">Setup guide — six weeks, step by step</div>
         <div class="playbook-item">The pre-engagement briefing — what you're actually signing up for</div>
-        <div class="playbook-item">AI governance framework — how The Filter makes AI stick</div>
         <div class="playbook-item">The Filter spreadsheet — intake, scoring, dashboard, ROI</div>
       </div>
     </div>
@@ -1016,46 +1132,18 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   </div>
 </section>
 
-<!-- ── AI SECTION ── -->
-<section class="ai-section" aria-labelledby="ai-heading">
-  <div class="ai-left">
-    <div class="label light">Added Benefit - AI Governance</div>
-    <h2 id="ai-heading">The Filter is also how <span class="accent">AI actually sticks.</span></h2>
-    <p>Most companies don't have an AI problem. They have an operating infrastructure and prioritization problem — and AI is just the latest thing caught in it. IT is evaluating vendors. Marketing is using tools nobody approved. Engineering is running experiments. All competing for the same resources, with no shared cadence and no definition of done.</p>
-    <p><strong>The Filter doesn't care if it's an AI initiative or a rebrand.</strong> Everything goes through the same system. Scored. Owned. Visible. That's what makes AI governable — not a separate framework, just the same discipline applied to one more category of work.</p>
-  </div>
-  <div class="ai-right">
-    <div class="ai-card">
-      <div class="ai-card-num">01</div>
-      <h4>Full portfolio visibility</h4>
-      <p>Every improvement initiative on one list. Including AI. Scored. Owned. Visible. You can't manage what you can't see.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">02</div>
-      <h4>Honest ROI tracking</h4>
-      <p>Did the estimated $200K efficiency gain actually materialize? Now you know.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">03</div>
-      <h4>Change management built in</h4>
-      <p>Change doesn't stick when it comes from all directions. Centralized releases to staff through the cadence fixes that structurally.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-num">04</div>
-      <h4>AI-enabled decisions</h4>
-      <p>The AI Insight column collapses every row of signal into one executive-ready decision line. The system reads the noise so you don't have to.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ── FINAL CTA ── -->
 <section class="cta-final" id="book">
-  <h2>Too many priorities?<br>Too much friction?<br>Not enough clarity?<br><span class="accent">Let's fix that.</span></h2>
-  <div class="cta-actions">
-    <a href="https://calendly.com/nathan-leftbrainconsult" class="btn large">Book 30 Minutes</a>
-    <a href="mailto:Nathan@leftbrainconsult.com" class="btn ghost light large">Email Nathan</a>
+  <div style="position:relative;z-index:1;">
+    <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(249,168,184,0.7);margin-bottom:2rem;">Left Brain Consulting · The Filter</div>
+    <h2>The math already closed.<br><span class="accent">The only question is how long<br>the current system runs.</span></h2>
+    <p>$35,000. Installed in 4 weeks. A running decision cadence your leadership team keeps without you, without me, without anyone holding it together. The same system that governed a $200M Fortune 50 transformation — available to any company willing to run it.</p>
+    <div class="cta-actions">
+      <a href="https://calendly.com/nathan-leftbrainconsult" class="btn large">Book 30 Minutes</a>
+      <a href="mailto:Nathan@leftbrainconsult.com" class="btn ghost light large">Email Nathan</a>
+    </div>
+    <div class="cta-note" style="margin-top:1.5rem;">No pitch deck. No discovery questionnaire. Just a conversation about whether this fits.</div>
   </div>
-
 </section>
 
 </main>
