@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -242,10 +243,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.93);backdrop
 /* OPERATOR */
 .operator{background:var(--off);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
 .op-grid{display:grid;grid-template-columns:minmax(0,0.78fr) minmax(0,1.22fr);gap:clamp(2.5rem,5vw,4.5rem);align-items:start;}
-.op-photo{position:relative;max-width:360px;}
-.op-photo img{width:100%;filter:grayscale(15%) contrast(1.03);border:1px solid var(--off-black);}
-.op-photo::after{content:'';position:absolute;inset:0;transform:translate(11px,11px);border:1px solid var(--maroon);z-index:-1;}
-.op-photo-fallback{display:none;width:100%;aspect-ratio:4/5;border:1px solid var(--off-black);align-items:center;justify-content:center;background:var(--white);font-family:var(--display);font-size:4rem;color:var(--maroon);}
+.op-photo{position:relative;max-width:360px;display:flex;align-items:center;justify-content:center;}
+.op-photo-circle{width:320px;height:320px;border-radius:50%;overflow:hidden;position:relative;flex-shrink:0;}
+.op-photo-circle img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(12%) contrast(1.04);display:block;}
+.op-photo-circle::after{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at center,transparent 55%,var(--off) 100%);}
+.op-photo-fallback{display:none;width:320px;height:320px;border-radius:50%;border:2px solid var(--rule);align-items:center;justify-content:center;background:var(--white);font-family:var(--display);font-size:4rem;color:var(--maroon);}
 .op-name{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.6vw,3rem);line-height:0.98;letter-spacing:0.02em;color:var(--off-black);margin-bottom:1.4rem;text-transform:uppercase;}
 .op-name .accent{color:var(--maroon);}
 .op-lead{font-size:1.1rem;line-height:1.7;color:var(--off-black);font-weight:500;margin-bottom:1.5rem;max-width:62ch;}
@@ -414,13 +416,13 @@ footer{background:var(--white);border-top:1px solid var(--rule);padding:2rem 0;}
             <span class="slider-read"><span class="rev" id="rev-read">$50M</span> revenue → <strong id="tax-read">$1.85M+</strong> / yr</span>
           </div>
           <input type="range" id="rev-slider" min="3" max="60" step="1" value="50" aria-label="Annual revenue in millions of dollars">
-          <p class="slider-note">Scaled linearly from the model above — directional only. On the call we build your real number from your headcount, your loaded costs, and your actual portfolio.</p>
+          <p class="slider-note">Scaled linearly from the model above — directional only. Every business is different; this is a starting point, not a ceiling.</p>
         </div>
       </div>
     </div>
 
     <div class="chaos-close">
-      <p><strong>The Filter removes this tax in 14 days — for a fixed fee that's a fraction of any single line above.</strong> The math isn't complicated. What's complicated is the first time a leadership team ranks everything against everything else and makes real calls in the open, while the system is still earning its authority. I run those sessions — someone with no stake in the outcome, holding the process steady until your team can hold it themselves.</p>
+      <p><strong>The Filter solves this problem in 14 days — for a fixed fee that's a fraction of any single line above.</strong> The math isn't complicated. What's complicated is the first time a leadership team ranks everything against everything else and makes real calls in the open, while the system is still earning its authority. I run those sessions — someone with no stake in the outcome, holding the process steady until your team can hold it themselves.</p>
       <div class="stat">
         <div class="n">Day 14</div>
         <div class="s">Rebaseline Complete · Guaranteed</div>
@@ -620,8 +622,10 @@ footer{background:var(--white);border-top:1px solid var(--rule);padding:2rem 0;}
 <section class="operator" id="about-bio" aria-labelledby="about-heading">
   <div class="wrap op-grid">
     <div class="op-photo">
-      <img src="NHeadshot.jpeg" alt="Nathan Harris"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="op-photo-circle">
+        <img src="NHeadshot.jpeg" alt="Nathan Harris"
+             onerror="this.style.display='none'">
+      </div>
       <div class="op-photo-fallback"><span>NH</span></div>
     </div>
     <div>
