@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Filter — A Decision System for Growing Companies | Left Brain Consulting</title>
-<meta name="description" content="The Filter installs the decision layer above your existing tools — scored intake, ranked priorities, and a weekly cadence — in 4 weeks. Decide what to work on, protect EBITDA, and make it stick.">
+<meta name="description" content="The Filter installs the decision layer above your existing tools — scored intake, ranked priorities, and a weekly cadence — installed in 14 days. Decide what to work on, protect EBITDA, and make it stick.">
 <meta property="og:title" content="The Filter — A Decision System for Growing Companies">
-<meta property="og:description" content="Install the decision layer above your existing tools in 4 weeks. Decide what to work on first, protect EBITDA, and make the important work actually stick.">
+<meta property="og:description" content="Install the decision layer above your existing tools in 14 days. Decide what to work on first, protect EBITDA, and make the important work actually stick.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.leftbrainconsult.com">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Filter — A Decision System for Growing Companies">
-<meta name="twitter:description" content="Install the decision layer above your existing tools in 4 weeks. Decide what to work on first, protect EBITDA, and make the important work actually stick.">
+<meta name="twitter:description" content="Install the decision layer above your existing tools in 14 days. Decide what to work on first, protect EBITDA, and make the important work actually stick.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
@@ -295,6 +295,16 @@ nav {
 .filter-callout-stat .n { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: #4ADE80; line-height: 1; }
 .filter-callout-stat .l { font-size: 0.75rem; color: var(--subtle); }
 
+/* ── WHEN THIS MAKES SENSE ── */
+.triggers { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); background: var(--white); }
+.trig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.trig { background: var(--white); padding: 1.9rem 1.8rem; border-top: 3px solid var(--maroon); }
+.trig .ic { width: 26px; height: 26px; color: var(--maroon); margin-bottom: 0.9rem; }
+.trig .t { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: 0.03em; color: var(--off-black); margin-bottom: 0.5rem; line-height: 1.02; }
+.trig p { font-size: 0.85rem; line-height: 1.7; color: var(--body); margin: 0; }
+@media (max-width: 820px) { .trig-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .trig-grid { grid-template-columns: 1fr; } }
+
 /* ── CHAOS TAX ── */
 .chaos-tax {
   padding: 4rem 4rem; border-bottom: 1px solid var(--rule);
@@ -312,6 +322,15 @@ nav {
 .chaos-total-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #FFE4E9; }
 .chaos-total-value { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--white); letter-spacing: 0.04em; }
 .chaos-closer { margin-top: 1.5rem; font-size: 0.95rem; color: var(--body); line-height: 1.75; max-width: 620px; }
+.chaos-slider { margin-top: 1px; background: var(--white); border: 1px solid var(--rule); border-top: none; padding: 1.4rem 1.75rem 1.5rem; }
+.chaos-slider-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.chaos-slider-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--off-black); }
+.chaos-slider-read { font-size: 0.9rem; color: var(--body); }
+.chaos-slider-read strong { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 1.35rem; letter-spacing: 0.02em; color: var(--maroon); }
+.chaos-slider input[type=range] { width: 100%; appearance: none; -webkit-appearance: none; height: 4px; background: var(--rule); border-radius: 2px; outline: none; }
+.chaos-slider input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; background: var(--maroon); border: 3px solid var(--white); box-shadow: 0 0 0 1px var(--maroon); border-radius: 50%; cursor: pointer; }
+.chaos-slider input[type=range]::-moz-range-thumb { width: 12px; height: 12px; background: var(--maroon); border: 3px solid var(--white); box-shadow: 0 0 0 1px var(--maroon); border-radius: 50%; cursor: pointer; }
+.chaos-slider-note { margin-top: 0.85rem; font-size: 0.72rem; line-height: 1.65; color: var(--subtle); }
 
 /* ── AI SECTION ── */
 .ai-section {
@@ -329,50 +348,6 @@ nav {
 .ai-card-num { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--maroon); margin-bottom: 0.35rem; }
 .ai-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.04em; color: var(--off-black); margin-bottom: 0.35rem; }
 .ai-card p { font-size: 0.85rem; line-height: 1.6; color: var(--body); }
-
-/* ── FREE PLAYBOOK ── */
-.playbook-section {
-  padding: 6rem 4rem; border-bottom: 1px solid var(--rule);
-  background: var(--off-black);
-}
-.playbook-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-.playbook-left h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 4vw, 3.8rem); line-height: 0.9; letter-spacing: 0.01em; color: var(--white); margin-bottom: 1.25rem; }
-.playbook-left h2 .accent { color: #F9A8B8; }
-.playbook-left p { font-size: 0.98rem; line-height: 1.8; color: rgba(255,255,255,0.87); margin-bottom: 1.5rem; }
-.playbook-left .kicker {
-  display: inline-block; font-size: 0.72rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  background: rgba(139,26,46,0.2); color: #F9A8B8;
-  border: 1px solid rgba(139,26,46,0.3);
-  padding: 0.35rem 0.85rem; margin-bottom: 1.5rem;
-}
-.playbook-contents { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
-.playbook-item { display: flex; gap: 0.75rem; font-size: 0.88rem; color: rgba(255,255,255,0.87); align-items: flex-start; line-height: 1.5; }
-.playbook-item::before { content: '—'; color: #F9A8B8; flex-shrink: 0; margin-top: 0.05rem; }
-.playbook-note { font-size: 0.82rem; color: rgba(255,255,255,0.75); font-style: italic; }
-
-.playbook-right { background: rgba(255,255,255,0.04); border: 1px solid var(--rule-dark); padding: 2.5rem; }
-.form-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.35rem; }
-.form-sub { font-size: 0.82rem; color: rgba(255,255,255,0.75); margin-bottom: 2rem; }
-.form-field { margin-bottom: 1rem; }
-.form-field label { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.87); margin-bottom: 0.4rem; }
-.form-field input, .form-field select {
-  width: 100%; padding: 0.75rem 1rem;
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-  color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
-  outline: none; transition: border-color 0.15s;
-}
-.form-field input::placeholder { color: rgba(255,255,255,0.2); }
-.form-field input:focus, .form-field select:focus { border-color: rgba(255,255,255,0.75); }
-.form-field select option { background: var(--off-black); }
-.form-submit {
-  width: 100%; padding: 0.9rem; background: var(--maroon); color: var(--white);
-  border: none; font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
-  font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-  cursor: pointer; transition: background 0.15s; margin-top: 0.5rem;
-}
-.form-submit:hover { background: var(--maroon-dark); }
-.form-disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.75); margin-top: 0.75rem; }
 
 /* ── PRICING ── */
 .offer { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); background: var(--off); }
@@ -461,8 +436,8 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 8rem 1.5rem 3rem; }
   .hero-right { display: none; }
-  .jobs-section, .visual-section, .offer, .about-section, .chaos-tax, .cta-final, .ai-section, .playbook-section { padding: 4rem 1.5rem; }
-  .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-cards, .ai-section, .playbook-inner { grid-template-columns: 1fr; }
+  .jobs-section, .visual-section, .offer, .about-section, .chaos-tax, .cta-final, .ai-section, .triggers { padding: 4rem 1.5rem; }
+  .jobs, .tiers, .proof-cards, .gap-diagram, .filter-diagram, .chaos-cards, .ai-section { grid-template-columns: 1fr; }
   [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:1fr auto"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:auto 1fr auto"] { grid-template-columns: 1fr !important; }
@@ -491,28 +466,26 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
     <span style="display:none;">LEFT BRAIN CONSULTING</span>
   </a>
   <div class="nav-right">
-    <a href="#system" class="nav-link">How It Works</a>
+    <a href="#when" class="nav-link">When</a>
     <a href="#about-bio" class="nav-link">About</a>
-    <a href="#playbook" class="nav-link">Free Playbook</a>
     <a href="#book" class="nav-cta">Book a Call</a>
   </div>
 </nav>
 
 <main id="main-content">
-
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">The Filter — Left Brain Consulting</div>
-    <h1>Your leadership team will make hundreds of decisions this year.<br><span class="accent">Most of them won't hold.</span></h1>
-    <p style="font-size:1.05rem;line-height:1.7;color:var(--off-black);font-weight:500;margin-bottom:1.25rem;max-width:520px;">Without a shared system, urgency masquerades as importance — and there's no defensible way to say no.</p>
-    <p class="hero-sub" style="margin-bottom:1.25rem;">The Filter installs the decision layer above your existing tools — a scored intake, ranked priorities, and weekly cadence, in 4 weeks — so the important ones actually stick. Every initiative visible, owned, and seen through to delivery.</p>
-    <p class="hero-sub">Most companies can expect to reclaim $500K–$2M+ in annual execution capacity by killing the rework, duplicated efforts, and abandoned initiatives that quietly erode EBITDA.</p>
+    <div class="hero-eyebrow">For $3M–$50M founders &amp; CEOs</div>
+    <h1>The <span class="accent">decision layer</span> your operating system is missing.</h1>
+    <p style="font-size:1.15rem;line-height:1.5;color:var(--off-black);font-weight:600;margin-bottom:1.25rem;max-width:540px;">Know exactly what your company should be working on — in 14 days.</p>
+    <p class="hero-sub" style="margin-bottom:1.25rem;">Every initiative scored, ranked, and owned. <strong style="color:var(--maroon);">The decision arguments stop. The right work starts.</strong> Guaranteed or your money back.</p>
+    <p class="hero-sub">Most companies reclaim $500K–$2M+ in annual execution capacity by killing the rework, duplicated effort, and abandoned initiatives that quietly erode EBITDA.</p>
     <div class="hero-actions">
       <a href="#book" class="btn large">Book a Call</a>
-      <a href="#playbook" class="btn ghost large">Get the Free Playbook</a>
+      <a href="#gap" class="btn ghost large">See How It Works</a>
     </div>
-    <div class="hero-ai-pill">4-Week Setup · Money-Back Guarantee</div>
+    <div class="hero-ai-pill">14-Day Install · Money-Back Guarantee</div>
   </div>
 
   <div class="hero-right">
@@ -539,77 +512,8 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   </div>
 </section>
 
-<!-- ── TWO JOBS ── -->
-<section class="jobs-section" aria-labelledby="jobs-heading">
-  <div class="label">What Changes</div>
-  <h2 id="jobs-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;color:var(--off-black);margin-bottom:1.25rem;">The priority pile becomes <span style="color:var(--maroon);">one operating picture.</span></h2>
-  <p class="jobs-intro" style="max-width:none;">Four things become true the day it's installed. They stay true after I leave.</p>
- 
-  <div class="jobs" style="grid-template-columns:1fr 1fr;">
-    <div class="job-card">
-      <div class="job-label">Active Work</div>
-      <div class="job-title">See what's in flight.</div>
-      <p>Every project actually moving lives on one list — what it is, who owns it, where it stands. No more guessing what's underway or who's on the hook.</p>
-    </div>
-    <div class="job-card">
-      <div class="job-label">Pipeline</div>
-      <div class="job-title">See what's coming.</div>
-      <p>Every request and idea that hasn't started yet sits on that same list, up against the work already in motion. Nothing jumps the queue in a hallway conversation.</p>
-    </div>
-    <div class="job-card">
-      <div class="job-label">Decisions</div>
-      <div class="job-title">The best idea wins.</div>
-      <p>Everything scored on one scale, so what gets worked on first stops being about who pushed hardest in the room. It comes down to what moves the business — regardless of who submitted it.</p>
-    </div>
-    <div class="job-card">
-      <div class="job-label">Delivery</div>
-      <div class="job-title">Commitments hold.</div>
-      <p>Named owners, a standing cadence, and a locked change process carry work to done — and keep last week's decision from getting reopened on Wednesday.</p>
-    </div>
-  </div>
-
-  <p style="font-size:1.05rem;line-height:1.7;color:var(--off-black);font-weight:500;margin-top:2.5rem;">Strategy stops being a deck on a shelf. It becomes the list your team works from on Monday.</p>
-</section>
-
-<!-- ── CHAOS TAX ── -->
-<section class="chaos-tax" aria-labelledby="chaos-heading">
-  <div class="label">The Chaos Tax</div>
-  <h2 id="chaos-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1.25rem;">What this replaces<br><span style="color:var(--maroon);">for a $50M business.</span></h2>
-  <p class="chaos-intro">These numbers use conservative assumptions. The real cost is usually higher — because misaligned priorities don't just waste time, they delay the work that actually moves the number. <strong>Every quarter this runs unaddressed is a quarter of execution capacity you don't get back.</strong></p>
-
-  <div class="chaos-cards">
-    <div class="chaos-card">
-      <div class="chaos-card-num">$780K</div>
-      <div class="chaos-card-label">Leadership time spent on the wrong priorities</div>
-      <div class="chaos-card-math">6 leaders × $250K loaded cost × 20% of time on low-ranked work = $300K direct cost. Add 3 hrs/week per leader in meetings trying to agree on what the priorities are: another $480K annually.</div>
-    </div>
-    <div class="chaos-card">
-      <div class="chaos-card-num">$420K</div>
-      <div class="chaos-card-label">Sunk cost on initiatives abandoned mid-cycle</div>
-      <div class="chaos-card-math">Strategic initiatives abandoned mid-cycle because a new fire got treated as a priority before it was validated. The work already started. The team already context-switched. The outcome never came.</div>
-    </div>
-    <div class="chaos-card">
-      <div class="chaos-card-num">$650K</div>
-      <div class="chaos-card-label">High-value work delayed because authority beat merit</div>
-      <div class="chaos-card-math">High-value initiatives delayed because someone with more authority in the room won the argument. The important work waited. The urgent-but-lower-value work got resourced first. One deferred quarter on a high-impact initiative at $2.6M ARR impact = $650K of revenue that started later than it had to.</div>
-    </div>
-  </div>
-
-  <div class="chaos-total">
-    <div class="chaos-total-label">Estimated annual cost of misalignment</div>
-    <div class="chaos-total-value">$1.85M<sup style="font-size:1.4rem;color:var(--maroon);">+</sup></div>
-  </div>
-
-  <div style="margin-top:2rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:2rem 2.5rem;background:var(--off-black);border-left:4px solid var(--maroon);">
-    <p style="font-size:1rem;line-height:1.8;color:rgba(255,255,255,0.9);margin:0;"><strong style="color:var(--white);">The Filter costs $35,000 and installs in 4 weeks.</strong> The math isn't complicated. What's complicated is the first time a leadership team has to rank everything against everything else — and make real calls in the open, while the system is still earning its authority. I run those sessions. Someone with no stake in the outcome holds the process steady until your team can hold it themselves.</p>
-    <div style="text-align:center;flex-shrink:0;">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:var(--white);line-height:1;">$35K</div>
-      <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Remote · 4 Weeks</div>
-    </div>
-  </div>
-</section>
 <!-- ── THE GAP ── -->
-<section class="visual-section tinted" aria-labelledby="gap-heading">
+<section class="visual-section tinted" id="gap" aria-labelledby="gap-heading">
   <div class="vis-header">
     <div>
       <div class="label">The Problem — Visualized</div>
@@ -702,91 +606,128 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   </div>
 </section>
 
-<!-- ── HOW IT WORKS ── -->
-<section style="padding:6rem 4rem;border-bottom:1px solid var(--rule);background:var(--off);" id="system" aria-labelledby="system-heading">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem;">
-    <div>
-      <div class="label">The Filter · How It Works</div>
-      <h2 id="system-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.6rem);line-height:0.92;letter-spacing:0.01em;color:var(--off-black);margin-bottom:0;">
-        One intake. One list.<br><span style="color:var(--maroon);">One hour a week.</span>
-      </h2>
+<!-- ── TWO JOBS ── -->
+<section class="jobs-section" aria-labelledby="jobs-heading">
+  <div class="label">What Changes</div>
+  <h2 id="jobs-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;color:var(--off-black);margin-bottom:1.25rem;">The priority pile becomes <span style="color:var(--maroon);">one operating picture.</span></h2>
+  <p class="jobs-intro" style="max-width:none;">Four things become true the day it's installed. They stay true after I leave.</p>
+ 
+  <div class="jobs" style="grid-template-columns:1fr 1fr;">
+    <div class="job-card">
+      <div class="job-label">Active Work</div>
+      <div class="job-title">See what's in flight.</div>
+      <p>Every project actually moving lives on one list — what it is, who owns it, where it stands. No more guessing what's underway or who's on the hook.</p>
     </div>
-    <p style="font-size:0.98rem;line-height:1.85;color:var(--body);margin:0;">A quality input system — not a decision-making system. The Decision Authority still decides. Intuition and judgment still matter. The Filter ensures that when a decision gets made, it's made on structured, shared understanding — not a hallway conversation or whoever asked loudest.</p>
-  </div>
-
-  <!-- 4-stage flow -->
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1px;">
-    <div style="background:var(--white);padding:2.25rem 2rem;border-top:2px solid var(--maroon);">
-      <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.6rem;font-weight:600;">01 — Intake</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--off-black);margin-bottom:0.3rem;line-height:1;">Capture</div>
-      <div style="font-size:0.78rem;color:var(--subtle);line-height:1.5;margin-bottom:1.25rem;">Everything enters through one door. No side channels.</div>
-      <div style="display:flex;flex-direction:column;gap:0.5rem;">
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Standardized form — title, description, scoring rationale</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Active work and pipeline on the same list</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Incomplete submissions returned immediately</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Golden rule: if it's not on the list, it doesn't exist</div>
-      </div>
+    <div class="job-card">
+      <div class="job-label">Pipeline</div>
+      <div class="job-title">See what's coming.</div>
+      <p>Every request and idea that hasn't started yet sits on that same list, up against the work already in motion. Nothing jumps the queue in a hallway conversation.</p>
     </div>
-    <div style="background:var(--white);padding:2.25rem 2rem;border-top:2px solid var(--maroon);">
-      <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.6rem;font-weight:600;">02 — Prioritize</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--off-black);margin-bottom:0.3rem;line-height:1;">Score & Rank</div>
-      <div style="font-size:0.78rem;color:var(--subtle);line-height:1.5;margin-bottom:1.25rem;">Every idea evaluated against the same criteria.</div>
-      <div style="display:flex;flex-direction:column;gap:0.5rem;">
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Impact × Urgency × Audience weighted scoring</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Ranked list surfaces at the weekly forum</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Score is input, not verdict — leadership still decides</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Capacity check before anything activates</div>
-      </div>
+    <div class="job-card">
+      <div class="job-label">Decisions</div>
+      <div class="job-title">The best idea wins.</div>
+      <p>Everything scored on one scale, so what gets worked on first stops being about who pushed hardest in the room. It comes down to what moves the business — regardless of who submitted it.</p>
     </div>
-    <div style="background:var(--white);padding:2.25rem 2rem;border-top:2px solid var(--maroon);">
-      <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.6rem;font-weight:600;">03 — Activate</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--off-black);margin-bottom:0.3rem;line-height:1;">Own & Deliver</div>
-      <div style="font-size:0.78rem;color:var(--subtle);line-height:1.5;margin-bottom:1.25rem;">Only what the team can actually absorb gets started.</div>
-      <div style="display:flex;flex-direction:column;gap:0.5rem;">
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Named owner assigned at activation</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Definition of done agreed before work begins</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Weekly status: green / at risk / off track</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>WIP limits enforced — active list stays honest</div>
-      </div>
-    </div>
-    <div style="background:var(--white);padding:2.25rem 2rem;border-top:2px solid var(--maroon);">
-      <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.6rem;font-weight:600;">04 — Release</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--off-black);margin-bottom:0.3rem;line-height:1;">Land & Stick</div>
-      <div style="font-size:0.78rem;color:var(--subtle);line-height:1.5;margin-bottom:1.25rem;">Done isn't done until the organization has absorbed it.</div>
-      <div style="display:flex;flex-direction:column;gap:0.5rem;">
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Demo at monthly forum — show the work to the room</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Centralized communication through the cadence</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>ROI check — did the estimated value materialize?</div>
-        <div style="font-size:0.78rem;color:var(--body);line-height:1.5;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Change management built into the release step</div>
-      </div>
+    <div class="job-card">
+      <div class="job-label">Delivery</div>
+      <div class="job-title">Commitments hold.</div>
+      <p>Named owners, a standing cadence, and a locked change process carry work to done — and keep last week's decision from getting reopened on Wednesday.</p>
     </div>
   </div>
 
-  <!-- Infrastructure row -->
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-top:none;margin-bottom:2rem;">
-    <div style="background:var(--white);padding:1.75rem 2rem;">
-      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.4rem;">The Spreadsheet</div>
-      <div style="font-weight:600;font-size:0.9rem;color:var(--off-black);margin-bottom:0.5rem;">Single Source of Truth</div>
-      <div style="font-size:0.8rem;line-height:1.65;color:var(--body);">Intake tab, scoring model, exec dashboard, ROI calculator. One list. Everything active, scored, owned, and visible. Lives in your existing stack — no new tools.</div>
+  <div style="text-align:center;margin-top:2.75rem;padding-top:2.5rem;border-top:1px solid var(--rule);">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,3.8vw,3.2rem);letter-spacing:0.03em;line-height:1;color:var(--off-black);margin-bottom:0.6rem;">If it's not on the list, <span style="color:var(--maroon);">it doesn't exist.</span></div>
+    <div style="font-size:0.85rem;color:var(--subtle);max-width:520px;margin:0 auto;line-height:1.7;">The single rule that makes the whole system work. Everything visible, everything ranked, nothing routed around in a hallway conversation.</div>
+  </div>
+</section>
+
+<!-- ── WHEN THIS MAKES SENSE ── -->
+<section class="triggers" id="when" aria-labelledby="when-heading">
+  <div class="label">When This Makes Sense</div>
+  <h2 id="when-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;color:var(--off-black);margin-bottom:1.25rem;">The best time is early. <span style="color:var(--maroon);">The next best time is now.</span></h2>
+  <p class="trig-intro" style="font-size:1rem;line-height:1.8;color:var(--body);max-width:640px;margin-bottom:2.25rem;">Most teams call when one of these is true. If you recognize your company here, the install pays for itself fast.</p>
+
+  <div class="trig-grid">
+    <div class="trig">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <div class="t">After a Raise</div>
+      <p>Capital amplifies whatever system you have — or doesn't. Lay the foundation before you deploy the money, not after.</p>
     </div>
-    <div style="background:var(--white);padding:1.75rem 2rem;">
-      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.4rem;">The Decision Log</div>
-      <div style="font-weight:600;font-size:0.9rem;color:var(--off-black);margin-bottom:0.5rem;">Institutional Memory</div>
-      <div style="font-size:0.8rem;line-height:1.65;color:var(--body);">Every activation, deferral, and kill documented with reasoning. No silent decisions. The log is what makes the system defensible six months later — and in a data room.</div>
+    <div class="trig">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M14 7h4a3 3 0 0 1 3 3v0M10 17H6a3 3 0 0 1-3-3v0"/></svg>
+      <div class="t">After an Acquisition</div>
+      <p>Two backlogs, one team, zero shared list. The Filter is the layer that makes the integration value actually land.</p>
     </div>
-    <div style="background:var(--white);padding:1.75rem 2rem;">
-      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.4rem;">The Fast Track Protocol</div>
-      <div style="font-weight:600;font-size:0.9rem;color:var(--off-black);margin-bottom:0.5rem;">For Genuine Urgency</div>
-      <div style="font-size:0.8rem;line-height:1.65;color:var(--body);">Three-question test → 15-min Decision Authority sync → named displacement. Nothing bypasses the system. It moves through it faster.</div>
+    <div class="trig">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="t">Scaling Headcount</div>
+      <p>Every new hire multiplies the coordination cost. Set the system before the org chart outgrows the hallway.</p>
+    </div>
+    <div class="trig">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/></svg>
+      <div class="t">A New Leadership Seat</div>
+      <p>A new CEO or COO inheriting the pile. The fastest way to take command is one ranked, owned list.</p>
+    </div>
+    <div class="trig">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M16 2l4 4-4 4"/></svg>
+      <div class="t">When Priorities Are Noise</div>
+      <p>Everything's urgent, so nothing is. If your team can't name the top five without an argument, it's time.</p>
+    </div>
+    <div class="trig">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <div class="t">Before the Next Push</div>
+      <p>A product launch, a new market, a transformation. Don't run a sprint on a foundation that can't hold the load.</p>
     </div>
   </div>
 
-  <!-- Golden rule -->
-  <div style="text-align:center;padding-top:2.5rem;border-top:1px solid var(--rule);">
-    <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:0.03em;line-height:1;color:var(--off-black);margin-bottom:0.75rem;">If it's not on the list,<br><span style="color:var(--maroon);">it doesn't exist.</span></div>
-    <div style="font-size:0.82rem;color:var(--subtle);max-width:480px;margin:0 auto;line-height:1.7;">This is the single rule that makes everything else work. Every bypass is a test of whether the system is real or performative. Hold it every session, every cycle.</div>
+  <p class="trig-foot" style="margin-top:2rem;font-size:1rem;line-height:1.7;color:var(--off-black);font-weight:500;max-width:66ch;">Set the system early and execution runs clean. Set it late and you're rebaselining mid-climb — <span style="color:var(--maroon);">still worth it, just harder.</span></p>
+</section>
+
+<!-- ── CHAOS TAX ── -->
+<section class="chaos-tax" aria-labelledby="chaos-heading">
+  <div class="label">The Chaos Tax</div>
+  <h2 id="chaos-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1.25rem;">What this replaces <span style="color:var(--maroon);">for a $50M business.</span></h2>
+  <p class="chaos-intro">These numbers use conservative assumptions. The real cost is usually higher — because misaligned priorities don't just waste time, they delay the work that actually moves the number. <strong>Every quarter this runs unaddressed is a quarter of execution capacity you don't get back.</strong></p>
+
+  <div class="chaos-cards">
+    <div class="chaos-card">
+      <div class="chaos-card-num">$780K</div>
+      <div class="chaos-card-label">Leadership time spent on the wrong priorities</div>
+      <div class="chaos-card-math">6 leaders × $250K loaded cost × 20% of time on low-ranked work = $300K direct cost. Add 3 hrs/week per leader in meetings trying to agree on what the priorities are: another $480K annually.</div>
+    </div>
+    <div class="chaos-card">
+      <div class="chaos-card-num">$420K</div>
+      <div class="chaos-card-label">Sunk cost on initiatives abandoned mid-cycle</div>
+      <div class="chaos-card-math">Strategic initiatives abandoned mid-cycle because a new fire got treated as a priority before it was validated. The work already started. The team already context-switched. The outcome never came.</div>
+    </div>
+    <div class="chaos-card">
+      <div class="chaos-card-num">$650K</div>
+      <div class="chaos-card-label">High-value work delayed because authority beat merit</div>
+      <div class="chaos-card-math">High-value initiatives delayed because someone with more authority in the room won the argument. The important work waited. The urgent-but-lower-value work got resourced first. One deferred quarter on a high-impact initiative at $2.6M ARR impact = $650K of revenue that started later than it had to.</div>
+    </div>
   </div>
 
+  <div class="chaos-total">
+    <div class="chaos-total-label">Estimated annual cost of misalignment</div>
+    <div class="chaos-total-value" id="chaos-total">$1.85M<sup style="font-size:1.4rem;color:var(--maroon);">+</sup></div>
+  </div>
+
+  <div class="chaos-slider">
+    <div class="chaos-slider-top">
+      <span class="chaos-slider-label">Scale it to your revenue</span>
+      <span class="chaos-slider-read"><span id="rev-read">$50M</span> revenue &rarr; <strong id="tax-read">$1.85M+</strong> / yr</span>
+    </div>
+    <input type="range" id="rev-slider" min="3" max="100" step="1" value="50" aria-label="Annual revenue in millions of dollars">
+    <p class="chaos-slider-note">Directional only — scaled linearly from the model above. Every business is different; your numbers will differ, and we'll calculate them together on the call.</p>
+  </div>
+
+  <div style="margin-top:2rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:2rem 2.5rem;background:var(--off-black);border-left:4px solid var(--maroon);">
+    <p style="font-size:1rem;line-height:1.8;color:rgba(255,255,255,0.9);margin:0;"><strong style="color:var(--white);">The Filter solves this in 14 days — for a fixed fee that's a fraction of any single line above.</strong> The math isn't complicated. What's complicated is the first time a leadership team has to rank everything against everything else — and make real calls in the open, while the system is still earning its authority. I run those sessions. Someone with no stake in the outcome holds the process steady until your team can hold it themselves.</p>
+    <div style="text-align:center;flex-shrink:0;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:var(--white);line-height:1;">14 Days</div>
+      <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Rebaseline · Guaranteed</div>
+    </div>
+  </div>
 </section>
 
 <!-- ── CASE STUDIES ── -->
@@ -865,11 +806,11 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
     <!-- Panel 04 -->
     <div class="tl-panel" id="tl-04">
       <div class="tl-panel-inner">
-        <div class="tl-panel-meta">Productized · Installable in 4 Weeks · Runs Without Me</div>
+        <div class="tl-panel-meta">Productized · Installable in 14 Days · Runs Without Me</div>
         <h3>Three complex scaled environments. One system that kept working. So I built it to stand on its own.</h3>
         <p>A $200M transformation. A failed ERP pulled back from the brink at a Fortune 275. A 100m ARR business unit with four acquired companies that had never operated as one. Different industries, different stakes, different names for what I was running — but the same system underneath every time. One intake. One ranked list. Decisions made in the open. Change paced to what teams could actually absorb.</p>
         <p>By the last one, it wasn't something I improvised. It was something I could hand to a team and walk away from.</p>
-        <p>So I productized it — documented, installable in 4 weeks, built to run without me. No retainer. No new tools. About an hour a week to maintain. I called it The Filter.</p>
+        <p>So I productized it — documented, installable in 14 days, built to run without me. No retainer. No new tools. About an hour a week to maintain. I called it The Filter.</p>
         <p class="tl-closer">Now I install in weeks what took me years inside those rooms to learn to build by hand.</p>
       </div>
     </div>
@@ -994,225 +935,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
 
 </section>
 
-<section class="offer" id="offer" aria-labelledby="offer-heading">
-  <div class="label">How to Eliminate The Chaos Tax</div>
-
-  <!-- Main install card — horizontal compact -->
-  <div style="border:1px solid var(--rule);background:var(--white);margin-bottom:1.5rem;display:grid;grid-template-columns:auto 1fr auto;gap:0;align-items:stretch;">
-
-    <!-- Left: label + name -->
-    <div style="padding:2.5rem 3rem;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center;min-width:260px;">
-      <div class="tier-badge" style="background:var(--subtle);margin-bottom:1rem;display:inline-block;width:fit-content;">Stack Install</div>
-      <div class="tier-name" style="margin:0;line-height:1;">Install<br>The Filter.</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--maroon);line-height:1;margin-top:1rem;">$35,000</div>
-      <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--subtle);margin-top:0.25rem;">Remote · 4 Weeks</div>
-    </div>
-
-    <!-- Middle: copy -->
-    <div style="padding:2.5rem 3rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;">
-      <p style="font-size:0.95rem;line-height:1.7;color:var(--body);margin:0;">Roughly 10 hours of working sessions over 4 weeks.</p>
-      <p style="font-size:0.95rem;line-height:1.7;color:var(--body);margin:0;">The whole system fits in a spreadsheet your team already knows how to use and takes one hour a week to maintain — that's not a limitation, it's the reason it survives contact with a real organization.</p>
-      <div style="display:flex;flex-direction:column;gap:0.6rem;">
-        <div style="font-size:0.88rem;line-height:1.55;color:var(--body);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>Active work, the backlog, and every new request live on one list — so incoming demands face up against what's already in flight instead of jumping the queue.</div>
-        <div style="font-size:0.88rem;line-height:1.55;color:var(--body);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>By Week 2 the entire portfolio is captured, scored, and ranked — that cleanup alone usually pays for the engagement.</div>
-        <div style="font-size:0.88rem;line-height:1.55;color:var(--body);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--maroon);flex-shrink:0;">—</span>It sits above whatever you already run. Nothing to rip out, nothing to replace.</div>
-      </div>
-      <p style="font-size:0.95rem;line-height:1.7;color:var(--off-black);font-weight:500;margin:0;">By the time we're done, the system doesn't feel installed. It's just how you now operate. Because it works.</p>
-    </div>
-
-    <!-- Right: CTA -->
-    <div style="padding:2.5rem 3rem;border-left:1px solid var(--rule);display:flex;align-items:center;justify-content:center;">
-      <a href="#book" class="btn large" style="white-space:nowrap;">Let's Talk</a>
-    </div>
-
-  </div>
-
-  <!-- On-site + Guarantee side by side -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;align-items:stretch;">
-
-    <!-- On-site -->
-    <div style="background:#FDF5F7;border:1px solid rgba(139,26,46,0.2);padding:2rem 2.25rem;display:flex;gap:1.25rem;align-items:start;">
-      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:0.2rem;"><path d="M16 3L4 8V16C4 22.627 9.373 28 16 28C22.627 28 28 22.627 28 16V8L16 3Z" stroke="var(--maroon)" stroke-width="2" stroke-linejoin="round"/><path d="M11 16.5L14.5 20L21 13" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <div>
-        <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--maroon);margin-bottom:0.5rem;">On-Site Workshop Available</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--off-black);line-height:1;margin-bottom:0.5rem;">$42,000</div>
-        <p style="font-size:0.88rem;line-height:1.75;color:var(--body);margin:0;">For teams already operating in person — we come to you to run the Week 2 portfolio review and decision workshop live. Travel included. Everything else runs the same.</p>
-      </div>
-    </div>
-
-    <!-- Guarantee -->
-    <div style="background:var(--maroon-deep);border:1px solid var(--maroon);padding:2rem 2.25rem;">
-      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#F9A8B8;margin-bottom:0.5rem;">The Guarantee</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.02em;line-height:1.15;color:var(--white);margin-bottom:0.75rem;">A fully re-baselined portfolio by Week 2 — or your money back.</div>
-      <p style="font-size:0.92rem;line-height:1.7;color:rgba(255,255,255,0.72);margin:0;">Every active improvement project — plus the queued backlog — captured, scored, and ranked, with your leadership aligned on the list. The low-impact work gets set down so your team's capacity flows to what actually moves the business. That clarity alone is worth the engagement. If we don't get there, you get a full refund. The only requirement is that your team shows up.</p>
-    </div>
-
-  </div>
-
-  <!-- Accordion FAQ -->
-  <div style="margin-top:3rem;border-top:1px solid var(--rule);padding-top:3rem;">
-    <div class="label">Common Questions</div>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          We don't have time for this.
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-a">
-          <p>That's the symptom. When everything is a priority, the loudest voice wins and nothing moves. ~10 hours over 4 weeks is the full cost of fixing that permanently.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          We already have a process.
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-a">
-          <p>Every team does — in theory. The question is whether it produces decisions or produces meetings. If your team agrees on the strategy but still can't agree on what gets worked on first, the process isn't working.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Why not just do it ourselves?
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-a">
-          <p>The playbook is free and it will work. What's complicated is getting a leadership team to agree on what's first — and then hold that agreement when the next urgent thing walks in the door. That takes someone who has no stake in the outcome. That's what the engagement is.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          What happens when you leave?
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-a">
-          <p>That's the whole design. A trained internal operator runs it from Week 5 — and once the system is in place, maintaining it is light work. The system, rules, and cadence stay. I exit. The capability doesn't.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          How much of our team's time does this actually take?
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-a">
-          <p>About 10 hours over the 4-week engagement. One kickoff session, some homework, one workshop, one business as usual cadence, one monthly review. In between, your team uses The Filter in the conversations they're already having. These 10 hours usually replace other meetings with similar agendas. The system runs inside the work, not on top of it.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Do we need to change our tools or tech stack?
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-a">
-          <p>No. The Filter is built inside your existing stack wherever possible — no new software, no new logins, no new overhead. If you already live in Google Sheets, MS Office, or pretty much any project management tool, that's where it lives. The system is the structure, not the software it sits on top of.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="tiers-note">
-    <p>Built inside your existing stack if we can. No new tools. No new logins. No new overhead (if anything, less overhead).</p>
-    <div class="tiers-cta">
-      <a href="#book" class="btn large">Book 30 Minutes</a>
-      <a href="#playbook" class="btn ghost large">Get the Free Playbook</a>
-    </div>
-  </div>
-
-  <style>
-  /* ── FAQ ACCORDION ── */
-  .faq-list { border: 1px solid var(--rule); }
-  .faq-item { border-bottom: 1px solid var(--rule); }
-  .faq-item:last-child { border-bottom: none; }
-  .faq-q {
-    width: 100%; background: var(--white); border: none; cursor: pointer;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.5rem 2rem; text-align: left; gap: 1.5rem;
-    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
-    color: var(--off-black); transition: background 0.15s;
-  }
-  .faq-q:hover { background: var(--off); }
-  .faq-q[aria-expanded="true"] { background: var(--off); color: var(--maroon); }
-  .faq-icon {
-    flex-shrink: 0; width: 18px; height: 18px; position: relative;
-    transition: transform 0.25s ease;
-  }
-  .faq-icon::before,
-  .faq-icon::after {
-    content: ''; position: absolute; background: var(--maroon);
-    border-radius: 1px; transition: transform 0.25s ease, opacity 0.25s ease;
-  }
-  .faq-icon::before { width: 2px; height: 18px; left: 8px; top: 0; }
-  .faq-icon::after  { width: 18px; height: 2px; top: 8px; left: 0; }
-  .faq-q[aria-expanded="true"] .faq-icon::before { transform: rotate(90deg); opacity: 0; }
-  .faq-a {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.25s ease;
-    padding: 0 2rem;
-  }
-  .faq-a.open { max-height: 400px; padding: 0 2rem 1.5rem; }
-  .faq-a p { font-size: 0.9rem; line-height: 1.8; color: var(--body); }
-
-  /* ── GUARANTEE ── */
-  .guarantee-block {
-    margin-top: 2.5rem;
-    border: 1.5px solid var(--maroon);
-    background: #FDF5F7;
-  }
-  .guarantee-inner {
-    padding: 2.25rem 2.5rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.75rem;
-    align-items: start;
-  }
-  .guarantee-icon { padding-top: 0.2rem; }
-  .guarantee-label {
-    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--maroon); margin-bottom: 0.4rem;
-  }
-  .guarantee-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem; letter-spacing: 0.03em; line-height: 1.1;
-    color: var(--off-black); margin-bottom: 0.75rem;
-  }
-  .guarantee-copy {
-    font-size: 0.88rem; line-height: 1.8; color: var(--body);
-  }
-  @media (max-width: 900px) {
-    .faq-q { padding: 1.25rem 1.25rem; }
-    .faq-a { padding: 0 1.25rem; }
-    .faq-a.open { padding: 0 1.25rem 1.25rem; }
-    .guarantee-inner { grid-template-columns: 1fr; gap: 1rem; }
-    .guarantee-icon { display: none; }
-  }
-  </style>
-
-  <script>
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      // close all
-      document.querySelectorAll('.faq-q').forEach(b => {
-        b.setAttribute('aria-expanded', 'false');
-        b.nextElementSibling.classList.remove('open');
-      });
-      // open this one if it was closed
-      if (!isOpen) {
-        btn.setAttribute('aria-expanded', 'true');
-        btn.nextElementSibling.classList.add('open');
-      }
-    });
-  });
-  </script>
-</section>
-
 <!-- ── ABOUT ── -->
 <section class="about-section" id="about-bio" aria-labelledby="about-heading">
   <div class="about-row">
@@ -1243,113 +965,6 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   </div>
 </section>
 
-<!-- ── FREE PLAYBOOK ── -->
-<section class="playbook-section" id="playbook" aria-labelledby="playbook-heading">
-  <div class="playbook-inner">
-    <div class="playbook-left">
-      <span class="kicker">Free — No catch</span>
-      <div class="label light">The Playbook</div>
-      <h2 id="playbook-heading">The full system.<br><span class="accent">On us.</span></h2>
-      <p>I give you the whole system upfront — free, no strings. It's complete and it will work.</p>
-      <p>There's a difference between buying the book and spending a few hours with the author. Having someone explain it, facilitate the sessions, support the team in between, and enforce new standards from a neutral position — that's what the engagement is.</p>
-      <div class="playbook-contents">
-        <div class="playbook-item">The intake system, scoring model, and full rules document</div>
-        <div class="playbook-item">The operating cadence — weekly, monthly, quarterly</div>
-        <div class="playbook-item">Setup guide — six weeks, step by step</div>
-        <div class="playbook-item">The pre-engagement briefing — what you're actually signing up for</div>
-        <div class="playbook-item">The Filter spreadsheet — intake, scoring, dashboard, ROI</div>
-      </div>
-    </div>
-    <div class="playbook-right">
-      <div class="form-title" id="playbook-form-title">Get the Playbook</div>
-      <div class="form-sub" id="playbook-form-sub">Free. Instant access.</div>
-      <div id="playbook-form">
-        <div class="form-field">
-          <label for="pb-first-name">First name</label>
-          <input id="pb-first-name" type="text" placeholder="Nathan" autocomplete="given-name" aria-label="First name">
-        </div>
-        <div class="form-field">
-          <label for="pb-email">Work email</label>
-          <input id="pb-email" type="email" placeholder="nathan@company.com" autocomplete="email" aria-label="Work email">
-        </div>
-        <div class="form-field">
-          <label for="pb-company-size">Company size</label>
-          <select id="pb-company-size" aria-label="Company size">
-            <option value="" disabled selected>Select one</option>
-            <option>Under 20 people</option>
-            <option>20–50 people</option>
-            <option>50–150 people</option>
-            <option>150–500 people</option>
-            <option>500+ people</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label for="pb-challenge">What's the main problem you're solving?</label>
-          <select id="pb-challenge" aria-label="Primary challenge">
-            <option value="" disabled selected>Select one</option>
-            <option>Too many priorities, not enough clarity</option>
-            <option>AI initiatives not moving</option>
-            <option>Leadership can't agree on what to work on</option>
-            <option>Work starts and never finishes</option>
-            <option>Just exploring</option>
-          </select>
-        </div>
-        <div id="pb-error" style="display:none;font-size:0.75rem;color:#F87171;margin-bottom:0.75rem;"></div>
-        <button id="pb-submit" class="form-submit" type="button">Send Me the Playbook</button>
-        <div class="form-disclaimer">No spam. Just the playbook.</div>
-      </div>
-      <div id="playbook-success" style="display:none;padding:1.5rem 0;">
-        <p style="font-size:1rem;font-weight:600;color:#FFFFFF;margin:0 0 0.5rem;">Check your inbox.</p>
-        <p style="font-size:0.88rem;color:rgba(255,255,255,0.87);margin:0;">The playbook is on its way.</p>
-      </div>
-    </div>
-
-    <script>
-      document.getElementById('pb-submit').addEventListener('click', async function () {
-        const btn = this;
-        const firstName = document.getElementById('pb-first-name').value.trim();
-        const email = document.getElementById('pb-email').value.trim();
-        const companySize = document.getElementById('pb-company-size').value;
-        const challenge = document.getElementById('pb-challenge').value;
-        const errorEl = document.getElementById('pb-error');
-
-        errorEl.style.display = 'none';
-
-        if (!firstName) { errorEl.textContent = 'Please enter your first name.'; errorEl.style.display = 'block'; return; }
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.style.display = 'block'; return; }
-
-        btn.textContent = 'Sending…';
-        btn.disabled = true;
-
-        try {
-          const res = await fetch('/api/subscribe-playbook', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ firstName, email, companySize, challenge }),
-          });
-
-          if (res.ok) {
-            document.getElementById('playbook-form').style.display = 'none';
-            document.getElementById('playbook-form-sub').style.display = 'none';
-            document.getElementById('playbook-form-title').textContent = 'You\'re in.';
-            document.getElementById('playbook-success').style.display = 'block';
-          } else {
-            errorEl.textContent = 'Something went wrong. Please try again.';
-            errorEl.style.display = 'block';
-            btn.textContent = 'Send Me the Playbook';
-            btn.disabled = false;
-          }
-        } catch (e) {
-          errorEl.textContent = 'Network error. Please try again.';
-          errorEl.style.display = 'block';
-          btn.textContent = 'Send Me the Playbook';
-          btn.disabled = false;
-        }
-      });
-    </script>
-  </div>
-</section>
-
 <!-- ── FINAL CTA ── -->
 <section class="cta-final" id="book">
   <div style="position:relative;z-index:1;">
@@ -1369,5 +984,26 @@ footer { padding: 2rem 4rem; display: flex; justify-content: space-between; alig
   <div class="footer-copy">©Left Brain Consulting LLC · Based in Colorado</div>
   <a href="mailto:Nathan@leftbrainconsult.com" class="footer-link">Nathan@leftbrainconsult.com</a>
 </footer>
+<script>
+(function(){
+  var slider = document.getElementById('rev-slider');
+  if(!slider) return;
+  var revRead = document.getElementById('rev-read'),
+      taxRead = document.getElementById('tax-read'),
+      total   = document.getElementById('chaos-total');
+  function fmt(k){
+    if(k>=1000){var m=k/1000;var s=(m>=10)?String(Math.round(m)):(Math.round(m*100)/100).toFixed(2).replace(/\.?0+$/,'');return '$'+s+'M';}
+    return '$'+Math.round(k/10)*10+'K';
+  }
+  function update(){
+    var rev=parseInt(slider.value,10), scale=rev/50;
+    revRead.textContent='$'+rev+'M';
+    taxRead.textContent=fmt(1850*scale)+'+';
+    total.innerHTML=fmt(1850*scale)+'<sup style="font-size:1.4rem;color:var(--maroon);">+</sup>';
+  }
+  slider.addEventListener('input',update);
+  update();
+})();
+</script>
 </body>
 </html>
