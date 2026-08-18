@@ -186,7 +186,7 @@ b,strong{font-weight:650;color:var(--ink)}
 
 /* ══ ORIGIN ══ */
 .origin{display:grid;grid-template-columns:250px 1fr;gap:3.2rem;align-items:start;margin-top:2.4rem}
-.shot img{width:100%;aspect-ratio:5/6;object-fit:cover;border:1px solid var(--ink);box-shadow:var(--sh-3);filter:grayscale(100%) contrast(1.04)}
+.shot img{width:100%;aspect-ratio:5/6;object-fit:cover;border:1px solid var(--ink);box-shadow:var(--sh-3);filter:none}
 .shot .fb{width:100%;aspect-ratio:5/6;border:1px solid var(--ink);background:var(--mar);display:flex;align-items:center;
   justify-content:center;font-family:var(--m);font-size:2.6rem;font-weight:600;color:#fff}
 .sig{font-family:var(--m);font-size:.74rem;line-height:1.7;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);
@@ -311,6 +311,23 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
 .chnote p{font-size:1.04rem;line-height:1.75;color:var(--text);max-width:64ch}
 @media(max-width:900px){.ch{grid-template-columns:1fr;gap:.45rem;padding:1.1rem 0}.chnote{padding:1.3rem}}
 
+
+/* who takes the heat */
+.heat{margin-top:2.3rem;padding:2.1rem 2.3rem;background:var(--ink);color:#fff;box-shadow:var(--sh-2)}
+.heat .big{font-size:clamp(1.28rem,2.5vw,1.72rem);font-weight:800;letter-spacing:-.032em;line-height:1.28;max-width:34ch;color:#fff}
+.heat p{color:rgba(255,255,255,.85);margin-top:1rem;max-width:62ch;font-size:1.02rem;line-height:1.74}
+.heat b{color:#fff;font-weight:650}
+.absorb{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.ab{padding:1.5rem 1.5rem;background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-1)}
+.ab .k{font-family:var(--m);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--mar);margin-bottom:.7rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule-l)}
+.ab p{font-size:.95rem;line-height:1.68;color:var(--mute)}
+.ab b{color:var(--ink);font-weight:650}
+.kicker{margin-top:1.5rem;padding:1.7rem 1.9rem;background:var(--mar-pale);border:1px solid var(--mar);box-shadow:var(--sh-1)}
+.kicker p{font-size:1.04rem;line-height:1.76;color:var(--text);max-width:64ch}
+.kicker b{color:var(--mar-d);font-weight:700}
+@media(max-width:900px){.heat,.kicker{padding:1.35rem}.absorb{grid-template-columns:1fr}}
+
 /* day15 */
 .d15{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.4rem}
 .dcard{padding:1.7rem 1.65rem;background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-1)}
@@ -346,8 +363,8 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
   <a class="bd" href="/">Left Brain <i>/ The Filter</i></a>
   <div class="nlinks">
     <a class="nl" href="#chair">What it looks like</a>
+    <a class="nl" href="#heat">Who takes the heat</a>
     <a class="nl" href="#day15">What changes</a>
-    <a class="nl" href="/eos">Running EOS?</a>
     <a class="nc" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
   </div>
 </div></nav>
@@ -526,7 +543,7 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
       <div class="land">
         <div class="w2">Complements</div>
         <h3>EOS or any operating system</h3>
-        <p>EOS decides how you run a quarter. It doesn't decide what belongs in it. <b>The Filter picks the Rocks, EOS runs them.</b> A team already running a V/TO and a real Level 10 rhythm is the most seamless condition available for install, because the discipline is already there. <a href="/eos">Longer version here.</a></p>
+        <p>EOS decides how you run a quarter. It doesn't decide what belongs in it. <b>The Filter picks the Rocks, EOS runs them.</b> A team already running a V/TO and a real Level 10 rhythm is the most seamless condition available for install, because the discipline is already there.</p>
       </div>
     </div>
 
@@ -537,9 +554,42 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
   </div>
 </section>
 
+<!-- HEAT -->
+<section class="s center" id="heat">
+  <div class="w" data-n="05">
+    <div class="badge">The part nobody warns you about</div>
+    <h2>Somebody has to say no. For two weeks, that's me.</h2>
+
+    <div class="heat">
+      <div class="big">Installing a decision layer means work gets stopped.</div>
+      <p>Not deferred. Stopped, in a room, in front of the person who asked for it. <b>That is the actual reason most companies never install one</b> — not that the idea is hard, but that nobody wants to be the one holding the knife.</p>
+      <p>Normally that job lands on you, or on a COO you hand it to. Either way somebody on your leadership team spends relationship capital they will need for the rest of the year, and they spend it on your behalf.</p>
+    </div>
+
+    <div class="absorb">
+      <div class="ab">
+        <div class="k">Scoring</div>
+        <p>I sit with each team on their own. <b>Nobody has to defend their number to a peer</b> across a table.</p>
+      </div>
+      <div class="ab">
+        <div class="k">Pushback</div>
+        <p>When a score is inflated, <b>I'm the one who says so.</b> Not your COO, and not the person who has to work with them Monday.</p>
+      </div>
+      <div class="ab">
+        <div class="k">The room</div>
+        <p>When something gets cancelled, <b>I'm the one standing there</b> when it happens, and the comparison is on the wall.</p>
+      </div>
+    </div>
+
+    <div class="kicker">
+      <p>You endorse it at kickoff and you ratify it at the workshop. That is the entire ask. Everything between those two moments is mine to carry, and on day 15 <b>the person who took your VP's project away doesn't work here anymore.</b></p>
+    </div>
+  </div>
+</section>
+
 <!-- DAY 15 -->
 <section class="s" id="day15">
-  <div class="w" data-n="05">
+  <div class="w" data-n="06">
     <div class="badge">What changes</div>
     <h2>What your week looks like on day 15.</h2>
 
@@ -578,7 +628,7 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
 
 <!-- ORIGIN -->
 <section class="s" id="origin">
-  <div class="w" data-n="06">
+  <div class="w" data-n="07">
     <div class="badge"><span class="dot"></span>Where it came from</div>
     <h2>This didn't start as a consulting product.</h2>
 
@@ -610,7 +660,7 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
 
 <!-- GUARANTEE -->
 <section class="s">
-  <div class="w" data-n="07">
+  <div class="w" data-n="08">
     <div class="badge"><span class="dot"></span>The guarantee</div>
     <h2>All three, in 14 days, or you get the whole fee back.</h2>
 
@@ -638,7 +688,7 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
 
 <!-- FAQ -->
 <section class="s">
-  <div class="w" data-n="08">
+  <div class="w" data-n="09">
     <div class="badge"><span class="dot"></span>The questions I get every time</div>
     <h2>Six things people ask before they book.</h2>
     <p class="lede">Tap any of them.</p>
@@ -646,7 +696,7 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
     <div class="faq">
       <details class="q" open>
         <summary>We already run EOS. Does this replace it?<span class="pm" aria-hidden="true"></span></summary>
-        <div class="ans"><p>No. It sits on top of it, and EOS companies are the easiest installs I do. The three gaps it fills are all things EOS says about itself: Rocks are progress and not maintenance, so standing load never gets counted. The 80% completion target tells you the quarter was overloaded after it already was. And force-ranking a fourth Rock is a conversation, so it goes to whoever argues best. <a href="/eos">Full breakdown here.</a></p></div>
+        <div class="ans"><p>No. It sits on top of it, and EOS companies are the easiest installs I do. The three gaps it fills are all things EOS says about itself: Rocks are progress and not maintenance, so standing load never gets counted. The 80% completion target tells you the quarter was overloaded after it already was. And force-ranking a fourth Rock is a conversation, so it goes to whoever argues best.</p></div>
       </details>
       <details class="q">
         <summary>Isn't this just a spreadsheet?<span class="pm" aria-hidden="true"></span></summary>
