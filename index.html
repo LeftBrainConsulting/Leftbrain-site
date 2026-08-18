@@ -195,6 +195,8 @@ b,strong{font-weight:650;color:var(--ink)}
 .sig{font-family:var(--m);font-size:.74rem;line-height:1.7;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);
   margin-top:1.2rem;padding-top:1rem;border-top:2px solid var(--ink)}
 .sig b{display:block;color:var(--ink);font-size:.75rem;letter-spacing:.09em;margin-bottom:.3rem}
+.siglogo{width:100%;max-width:150px;height:auto;margin-top:1.9rem;padding-top:1.5rem;
+  border-top:1px solid var(--rule);opacity:.9}
 .story p{font-size:1.03rem;line-height:1.82;color:var(--text);margin-bottom:1.15rem;max-width:63ch}
 .story .lastline{font-size:1.22rem;font-weight:700;letter-spacing:-.026em;line-height:1.4;color:var(--mar-d);
   margin:1.4rem 0 0;padding-top:1.2rem;border-top:2px solid var(--ink)}
@@ -205,6 +207,7 @@ b,strong{font-weight:650;color:var(--ink)}
 .strip b{display:block;font-family:var(--m);font-size:1.45rem;font-weight:600;letter-spacing:-.025em;color:var(--ink);line-height:1}
 .strip span{display:block;font-size:.85rem;line-height:1.5;color:var(--mute);margin-top:.55rem}
 @media(max-width:900px){.origin{grid-template-columns:1fr;gap:1.8rem}.shot{max-width:220px}
+  .siglogo{max-width:120px;margin-top:1.4rem;padding-top:1.1rem}
   .strip{grid-template-columns:1fr 1fr}.strip>div{padding:1rem .9rem 1rem 0;border-bottom:1px solid var(--rule)}
   .strip>div:nth-child(2n){border-right:none}.strip>div:not(:first-child){padding-left:0}.strip>div:nth-child(2n){padding-left:.9rem}}
 
@@ -639,6 +642,7 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
       <div class="shot">
         <img src="NHeadshot.jpeg" alt="Nathan Harris" onerror="this.outerHTML='&lt;div class=\'fb\'&gt;NH&lt;/div&gt;'">
         <div class="sig"><b>Nathan Harris</b>Founder &amp; Principal<br>Left Brain Consulting</div>
+        <img class="siglogo" src="/logo.svg" alt="" onerror="this.style.display='none'">
       </div>
 
       <div class="story">
@@ -682,7 +686,7 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
         </div>
         <div class="gs">
           <div class="h">What I need from you</div>
-          <p><b>Your leadership team in a room, twice. 1hr & 3hr.</b> If your calendar can't hold that in the next two weeks, then the symptom of not having The Filter running is showing.</p>
+          <p><b>Your leadership team in a room, twice.</b> If your calendar can't hold that in the next two weeks, I'll say so before we start instead of after.</p>
         </div>
       </div>
     </div>
@@ -692,18 +696,18 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
 <!-- FAQ -->
 <section class="s">
   <div class="w" data-n="09">
-    <div class="badge"><span class="dot"></span>The questions I regularly get</div>
+    <div class="badge"><span class="dot"></span>The questions I get every time</div>
     <h2>Six things people ask before they book.</h2>
     <p class="lede">Tap any of them.</p>
 
     <div class="faq">
       <details class="q" open>
         <summary>We already run EOS. Does this replace it?<span class="pm" aria-hidden="true"></span></summary>
-        <div class="ans"><p>No. It sits on top of it, and EOS companies are the easiest installs I can do. The three gaps it fills are all things EOS says about itself: Rocks are progress and not maintenance, so standing load never gets counted. The 80% completion target tells you the quarter was overloaded after it already was. And force-ranking a fourth Rock is a conversation, so it goes to whoever argues best.</p></div>
+        <div class="ans"><p>No. It sits on top of it, and EOS companies are the easiest installs I do. The three gaps it fills are all things EOS says about itself: Rocks are progress and not maintenance, so standing load never gets counted. The 80% completion target tells you the quarter was overloaded after it already was. And force-ranking a fourth Rock is a conversation, so it goes to whoever argues best.</p></div>
       </details>
       <details class="q">
-        <summary>Isn't this just basically a spreadsheet?<span class="pm" aria-hidden="true"></span></summary>
-        <div class="ans"><p>The spreadsheet is free, it's at the bottom of this page, take it and run it yourself. <b>What you're paying for is somebody who can get 6 different departments to score honestly and a leadership team to kill something in front of each other.</b> That part doesn't come in a file.</p></div>
+        <summary>Isn't this just a spreadsheet?<span class="pm" aria-hidden="true"></span></summary>
+        <div class="ans"><p>The spreadsheet is free, it's at the bottom of this page, take it and run it yourself. <b>What you're paying for is somebody who can get twelve teams to score honestly and a leadership team to kill something in front of each other.</b> That part doesn't come in a file.</p></div>
       </details>
       <details class="q">
         <summary>14 days seems fast for something this big.<span class="pm" aria-hidden="true"></span></summary>
@@ -735,7 +739,7 @@ footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
 
       <div class="ob">
         <div class="h">Thirty minutes · No questionnaire · Nothing to install</div>
-        <div class="b2">Bring some things your team has friction with deciding on what to do next. We'll score them live together and you'll leave with a ranked view of the conflict, whether or not we ever work together.</div>
+        <div class="b2">Bring six things your team is fighting over. We'll score them live and you'll leave with a ranked view of the conflict, whether or not we ever work together.</div>
       </div>
 
       <div class="acts">
