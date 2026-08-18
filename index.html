@@ -2,696 +2,716 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Filter — A Decision System for Growing Companies | Left Brain Consulting</title>
-<meta name="description" content="The Filter installs the decision layer above your existing tools — scored intake, ranked priorities, and a weekly cadence — installed in 14 days. Decide what to work on, protect EBITDA, and make it stick.">
-<meta property="og:title" content="The Filter — A Decision System for Growing Companies">
-<meta property="og:description" content="Install the decision layer above your existing tools in 14 days. Decide what to work on first, protect EBITDA, and make the important work actually stick.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://leftbrainconsult.com">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Filter — A Decision System for Growing Companies">
-<meta name="twitter:description" content="Install the decision layer above your existing tools in 14 days. Decide what to work on first, protect EBITDA, and make the important work actually stick.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Filter — Everything changing your business, on one list, in 14 days</title>
+<meta name="description" content="Business as usual keeps the lights on. The Filter decides whether the house gets another room or an upgraded kitchen first. 14 days, two meetings from you, or you don't pay.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="logo.svg">
-<script defer src="/_vercel/insights/script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --maroon: #8B1A2E;
-  --maroon-dark: #701525;
-  --maroon-deep: #4A0D1A;
-  --maroon-glow: rgba(139,26,46,0.15);
-  --black: #0D0D0D;
-  --off-black: #111111;
-  --body: #1F2937;
-  --subtle: #4B5563;
-  --rule: #E5E7EB;
-  --rule-dark: rgba(255,255,255,0.08);
-  --off: #F8F7F5;
-  --cream: #FAF9F7;
-  --white: #FFFFFF;
-  --green: #16A34A;
-  --green-light: rgba(22,163,74,0.1);
-  --indigo: #4F46E5;
-  --indigo-light: #EEF2FF;
-  --amber: #D97706;
+:root{
+  /* WCAG-checked against #F7F6F3 paper */
+  --paper:#F7F6F3;      /* page */
+  --white:#FFFFFF;      /* level-1 card */
+  --sunk:#EDEBE5;       /* level-2 aside */
+  --ink:#14161A;        /* 16.8:1  AAA */
+  --text:#2B2E34;       /* 12.6:1  AAA */
+  --mute:#4F5259;       /*  7.2:1  AAA */
+  --soft:#5D6067;       /*  5.0:1  AA  */
+  --rule:#DCD8D0; --rule-l:#E9E6DF; --rule-d:rgba(255,255,255,.18);
+  --mar:#8B1A2E;        /*  8.5:1  AAA */
+  --mar-d:#6E1424; --mar-pale:#F7EEEF; --mar-tint:#EFE0E2;
+  --ok:#1B6E37; --warn:#8F5209;
+  --sh-1:0 1px 2px rgba(20,22,26,.04), 0 2px 8px rgba(20,22,26,.03);
+  --sh-2:0 2px 4px rgba(20,22,26,.05), 0 12px 28px -12px rgba(20,22,26,.18);
+  --sh-3:0 4px 10px rgba(20,22,26,.06), 0 28px 56px -28px rgba(20,22,26,.34);
+  --m:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+  --rail:66px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--text);font-family:'Archivo',system-ui,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.038'/%3E%3C/svg%3E")}
+a{color:inherit}img{max-width:100%;display:block}
+.skip{position:absolute;left:1rem;top:-9rem;background:var(--mar);color:#fff;padding:.65rem 1.1rem;z-index:200;text-decoration:none;font-weight:600}
+.skip:focus{top:1rem}
+:focus-visible{outline:2px solid var(--mar);outline-offset:3px}
+::selection{background:var(--mar-tint);color:var(--ink)}
+
+.w{max-width:1180px;margin:0 auto;padding:0 3rem;position:relative;z-index:1}
+@media(max-width:900px){.w{padding:0 1.25rem}}
+
+/* ══ TYPE SCALE ══ */
+h1{font-size:clamp(2.45rem,5.5vw,4.2rem);font-weight:900;letter-spacing:-.052em;line-height:.98;color:var(--ink)}
+h1 em{font-style:normal;font-weight:900;color:var(--mar)}
+h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.042em;line-height:1.06;color:var(--ink);max-width:20ch}
+h3{font-size:1.06rem;font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--ink)}
+.lede{font-size:1.11rem;line-height:1.66;color:var(--mute);max-width:56ch;margin-top:1.1rem}
+p{font-size:.98rem;line-height:1.74}
+b,strong{font-weight:650;color:var(--ink)}
+.badge{font-family:var(--m);font-size:.75rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--soft);margin-bottom:1.15rem;display:block}
+.badge .dot{display:none}
+
+/* ══ NUMBERED RAIL ══ */
+.s .w[data-n]{display:grid;grid-template-columns:var(--rail) 1fr;column-gap:1.75rem}
+.s .w[data-n]>*{grid-column:2}
+.s .w[data-n]::before{content:attr(data-n);grid-column:1;grid-row:1;align-self:start;
+  font-family:var(--m);font-size:.85rem;font-weight:600;letter-spacing:.08em;color:var(--mar);
+  border-top:2px solid var(--mar);padding-top:.6rem}
+@media(max-width:900px){
+  .s .w[data-n]{display:block}
+  .s .w[data-n]::before{display:inline-block;margin-bottom:1.1rem}
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--white);
-  color: var(--off-black);
-  overflow-x: hidden;
-  max-width: 1400px;
-  margin: 0 auto;
-}
+/* ══ NAV ══ */
+.nav{position:sticky;top:0;z-index:100;background:rgba(247,246,243,.93);backdrop-filter:blur(14px) saturate(1.4);
+  border-bottom:1px solid var(--rule)}
+.navin{max-width:1180px;margin:0 auto;padding:.9rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.bd{font-family:var(--m);font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.bd i{font-style:normal;color:var(--mar)}
+.nlinks{display:flex;align-items:center;gap:1.7rem}
+.nl{font-family:var(--m);font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);text-decoration:none;
+  padding-bottom:2px;border-bottom:1px solid transparent;transition:.15s}
+.nl:hover{color:var(--ink);border-bottom-color:var(--mar)}
+.nc{font-family:var(--m);font-size:.73rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:.66rem 1.35rem;background:var(--mar);color:#fff;text-decoration:none;border:1px solid var(--mar);transition:.15s}
+.nc:hover{background:var(--mar-d);border-color:var(--mar-d)}
+@media(max-width:900px){.navin{padding:.75rem 1.25rem}.nlinks .nl{display:none}}
 
-/* ── SKIP + FOCUS ── */
-.skip-link { position: absolute; top: -100%; left: 1rem; background: var(--maroon); color: #fff; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 600; text-decoration: none; z-index: 1000; }
-.skip-link:focus { top: 1rem; }
-:focus-visible { outline: 3px solid var(--maroon); outline-offset: 3px; }
+/* ══ BUTTONS ══ */
+.btn{display:inline-flex;align-items:center;font-family:var(--m);font-size:.77rem;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;padding:1.05rem 2.1rem;background:var(--mar);color:#fff;text-decoration:none;
+  border:1px solid var(--mar);transition:.15s;box-shadow:var(--sh-1)}
+.btn:hover{background:var(--mar-d);border-color:var(--mar-d);box-shadow:var(--sh-2)}
+.btn.o{background:transparent;color:var(--mar);box-shadow:none}
+.btn.o:hover{background:var(--mar);color:#fff}
+.acts{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:2.1rem}
 
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 50%; transform: translateX(-50%);
-  width: 100%; max-width: 1400px; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1.1rem 4rem;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--rule);
-}
-.nav-logo {
-  font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem;
-  letter-spacing: 0.08em; color: var(--off-black); text-decoration: none;
-  display: flex; align-items: center; gap: 0.6rem;
-}
-.nav-logo img { height: 28px; width: auto; object-fit: contain; }
-@media (max-width: 900px) { .nav-logo img { display: none; } }
-.nav-right { display: flex; align-items: center; gap: 1.5rem; }
-.nav-link { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--subtle); text-decoration: none; transition: color 0.15s; }
-.nav-link:hover { color: var(--off-black); }
-.nav-cta { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.55rem 1.4rem; background: var(--maroon); color: var(--white); text-decoration: none; transition: background 0.15s; }
-.nav-cta:hover { background: var(--maroon-dark); }
+/* ══ SECTIONS ══ */
+.s{padding:6.5rem 0;border-top:1px solid var(--rule);position:relative}
+.s.center{background:var(--sunk);border-top-color:var(--rule)}
+@media(max-width:900px){.s{padding:3.8rem 0}}
 
-/* ── SHARED ── */
-.label {
-  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--maroon);
-  display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
-}
-.label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+/* ══ HERO ══ */
+.hero{padding:5.5rem 0 6rem;border-top:none;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:repeating-linear-gradient(0deg,transparent 0 95px,var(--rule-l) 95px 96px);opacity:.5}
+.hgrid{display:grid;grid-template-columns:1.03fr .97fr;gap:4.5rem;align-items:center;position:relative;z-index:1}
+.hero .sub{font-size:1.13rem;line-height:1.68;color:var(--mute);max-width:45ch;margin-top:1.6rem}
+.hmeta{display:flex;gap:1.7rem;flex-wrap:wrap;margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--rule);
+  font-family:var(--m);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.hmeta span{display:flex;align-items:center;gap:.6rem}
+.hmeta span::before{content:'';width:6px;height:6px;background:var(--mar)}
+@media(max-width:900px){.hero{padding:2.8rem 0 3.2rem}.hgrid{grid-template-columns:1fr;gap:2.6rem}}
 
-.btn {
-  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 0.9rem 2.2rem; background: var(--maroon); color: var(--white);
-  text-decoration: none; display: inline-block; transition: all 0.15s;
-  border: 1.5px solid var(--maroon);
-}
-.btn:hover { background: var(--maroon-dark); border-color: var(--maroon-dark); }
-.btn.ghost { background: transparent; color: var(--maroon); }
-.btn.ghost:hover { background: var(--maroon); color: var(--white); }
-.btn.large { font-size: 0.85rem; padding: 1.1rem 2.6rem; }
+/* ══ REGISTER ══ */
+.reg{background:var(--white);border:1px solid var(--ink);box-shadow:var(--sh-3);overflow:hidden}
+.rh{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.25rem;background:var(--ink);
+  font-family:var(--m);font-size:.73rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.rh .a{color:#fff}.rh .b{color:rgba(255,255,255,.7);font-weight:400}
+.rcols{display:grid;grid-template-columns:54px 1fr 36px 96px;gap:.55rem;padding:.68rem 1.25rem;background:var(--sunk);
+  font-family:var(--m);font-size:.68rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--mute);
+  border-bottom:1px solid var(--rule)}
+.rr{display:grid;grid-template-columns:54px 1fr 36px 96px;gap:.55rem;align-items:center;padding:.78rem 1.25rem;
+  border-bottom:1px solid var(--rule-l);position:relative;opacity:0;transform:translateY(6px);
+  animation:rin .5s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes rin{to{opacity:1;transform:none}}
+.rr:last-of-type{border-bottom:none}
+.rs{font-family:var(--m);font-size:1.06rem;font-weight:600;color:var(--mar);letter-spacing:-.02em}
+.rn{font-size:.92rem;font-weight:500;color:var(--ink)}
+.rz{font-family:var(--m);font-size:.66rem;font-weight:500;color:var(--mute)}
+.rc{font-family:var(--m);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:.3rem 0;text-align:center;border:1px solid}
+.rc.a{color:var(--ok);border-color:rgba(27,110,55,.4);background:rgba(27,110,55,.08)}
+.rc.q{color:var(--warn);border-color:rgba(143,82,9,.4);background:rgba(143,82,9,.08)}
+.rc.x{color:var(--mar);border-color:rgba(139,26,46,.4);background:var(--mar-pale)}
+.stk{position:absolute;left:1.25rem;right:1.25rem;top:50%;height:1.5px;background:var(--mar);
+  transform:scaleX(0);transform-origin:left;animation:draw .5s cubic-bezier(.4,0,.2,1) 1.05s forwards}
+@keyframes draw{to{transform:scaleX(1)}}
+.rf{padding:.9rem 1.25rem;background:var(--ink);display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--m);font-size:.72rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.rf b{color:#fff;font-weight:600}
+.rnote{margin-top:1.15rem;font-size:.88rem;line-height:1.6;color:var(--mute);text-align:center;max-width:48ch;margin-inline:auto}
+@media(max-width:900px){.rcols,.rr{grid-template-columns:46px 1fr 86px}.rz,.rcols span:nth-child(3){display:none}}
 
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1.85fr 1fr;
-  border-bottom: 1px solid var(--rule);
-  overflow: hidden;
-  background: var(--off);
-}
+/* ══ TWO KINDS ══ */
+.twok{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.5rem}
+.kind{padding:1.85rem 1.75rem;background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-1)}
+.kind.b{background:var(--mar-pale);border-color:var(--mar);box-shadow:var(--sh-2)}
+.kind .h{font-family:var(--m);font-size:.75rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--soft);margin-bottom:.85rem}
+.kind.b .h{color:var(--mar)}
+.kind .t{font-size:1.22rem;font-weight:800;letter-spacing:-.028em;margin-bottom:.65rem;color:var(--ink)}
+.kind p{color:var(--mute)}
+.kind ul{list-style:none;margin-top:1rem;border-top:1px solid var(--rule-l);padding-top:.4rem}
+.kind.b ul{border-top-color:var(--mar-tint)}
+.kind li{font-size:.93rem;line-height:1.5;color:var(--mute);padding:.42rem 0 .42rem 1.15rem;position:relative}
+.kind li::before{content:'';position:absolute;left:0;top:1.02rem;width:6px;height:1.5px;background:var(--soft)}
+.kind.b li::before{background:var(--mar)}
+.houseline{margin-top:1.7rem;padding:2rem 2.2rem;background:var(--white);border:1px solid var(--rule);border-left:4px solid var(--mar);box-shadow:var(--sh-1)}
+.houseline .hq{font-size:clamp(1.32rem,2.6vw,1.8rem);font-weight:800;letter-spacing:-.032em;line-height:1.26;color:var(--mar-d);max-width:34ch}
+.houseline p{color:var(--text);margin-top:1rem;max-width:62ch}
+@media(max-width:900px){.twok{grid-template-columns:1fr}.kind,.houseline{padding:1.35rem}}
 
-.hero-left {
-  padding: 10rem 4rem 6rem;
-  display: flex; flex-direction: column; justify-content: center;
-  position: relative;
-}
+/* ══ LANDS ══ */
+.lands{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+.land a{color:var(--mar);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:1080px){.lands{grid-template-columns:1fr 1fr}}
+.land{padding:1.6rem 1.45rem;background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-2);transition:.2s}
+.land:hover{box-shadow:var(--sh-3);transform:translateY(-2px)}
+.land .w2{font-family:var(--m);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mar);
+  margin-bottom:.85rem;padding-bottom:.7rem;border-bottom:1px solid var(--rule-l)}
+.land h3{font-size:1.08rem;font-weight:800;letter-spacing:-.026em;margin-bottom:.65rem}
+.land p{font-size:.92rem;line-height:1.68;color:var(--mute)}
+.notfor{margin-top:1.7rem;padding:1.5rem 1.8rem;border:1px dashed var(--rule);background:transparent}
+.notfor .h{font-family:var(--m);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:.75rem}
+.notfor p{color:var(--mute);max-width:74ch}
+@media(max-width:900px){.lands{grid-template-columns:1fr}.land,.notfor{padding:1.35rem}}
 
-.hero-left::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 79px,
-    var(--rule) 79px,
-    var(--rule) 80px
-  );
-  opacity: 0.35;
-  pointer-events: none;
-}
+/* ══ STACK ══ */
+.stack{margin-top:2.2rem;border:1px solid var(--ink);background:var(--white);box-shadow:var(--sh-2)}
+.st{display:grid;grid-template-columns:46px 1fr;gap:1.1rem;padding:1.25rem 1.8rem;border-bottom:1px solid var(--rule-l);align-items:baseline}
+.st:last-of-type{border-bottom:none}
+.st .n{font-family:var(--m);font-size:.84rem;font-weight:600;color:var(--mar);letter-spacing:.06em}
+.st .t{font-size:1.06rem;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.st .d{font-size:.95rem;line-height:1.65;color:var(--mute);margin-top:.3rem;max-width:64ch}
+.effort{margin-top:1.6rem;padding-top:1.4rem;border-top:2px solid var(--ink)}
+.effort .eh{font-family:var(--m);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mar);margin-bottom:.9rem}
+.effort ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.15rem 2.5rem}
+.effort li{font-size:.96rem;line-height:1.55;color:var(--mute);padding:.45rem 0 .45rem 1.3rem;position:relative}
+.effort li::before{content:'';position:absolute;left:0;top:1.02rem;width:7px;height:2px;background:var(--mar)}
+@media(max-width:900px){.st{grid-template-columns:1fr;gap:.3rem;padding:1.15rem 1.3rem}.effort ul{grid-template-columns:1fr}}
 
-.hero-eyebrow {
-  font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--maroon); margin-bottom: 2rem;
-  display: flex; align-items: center; gap: 0.75rem;
-  position: relative;
-}
-.hero-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--maroon); display: block; }
+/* ══ ORIGIN ══ */
+.origin{display:grid;grid-template-columns:250px 1fr;gap:3.2rem;align-items:start;margin-top:2.4rem}
+.shot img{width:100%;aspect-ratio:5/6;object-fit:cover;border:1px solid var(--ink);box-shadow:var(--sh-3);filter:grayscale(100%) contrast(1.04)}
+.shot .fb{width:100%;aspect-ratio:5/6;border:1px solid var(--ink);background:var(--mar);display:flex;align-items:center;
+  justify-content:center;font-family:var(--m);font-size:2.6rem;font-weight:600;color:#fff}
+.sig{font-family:var(--m);font-size:.74rem;line-height:1.7;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);
+  margin-top:1.2rem;padding-top:1rem;border-top:2px solid var(--ink)}
+.sig b{display:block;color:var(--ink);font-size:.75rem;letter-spacing:.09em;margin-bottom:.3rem}
+.story p{font-size:1.03rem;line-height:1.82;color:var(--text);margin-bottom:1.15rem;max-width:63ch}
+.story .lastline{font-size:1.22rem;font-weight:700;letter-spacing:-.026em;line-height:1.4;color:var(--mar-d);
+  margin:1.4rem 0 0;padding-top:1.2rem;border-top:2px solid var(--ink)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.6rem;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule)}
+.strip>div{padding:1.25rem 1.3rem 1.25rem 0;border-right:1px solid var(--rule)}
+.strip>div:last-child{border-right:none;padding-right:0}
+.strip>div:not(:first-child){padding-left:1.3rem}
+.strip b{display:block;font-family:var(--m);font-size:1.45rem;font-weight:600;letter-spacing:-.025em;color:var(--ink);line-height:1}
+.strip span{display:block;font-size:.85rem;line-height:1.5;color:var(--mute);margin-top:.55rem}
+@media(max-width:900px){.origin{grid-template-columns:1fr;gap:1.8rem}.shot{max-width:220px}
+  .strip{grid-template-columns:1fr 1fr}.strip>div{padding:1rem .9rem 1rem 0;border-bottom:1px solid var(--rule)}
+  .strip>div:nth-child(2n){border-right:none}.strip>div:not(:first-child){padding-left:0}.strip>div:nth-child(2n){padding-left:.9rem}}
 
-.hero h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(3.2rem, 5.5vw, 6.2rem);
-  line-height: 0.9; letter-spacing: 0.01em;
-  color: var(--off-black); margin-bottom: 1.5rem;
-  position: relative;
-}
-.hero h1 .accent { color: var(--maroon); }
+/* ══ GUARANTEE ══ */
+.gbox{margin-top:2.2rem;border:2px solid var(--mar);background:var(--white);box-shadow:var(--sh-2)}
+.gtop{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;padding:2.1rem 2.3rem}
+.seal{width:96px;height:96px;border-radius:50%;flex:0 0 96px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:2px solid var(--mar);background:var(--mar-pale)}
+.seal .n{font-family:var(--m);font-size:1.95rem;font-weight:600;color:var(--mar);line-height:1}
+.seal .u{font-family:var(--m);font-size:.63rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mar);margin-top:.25rem}
+.gtop .t{font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:800;letter-spacing:-.032em;line-height:1.24;max-width:28ch;color:var(--ink)}
+.gtop p{color:var(--mute);margin-top:.85rem;max-width:60ch}
+.gsplit{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--mar-tint);background:var(--mar-pale)}
+.gs{padding:1.5rem 2.3rem;border-right:1px solid var(--mar-tint)}
+.gs:last-child{border-right:none}
+.gs .h{font-family:var(--m);font-size:.73rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mar);margin-bottom:.6rem}
+.gs p{font-size:.95rem;color:var(--text)}
+@media(max-width:900px){.gtop{grid-template-columns:1fr;gap:1.2rem;padding:1.4rem}.gsplit{grid-template-columns:1fr}
+  .gs{border-right:none;border-bottom:1px solid var(--mar-tint);padding:1.2rem 1.4rem}}
 
-.hero-sub {
-  font-size: 1.05rem; line-height: 1.8; color: var(--body);
-  max-width: 480px; margin-bottom: 2.5rem; position: relative;
-}
+/* ══ FAQ ══ */
+.faq{margin-top:2.4rem;border-top:2px solid var(--ink)}
+.q{border-bottom:1px solid var(--rule);background:transparent;transition:background .18s}
+.q[open]{background:var(--white)}
+.q>summary{list-style:none;cursor:pointer;padding:1.35rem 1.2rem 1.35rem 0;display:grid;
+  grid-template-columns:1fr 30px;align-items:start;gap:1rem;
+  font-size:1.09rem;font-weight:700;letter-spacing:-.022em;color:var(--ink);line-height:1.35;transition:color .15s}
+.q[open]>summary{padding-left:1.2rem}
+.q>summary::-webkit-details-marker{display:none}
+.q>summary:hover{color:var(--mar)}
+.q>summary:focus-visible{outline:2px solid var(--mar);outline-offset:-2px}
+.q .pm{position:relative;width:16px;height:16px;justify-self:end;margin-top:.28rem;flex:0 0 16px}
+.q .pm::before,.q .pm::after{content:'';position:absolute;background:var(--mar);transition:transform .22s ease,opacity .22s ease}
+.q .pm::before{left:0;top:7px;width:16px;height:2px}
+.q .pm::after{left:7px;top:0;width:2px;height:16px}
+.q[open] .pm::after{transform:rotate(90deg);opacity:0}
+.q .ans{padding:0 1.2rem 1.5rem 0;animation:faqin .24s ease}
+.q[open] .ans{padding-left:1.2rem}
+@keyframes faqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.q .ans p{font-size:.97rem;line-height:1.75;color:var(--mute);max-width:70ch}
+.q a{color:var(--mar);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:900px){.q>summary{font-size:1.01rem;padding-right:.6rem}.q[open]>summary,.q[open] .ans{padding-left:.9rem}}
 
-.hero-actions { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; position: relative; }
+/* ══ CLOSE ══ */
+.end{padding:6.5rem 0 7.5rem;border-top:1px solid var(--rule);background:var(--sunk)}
+.endcard{text-align:center;max-width:660px;margin:0 auto}
+.endcard .badge{text-align:center}
+.endcard h2{margin:0 auto;max-width:19ch}
+.endcard h2 em{font-style:normal;font-weight:800;color:var(--mar)}
+.endcard .lede{margin:1.2rem auto 0;max-width:54ch}
+.ob{margin:2.3rem auto 0;border:1px solid var(--ink);background:var(--white);text-align:left;box-shadow:var(--sh-2)}
+.ob .h{padding:.85rem 1.35rem;background:var(--ink);color:#fff;font-family:var(--m);font-size:.73rem;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase}
+.ob .b2{padding:1.45rem 1.35rem;font-size:.99rem;line-height:1.7;color:var(--text)}
+.endcard .acts{justify-content:center;margin-top:2.2rem}
+.px{margin-top:2rem;font-family:var(--m);font-size:.74rem;line-height:1.95;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--mute)}
+.feenote{margin-top:1.1rem;font-size:.9rem;line-height:1.6;color:var(--mute)}
+.feenote a{color:var(--mar);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:900px){.end{padding:3.8rem 0 4.5rem}}
 
-/* Hero right — credibility panel */
-.hero-right {
-  background: var(--off);
-  padding: 4rem 3.5rem;
-  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-  gap: 2.5rem;
-  border-left: 1px solid var(--rule);
-}
+footer{border-top:1px solid var(--rule);padding:2.3rem 0 2.6rem;background:var(--paper)}
+footer .w{display:flex;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;font-family:var(--m);font-size:.74rem;
+  letter-spacing:.08em;color:var(--mute)}
+footer a{color:var(--mute);text-decoration:none;border-bottom:1px solid var(--rule)}
+footer a:hover{color:var(--mar);border-bottom-color:var(--mar)}
 
-.hero-ai-pill {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(139,26,46,0.08); border: 1px solid rgba(139,26,46,0.25);
-  padding: 0.5rem 1rem; margin-top: 2.5rem;
-  font-size: 0.78rem; color: var(--off-black); letter-spacing: 0.04em;
-}
-.hero-ai-pill::before {
-  content: ''; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--maroon); display: block; flex-shrink: 0;
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}
+  .rr{opacity:1;transform:none}.stk{transform:scaleX(1)}}
+@media print{.nav,.end{display:none}body::before{display:none}}
+</style><style>
 
-/* ── TWO JOBS ── */
-.jobs-section { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); }
-.jobs-intro { font-size: 1.05rem; line-height: 1.8; color: var(--body); max-width: 560px; margin-bottom: 3rem; }
+/* proof bar */
+.proofbar{background:var(--ink);color:#fff;border-top:3px solid var(--mar)}
+.pbin{max-width:1180px;margin:0 auto;padding:1.9rem 3rem;display:grid;
+  grid-template-columns:auto 1fr auto;gap:2.4rem;align-items:center}
+.pbin .num{font-family:var(--m);font-size:clamp(2.6rem,5.6vw,3.9rem);font-weight:600;letter-spacing:-.045em;
+  line-height:.9;color:#fff;white-space:nowrap}
+.pbin .num span{display:block;font-family:var(--m);font-size:.72rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:#D9909C;margin-top:.6rem}
+.pbin .txt{font-size:1.06rem;line-height:1.68;color:rgba(255,255,255,.88);max-width:56ch}
+.pbin .txt b{color:#fff;font-weight:650}
+.pblink{font-family:var(--m);font-size:.74rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;
+  color:#fff;text-decoration:none;white-space:nowrap;border-bottom:2px solid var(--mar);padding-bottom:3px;transition:.15s}
+.pblink:hover{border-bottom-color:#fff}
+@media(max-width:900px){.pbin{grid-template-columns:1fr;gap:1.1rem;padding:1.5rem 1.25rem}
+  .pbin .num{font-size:2.7rem}}
 
-.jobs {
-  display: grid; grid-template-columns: 1fr 1fr 1.2fr;
-  gap: 1px; background: var(--rule); border: 1px solid var(--rule);
-}
-.job-card { background: var(--white); padding: 2.75rem; }
-.job-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.6rem; }
-.job-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.03em; line-height: 1; margin-bottom: 0.75rem; color: var(--off-black); }
-.job-card p { font-size: 0.9rem; line-height: 1.7; color: var(--body); }
+/* stage */
+.stage{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.4rem}
+.stat{padding:1.8rem 1.7rem;background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-2)}
+.stat .n{font-family:var(--m);font-size:3rem;font-weight:600;letter-spacing:-.045em;color:var(--mar);line-height:.92}
+.stat .t{font-size:.99rem;line-height:1.62;color:var(--text);margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--rule-l)}
+.stat .t b{color:var(--ink);font-weight:650}
+.stat .src{font-family:var(--m);font-size:.71rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);margin-top:.9rem}
+.sowhat{margin-top:1.7rem;padding:1.9rem 2.1rem;background:var(--mar-pale);border:1px solid var(--mar);box-shadow:var(--sh-2)}
+.sowhat .big{font-size:clamp(1.25rem,2.5vw,1.68rem);font-weight:800;letter-spacing:-.032em;line-height:1.28;max-width:30ch;color:var(--mar-d)}
+.sowhat p{color:var(--text);margin-top:.95rem;max-width:60ch;font-size:1.01rem;line-height:1.72}
+@media(max-width:900px){.stage{grid-template-columns:1fr}.stat,.sowhat{padding:1.35rem}}
 
-/* ── THE GAP ── */
-.visual-section { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); }
-.visual-section.tinted { background: var(--off); }
+/* chair */
+.chair{margin-top:2.4rem;border-top:2px solid var(--ink)}
+.ch{display:grid;grid-template-columns:.85fr 1.15fr;gap:2.2rem;padding:1.4rem 0;border-bottom:1px solid var(--rule);align-items:start}
+.ch .you{font-size:1.05rem;font-weight:700;letter-spacing:-.022em;line-height:1.4;color:var(--soft)}
+.ch .real{font-size:.98rem;line-height:1.7;color:var(--text)}
+.ch .real b{color:var(--ink);font-weight:650}
+.chnote{margin-top:1.7rem;padding:1.7rem 1.9rem;background:var(--white);border:1px solid var(--rule);border-left:4px solid var(--mar);box-shadow:var(--sh-1)}
+.chnote p{font-size:1.04rem;line-height:1.75;color:var(--text);max-width:64ch}
+@media(max-width:900px){.ch{grid-template-columns:1fr;gap:.45rem;padding:1.1rem 0}.chnote{padding:1.3rem}}
 
-.vis-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3rem; }
-.vis-headline {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
-  line-height: 0.95; letter-spacing: 0.02em; color: var(--off-black);
-}
-.vis-headline .accent { color: var(--maroon); }
-.vis-sub { font-size: 0.95rem; line-height: 1.75; color: var(--body); }
+/* day15 */
+.d15{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.4rem}
+.dcard{padding:1.7rem 1.65rem;background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-1)}
+.dcard .when{font-family:var(--m);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--mar);margin-bottom:.8rem;padding-bottom:.65rem;border-bottom:1px solid var(--rule-l)}
+.dcard p{font-size:.99rem;line-height:1.72;color:var(--mute)}
+.dcard p b{color:var(--ink);font-weight:650}
+.calm{margin-top:1.7rem;padding:2.1rem 2.3rem;background:var(--mar-pale);border:1px solid var(--mar);box-shadow:var(--sh-2)}
+.calm .big{font-size:clamp(1.3rem,2.6vw,1.78rem);font-weight:800;letter-spacing:-.032em;line-height:1.26;color:var(--mar-d);max-width:32ch}
+.calm p{color:var(--text);margin-top:1rem;max-width:62ch}
+.artifacts{margin-top:1.7rem;padding-top:1.4rem;border-top:2px solid var(--ink);display:grid;
+  grid-template-columns:1fr 1fr 1fr auto;gap:1.6rem;align-items:start}
+.art{font-size:.92rem;line-height:1.55;color:var(--mute)}
+.art b{display:block;color:var(--ink);font-weight:650;font-size:.97rem;margin-bottom:.25rem}
+.artlink{font-family:var(--m);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mar);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+@media(max-width:900px){.d15{grid-template-columns:1fr}.calm{padding:1.35rem}.artifacts{grid-template-columns:1fr;gap:1rem}}
 
-.gap-diagram { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-.gap-col { padding: 2rem; }
-.gap-col.strategy { background: var(--indigo-light); }
-.gap-col.gap-zone { background: var(--off); }
-.gap-col.execution { background: #F0FDF4; }
-.gap-col-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.25rem; }
-.gap-col-label.s { color: var(--indigo); }
-.gap-col-label.g { color: var(--maroon); }
-.gap-col-label.e { color: var(--green); }
-.gap-item { padding: 0.6rem 0.85rem; margin-bottom: 0.45rem; border-radius: 3px; font-size: 0.85rem; }
-.gap-item.strat { background: var(--white); border: 1px solid #C7D2FE; border-left: 3px solid var(--indigo); color: var(--off-black); font-weight: 500; }
-.gap-item.exec { background: var(--white); border: 1px solid #BBF7D0; border-left: 3px solid var(--green); color: var(--off-black); font-weight: 500; }
-.gap-item.chaos-red { background: var(--white); border: 1px solid #E8C4CC; border-left: 3px solid var(--maroon); color: var(--off-black); font-size: 0.8rem; font-weight: 500; }
-.gap-item.chaos-yellow { background: var(--white); border: 1px solid #E8C4CC; border-left: 3px solid #B52D45; color: var(--off-black); font-size: 0.8rem; font-weight: 500; }
-.gap-item.chaos-gray { background: var(--white); border: 1px solid var(--rule); border-left: 3px solid #C9A8B2; color: var(--body); font-size: 0.8rem; }
-.gap-pain-bar { background: var(--off); border-top: 1px solid var(--rule); padding: 0.7rem 0.85rem; font-size: 0.75rem; color: var(--subtle); font-style: italic; text-align: center; margin-top: 0.5rem; }
-.gap-caption { background: var(--white); border: 1px solid var(--rule); border-left: 3px solid var(--maroon); padding: 1.25rem 2rem; font-size: 0.92rem; font-style: italic; color: var(--off-black); text-align: center; }
-
-/* The Filter diagram */
-.filter-diagram { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 3rem; }
-.filter-col { padding: 2rem; }
-.filter-col.strategy { background: var(--indigo-light); }
-.filter-col.stack { background: var(--off-black); padding: 0; }
-.filter-col.execution { background: #F0FDF4; }
-.filter-col-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.25rem; }
-.filter-col-label.s { color: var(--indigo); }
-.filter-col-label.e { color: var(--green); }
-.filter-stack-header { padding: 1.5rem 1.75rem 0.75rem; border-bottom: 1px solid var(--rule-dark); }
-.filter-stack-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #FBCFE8; }
-.filter-ranks { padding: 1rem 1.75rem; }
-.rank-item { padding: 0.5rem 0.85rem; margin-bottom: 0.3rem; font-size: 0.85rem; background: rgba(255,255,255,0.95); border-left: 3px solid var(--maroon); color: var(--off-black); }
-.rank-1 { font-weight: 700; opacity: 1; }
-.rank-2 { font-weight: 600; opacity: 0.95; }
-.rank-3 { font-weight: 400; opacity: 0.82; border-left-color: #B52D45; }
-.rank-4 { font-weight: 400; opacity: 0.6; font-size: 0.8rem; border-left-color: #C9A8B2; }
-.rank-5 { font-weight: 400; opacity: 0.4; font-size: 0.76rem; border-left-color: #C9A8B2; }
-.capacity-bar-wrap { padding: 0.75rem 1.75rem 1.5rem; }
-.capacity-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #F9A8B8; margin-bottom: 0.4rem; }
-.capacity-track { background: rgba(255,255,255,0.1); height: 5px; border-radius: 2px; overflow: hidden; margin-bottom: 0.3rem; }
-.capacity-fill { background: #4ADE80; height: 100%; width: 60%; }
-.capacity-note { font-size: 0.75rem; color: rgba(255,255,255,0.75); font-style: italic; }
-.filter-exec-item { padding: 0.6rem 0.85rem; margin-bottom: 0.45rem; background: var(--white); border: 1px solid #BBF7D0; border-left: 3px solid var(--green); font-size: 0.85rem; font-weight: 500; color: var(--off-black); }
-.filter-exec-item.blocked { opacity: 0.3; border-left-color: var(--rule); border-color: var(--rule); font-weight: 400; }
-
-.filter-callout {
-  background: var(--off-black); border-left: 4px solid #4ADE80;
-  padding: 1.75rem 2rem; margin-top: 1px;
-  display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center;
-}
-.filter-callout-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.35rem; }
-.filter-callout-text p { font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.87); }
-.filter-callout-stat .n { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: #4ADE80; line-height: 1; }
-.filter-callout-stat .l { font-size: 0.75rem; color: var(--subtle); }
-
-/* ── WHEN THIS MAKES SENSE ── */
-.triggers { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); background: var(--white); }
-.trig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-.trig { background: var(--white); padding: 1.9rem 1.8rem; border-top: 3px solid var(--maroon); }
-.trig .ic { width: 26px; height: 26px; color: var(--maroon); margin-bottom: 0.9rem; }
-.trig .t { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: 0.03em; color: var(--off-black); margin-bottom: 0.5rem; line-height: 1.02; }
-.trig p { font-size: 0.85rem; line-height: 1.7; color: var(--body); margin: 0; }
-@media (max-width: 820px) { .trig-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 520px) { .trig-grid { grid-template-columns: 1fr; } }
-
-/* ── CHAOS TAX ── */
-.chaos-tax {
-  padding: 4rem 4rem; border-bottom: 1px solid var(--rule);
-  background: var(--white);
-}
-.chaos-tax .label { color: var(--maroon); }
-.chaos-tax h2 { color: var(--off-black); }
-.chaos-intro { font-size: 1rem; line-height: 1.8; color: var(--body); max-width: 100%; margin-bottom: 2rem; }
-.chaos-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 1px; }
-.chaos-card { background: var(--white); padding: 2rem 1.75rem; }
-.chaos-card-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--maroon); letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.4rem; }
-.chaos-card-label { font-size: 0.88rem; font-weight: 600; color: var(--off-black); margin-bottom: 0.6rem; line-height: 1.4; }
-.chaos-card-math { font-size: 0.75rem; color: var(--subtle); font-style: italic; line-height: 1.6; padding-top: 0.6rem; border-top: 1px solid var(--rule); }
-.chaos-total { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 1.25rem 1.75rem; background: var(--maroon); gap: 2rem; }
-.chaos-total-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #FFE4E9; }
-.chaos-total-value { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--white); letter-spacing: 0.04em; }
-.chaos-slider { margin-top: 1px; background: var(--white); border: 1px solid var(--rule); border-top: none; padding: 1.4rem 1.75rem 1.5rem; }
-.chaos-slider-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
-.chaos-slider-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--off-black); }
-.chaos-slider-read { font-size: 0.9rem; color: var(--body); }
-.chaos-slider-read strong { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 1.35rem; letter-spacing: 0.02em; color: var(--maroon); }
-.chaos-slider input[type=range] { width: 100%; appearance: none; -webkit-appearance: none; height: 4px; background: var(--rule); border-radius: 2px; outline: none; }
-.chaos-slider input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; background: var(--maroon); border: 3px solid var(--white); box-shadow: 0 0 0 1px var(--maroon); border-radius: 50%; cursor: pointer; }
-.chaos-slider input[type=range]::-moz-range-thumb { width: 12px; height: 12px; background: var(--maroon); border: 3px solid var(--white); box-shadow: 0 0 0 1px var(--maroon); border-radius: 50%; cursor: pointer; }
-.chaos-slider-note { margin-top: 0.85rem; font-size: 0.72rem; line-height: 1.65; color: var(--subtle); }
-
-/* ── PROOF / ABOUT ── */
-.about-section { padding: 6rem 4rem; border-bottom: 1px solid var(--rule); }
-.about-row { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem; }
-.about-photo { width: 260px; height: 260px; object-fit: cover; object-position: top; display: block; border-radius: 50%; border: 4px solid var(--maroon); }
-.about-photo-placeholder { width: 260px; height: 260px; background: var(--off); border-top: 4px solid var(--maroon); border: 1px solid var(--rule); display: none; align-items: center; justify-content: center; }
-.about-photo-placeholder span { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--maroon); }
-.about-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--off-black); margin-bottom: 0.75rem; line-height: 1.1; }
-.about-name .accent { color: var(--maroon); }
-.about-bio p { font-size: 0.92rem; line-height: 1.8; color: var(--body); margin-bottom: 0.75rem; }
-.about-bio p strong { color: var(--off-black); font-weight: 600; }
-
-/* ── FINAL CTA ── */
-.cta-final {
-  padding: 7rem 4rem; background: var(--off-black); text-align: center;
-  border-bottom: 1px solid var(--rule-dark); position: relative; overflow: hidden;
-}
-.cta-final::before {
-  content: 'THE FILTER';
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  font-family: 'Bebas Neue', sans-serif; font-size: 18vw; letter-spacing: -0.02em;
-  color: rgba(255,255,255,0.02); white-space: nowrap; pointer-events: none;
-  user-select: none;
-}
-.cta-final h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 5vw, 5rem); line-height: 0.9; letter-spacing: 0.01em; color: var(--white); margin-bottom: 1.25rem; position: relative; }
-.cta-final h2 .accent { color: #F9A8B8; }
-.cta-final p { font-size: 1rem; color: rgba(255,255,255,0.87); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.75; position: relative; }
-.cta-final p em { font-style: normal; color: #F9A8B8; }
-.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; position: relative; }
-.cta-note { font-size: 0.78rem; color: rgba(255,255,255,0.75); position: relative; line-height: 1.9; }
-
-/* ── FOOTER ── */
-footer { padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); }
-.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 0.1em; color: var(--off-black); }
-.footer-copy { font-size: 0.72rem; color: var(--subtle); }
-.footer-link { font-size: 0.72rem; color: var(--subtle); text-decoration: none; transition: color 0.15s; }
-.footer-link:hover { color: var(--maroon); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  nav, footer { padding: 1rem 1.5rem; }
-  .nav-right .nav-link { display: none; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 8rem 1.5rem 3rem; }
-  .hero-right { display: none; }
-  .jobs-section, .visual-section, .about-section, .chaos-tax, .cta-final, .triggers { padding: 4rem 1.5rem; }
-  .jobs, .gap-diagram, .filter-diagram, .chaos-cards { grid-template-columns: 1fr; }
-  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
-  [style*="grid-template-columns:1fr auto"] { grid-template-columns: 1fr !important; }
-  .chaos-total, .filter-callout, .vis-header { grid-template-columns: 1fr; }
-  .about-row { grid-template-columns: 1fr; gap: 2rem; }
-  .about-photo, .about-photo-placeholder { width: 100px; height: 100px; }
-  .about-photo-placeholder span { font-size: 2rem; }
-  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-}
+/* downloads */
+.dl2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.7rem;text-align:left}
+.dlc{padding:1.3rem 1.4rem;background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-1);text-decoration:none;display:block;transition:.18s}
+.dlc:hover{border-color:var(--mar);box-shadow:var(--sh-2);transform:translateY(-2px)}
+.dlc .k{font-family:var(--m);font-size:.72rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--mar);margin-bottom:.5rem}
+.dlc .t{font-size:1rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:.3rem}
+.dlc .d{font-size:.88rem;line-height:1.55;color:var(--mute)}
+@media(max-width:900px){.dl2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav role="navigation" aria-label="Main navigation">
-  <a href="https://leftbrainconsult.com" class="nav-logo">
-    <img src="logo.svg" alt="Left Brain Consulting" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-    <span style="display:none;">LEFT BRAIN CONSULTING</span>
-  </a>
-  <div class="nav-right">
-    <a href="#when" class="nav-link">When</a>
-    <a href="#about-bio" class="nav-link">About</a>
-    <a href="#book" class="nav-cta">Book a Call</a>
+<nav class="nav"><div class="navin">
+  <a class="bd" href="/">Left Brain <i>/ The Filter</i></a>
+  <div class="nlinks">
+    <a class="nl" href="#chair">What it looks like</a>
+    <a class="nl" href="#day15">What changes</a>
+    <a class="nl" href="/eos">Running EOS?</a>
+    <a class="nc" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
   </div>
-</nav>
+</div></nav>
 
-<main id="main-content">
-<!-- ── HERO ── -->
+<main id="main">
+
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">For leadership teams with more projects than people</div>
-    <h1>Know exactly what your company should be working on — <span class="accent">in 14 days.</span></h1>
-    <p style="font-size:1.15rem;line-height:1.5;color:var(--off-black);font-weight:600;margin-bottom:1.25rem;max-width:540px;">The Filter: the decision layer that makes your priorities defensible, not just clear.</p>
-    <p class="hero-sub" style="margin-bottom:1.25rem;">Every initiative scored by the people doing the work, on one list, against real capacity. <strong style="color:var(--maroon);">Nothing moves up because someone pushed harder.</strong> Installed in 14 days, or your money back.</p>
-    <p class="hero-sub">Most companies free up $500K–$2M+ in annual execution capacity — energy that was spread across competing efforts, now pointed at the work that grows EBITDA.</p>
-    <div class="hero-actions">
-      <a href="#book" class="btn large">Book a Call</a>
-      <a href="#gap" class="btn ghost large">See How It Works</a>
-    </div>
-    <div class="hero-ai-pill">14-Day Install · Money-Back Guarantee</div>
-  </div>
+  <div class="w">
+    <div class="hgrid">
+      <div>
+        <div class="badge"><span class="dot"></span>Founder-led &amp; PE-backed · 30–200 people</div>
+        <h1>Everyone at the table is right. <em>That's why nothing finishes.</em></h1>
+        <p class="sub">In 14 days you get one list of everything competing for your team, a decision on every item, and a system your leaders keep running after I leave. If all three aren't there on day 14, you don't pay.</p>
+        <div class="acts">
+          <a class="btn" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
+        </div>
+        <div class="hmeta"><span>14 days</span><span>One fixed fee</span><span>Two meetings from you</span></div>
+      </div>
 
-  <div class="hero-right">
-    <div style="width:100%;display:flex;justify-content:center;margin-bottom:0.5rem;">
-      <img src="logo.svg" alt="Left Brain Consulting" style="width:110px;height:auto;opacity:0.85;">
-    </div>
-    <div style="border-top:1px solid var(--rule);padding-top:2rem;width:100%;">
-      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--maroon);margin-bottom:1.25rem;">Track Record</div>
-      <div style="display:flex;flex-direction:column;gap:1.25rem;">
-        <div style="display:flex;gap:1rem;align-items:flex-start;">
-          <span style="color:var(--maroon);font-size:0.9rem;flex-shrink:0;margin-top:0.1rem;">—</span>
-          <p style="font-size:0.88rem;line-height:1.7;color:var(--body);margin:0;">Built inside a <strong>Fortune 50 transformation</strong> — $200M investment, Big 4 (EY) engagement, VP-level decision governance.</p>
+      <div>
+        <div class="reg">
+          <div class="rh"><span class="a">The Register</span><span class="b">Ratified · Day 14</span></div>
+          <div class="rcols"><span>Score</span><span>Initiative</span><span>Size</span><span style="text-align:center">Call</span></div>
+          <div class="rr" style="animation-delay:.15s"><div class="rs">9.2</div><div class="rn">ERP migration</div><div class="rz">XL</div><div class="rc a">Active</div></div>
+          <div class="rr" style="animation-delay:.26s"><div class="rs">8.9</div><div class="rn">Custom build for top account</div><div class="rz">S</div><div class="rc a">Active</div></div>
+          <div class="rr" style="animation-delay:.37s"><div class="rs">8.7</div><div class="rn">Sales &amp; ops alignment</div><div class="rz">L</div><div class="rc a">Active</div></div>
+          <div class="rr" style="animation-delay:.48s"><div class="rs">7.1</div><div class="rn">Pricing overhaul</div><div class="rz">L</div><div class="rc q">Queued</div></div>
+          <div class="rr" style="animation-delay:.59s"><div class="rs">5.5</div><div class="rn">Onboarding rebuild</div><div class="rz">S</div><div class="rc a">Active</div></div>
+          <div class="rr" style="animation-delay:.70s"><div class="rs">4.0</div><div class="rn">Custom reporting build</div><div class="rz">M</div><div class="rc x">Cancelled</div><div class="stk"></div></div>
+          <div class="rf"><span>Delivery load</span><span><b>6 / 6 · At capacity</b></span></div>
         </div>
-        <div style="display:flex;gap:1rem;align-items:flex-start;">
-          <span style="color:var(--maroon);font-size:0.9rem;flex-shrink:0;margin-top:0.1rem;">—</span>
-          <p style="font-size:0.88rem;line-height:1.7;color:var(--body);margin:0;">Forged in an <strong>ERP migration recovery</strong> across a $15B ARR environment, alongside an enterprise finance function stabilization.</p>
-        </div>
-        <div style="display:flex;gap:1rem;align-items:flex-start;">
-          <span style="color:var(--maroon);font-size:0.9rem;flex-shrink:0;margin-top:0.1rem;">—</span>
-          <p style="font-size:0.88rem;line-height:1.7;color:var(--body);margin:0;">Crystallized across a <strong>four-company integration</strong> — ~$5M of duplicated effort reallocated to protect ~$45M of delivery capacity. Still running without me a year later.</p>
-        </div>
+        <p class="rnote">The account request earned second place instead of jumping the line, and the pricing overhaul went to the queue because of it. Further down, the reporting build died because the ERP above it already does the job.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── THE GAP ── -->
-<section class="visual-section tinted" id="gap" aria-labelledby="gap-heading">
-  <div class="vis-header">
-    <div>
-      <div class="label">The Connection — Visualized</div>
-      <div class="vis-headline" id="gap-heading">You have strategy. You have execution.<br><span class="accent">The Filter connects them.</span></div>
-    </div>
-    <p class="vis-sub">Strategy lives in your plans. Execution lives in your tools. Between them sits every improvement idea your growth generates — all of it worthwhile, all of it competing for the same capacity. The Filter is where they get compared, before anyone commits capacity to them.</p>
+<!-- PROOF BAR -->
+<div class="proofbar">
+  <div class="pbin">
+    <div class="num">$5M<span>of a $50M base</span></div>
+    <div class="txt">That's what came back when a 1,000-person company put <b>every initiative on one list for the first time.</b> Four businesses it had just acquired, four backlogs, no way to compare any of it. The system is still running a year later, without me there.</div>
+    <a class="pblink" href="#origin">How that worked &rarr;</a>
   </div>
+</div>
 
-  <div class="gap-diagram">
-    <div class="gap-col strategy">
-      <div class="gap-col-label s">Strategy</div>
-      <div class="gap-item strat">Annual goals</div>
-      <div class="gap-item strat">OKRs</div>
-      <div class="gap-item strat">Board priorities</div>
-      <div class="gap-item strat">Vision deck</div>
-    </div>
-    <div class="gap-col gap-zone">
-      <div class="gap-col-label g">Initiatives In Play</div>
-      <div class="gap-item chaos-gray">ERP migration</div>
-      <div class="gap-item chaos-yellow">Sales &amp; ops alignment</div>
-      <div class="gap-item chaos-red">Pricing model overhaul</div>
-      <div class="gap-item chaos-gray">MDM Enhancements</div>
-      <div class="gap-item chaos-yellow">Headcount plan for H2</div>
-      <div class="gap-item chaos-gray">Compensation restructure</div>
-      <div class="gap-item chaos-red">Process Harmonization</div>
-      <div class="gap-item chaos-red">Reporting infrastructure rebuild</div>
-      <div class="gap-pain-bar">all real · all worth doing · all competing for the same capacity</div>
-    </div>
-    <div class="gap-col execution">
-      <div class="gap-col-label e">Execution</div>
-      <div class="gap-item exec">Engineering team</div>
-      <div class="gap-item exec">Weekly sprints</div>
-      <div class="gap-item exec">PM tools</div>
-      <div class="gap-item exec">Daily standups</div>
-    </div>
-  </div>
-  <div class="gap-caption">You're not short on good ideas. The Filter gives them a running order everyone trusts.</div>
+<!-- STAGE -->
+<section class="s">
+  <div class="w" data-n="01">
+    <div class="badge">What's actually happening</div>
+    <h2>Three numbers from this year.</h2>
 
-  <!-- The Filter solution -->
-  <div style="margin-top:4rem;">
-    <div class="label">How The Filter Works</div>
-    <div class="vis-headline">Everything in one ranked list. <span class="accent">Here's how it works.</span></div>
-    <p class="vis-sub" style="margin-top:0.75rem;margin-bottom:0;">Every improvement idea — AI projects, system upgrades, process changes — gets submitted to a single intake and scored by whoever submitted it, on the same three criteria every time &mdash; Impact 40, Urgency 40, Audience 20. The ranked list starts the conversation. Leadership finishes it in one meeting. What activates is what the team can actually absorb.</p>
-    <p class="vis-sub" style="margin-top:1rem;margin-bottom:0;"><strong>When every initiative is visible and ranked, your capital flows to the work with the highest return — and that's how EBITDA compounds. Once it's running, the ranked list quietly shows you the next capability worth building, exactly when you're ready for it.</strong></p>
-  </div>
-
-  <div class="filter-diagram">
-    <div class="filter-col strategy">
-      <div class="filter-col-label s">Strategy</div>
-      <div class="gap-item strat">Annual goals</div>
-      <div class="gap-item strat">OKRs</div>
-      <div class="gap-item strat">Board priorities</div>
-      <div class="gap-item strat">Vision</div>
-    </div>
-    <div class="filter-col stack">
-      <div class="filter-stack-header">
-        <div class="filter-stack-title">The Filter — Priority Stack</div>
+    <div class="stage">
+      <div class="stat">
+        <div class="n">65%</div>
+        <div class="t">of PE firms report replacing a portfolio company CEO during the holding period. <b>Only 9% say they rarely do it.</b> 83% say unplanned turnover stretches the hold, and nearly half say it cuts returns.</div>
+        <div class="src">AlixPartners · March 2026</div>
       </div>
-      <div class="filter-ranks">
-        <div class="rank-item rank-1">9.2 &nbsp; Install Agentic AI CRM Plug-in</div>
-        <div class="rank-item rank-2">8.7 &nbsp; Data Warehouse for Refreshable KPI Management</div>
-        <div class="rank-item rank-3">7.1 &nbsp; Customization Request from Strategic Customer</div>
-        <div class="rank-item rank-4">5.5 &nbsp; Bring in Consultants for Change Management</div>
-        <div class="rank-item rank-5">4.2 &nbsp; Onboarding Process Improvement</div>
+      <div class="stat">
+        <div class="n">95%</div>
+        <div class="t">of enterprise AI pilots produced no measurable P&amp;L impact against $30&ndash;40B spent. <b>The cause wasn't the models.</b> It was integration into how the company actually works.</div>
+        <div class="src">MIT NANDA · State of AI in Business</div>
       </div>
-      <div class="capacity-bar-wrap">
-        <div class="capacity-label">Capacity check</div>
-        <div class="capacity-track"><div class="capacity-fill"></div></div>
-        <div class="capacity-note">Available bandwidth vs. already allocated</div>
+      <div class="stat">
+        <div class="n">20%</div>
+        <div class="t">global employee engagement, the lowest since 2020. <b>Manager engagement fell nine points since 2022</b>, and managers are the layer that turns strategy into priorities.</div>
+        <div class="src">Gallup · 2026</div>
       </div>
     </div>
-    <div class="filter-col execution">
-      <div class="filter-col-label e">Execution</div>
-      <div class="filter-exec-item">✓ &nbsp;Right work activated</div>
-      <div class="filter-exec-item">✓ &nbsp;PM tools get fed</div>
-      <div class="filter-exec-item blocked">· &nbsp;Queued — next in line</div>
-      <div class="filter-exec-item blocked">· &nbsp;Sequenced for later</div>
-    </div>
-  </div>
-  <div class="filter-callout">
-    <div class="filter-callout-text">
-      <h3>Capacity-aware by design.</h3>
-      <p>A high score doesn't mean it starts Monday. The Filter activates what your team can absorb right now — so a 5.5 that fits this quarter can move ahead of a 9.2 that needs six months of runway. That's the system protecting your team's focus.</p>
-      <p style="margin-top:0.75rem;">And when the same team keeps showing up overloaded, that stops being a scheduling problem and becomes a hiring case you can defend.</p>
-      <p style="margin-top:0.75rem;font-size:0.88rem;color:rgba(255,255,255,0.87);">What gets prioritized gets owned. What gets owned gets visible.</p>
-    </div>
-    <div class="filter-callout-stat">
-      <div class="n">1hr</div>
-      <div class="l">per week to run it</div>
+
+    <div class="sowhat">
+      <div class="big">Three different reports. One failure.</div>
+      <p>Companies are committing to more change than their people can absorb, and almost nobody runs the arithmetic before they commit. The work isn't wrong. There's just too much of it pointed at the same people, and the layer that was supposed to sort it out is the layer that's burning out.</p>
     </div>
   </div>
 </section>
 
-<!-- ── TWO JOBS ── -->
-<section class="jobs-section" aria-labelledby="jobs-heading">
-  <div class="label">What Changes</div>
-  <h2 id="jobs-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;color:var(--off-black);margin-bottom:1.25rem;">Every initiative becomes <span style="color:var(--maroon);">one clear operating picture.</span></h2>
-  <p class="jobs-intro" style="max-width:none;">Four things become true the day it's installed. They stay true after I leave.</p>
- 
-  <div class="jobs" style="grid-template-columns:1fr 1fr;">
-    <div class="job-card">
-      <div class="job-label">Active Work</div>
-      <div class="job-title">See what's in flight.</div>
-      <p>Every project actually moving lives on one list — what it is, who owns it, where it stands. Anyone can see what's underway and who's carrying it.</p>
-    </div>
-    <div class="job-card">
-      <div class="job-label">Pipeline</div>
-      <div class="job-title">See what's coming.</div>
-      <p>Every request and idea that hasn't started yet sits on that same list, measured against the work already in motion. New ideas earn their place in the order on the same terms as everything else.</p>
-    </div>
-    <div class="job-card">
-      <div class="job-label">Decisions</div>
-      <div class="job-title">The best idea wins.</div>
-      <p>Everything scored on one scale, so the work that moves the business rises to the top — wherever the idea came from, whoever submitted it.</p>
-    </div>
-    <div class="job-card">
-      <div class="job-label">Delivery</div>
-      <div class="job-title">Commitments hold.</div>
-      <p>Named owners, a standing cadence, and a clear change process carry work all the way to done — and keep this week's decisions steady through next week.</p>
-    </div>
-  </div>
+<!-- CHAIR -->
+<section class="s center" id="chair">
+  <div class="w" data-n="02">
+    <div class="badge">How it shows up</div>
+    <h2>You've probably already diagnosed this as something else.</h2>
 
-  <div style="margin-top:2.5rem;text-align:center;padding:2.75rem 2rem;background:var(--off);border:1px solid var(--rule);border-top:3px solid var(--maroon);">
-    <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.7rem,2.8vw,2.6rem);letter-spacing:0.03em;line-height:1.05;color:var(--off-black);margin-bottom:0.75rem;">If it is not on the list, <span style="color:var(--maroon);">it does not exist.</span></div>
-    <div style="font-size:0.9rem;color:var(--subtle);max-width:560px;margin:0 auto;line-height:1.7;">The single rule that makes the whole system work. Everything that matters is visible, ranked, and decided in the open. The system surfaces the field. Your leaders still make the call &mdash; the difference is everyone sees why.</div>
-  </div>
-</section>
-
-<!-- ── CHAOS TAX ── -->
-<section class="chaos-tax" aria-labelledby="chaos-heading">
-  <div class="label">The Chaos Tax</div>
-  <h2 id="chaos-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1.25rem;">What the gap is <span style="color:var(--maroon);">costing you.</span></h2>
-  <p class="chaos-intro">These numbers use conservative assumptions — the real cost is usually larger. Without a system, this is what's leaking out of a $50M business every year. <strong>Every quarter you run this way is a quarter you're paying it.</strong></p>
-
-  <div class="chaos-cards">
-    <div class="chaos-card">
-      <div class="chaos-card-num">$780K</div>
-      <div class="chaos-card-label">Leadership time burned on the wrong things</div>
-      <div class="chaos-card-math">6 leaders × $250K loaded cost × 20% of their time on misaligned work = $300K lost. Add ~3 hrs/week per leader relitigating priorities that were never settled: another $480K a year.</div>
+    <div class="chair">
+      <div class="ch">
+        <div class="you">"I think we need to hire."</div>
+        <div class="real">Maybe you do. <b>But you can't prove it yet, and neither can the person asking.</b> So you either approve on a feeling or decline on one.</div>
+      </div>
+      <div class="ch">
+        <div class="you">"One of my leaders is the problem."</div>
+        <div class="real">Usually not. <b>They're the one with a real case who keeps making it,</b> because there's no other way to get their work moved up.</div>
+      </div>
+      <div class="ch">
+        <div class="you">"The team got slower."</div>
+        <div class="real">They're carrying more than they were last year. <b>Nobody wrote down how much more,</b> so it looks like a performance problem instead of a math problem.</div>
+      </div>
+      <div class="ch">
+        <div class="you">"Our biggest customer asked for it."</div>
+        <div class="real">So it went straight to the top. <b>Nobody checked what it displaced</b>, and what it displaced was part of why two other accounts stay.</div>
+      </div>
+      <div class="ch">
+        <div class="you">"We already decided this."</div>
+        <div class="real">You did. <b>It came back three weeks later</b> because nothing was written down about what it beat, or why.</div>
+      </div>
     </div>
-    <div class="chaos-card">
-      <div class="chaos-card-num">$420K</div>
-      <div class="chaos-card-label">Investment that never reaches the finish line</div>
-      <div class="chaos-card-math">Strategic initiatives stall the moment a new fire jumps the line, and the sunk cost never converts to value. The work that gets started doesn't get finished.</div>
-    </div>
-    <div class="chaos-card">
-      <div class="chaos-card-num">$650K</div>
-      <div class="chaos-card-label">High-value work that ships a quarter late</div>
-      <div class="chaos-card-math">When the highest-impact initiative loses the room to whoever's loudest, it starts a full quarter behind schedule. On a $2.6M ARR initiative, one lost quarter is $650K of revenue arriving late.</div>
-    </div>
-  </div>
 
-  <div class="chaos-total">
-    <div class="chaos-total-label">Estimated annual chaos tax</div>
-    <div class="chaos-total-value" id="chaos-total">$1.85M<sup style="font-size:1.4rem;color:var(--maroon);">+</sup></div>
-  </div>
-
-  <div class="chaos-slider">
-    <div class="chaos-slider-top">
-      <span class="chaos-slider-label">Scale it to your revenue</span>
-      <span class="chaos-slider-read"><span id="rev-read">$50M</span> revenue &rarr; <strong id="tax-read">$1.85M+</strong> / yr</span>
-    </div>
-    <input type="range" id="rev-slider" min="3" max="75" step="1" value="50" aria-label="Annual revenue in millions of dollars">
-    <p class="chaos-slider-note">Directional only — scaled linearly from the model above. Every business is different; your numbers will differ. This is to demonstrate the cost of misaligned and unclear priorities across the business.</p>
-  </div>
-
-  <div style="margin-top:2rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:2rem 2.5rem;background:var(--off-black);border-left:4px solid var(--maroon);">
-    <p style="font-size:1rem;line-height:1.8;color:rgba(255,255,255,0.9);margin:0;"><strong style="color:var(--white);">The Filter shuts this off in 14 days — for a fixed fee that's a fraction of any single line above.</strong> The math is the easy part. The real work is the first time a leadership team ranks everything against everything else and makes the calls in the open. I run those sessions — a neutral hand who holds the process steady until your team owns it themselves.</p>
-    <div style="text-align:center;flex-shrink:0;">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:var(--white);line-height:1;">14 Days</div>
-      <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Installed · Guaranteed</div>
+    <div class="chnote">
+      <p>None of those are people problems. They're the same problem four different ways: <b>there's no shared list, no agreed way to rank it, and no number for what your teams can actually carry.</b></p>
     </div>
   </div>
 </section>
 
-<!-- ── WHEN THIS MAKES SENSE ── -->
-<section class="triggers" id="when" aria-labelledby="when-heading">
-  <div class="label">When This Makes Sense</div>
-  <h2 id="when-heading" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:0.95;letter-spacing:0.02em;color:var(--off-black);margin-bottom:1.25rem;">The best time is early. <span style="color:var(--maroon);">The next best time is now.</span></h2>
-  <p class="trig-intro" style="font-size:1rem;line-height:1.8;color:var(--body);max-width:640px;margin-bottom:2.25rem;">Most teams call when one of these is true. If you recognize your company here, the install pays for itself fast.</p>
+<!-- WHAT IT IS -->
+<section class="s" id="what">
+  <div class="w" data-n="03">
+    <div class="badge"><span class="dot"></span>What this actually is</div>
+    <h2>Your company runs two kinds of work at once.</h2>
 
-  <div class="trig-grid">
-    <div class="trig">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      <div class="t">After a Raise</div>
-      <p>Capital amplifies whatever system you already have. Set the decision layer first, and every dollar you deploy lands on the highest-return work.</p>
+    <div class="twok">
+      <div class="kind">
+        <div class="h">Run the business</div>
+        <div class="t">Keeping the lights on</div>
+        <p>Nobody argues about this and it happens whether or not anyone is watching.</p>
+        <ul>
+          <li>Invoices go out</li>
+          <li>Tickets get answered</li>
+          <li>Payroll runs</li>
+          <li>The product stays up</li>
+        </ul>
+      </div>
+      <div class="kind b">
+        <div class="h">Change the business</div>
+        <div class="t">Everything else</div>
+        <p>All of it is optional. All of it wants the same people. Almost nobody has one list of it.</p>
+        <ul>
+          <li>The ERP migration</li>
+          <li>The pricing overhaul</li>
+          <li>The comp plan rebuild</li>
+          <li>The build your biggest customer asked for</li>
+          <li>The reporting build nobody owns</li>
+        </ul>
+      </div>
     </div>
-    <div class="trig">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M14 7h4a3 3 0 0 1 3 3v0M10 17H6a3 3 0 0 1-3-3v0"/></svg>
-      <div class="t">After an Acquisition</div>
-      <p>Two teams, two backlogs, one big opportunity. The Filter gives the combined org a single ranked list — so the integration value lands fast.</p>
-    </div>
-    <div class="trig">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      <div class="t">Scaling Headcount</div>
-      <p>Every new hire adds capacity worth pointing in the right direction. Set the system while you grow, and each new person plugs into a clear order on day one.</p>
-    </div>
-    <div class="trig">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/></svg>
-      <div class="t">A New Leadership Seat</div>
-      <p>A new CEO or COO stepping in. The fastest way to take command is one ranked, owned list the whole team already trusts.</p>
-    </div>
-    <div class="trig">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M16 2l4 4-4 4"/></svg>
-      <div class="t">More Good Options Than Time</div>
-      <p>Growth gives you more worthwhile work than any quarter can hold. The Filter turns the whole list into a clear, ranked top five — and the neutrality to decide it in the open.</p>
-    </div>
-    <div class="trig">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      <div class="t">Before the Next Push</div>
-      <p>A product launch, a new market, a transformation. Set the decision layer first, so the whole team pushes in the same direction when it counts.</p>
+
+    <div class="houseline">
+      <div class="hq">Business as usual keeps the lights on. This decides whether the house gets another room, or an upgraded kitchen first.</div>
+      <p>I don't touch the first column. What I do is put everything in the second column in one place, ranked, with a line drawn where your capacity actually runs out. Most leadership teams have never seen that list in one piece. When they finally do, the first thing they notice is how much of it is the same work twice.</p>
     </div>
   </div>
-
-  <p class="trig-foot" style="margin-top:2rem;font-size:1rem;line-height:1.7;color:var(--off-black);font-weight:500;max-width:66ch;">Set the system early and execution runs clean from day one. Set it once you're already climbing and it still pays off fast — <span style="color:var(--maroon);">The Filter meets you wherever you are.</span></p>
 </section>
 
+<!-- WHERE IT LANDS -->
+<section class="s center">
+  <div class="w" data-n="04">
+    <div class="badge"><span class="dot"></span>Where this usually lands</div>
+    <h2>It sits on top of whatever you're already doing.</h2>
+    <p class="lede">I'm not replacing your plan. I'm the thing that decides what the plan can actually hold.</p>
 
-
-<!-- ── ABOUT ── -->
-<section class="about-section" id="about-bio" aria-labelledby="about-heading">
-  <div class="about-row">
-    <div class="about-photo-wrap">
-      <img src="NHeadshot.jpeg" alt="Nathan Harris" class="about-photo"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="about-photo-placeholder"><span>NH</span></div>
+    <div class="lands">
+      <div class="land">
+        <div class="w2">Complements</div>
+        <h3>A PE 100-day plan</h3>
+        <p>The value creation plan says what to do. It doesn't say what the company stops doing to make room. Day 1 to 14 of the 100 is the cheapest possible time to find out ops is already running at 150%, instead of finding out in month five.</p>
+      </div>
+      <div class="land">
+        <div class="w2">Complements</div>
+        <h3>A merger or acquisition</h3>
+        <p>Two companies, two backlogs, two sets of priorities, and no shared way to compare any of it. Both sides defend their own list because there's nothing else to defend it against. The integration value shows up this year or it doesn't.</p>
+      </div>
+      <div class="land">
+        <div class="w2">Complements</div>
+        <h3>A new C-suite exec</h3>
+        <p>You inherited a list you didn't build and can't defend yet. Cutting things in month one makes you the new person who cancels things. If an outsider runs the room instead, the team owns the outcome with you.</p>
+      </div>
+      <div class="land">
+        <div class="w2">Complements</div>
+        <h3>EOS or any operating system</h3>
+        <p>EOS decides how you run a quarter. It doesn't decide what belongs in it. <b>The Filter picks the Rocks, EOS runs them.</b> A team already running a V/TO and a real Level 10 rhythm is the easiest install I'll ever do, because the discipline is already there. <a href="/eos">Longer version here.</a></p>
+      </div>
     </div>
-    <div class="about-bio">
-      <div class="about-name" id="about-heading">Nathan Harris. Founder & Principal.<br><span class="accent">Tested Operator. Real System.</span></div>
-      <p>I've been in the room for thousands of decisions. From EVPs running $2B ARR lines of business down to line managers just trying to hold a team accountable — with hundreds of decision makers in between. And then was the primary operator trusted to ensure the most critical items decided were seen through from idea to delivered outcome.</p>
 
-      <div style="margin:2rem 0 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--maroon);">The Pattern I Kept Watching</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:2rem;">
-        <div style="background:var(--off);padding:1.75rem 2rem;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.03em;color:var(--off-black);margin-bottom:0.6rem;line-height:1;">01 — Decisions Wanted a Shared Standard</div>
-          <p style="font-size:0.88rem;line-height:1.75;color:var(--body);margin:0;">Smart people moving fast, ready for one shared way to rank what mattered most. Give them a single clear standard and the best work surfaces on its own — on merit, every time.</p>
-        </div>
-        <div style="background:var(--off);padding:1.75rem 2rem;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.03em;color:var(--off-black);margin-bottom:0.6rem;line-height:1;">02 — Follow-Through Wanted a System</div>
-          <p style="font-size:0.88rem;line-height:1.75;color:var(--body);margin:0;">Cadences, communication, delivery visibility — the support structure that carries decisions all the way to done. Build it once and execution keeps its promises.</p>
+    <div class="notfor">
+      <div class="h">Don't book the call if</div>
+      <p>You're under about 20 people and can still hold the whole list in your head. <b>Or</b> you want someone to own execution afterward, because I install it and leave. <b>Or</b> you can't get your leadership team in a room twice inside two weeks. <b>Or</b> you're shopping for software, because there isn't any.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 15 -->
+<section class="s" id="day15">
+  <div class="w" data-n="05">
+    <div class="badge">What changes</div>
+    <h2>What your week looks like on day 15.</h2>
+
+    <div class="d15">
+      <div class="dcard">
+        <div class="when">Your next quarterly</div>
+        <p>Starts with a list your leadership team already agreed to, in order. <b>You're approving, not refereeing.</b></p>
+      </div>
+      <div class="dcard">
+        <div class="when">When something new lands</div>
+        <p>There's a place to put it and a way to answer it <b>that isn't your gut and isn't a meeting.</b></p>
+      </div>
+      <div class="dcard">
+        <div class="when">When you say no</div>
+        <p>Nobody takes it personally, <b>because they watched the comparison that produced it.</b></p>
+      </div>
+      <div class="dcard">
+        <div class="when">When you're ready to hire</div>
+        <p>The case is already written. <b>Three quarters of declined work with the reason on each one.</b></p>
+      </div>
+    </div>
+
+    <div class="calm">
+      <div class="big">None of this is dramatic. That's the point.</div>
+      <p>A good CEO is quietly noticeable. The company just runs, decisions hold, and nobody is arguing about what matters this week. <b>The calm is the product.</b> The list is only how you get there.</p>
+    </div>
+
+    <div class="artifacts">
+      <div class="art"><b>One ranked list</b>Everything competing for your team, scored against what they can staff.</div>
+      <div class="art"><b>A call on every item</b>Active, queued, or dead. A name and a date on each.</div>
+      <div class="art"><b>The system, yours</b>No license, no software. About an hour a week.</div>
+      <a class="artlink" href="/The-Filter-One-Pager.pdf" download>How it works &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN -->
+<section class="s" id="origin">
+  <div class="w" data-n="06">
+    <div class="badge"><span class="dot"></span>Where it came from</div>
+    <h2>This didn't start as a consulting product.</h2>
+
+    <div class="origin">
+      <div class="shot">
+        <img src="NHeadshot.jpeg" alt="Nathan Harris" onerror="this.outerHTML='&lt;div class=\'fb\'&gt;NH&lt;/div&gt;'">
+        <div class="sig"><b>Nathan Harris</b>Founder &amp; Principal<br>Left Brain Consulting</div>
+      </div>
+
+      <div class="story">
+        <p>I built it inside a <b>$200M rebuild of a $2B business unit at a Fortune 50</b>, with EY and IBM in the room and more than fifty teams all pointed at the same calendar. I chaired the board that decided what got through and what didn't. That company spent real money to keep that level of talent around, and this is the part of it that actually did the work.</p>
+
+        <p>Then I took it out, cut it down to the part that mattered, and ran it at a <b>$100M ARR company that had just bought four other companies.</b> About a thousand people, four backlogs, no way to compare any of it against anything. Every initiative went on one list and the calls got made out loud.</p>
+
+        <p>Eight years of that, from EVPs running $2B lines of business down to line managers just trying to hold a team accountable, and it was the same problem every time. <b>What I'm actually selling is neutrality.</b> The score starts the conversation and your leaders end it, but that only works if whoever's running the room doesn't care which department wins. Usually nobody inside the company can.</p>
+
+        <div class="lastline">Same system, smaller room, and it goes in a lot faster.</div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <div><b>25%+</b><span>of effort duplicated before one intake existed</span></div>
+      <div><b>97</b><span>requests onto a single ranked list</span></div>
+      <div><b>$5M</b><span>freed of a $50M expense base</span></div>
+      <div><b>Still on</b><span>a year later, through a leadership change</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="s">
+  <div class="w" data-n="07">
+    <div class="badge"><span class="dot"></span>The guarantee</div>
+    <h2>All three, in 14 days, or you get the whole fee back.</h2>
+
+    <div class="gbox">
+      <div class="gtop">
+        <div class="seal"><div class="n">14</div><div class="u">Days</div></div>
+        <div>
+          <div class="t">Not a discount and not a credit. The whole thing.</div>
+          <p><b>You keep everything either way</b> — the list, the scores, and the system behind it — whether or not I earned the invoice.</p>
         </div>
       </div>
-
-      <p>I built The Filter to give that follow-through a home. And watched what happened when organizations made decisions out loud, in one clear order: decisions held, work finished on time, stakeholders planned with confidence, and the team's energy went straight to the work that mattered.</p>
-      <p style="margin-top:1.75rem;font-size:0.88rem;color:var(--subtle);line-height:1.75;">Outside of work: competing in jiu jitsu, exploring Colorado with my wife, son, and dog, and trying to be present for all of it.</p>
+      <div class="gsplit">
+        <div class="gs">
+          <div class="h">What I'm guaranteeing</div>
+          <p><b>The work and the date.</b> A scored, ranked, capacity-checked list with a decision on every line. Nobody can guarantee which initiatives you pick, and I'm not going to pretend otherwise.</p>
+        </div>
+        <div class="gs">
+          <div class="h">What I need from you</div>
+          <p><b>Your leadership team in a room, twice.</b> If your calendar can't hold that in the next two weeks, I'll say so before we start instead of after.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── FINAL CTA ── -->
-<section class="cta-final" id="book">
-  <div style="position:relative;z-index:1;">
-    <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(249,168,184,0.7);margin-bottom:2rem;">Left Brain Consulting · The Filter</div>
-    <h2>Name your top five priorities.<br><span class="accent">In order. Out loud.</span></h2>
-    <p>Now have each of your leaders write theirs down separately. Compare the lists.<br>The gap between them is what you're paying for every quarter.</p>
-    <div class="cta-actions">
-      <a href="https://calendly.com/nathan-leftbrainconsult" class="btn large">Book 30 Minutes</a>
+<!-- FAQ -->
+<section class="s">
+  <div class="w" data-n="08">
+    <div class="badge"><span class="dot"></span>The questions I get every time</div>
+    <h2>Six things people ask before they book.</h2>
+    <p class="lede">Tap any of them.</p>
+
+    <div class="faq">
+      <details class="q" open>
+        <summary>We already run EOS. Does this replace it?<span class="pm" aria-hidden="true"></span></summary>
+        <div class="ans"><p>No. It sits on top of it, and EOS companies are the easiest installs I do. The three gaps it fills are all things EOS says about itself: Rocks are progress and not maintenance, so standing load never gets counted. The 80% completion target tells you the quarter was overloaded after it already was. And force-ranking a fourth Rock is a conversation, so it goes to whoever argues best. <a href="/eos">Full breakdown here.</a></p></div>
+      </details>
+      <details class="q">
+        <summary>Isn't this just a spreadsheet?<span class="pm" aria-hidden="true"></span></summary>
+        <div class="ans"><p>The spreadsheet is free, it's at the bottom of this page, take it and run it yourself. <b>What you're paying for is somebody who can get twelve teams to score honestly and a leadership team to kill something in front of each other.</b> That part doesn't come in a file.</p></div>
+      </details>
+      <details class="q">
+        <summary>14 days seems fast for something this big.<span class="pm" aria-hidden="true"></span></summary>
+        <div class="ans"><p>It's fast because I'm not learning your business. <b>Your people supply every input. I supply the standard, the capacity math, and the fact that I don't care who wins.</b> It's ten working days of my time and about two hours of yours.</p></div>
+      </details>
+      <details class="q">
+        <summary>My team is already underwater. They don't have time for this.<span class="pm" aria-hidden="true"></span></summary>
+        <div class="ans"><p>One hour, once. That's the whole ask of anyone outside your leadership team. <b>If they're underwater, this is the thing that finally measures it</b>, and the measurement is what lets something come off their plate.</p></div>
+      </details>
+      <details class="q">
+        <summary>What if we don't agree with the ranking?<span class="pm" aria-hidden="true"></span></summary>
+        <div class="ans"><p>Then you override it, out loud, with everything on the table. <b>The score starts the conversation and your leaders finish it.</b> The number was never the point. The point is that everyone watched the same comparison before the call got made.</p></div>
+      </details>
+      <details class="q">
+        <summary>What happens after you leave?<span class="pm" aria-hidden="true"></span></summary>
+        <div class="ans"><p>About an hour a week. New requests get scored the same way as everything already running, and there's nothing new to stand up to do it. <b>If it needed me to keep working, I built it wrong.</b></p></div>
+      </details>
     </div>
-    <div class="cta-note" style="margin-top:1.5rem;">Bring six things your team is fighting over. We'll score them live in 30 minutes, and you'll leave with a ranked view of the conflict &mdash; whether or not we work together.<br>No pitch deck, no questionnaire.</div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="end">
+  <div class="w">
+    <div class="endcard">
+      <div class="badge">One conversation, no deck</div>
+      <h2>Name your top five. <em>In order. Out loud.</em></h2>
+      <p class="lede">Then have each of your leaders write theirs down separately and compare them. The gap between those lists is what you're paying for every quarter, and it's the only qualification test that matters.</p>
+
+      <div class="ob">
+        <div class="h">Thirty minutes · No questionnaire · Nothing to install</div>
+        <div class="b2">Bring six things your team is fighting over. We'll score them live and you'll leave with a ranked view of the conflict, whether or not we ever work together.</div>
+      </div>
+
+      <div class="acts">
+        <a class="btn" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
+      </div>
+      <div class="px">One fixed fee, agreed before we start · No retainer, no hourly, no change orders<br>Full refund if all three aren't delivered in 14 days</div>
+
+      <div class="dl2">
+        <a class="dlc" href="/The-Filter-One-Pager.pdf" download>
+          <div class="k">One-pager · PDF</div>
+          <div class="t">How the install actually works</div>
+          <div class="d">The 14 days, the scoring, what happens in the workshop. Everything this page left out.</div>
+        </a>
+        <a class="dlc" href="/The-Filter-Core-System.xlsx" download>
+          <div class="k">The system · XLSX</div>
+          <div class="t">Run it yourself, free</div>
+          <div class="d">The whole thing. Take it, use it with your team, keep it. No email required.</div>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <div class="footer-logo">Left Brain Consulting</div>
-  <div class="footer-copy">©Left Brain Consulting LLC · Based in Colorado</div>
-  <a href="mailto:nathan@leftbrainconsult.com" class="footer-link">nathan@leftbrainconsult.com</a>
-</footer>
-<script>
-(function(){
-  var slider = document.getElementById('rev-slider');
-  if(!slider) return;
-  var revRead = document.getElementById('rev-read'),
-      taxRead = document.getElementById('tax-read'),
-      total   = document.getElementById('chaos-total');
-  function fmt(k){
-    if(k>=1000){var m=k/1000;var s=(m>=10)?String(Math.round(m)):(Math.round(m*100)/100).toFixed(2).replace(/\.?0+$/,'');return '$'+s+'M';}
-    return '$'+Math.round(k/10)*10+'K';
-  }
-  function update(){
-    var rev=parseInt(slider.value,10), scale=rev/50;
-    revRead.textContent='$'+rev+'M';
-    taxRead.textContent=fmt(1850*scale)+'+';
-    total.innerHTML=fmt(1850*scale)+'<sup style="font-size:1.4rem;color:var(--maroon);">+</sup>';
-  }
-  slider.addEventListener('input',update);
-  update();
-})();
-</script>
+<footer><div class="w">
+  <div>&copy; Left Brain Consulting LLC &middot; Colorado</div>
+  <div><a href="mailto:nathan@leftbrainconsult.com">nathan@leftbrainconsult.com</a></div>
+</div></footer>
+
 </body>
 </html>
