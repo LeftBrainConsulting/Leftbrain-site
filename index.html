@@ -223,6 +223,24 @@ a{color:inherit}
   .stats{grid-template-columns:1fr;gap:.9rem}
   .chip{white-space:normal}
 }
+
+/* ---- about ---- */
+.about{padding:1.2rem 0 4.6rem;border-top:1px solid var(--rule);margin-top:1.4rem;scroll-margin-top:88px}
+.abgrid{display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+.abtext h2{font-size:clamp(1.55rem,3vw,2.25rem);font-weight:800;letter-spacing:-.04em;line-height:1.07;
+  color:var(--ink);max-width:20ch;margin:0 0 1.4rem}
+.abtext h2 em{font-style:normal;color:var(--mar)}
+.abtext p{font-size:1.01rem;line-height:1.76;color:var(--mute);max-width:62ch;margin:0 0 1rem}
+.abspec{position:static}
+.abspec .srow:last-of-type{border-bottom:1px solid var(--rule)}
+.abpers{padding:1rem}
+.abpers .chiplab{margin-bottom:.65rem}
+.abpers .chips{gap:.35rem}
+.abpers .chip{font-size:var(--ms-2)}
+@media(max-width:900px){
+  .about{padding:.8rem 0 3rem}
+  .abgrid{grid-template-columns:1fr;gap:1.8rem}
+}
 </style>
 </head>
 <body>
@@ -233,6 +251,7 @@ a{color:inherit}
     <a class="nl" href="/filter">The Filter</a>
     <a class="nl" href="#r02">Fractional</a>
     <a class="nl" href="#r03">Full time</a>
+    <a class="nl" href="#about">About</a>
     <a class="nc" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
   </div>
 </div></nav>
@@ -493,6 +512,45 @@ a{color:inherit}
     </article>
   </div>
 </main>
+
+<section class="about" id="about">
+  <div class="w">
+    <div class="rhead">Who you&#8217;d be working with</div>
+    <div class="abgrid">
+      <div class="abtext">
+        <h2>Nobody hands you the title <em>organizational architect.</em></h2>
+
+        <p>I was put inside a Fortune 50 turnaround at 23 and handed the change control board &mdash; 50+ application development teams, 1,000+ executive change requests, on a $200M program overhauling a $2B business unit. It didn&#8217;t exist before me. The platform couldn&#8217;t go live without it.</p>
+
+        <p>Then I became the audit point of contact for that program, which meant seeing how every team actually operated against the standard rather than how they described it. Most operators know one function deeply. That year I got the cross-section &mdash; and that vantage point is the whole thing. I know how functions fail against each other, where decisions actually get made, and what has to exist before execution can hold.</p>
+
+        <p>Eight years, five promotions, Associate Director by 25. A $125M budget covering every enterprise system at a $15B company. A failed ERP consolidation I got handed the rollback of. A $100M ARR business unit running as three silos that I put behind one intake &mdash; still running today after the leadership that sponsored it turned over.</p>
+
+        <div class="refblk">
+          <span class="reflab">The short version</span>
+          <p class="refp">I build the layer that decides. Then I leave, and it keeps running. That constraint &mdash; that it has to survive without me &mdash; is what shaped every method on this page.</p>
+        </div>
+      </div>
+
+      <aside class="spec abspec">
+        <div class="spechd">Background</div>
+        <div class="srow"><span class="sk">Then</span><span class="sv">MetLife &middot; Fortune ~50<br>IQVIA &middot; Fortune ~275</span></div>
+        <div class="srow"><span class="sk">Now</span><span class="sv">Left Brain Consulting.<br>Co-founder, Blotto.</span></div>
+        <div class="srow"><span class="sk">Based</span><span class="sv">Westminster, Colorado.<br>Remote, and on-site when it earns the trip.</span></div>
+        <div class="abpers">
+          <span class="chiplab">Away from the work</span>
+          <div class="chips">
+            <span class="chip">Husband &amp; father</span>
+            <span class="chip">Jiu jitsu</span>
+            <span class="chip">Colorado trails</span>
+            <span class="chip">Border Collie</span>
+            <span class="chip">Too much coffee</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
 
 <footer class="foot">
   <div class="w footin">
