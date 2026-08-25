@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Left Brain Consulting — Nathan Harris</title>
 <meta name="description" content="I build the machinery a business unit runs on. The Filter: a 14-day decision governance install. Fractional operator engagements. Open to full-time transformation and delivery leadership.">
-<link rel="icon" type="image/svg+xml" href="/logo.svg">
-<link rel="apple-touch-icon" href="/logo.svg">
+<link rel="icon" type="image/png" href="/img/mark-nav.png">
+<link rel="apple-touch-icon" href="/img/mark-foot.png">
 <meta name="theme-color" content="#8B1A2E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -287,12 +287,38 @@ a{color:inherit}
   .srow{grid-template-columns:74px 1fr;gap:.7rem}
   .sk{font-size:.6rem;letter-spacing:.1em}
 }
+
+.bd{display:inline-flex;align-items:center;gap:.6rem}
+.mk{height:19px;width:auto;display:block;flex:0 0 auto}
+.fmk{height:44px;width:auto;display:block;margin-bottom:.9rem;opacity:.9}
+@media(max-width:520px){.mk{height:17px}.bd{gap:.45rem}}
+
+/* mark as section-rule marker */
+.rhead{display:flex;align-items:center;gap:.75rem}
+.rmk{height:15px;width:auto;display:block;flex:0 0 auto;opacity:.85}
+
+/* ghosted mark behind the about block */
+.about{position:relative;overflow:hidden}
+.ghost{position:absolute;right:-46px;top:38px;width:300px;height:518px;pointer-events:none;z-index:0;
+  background:url('/img/mark-ghost.png') no-repeat center/contain}
+.about .w{position:relative;z-index:1}
+@media(max-width:900px){.ghost{display:none}}
+
+/* discipline drawing tiles */
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.dt{margin:0;background:var(--white);border:1px solid var(--rule);border-top:2px solid #C5828D}
+.dt svg{display:block;width:100%;height:auto;padding:.35rem .35rem 0}
+.dt figcaption{font-family:var(--m);font-size:.63rem;font-weight:500;letter-spacing:.02em;line-height:1.4;
+  color:var(--text);border-top:1px solid var(--rule-l);padding:.45rem .5rem .5rem;text-align:center}
+@media(max-width:1000px){.dgrid{grid-template-columns:repeat(4,1fr);gap:.45rem}.dt figcaption{font-size:.58rem}}
+@media(max-width:900px){.dgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.dgrid{grid-template-columns:repeat(2,1fr)}.dt figcaption{font-size:.62rem}}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="navin">
-  <a class="bd" href="/">Left Brain <i>/ Nathan Harris</i></a>
+  <a class="bd" href="/"><img class="mk" src="/img/mark-nav.png" alt="" width="32" height="96">Left Brain <i>/ Nathan Harris</i></a>
   <div class="nlinks">
     <a class="nl" href="/filter">The Filter</a>
     <a class="nl" href="#r02">Fractional</a>
@@ -361,7 +387,7 @@ a{color:inherit}
 
 <main class="routes">
   <div class="w">
-    <div class="rhead">Survey the building &middot; Repair the floor &middot; Span the gap</div>
+    <div class="rhead"><img class="rmk" src="/img/mark-nav.png" alt="" width="55" height="96">Survey the building &middot; Repair the floor &middot; Span the gap</div>
     <article class="scene lead" id="r01">
       <div class="top">
         <span class="kick"><i>01</i>The strategic timeout</span>
@@ -453,7 +479,63 @@ a{color:inherit}
         <div class="say">
           <p>No diagnostic needed. I come in, get up to speed, and run the playbook &mdash; solve the constraint with your team, train them to operate it without me, and move on to the next one.</p>
           <p class="tight">If more than one of these is true at once, that&#8217;s a timeout, not a fix.</p>
-          <div class="chipwrap"><span class="chiplab">Where it applies</span><div class="chips"><span class="chip">Performance management</span><span class="chip">Capacity planning</span><span class="chip">Planning &amp; exec cadence</span><span class="chip">AI governance</span><span class="chip">Change management</span><span class="chip">Post-sale &amp; CS</span><span class="chip">M&amp;A integration</span></div></div>
+          <div class="chipwrap"><span class="chiplab">Where it applies</span><div class="dgrid"><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Performance management"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
+<line x1="30" y1="72" x2="170" y2="72" stroke="#8B1A2E" stroke-width="2.4" stroke-dasharray="7 5"/>
+<text x="170" y="66" text-anchor="end" font-family="IBM Plex Mono" font-size="9" font-weight="600" fill="#8B1A2E">TARGET</text>
+<rect x="92" y="40" width="16" height="128" fill="none" stroke="#14161A" stroke-width="2.2"/>
+<line x1="92" y1="52" x2="108" y2="52" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="64" x2="102" y2="64" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="76" x2="108" y2="76" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="88" x2="102" y2="88" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="100" x2="108" y2="100" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="112" x2="102" y2="112" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="124" x2="108" y2="124" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="136" x2="102" y2="136" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="148" x2="108" y2="148" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="160" x2="102" y2="160" stroke="#14161A" stroke-width="1.1"/>
+<rect x="76" y="100" width="48" height="14" fill="#EAE7E0" stroke="#14161A" stroke-width="1.8"/>
+<path d="M124 107 L136 107" stroke="#14161A" stroke-width="1.6"/><path d="M132 103 L138 107 L132 111" fill="none" stroke="#14161A" stroke-width="1.6"/>
+<g stroke="#4B4D54" stroke-width="1"><line x1="52" y1="72" x2="52" y2="107"/><line x1="47" y1="72" x2="57" y2="72"/><line x1="47" y1="107" x2="57" y2="107"/></g></svg><figcaption>Performance management</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capacity planning"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
+<rect x="84" y="112" width="32" height="56" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/>
+<rect x="77" y="96" width="46" height="15" fill="#F7F6F3" stroke="#14161A" stroke-width="1.7"/><rect x="77" y="79" width="46" height="15" fill="#F7F6F3" stroke="#14161A" stroke-width="1.7"/><rect x="77" y="62" width="46" height="15" fill="#F7F6F3" stroke="#14161A" stroke-width="1.7"/><rect x="77" y="45" width="46" height="15" fill="#F7F6F3" stroke="#14161A" stroke-width="1.7"/>
+<line x1="34" y1="79" x2="166" y2="79" stroke="#8B1A2E" stroke-width="2.6"/>
+<text x="166" y="73" text-anchor="end" font-family="IBM Plex Mono" font-size="9" font-weight="600" fill="#8B1A2E">RATED LOAD</text>
+<g stroke="#8B1A2E" stroke-width="1.2" stroke-dasharray="3 3"><line x1="60" y1="45" x2="60" y2="79"/></g>
+<text x="52" y="58" text-anchor="end" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#8B1A2E">OVER</text></svg><figcaption>Capacity planning</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Planning and exec cadence"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
+<line x1="24" y1="54" x2="176" y2="54" stroke="#14161A" stroke-width="3.4"/>
+<rect x="32" y="54" width="13" height="114" fill="#EAE7E0" stroke="#14161A" stroke-width="2"/><rect x="68" y="54" width="13" height="114" fill="#EAE7E0" stroke="#14161A" stroke-width="2"/><rect x="104" y="54" width="13" height="114" fill="#EAE7E0" stroke="#14161A" stroke-width="2"/><rect x="140" y="54" width="13" height="114" fill="#EAE7E0" stroke="#14161A" stroke-width="2"/>
+<path d="M45 74 Q56.5 62 68 74" fill="none" stroke="#8B1A2E" stroke-width="2"/><path d="M81 74 Q92.5 62 104 74" fill="none" stroke="#8B1A2E" stroke-width="2"/><path d="M117 74 Q128.5 62 140 74" fill="none" stroke="#8B1A2E" stroke-width="2"/>
+<g stroke="#4B4D54" stroke-width="1"><line x1="38" y1="40" x2="146" y2="40"/>
+<line x1="38" y1="35" x2="38" y2="45"/><line x1="74" y1="35" x2="74" y2="45"/><line x1="110" y1="35" x2="110" y2="45"/><line x1="146" y1="35" x2="146" y2="45"/></g>
+<text x="92" y="30" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#4B4D54">EQUAL BAYS</text></svg><figcaption>Planning &amp; exec cadence</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI governance"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
+<g stroke="#8B1A2E" stroke-width="2" fill="none">
+  <path d="M18 66 H48 V90 H74"/><path d="M18 104 H40 V128 H74"/><path d="M18 140 H62 V116 H74"/>
+</g>
+<g fill="#8B1A2E"><circle cx="18" cy="66" r="3.4"/><circle cx="18" cy="104" r="3.4"/><circle cx="18" cy="140" r="3.4"/></g>
+<rect x="86" y="52" width="82" height="116" fill="#EAE7E0" stroke="#14161A" stroke-width="2.4"/>
+<rect x="74" y="82" width="12" height="56" fill="#F7F6F3" stroke="#14161A" stroke-width="2"/>
+<line x1="80" y1="82" x2="80" y2="138" stroke="#8B1A2E" stroke-width="2.2"/>
+<line x1="96" y1="70" x2="158" y2="70" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="88" x2="158" y2="88" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="106" x2="158" y2="106" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="124" x2="158" y2="124" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="142" x2="158" y2="142" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="158" x2="158" y2="158" stroke="#14161A" stroke-width="1.1" opacity=".45"/>
+<text x="127" y="44" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#14161A">ONE GATE</text></svg><figcaption>AI governance</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Change management"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
+<rect x="112" y="34" width="30" height="134" fill="#EAE7E0" stroke="#14161A" stroke-width="2.4"/>
+<line x1="112" y1="56" x2="142" y2="56" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="112" y1="78" x2="142" y2="78" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="112" y1="100" x2="142" y2="100" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="112" y1="122" x2="142" y2="122" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="112" y1="144" x2="142" y2="144" stroke="#14161A" stroke-width="1" opacity=".4"/>
+<g stroke="#8B1A2E" stroke-width="2.6" fill="none">
+  <path d="M112 62 L54 168"/><path d="M112 96 L74 168"/><path d="M112 130 L94 168"/>
+</g>
+<line x1="46" y1="168" x2="102" y2="168" stroke="#8B1A2E" stroke-width="3.4"/>
+<g stroke="#8B1A2E" stroke-width="1.4"><line x1="83" y1="80" x2="60" y2="122"/></g>
+<text x="66" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#8B1A2E">SHORED</text></svg><figcaption>Change management</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Post-sale and CS"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
+<path d="M66 168 L66 82 A34 34 0 0 1 134 82 L134 168" fill="#EAE7E0" stroke="#14161A" stroke-width="2.6"/>
+<path d="M58 168 L58 79 A42 42 0 0 1 142 79 L142 168" fill="none" stroke="#14161A" stroke-width="1" opacity=".35"/>
+<rect x="74" y="160" width="52" height="8" fill="none" stroke="#8B1A2E" stroke-width="1.8"/><rect x="69" y="152" width="62" height="8" fill="none" stroke="#8B1A2E" stroke-width="1.8"/><rect x="64" y="144" width="72" height="8" fill="none" stroke="#8B1A2E" stroke-width="1.8"/>
+<line x1="100" y1="96" x2="100" y2="136" stroke="#8B1A2E" stroke-width="2.6"/>
+<path d="M92 128 L100 138 L108 128" fill="none" stroke="#8B1A2E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="100" y="42" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#14161A">THRESHOLD</text></svg><figcaption>Post-sale &amp; CS</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MandA integration"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
+<rect x="16" y="86" width="56" height="82" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/>
+<rect x="128" y="66" width="56" height="102" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/>
+<line x1="24" y1="100" x2="64" y2="100" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="24" y1="118" x2="64" y2="118" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="24" y1="136" x2="64" y2="136" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="24" y1="154" x2="64" y2="154" stroke="#14161A" stroke-width="1" opacity=".4"/>
+<line x1="136" y1="82" x2="176" y2="82" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="136" y1="102" x2="176" y2="102" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="136" y1="122" x2="176" y2="122" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="136" y1="142" x2="176" y2="142" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="136" y1="162" x2="176" y2="162" stroke="#14161A" stroke-width="1" opacity=".4"/>
+<line x1="72" y1="106" x2="128" y2="106" stroke="#8B1A2E" stroke-width="3.4"/>
+<line x1="72" y1="126" x2="128" y2="126" stroke="#8B1A2E" stroke-width="3.4"/>
+<line x1="86" y1="106" x2="86" y2="126" stroke="#8B1A2E" stroke-width="1.6"/><line x1="100" y1="106" x2="100" y2="126" stroke="#8B1A2E" stroke-width="1.6"/><line x1="114" y1="106" x2="114" y2="126" stroke="#8B1A2E" stroke-width="1.6"/>
+<text x="100" y="96" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#8B1A2E">LINK</text></svg><figcaption>M&amp;A integration</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Delivery standards"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
+<g><rect x="18" y="76" width="40" height="92" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/><path d="M18 76 L38 56 L58 76" fill="none" stroke="#14161A" stroke-width="2.2"/><line x1="28" y1="104" x2="48" y2="104" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="28" y1="128" x2="48" y2="128" stroke="#14161A" stroke-width="1" opacity=".4"/></g><g><rect x="80" y="76" width="40" height="92" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/><path d="M80 76 L100 56 L120 76" fill="none" stroke="#14161A" stroke-width="2.2"/><line x1="90" y1="104" x2="110" y2="104" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="90" y1="128" x2="110" y2="128" stroke="#14161A" stroke-width="1" opacity=".4"/></g><g><rect x="142" y="76" width="40" height="92" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/><path d="M142 76 L162 56 L182 76" fill="none" stroke="#14161A" stroke-width="2.2"/><line x1="152" y1="104" x2="172" y2="104" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="152" y1="128" x2="172" y2="128" stroke="#14161A" stroke-width="1" opacity=".4"/></g>
+<g stroke="#8B1A2E" stroke-width="1.4">
+  <line x1="58" y1="42" x2="80" y2="42"/><line x1="58" y1="36" x2="58" y2="48"/><line x1="80" y1="36" x2="80" y2="48"/>
+  <line x1="120" y1="42" x2="142" y2="42"/><line x1="120" y1="36" x2="120" y2="48"/><line x1="142" y1="36" x2="142" y2="48"/>
+</g>
+<text x="100" y="30" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#8B1A2E">SAME EVERY BAY</text></svg><figcaption>Delivery standards</figcaption></figure></div></div>
           <div class="refblk"><span class="reflab">Proof</span><p class="refp">The delivery standards behind every one of these were built and pressure-tested alongside <b>EY, IBM, Infosys and Cognizant</b>, and with <b>C-suite and SVP leadership inside Fortune 50 and Fortune 275</b> organizations.</p></div>
         </div>
         <aside class="spec">
@@ -559,9 +641,9 @@ a{color:inherit}
   </div>
 </main>
 
-<section class="about" id="about">
+<section class="about" id="about"><span class="ghost" aria-hidden="true"></span>
   <div class="w">
-    <div class="rhead">Who you&#8217;d be working with</div>
+    <div class="rhead"><img class="rmk" src="/img/mark-nav.png" alt="" width="55" height="96">Who you&#8217;d be working with</div>
     <div class="abgrid">
       <div class="abtext">
         <h2>Nobody hands you the title <em>organizational architect.</em></h2>
@@ -602,6 +684,7 @@ a{color:inherit}
 <footer class="foot">
   <div class="w footin">
     <div>
+      <img class="fmk" src="/img/mark-foot.png" alt="Left Brain Consulting" width="84" height="240">
       <div class="lbl">Left Brain Consulting <i>·</i> leftbrainconsult.com</div>
     </div>
     <div>
