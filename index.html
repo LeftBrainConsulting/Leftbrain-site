@@ -245,9 +245,48 @@ a{color:inherit}
 .abface{border-bottom:1px solid var(--rule);background:var(--sunk)}
 .abface img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 18%;
   filter:grayscale(.24) contrast(1.03)}
-@media(max-width:900px){.abface img{aspect-ratio:16/7;object-position:50% 24%}}
+
 
 .abtext p b{font-weight:650;color:var(--ink)}
+
+/* ================= MOBILE PASS ================= */
+@media(max-width:900px){
+  /* hero figure becomes a business card row instead of a tall plate */
+  .hshot{max-width:none;display:flex;align-items:stretch;background:var(--white);
+    border:1px solid var(--rule);border-top:3px solid var(--mar);box-shadow:var(--sh-2)}
+  .shotwrap{border:0;box-shadow:none;padding:0;flex:0 0 116px;background:transparent}
+  .shotwrap img{aspect-ratio:1/1;height:100%;object-position:50% 18%}
+  .hshot figcaption{flex:1;border:0;border-left:1px solid var(--rule);box-shadow:none;
+    padding:.8rem .9rem;display:flex;flex-direction:column;justify-content:center}
+  .hshot .nm{padding-bottom:.4rem;margin-bottom:.4rem}
+  .hshot .rl{line-height:1.6}
+  .hshot .fo{margin-top:.45rem;padding-top:.45rem}
+  .hshot .fo br{display:none}
+
+  /* stats: tighter, two-up, less vertical cost */
+  .stats{grid-template-columns:1fr 1fr;gap:.9rem 1.4rem;margin-top:1.5rem;padding-top:1.15rem;max-width:none}
+  .st dt{font-size:1rem;padding-bottom:.34rem;margin-bottom:.34rem}
+  .st dd{line-height:1.5}
+
+  /* about: avatar row, never a cropped face */
+  .abface{display:flex;align-items:center;gap:.85rem;padding:.7rem .8rem;
+    border-bottom:1px solid var(--rule);background:var(--sunk)}
+  .abface img{width:64px;height:64px;flex:0 0 64px;aspect-ratio:1/1;object-position:50% 16%;
+    border:1px solid var(--rule)}
+  .abface::after{content:'Nathan Harris';font-family:var(--m);font-size:var(--ms-1);font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .abtext h2{max-width:none}
+  .abtext p{max-width:none}
+  .abpers .chip{white-space:normal}
+}
+@media(max-width:520px){
+  .stats{grid-template-columns:1fr;gap:.85rem}
+  .st dt{font-size:.95rem}
+  .hshot .rl{font-size:.66rem;letter-spacing:.06em}
+  .shotwrap{flex:0 0 96px}
+  .srow{grid-template-columns:74px 1fr;gap:.7rem}
+  .sk{font-size:.6rem;letter-spacing:.1em}
+}
 </style>
 </head>
 <body>
@@ -274,7 +313,7 @@ a{color:inherit}
         <div class="st"><dt>8 yrs</dt><dd>Inside Fortune 50 and Fortune 275 transformations</dd></div>
         <div class="st"><dt>50+</dt><dd>Application teams under one change control board</dd></div>
         <div class="st"><dt>$200M</dt><dd>Program governed, plus an enterprise PMO built from nothing</dd></div>
-        <div class="st"><dt>0</dt><dd>Critical defects after recovering a rolled-back ERP consolidation at 15B ARR enterprise</dd></div>
+        <div class="st"><dt>0</dt><dd>Critical defects on a rolled-back ERP consolidation</dd></div>
       </dl>
     </div>
     <figure class="hshot">
@@ -283,7 +322,7 @@ a{color:inherit}
         <span class="nm">Nathan Harris</span>
         <span class="rl">Founder &amp; Principal</span>
         <span class="rl">Denver &middot; Boulder, CO</span>
-        <span class="rl fo">For B2B SaaS &middot; Professional &amp;<br>tech-enabled services</span>
+        <span class="rl fo">B2B SaaS &middot; Professional &amp;<br>tech-enabled services</span>
       </figcaption>
     </figure>
   </div>
@@ -356,7 +395,7 @@ a{color:inherit}
         <div class="say">
           <p>In fourteen days you see the whole portfolio &mdash; active work and backlog &mdash; ranked against real capacity, with a decision on every item. The timeout that keeps the next one from being needed.</p>
           <p class="tight">A diagnostic that keeps diagnosing &mdash; about an hour per team to stay current. Every structural gap it finds becomes a defensible business case for headcount.</p>
-          <div class="chipwrap"><span class="chiplab">What exists after the 10 Working Days</span><div class="chips"><span class="chip">One ranked portfolio</span><span class="chip">A decision on every item</span><span class="chip">A system you own forever</span></div></div>
+          <div class="chipwrap"><span class="chiplab">What exists on Day 10</span><div class="chips"><span class="chip">One ranked portfolio</span><span class="chip">A decision on every item</span><span class="chip">A system you own forever</span></div></div>
           <div class="refblk"><span class="reflab">Proof</span><p class="refp">Reallocated <b class="n">$5M</b> of a <b class="n">$50M</b> expense base to protect EBITDA inside a <b class="n">$100M ARR</b> business unit &mdash; and it survived a change in leadership at the top with nobody in the room to defend it.</p></div>
         </div>
         <aside class="spec">
