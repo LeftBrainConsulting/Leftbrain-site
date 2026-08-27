@@ -144,6 +144,11 @@ a{color:inherit}
 .chip{font-family:var(--m);font-size:var(--ms-2);font-weight:500;letter-spacing:.01em;color:var(--text);
   background:var(--sunk);border:0;border-left:2px solid var(--mar);padding:.42rem .74rem;white-space:nowrap}
 .scene.mid .chip{border-left-color:var(--mar-mid)}
+.slist{list-style:none;margin:0;padding:0;display:grid;gap:.52rem;max-width:54ch}
+.slist li{font-size:.95rem;line-height:1.55;color:var(--mute);padding-left:.8rem;border-left:2px solid var(--mar)}
+.scene.mid .slist li{border-left-color:var(--mar-mid)}
+.scene.deep .slist li{border-left-color:var(--ink)}
+@media(max-width:900px){.slist{max-width:none}}
 .scene.deep .chip{border-left-color:var(--ink)}
 
 .refp{font-family:var(--m);font-size:var(--ms-2);line-height:1.74;color:var(--mute);max-width:62ch;margin:0}
@@ -181,6 +186,15 @@ a{color:inherit}
 .foot .lbl i{font-style:normal;color:var(--mar)}
 .foot a{font-family:var(--m);font-size:var(--ms-2);color:var(--soft);text-decoration:none;display:block;line-height:2.05}
 .foot a:hover{color:var(--mar)}
+.legal{margin:2.6rem 0 0;padding-top:1.4rem;border-top:1px solid var(--rule);max-width:80ch}
+.legal>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:baseline;gap:.5rem;
+  font-family:var(--m);font-size:var(--ms-2);letter-spacing:.05em;color:var(--soft)}
+.legal>summary::-webkit-details-marker{display:none}
+.legal>summary::before{content:"+";font-weight:600;color:var(--mar)}
+.legal[open]>summary::before{content:"\2013"}
+.legal>summary:hover{color:var(--mar)}
+.legal>summary:focus-visible{outline:2px solid var(--mar);outline-offset:3px}
+.legal p{margin:.9rem 0 0;max-width:78ch;font-family:var(--m);font-size:.7rem;line-height:1.75;color:var(--soft)}
 
 /* ══ RESPONSIVE — single breakpoint block, last in the cascade ══ */
 @media(max-width:1000px){
@@ -332,7 +346,7 @@ a{color:inherit}
     <div class="hleft">
       <span class="badge">Left Brain Consulting &middot; Nathan Harris</span>
       <h1>Between strategy and execution, <em>something has to decide.</em></h1>
-      <p class="lede">I come in when the decision layer is broken, the floor is failing, or the gap is wider than the team inside can close. Fourteen-day installs, outcome-based work, or highly selective full-time when the need is real.</p>
+      <p class="lede">When something has to happen across teams that don&#8217;t report to each other, I&#8217;m the one who makes it land. I know what good looks like, I know what it all connects to, and I hold the teams to it until it&#8217;s real. Fourteen-day installs or fixed-scope repair &mdash; one lane, for a defined stretch, then out.</p>
       <p class="qual">Knowledge-work environments preferred &mdash; software, professional services, tech-enabled operations. Where the constraint is cross-functional and the capacity is people.</p>
       <dl class="stats">
         <div class="st"><dt>8 yrs</dt><dd>Inside Fortune 50 and Fortune 275 transformations</dd></div>
@@ -430,7 +444,7 @@ a{color:inherit}
     </article>
     <article class="scene mid" id="r02">
       <div class="top">
-        <span class="kick"><i>02</i>Symptom treatment</span>
+        <span class="kick"><i>02</i>Targeted repair</span>
         <h2>You already know what&#8217;s keeping you up at night.</h2>
       </div>
       <div class="plate "><svg viewBox="0 0 960 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A building with eight floors. Seven are fine. One is scaffolded and under repair.">
@@ -470,8 +484,16 @@ a{color:inherit}
       <p class="figcap"><i>Fig. 02</i> Eight floors. Seven are fine. One is scaffolded and under repair</p>
       <div class="under">
         <div class="say">
-          <p>No diagnostic needed. I come in, get up to speed, and run the playbook &mdash; solve the constraint with your team, train them to operate it without me, and move on to the next one.</p>
+          <p>No diagnostic needed. We agree what done looks like before I start &mdash; in writing, with a date. Then I&#8217;m on the ground driving it with your team until it&#8217;s met, not advising from the side. If specialist build work is needed, I bring the person in and hold them to the same definition.</p>
           <p class="tight">If more than one of these is true at once, that&#8217;s a timeout, not a fix.</p>
+          <div class="chipwrap"><span class="chiplab">Sounds like this</span><ul class="slist">
+            <li>Two teams shipping into the same system with no agreed release order.</li>
+            <li>An acquisition closed and nothing got absorbed. Two of everything, and no one will pick.</li>
+            <li>A program that has slipped three times and nobody can say what actually caused it.</li>
+            <li>A build with no agreed definition of done, so it never quite ships.</li>
+            <li>A function that exists on the org chart but has no intake, no review, no escalation path.</li>
+          </ul></div>
+          <div class="chipwrap"><span class="chiplab">What exists at the end</span><div class="chips"><span class="chip">The constraint, cleared</span><span class="chip">A written definition of done</span><span class="chip">A cadence with named owners</span></div></div>
           <div class="chipwrap"><span class="chiplab">Where it applies</span><div class="dgrid"><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Performance management"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
 <line x1="30" y1="72" x2="170" y2="72" stroke="#8B1A2E" stroke-width="2.4" stroke-dasharray="7 5"/>
 <text x="170" y="66" text-anchor="end" font-family="IBM Plex Mono" font-size="9" font-weight="600" fill="#8B1A2E">TARGET</text>
@@ -597,6 +619,7 @@ a{color:inherit}
       <a href="https://linkedin.com/in/nathan-harris13">linkedin.com/in/nathan-harris13</a>
     </div>
   </div>
+  <div class="w"><details class="legal"><summary>Trademarks &amp; non-affiliation</summary><p>Company names appearing on this site refer to organizations where Nathan Harris was previously employed or with whom he worked in the course of that employment. They are referenced for identification only. All trademarks and trade names are the property of their respective owners. No affiliation, sponsorship, endorsement, or ongoing relationship with Left Brain Consulting is stated or implied. Metrics describe work performed while employed and do not include confidential or proprietary information.</p></details></div>
 </footer>
 
 </body>
