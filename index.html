@@ -1,668 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Left Brain Consulting — Nathan Harris</title>
-<meta name="description" content="Connect your boardroom to what is actually changing on the ground floor. The Filter: a 10-working-day install that puts every initiative competing for your people on one ranked list, scored by the teams carrying the work, with owners against real capacity. Money-back guarantee.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Left Brain Consulting — Why your AI projects stall, and the fix</title>
+<meta name="description" content="AI projects don't fail on the technology. They fail because nobody ranked them, nobody checked capacity, and the process underneath was never written down. The Filter: a 10-working-day install. Find more waste than it costs, or don't pay.">
+<meta property="og:title" content="Most AI projects fail before anyone writes a line of code.">
+<meta property="og:description" content="A 10-working-day install that ranks every AI initiative against one standard, against how ready the process underneath actually is, and against what your teams can absorb.">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="apple-touch-icon" href="/logo.svg">
 <meta name="theme-color" content="#8B1A2E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F7F6F3; --white:#FFFFFF; --sunk:#EDEBE5;
-  --ink:#14161A; --text:#2B2E34; --mute:#4B4D54; --soft:#6B6E75;
+  --paper:#F7F6F3; --white:#FFFFFF; --sunk:#EFEDE8;
+  --ink:#14161A; --text:#2B2E34; --mute:#4B4D54; --soft:#6B6E75; --faint:#9A9BA1;
   --rule:#DCD8D0; --rule-l:#E9E6DF;
-  --mar:#8B1A2E; --mar-d:#6E1424; --mar-mid:#A8586A; --mar-tint:#EFE0E2;
-  --sh-1:0 1px 2px rgba(20,22,26,.04), 0 2px 8px rgba(20,22,26,.03);
-  --sh-2:0 2px 4px rgba(20,22,26,.05), 0 12px 28px -12px rgba(20,22,26,.18);
-  --sh-3:0 4px 10px rgba(20,22,26,.06), 0 28px 56px -28px rgba(20,22,26,.34);
+  --mar:#8B1A2E; --mar-d:#6E1424; --mar-tint:#F1E3E5;
   --m:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
-  /* three mono steps: label / value / figure */
-  --ms-1:.69rem; --ms-2:.765rem; --ms-3:.86rem;
+  --pad:clamp(20px,5vw,40px);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--text);font-family:'Archivo',system-ui,sans-serif;
-  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.038'/%3E%3C/svg%3E")}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--mar);outline-offset:3px}
-::selection{background:var(--mar-tint);color:var(--ink)}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{transition-duration:.01ms !important;animation-duration:.01ms !important}
-}
-.w{max-width:1180px;margin:0 auto;padding:0 3rem;position:relative;z-index:1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--text);
+  font:400 17px/1.6 Archivo,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{color:var(--ink);margin:0;letter-spacing:-.022em;font-weight:700;text-wrap:balance}
+h1{font-size:clamp(33px,5.2vw,58px);line-height:1.05;font-weight:800;letter-spacing:-.033em}
+h2{font-size:clamp(25px,3.3vw,37px);line-height:1.13}
+h3{font-size:clamp(18px,2vw,21px);line-height:1.25}
+p{margin:0}
+a{color:var(--ink)}
+.n{font-family:var(--m);font-variant-numeric:tabular-nums;font-weight:500}
+:focus-visible{outline:2.5px solid var(--mar);outline-offset:3px;border-radius:2px}
 
-/* ══ NAV ══ */
-.nav{position:sticky;top:0;z-index:100;background:rgba(247,246,243,.93);backdrop-filter:blur(14px) saturate(1.4);
-  border-bottom:1px solid var(--rule)}
-.navin{max-width:1180px;margin:0 auto;padding:.95rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.bd{font-family:var(--m);font-size:var(--ms-2);font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);text-decoration:none}
-.bd i{font-style:normal;color:var(--mar)}
-.nlinks{display:flex;align-items:center;gap:1.7rem}
-.nl{font-family:var(--m);font-size:var(--ms-1);font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--soft);
-  text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;transition:.15s}
-.nl:hover{color:var(--ink);border-bottom-color:var(--mar)}
-.nc{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.11em;text-transform:uppercase;
-  padding:.64rem 1.3rem;background:var(--mar);color:#fff;text-decoration:none;border:1px solid var(--mar);transition:.15s}
-.nc:hover{background:var(--mar-d);border-color:var(--mar-d)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad)}
+section{padding:clamp(56px,8vw,100px) 0;border-top:1px solid var(--rule-l)}
+section:first-of-type{border-top:0}
+.lede{font-size:clamp(18px,2vw,21px);color:var(--mute);line-height:1.55;max-width:58ch}
+.kicker{color:var(--mar);font-weight:600;font-size:15px;margin-bottom:13px}
+.after{margin-top:28px;font-size:16.5px;color:var(--mute);max-width:64ch;line-height:1.6}
 
-/* ══ HERO ══ */
-.hero{padding:5.2rem 0 3.6rem;border-bottom:1px solid var(--rule)}
-.heroin{display:grid;grid-template-columns:1fr 300px;gap:3.4rem;align-items:start}
-.badge{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.19em;text-transform:uppercase;
-  color:var(--soft);margin-bottom:1.5rem;display:block}
-.hleft h1{font-size:clamp(2.25rem,4.6vw,3.6rem);font-weight:900;letter-spacing:-.05em;line-height:1.0;color:var(--ink);max-width:17ch;margin:0}
-.hleft h1 em{font-style:normal;font-weight:900;color:var(--mar)}
-.lede{font-size:1.08rem;line-height:1.68;color:var(--mute);max-width:52ch;margin-top:1.5rem}
-.lede b{font-weight:650;color:var(--ink)}
-.qual{font-family:var(--m);font-size:var(--ms-2);line-height:1.78;color:var(--soft);max-width:50ch;margin-top:1.15rem;
-  border-left:2px solid var(--rule);padding-left:1rem}
+header{position:sticky;top:0;z-index:40;background:rgba(247,246,243,.93);
+  backdrop-filter:blur(9px);border-bottom:1px solid var(--rule-l)}
+.nav{display:flex;align-items:center;gap:26px;height:62px}
+.brand{font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.02em;font-size:16px}
+.brand span{color:var(--soft);font-weight:400}
+.nav .gap{flex:1}
+.nav a.lnk{color:var(--mute);text-decoration:none;font-size:15px}
+.nav a.lnk:hover{color:var(--ink)}
+@media(max-width:760px){.nav a.lnk{display:none}}
 
-/* hero figures — the second entry point */
-.stats{margin-top:1.9rem;padding-top:1.35rem;border-top:1px solid var(--rule);
-  display:grid;grid-template-columns:1fr 1fr;gap:1.15rem 2.4rem;max-width:56ch}
-.st{display:block}
-.st dt{font-family:var(--m);font-size:1.12rem;font-weight:600;letter-spacing:-.015em;color:var(--ink);
-  font-variant-numeric:tabular-nums;line-height:1;padding-bottom:.42rem;margin-bottom:.42rem;
-  border-bottom:1px solid var(--rule-l)}
-.st dd{font-family:var(--m);font-size:var(--ms-1);font-weight:500;letter-spacing:.05em;line-height:1.62;color:var(--soft)}
+.btn{display:inline-block;padding:13px 22px;border-radius:7px;font-size:16px;font-weight:600;
+  text-decoration:none;border:1px solid var(--rule);background:var(--white);color:var(--ink)}
+.btn:hover{border-color:var(--soft)}
+.btn.solid{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:#000}
+.btn.sm{padding:9px 16px;font-size:14.5px}
+.btns{display:flex;gap:11px;flex-wrap:wrap;align-items:center;margin-top:32px}
 
-.hshot{margin:0;position:sticky;top:92px}
-.shotwrap{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--mar);box-shadow:var(--sh-2);padding:.65rem .65rem 0}
-.shotwrap img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;filter:grayscale(.22) contrast(1.03)}
-.hshot figcaption{background:var(--white);border:1px solid var(--rule);border-top:0;box-shadow:var(--sh-2);padding:.85rem .95rem 1rem}
-.hshot .nm{display:block;font-family:var(--m);font-size:var(--ms-2);font-weight:600;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink);padding-bottom:.5rem;margin-bottom:.5rem;border-bottom:1px solid var(--rule-l)}
-.hshot .rl{display:block;font-family:var(--m);font-size:var(--ms-1);font-weight:500;letter-spacing:.09em;color:var(--soft);line-height:1.75}
-.hshot .fo{margin-top:.55rem;padding-top:.55rem;border-top:1px solid var(--rule-l);color:var(--mar);font-weight:600}
+/* hero */
+.hero{padding-top:clamp(44px,6.5vw,80px)}
+.hero .sub{font-size:clamp(17px,1.9vw,20px);color:var(--mute);margin-top:22px;max-width:54ch;line-height:1.55}
+.hero .fine{font-size:14.5px;color:var(--soft);margin-top:14px}
 
-/* ══ TRIAD ══ */
-.seats{padding:3.4rem 0 .4rem}
-.sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.1rem}
-.seat{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--mar);
-  box-shadow:var(--sh-1);padding:1.7rem 1.5rem 1.5rem}
-.seat+.seat{border-top-color:var(--ink)}
-.skick{display:block;font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--soft);margin-bottom:.7rem}
-.seat h3{font-size:1.22rem;font-weight:750;letter-spacing:-.025em;line-height:1.24;color:var(--ink);margin-bottom:.7rem}
-.seat>p{font-size:.95rem;line-height:1.6;color:var(--mute);margin-bottom:1.05rem;
-  padding-bottom:1.05rem;border-bottom:1px solid var(--rule-l)}
-.seat .slist{max-width:none}
-.seat+.seat .slist li{border-left-color:var(--ink)}
-.sjoin{margin-top:1.15rem;font-family:var(--m);font-size:var(--ms-2);letter-spacing:.02em;
-  color:var(--soft);text-align:center}
-@media(max-width:900px){.sgrid{grid-template-columns:1fr}.seats{padding-top:2.4rem}}
-.triad{padding:3.2rem 0 0}
-.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-.fr{display:flex;flex-direction:column;text-decoration:none;background:var(--white);
-  border:1px solid var(--rule);border-top:3px solid var(--rule);box-shadow:var(--sh-1);
-  padding:1.6rem 1.45rem 1.3rem;transition:.16s}
-.fr:hover{box-shadow:var(--sh-2);border-color:#CFCAC0;transform:translateY(-2px)}
-.fr.f1{border-top-color:var(--mar)}
-.fr.f2{border-top-color:var(--mar-mid)}
-.fr.f3{border-top-color:var(--ink)}
-.fn{font-family:var(--m);font-size:1.35rem;font-weight:600;letter-spacing:-.02em;color:var(--mar);line-height:1;margin-bottom:1rem}
-.fr.f3 .fn{color:var(--ink)}
-.fk{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-bottom:.55rem}
-.ft{font-size:1.1rem;font-weight:750;letter-spacing:-.025em;line-height:1.22;color:var(--ink)}
-.fs{font-family:var(--m);font-size:var(--ms-1);font-weight:500;letter-spacing:.05em;color:var(--soft);margin-top:.55rem}
-.fl{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--mar);
-  margin-top:1.5rem;padding-top:.9rem;border-top:1px solid var(--rule-l);display:flex;align-items:center;gap:.45rem}
-.fl i{font-style:normal;transition:transform .16s}
-.fr:hover .fl i{transform:translateY(2px)}
+/* ranked list */
+.list{margin-top:clamp(38px,5.5vw,58px);background:var(--white);border:1px solid var(--rule);
+  border-radius:12px;padding:8px 0;box-shadow:0 1px 2px rgba(20,22,26,.04),0 18px 40px -26px rgba(20,22,26,.24)}
+.li{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:baseline;
+  padding:12px 22px;border-bottom:1px solid var(--rule-l)}
+.li:last-child{border-bottom:0}
+.li .rk{color:var(--faint);font-size:13px;text-align:right}
+.li .nm{color:var(--ink);font-weight:500;font-size:16.5px}
+.li .nm em{display:block;font-style:normal;font-size:13px;color:var(--faint);margin-top:2px;font-weight:400}
+.li .sc{color:var(--ink);font-weight:600;font-size:17px}
+.li.under .nm,.li.under .sc{color:var(--soft);font-weight:400}
+.cut{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--mar-tint)}
+.cut .bar{height:4px;background:var(--mar);border-radius:2px;flex:1}
+.cut span{color:var(--mar-d);font-weight:600;font-size:14px}
+@media(max-width:580px){.li{grid-template-columns:28px 1fr auto;padding:11px 15px;gap:10px}
+  .cut{padding:14px 15px;gap:10px}.cut span{font-size:12.5px}}
 
-/* ══ ROUTES ══ */
-.routes{padding:2.2rem 0 5.5rem}
-.rhead{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.19em;text-transform:uppercase;
-  color:var(--soft);padding-bottom:1.1rem;border-bottom:1px solid var(--rule);margin-bottom:2.6rem}
-.scene{margin-bottom:5rem;position:relative;scroll-margin-top:88px}
-.scene:last-child{margin-bottom:1rem}
+/* stats */
+.strip{display:flex;flex-wrap:wrap;gap:0;margin-top:40px}
+.stat{padding-right:clamp(20px,4vw,42px);margin-right:clamp(20px,4vw,42px);border-right:1px solid var(--rule)}
+.stat:last-child{border-right:0;margin-right:0;padding-right:0}
+.stat b{display:block;font-size:clamp(29px,4vw,42px);font-weight:700;color:var(--ink);
+  letter-spacing:-.03em;line-height:1.05;font-family:var(--m)}
+.stat span{display:block;font-size:14px;color:var(--soft);margin-top:6px;max-width:20ch}
 
-/* headline binds to its drawing */
-.top{padding-bottom:.9rem}
-.kick{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--soft);
-  display:flex;align-items:baseline;gap:.8rem;margin-bottom:.9rem}
-.kick i{font-style:normal;font-size:1.35rem;font-weight:600;letter-spacing:0;color:var(--mar);line-height:1}
-.scene h2{font-size:clamp(1.6rem,3.1vw,2.35rem);font-weight:800;letter-spacing:-.04em;line-height:1.06;color:var(--ink);max-width:20ch;margin:0}
+/* readiness track — a real sequence */
+.track{margin-top:42px;display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+.tk{background:var(--white);border:1px solid var(--rule);padding:18px 16px 20px;border-radius:8px}
+.tk .s{font-family:var(--m);font-size:12px;color:var(--faint)}
+.tk h3{font-size:16.5px;margin:8px 0 6px;font-weight:600}
+.tk p{font-size:13.5px;color:var(--soft);line-height:1.45}
+.tk.hot{background:var(--ink);border-color:var(--ink)}
+.tk.hot h3{color:var(--paper)}.tk.hot p{color:#B3B0AB}.tk.hot .s{color:#D5A3AA}
+@media(max-width:900px){.track{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.track{grid-template-columns:1fr}}
 
-.plate{background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-1);padding:1.8rem 1.6rem}
-.plate svg{display:block;width:100%;height:auto}
-.scene.lead .plate{border-top:3px solid var(--mar)}
-.scene.mid .plate{background:var(--sunk);border-top:3px solid var(--mar-mid)}
-.plate.ink{background:#14161A;border-color:#14161A;border-top:3px solid #DC8A98;box-shadow:var(--sh-3)}
+.jump{margin-top:34px;background:var(--white);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.jr{display:grid;grid-template-columns:1.5fr 1fr auto;gap:18px;align-items:center;
+  padding:15px 22px;border-bottom:1px solid var(--rule-l)}
+.jr:last-child{border-bottom:0}
+.jr .t{font-weight:500;color:var(--ink);font-size:16px}
+.jr .g{font-family:var(--m);font-size:13.5px;color:var(--mute)}
+.jr .v{font-weight:600;font-size:15px;text-align:right;white-space:nowrap}
+.jr.ok .v{color:#3F5C3A}.jr.warn .v{color:#8A6A1F}.jr.bad .v{color:var(--mar)}
+@media(max-width:640px){.jr{grid-template-columns:1fr;gap:5px;padding:14px 16px}.jr .v{text-align:left}}
 
-/* caption: turns a decode into a confirm */
-.figcap{font-family:var(--m);font-size:var(--ms-2);font-weight:400;letter-spacing:.02em;
-  color:var(--soft);margin-top:.85rem;display:flex;align-items:baseline;gap:.75rem;line-height:1.55}
-.figcap i{font-style:normal;font-size:var(--ms-1);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--mar);white-space:nowrap}
-.scene.mid .figcap i{color:#8A434E}
+/* capability grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.cd{background:var(--white);border:1px solid var(--rule);border-radius:11px;padding:24px 22px 26px}
+.cd h3{font-size:18.5px;font-weight:600;margin-bottom:9px}
+.cd p{font-size:15px;color:var(--soft);line-height:1.55}
+.cd.dark{background:var(--ink);border-color:var(--ink)}
+.cd.dark h3{color:var(--paper)}.cd.dark p{color:#B3B0AB}
+@media(max-width:880px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
 
-.under{display:grid;grid-template-columns:1fr 300px;gap:3rem;padding:1.6rem .2rem 0;align-items:start}
-.say p{font-size:1.01rem;line-height:1.74;color:var(--mute);max-width:54ch;margin:0}
-.say p.tight{margin-top:.72rem;font-size:.94rem;color:var(--soft)}
-.chipwrap,.refblk{margin-top:1.5rem;padding-top:1.05rem;border-top:1px solid var(--rule)}
-.chiplab,.reflab{display:block;font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--soft);margin-bottom:.7rem}
-.reflab{color:var(--mar)}
-.scene.mid .reflab{color:#8A434E}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:38px;
+  background:var(--rule-l);border:1px solid var(--rule-l);border-radius:10px;overflow:hidden}
+.stp{background:var(--white);padding:22px 20px 24px}
+.stp .i{font-family:var(--m);font-size:12.5px;color:var(--mar)}
+.stp h3{margin:10px 0 7px;font-size:17px;font-weight:600}
+.stp p{font-size:14.5px;color:var(--soft);line-height:1.5}
+.stp.last{background:var(--ink)}
+.stp.last h3{color:var(--paper)}.stp.last p{color:#B3B0AB}.stp.last .i{color:#D5A3AA}
+@media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
 
-/* chips carry their mark, not a box */
-.chips{display:flex;flex-wrap:wrap;gap:.4rem}
-.chip{font-family:var(--m);font-size:var(--ms-2);font-weight:500;letter-spacing:.01em;color:var(--text);
-  background:var(--sunk);border:0;border-left:2px solid var(--mar);padding:.42rem .74rem;white-space:nowrap}
-.scene.mid .chip{border-left-color:var(--mar-mid)}
-.slist{list-style:none;margin:0;padding:0;display:grid;gap:.52rem;max-width:54ch}
-.slist li{font-size:.95rem;line-height:1.55;color:var(--mute);padding-left:.8rem;border-left:2px solid var(--mar)}
-.scene.mid .slist li{border-left-color:var(--mar-mid)}
-.scene.deep .slist li{border-left-color:var(--ink)}
-@media(max-width:900px){.slist{max-width:none}}
-.scene.deep .chip{border-left-color:var(--ink)}
+/* def rows */
+.rows{margin-top:34px;border-top:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:minmax(180px,1fr) 2.1fr;gap:clamp(16px,4vw,44px);
+  padding:19px 0;border-bottom:1px solid var(--rule-l);align-items:baseline}
+.row dt{color:var(--ink);font-weight:600;font-size:17.5px;margin:0}
+.row dd{margin:0;color:var(--soft);font-size:16px;line-height:1.55}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:5px;padding:16px 0}}
 
-.refp{font-family:var(--m);font-size:var(--ms-2);line-height:1.74;color:var(--mute);max-width:62ch;margin:0}
-.refp b{font-weight:600;color:var(--mar)}
-.scene.mid .refp b{color:#8A434E}
-/* figures outrank names */
-.n{color:var(--ink);font-weight:650;font-variant-numeric:tabular-nums}
-.scene.mid .refp .n,.scene.deep .refp .n,.refp .n{color:var(--ink)}
+/* guarantee */
+.gtee{background:var(--ink);border-top:0}
+.gtee .k{color:#D5A3AA;font-weight:600;font-size:15px;margin-bottom:18px}
+.gtee h2{color:var(--paper);max-width:23ch}
+.gtee .big{color:#E8B5BC;font-size:clamp(24px,3.2vw,36px);font-weight:700;letter-spacing:-.022em;margin-top:14px}
+.gtee p{color:#AFACA7;margin-top:26px;max-width:62ch;font-size:16.5px;line-height:1.6}
+.gtee .fine{color:#7E7B77;font-size:14.5px;margin-top:16px}
 
-/* ══ SPEC PANEL ══ */
-.spec{background:var(--white);border:1px solid var(--rule);box-shadow:var(--sh-1);align-self:start;position:sticky;top:92px}
-.spechd{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--soft);padding:.85rem 1rem .7rem;border-bottom:1px solid var(--rule)}
-.srow{display:grid;grid-template-columns:88px 1fr;gap:.85rem;padding:.8rem 1rem;border-bottom:1px solid var(--rule-l)}
-.srow:last-of-type{border-bottom:1px solid var(--rule)}
-.sk{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--soft);padding-top:.22rem}
-.sv{font-family:var(--m);font-size:var(--ms-2);line-height:1.62;color:var(--text)}
-.sv b{display:block;font-size:1.2rem;font-weight:600;color:var(--mar);letter-spacing:-.015em;margin-bottom:.1rem;font-variant-numeric:tabular-nums}
-.sv s{color:var(--soft);text-decoration-thickness:1px}
-/* action terminates the panel */
-.sact{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.5rem;background:var(--sunk);border-top:1px solid var(--rule)}
-.cta{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.11em;text-transform:uppercase;
-  padding:.75rem 1.2rem;text-decoration:none;border:1px solid var(--mar);color:var(--mar);background:var(--white);
-  text-align:center;transition:.15s;display:block;margin:0}
-.cta:hover{background:var(--mar);color:#fff}
-.cta.solid{background:var(--mar);color:#fff}
-.cta.solid:hover{background:var(--mar-d);border-color:var(--mar-d)}
-.cta.ghost{background:transparent;color:var(--mar);border-color:var(--rule)}
-.cta.ghost:hover{background:var(--mar);color:#fff;border-color:var(--mar)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);margin-top:34px}
+@media(max-width:760px){.two{grid-template-columns:1fr;gap:28px}}
+.ul{list-style:none;padding:0;margin:14px 0 0}
+.ul li{position:relative;padding:9px 0 9px 26px;font-size:16px;color:var(--mute);
+  border-bottom:1px solid var(--rule-l);line-height:1.5}
+.ul li:before{content:"";position:absolute;left:2px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--mar)}
+.ul.no li:before{background:none;border:1.5px solid var(--rule);width:8px;height:8px;top:16px;left:1px}
 
-/* ══ FOOT ══ */
-.foot{border-top:1px solid var(--rule);background:var(--sunk);padding:3.4rem 0}
-.footin{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:flex-start}
-.foot .lbl{font-family:var(--m);font-size:var(--ms-1);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
-.foot .lbl i{font-style:normal;color:var(--mar)}
-.foot a{font-family:var(--m);font-size:var(--ms-2);color:var(--soft);text-decoration:none;display:block;line-height:2.05}
-.foot a:hover{color:var(--mar)}
-.legal{margin:2.6rem 0 0;padding-top:1.4rem;border-top:1px solid var(--rule);max-width:80ch}
-.legal>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:baseline;gap:.5rem;
-  font-family:var(--m);font-size:var(--ms-2);letter-spacing:.05em;color:var(--soft)}
-.legal>summary::-webkit-details-marker{display:none}
-.legal>summary::before{content:"+";font-weight:600;color:var(--mar)}
-.legal[open]>summary::before{content:"\2013"}
-.legal>summary:hover{color:var(--mar)}
-.legal>summary:focus-visible{outline:2px solid var(--mar);outline-offset:3px}
-.legal p{margin:.9rem 0 0;max-width:78ch;font-family:var(--m);font-size:.7rem;line-height:1.75;color:var(--soft)}
+.case{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:clamp(26px,4vw,42px);margin-top:34px}
+.case .strip{margin-top:26px}
+.case blockquote{margin:26px 0 0;padding-left:20px;border-left:3px solid var(--mar);
+  font-size:18px;color:var(--ink);line-height:1.5;font-weight:500;max-width:56ch}
 
-/* ══ RESPONSIVE — single breakpoint block, last in the cascade ══ */
-@media(max-width:1000px){
-  .heroin{grid-template-columns:1fr 260px;gap:2.4rem}
-  .under{grid-template-columns:1fr 268px;gap:2rem}
-}
-@media(max-width:900px){
-  .w{padding:0 1.25rem}
-  .navin{padding:.75rem 1.25rem}
-  .hero{padding:2.6rem 0 2.2rem}
-  .heroin{grid-template-columns:1fr;gap:1.8rem}
-  .hleft h1{max-width:none}
-  .hshot{position:static;max-width:210px}
-  .stats{grid-template-columns:1fr 1fr;gap:1rem 1.6rem;margin-top:1.6rem}
-  .triad{padding:2rem 0 0}
-  .routes{padding:1.75rem 0 3.5rem}
-  .rhead{margin-bottom:1.9rem}
-  .scene{margin-bottom:3.2rem}
-  .plate{padding:1rem .85rem}
-  .figcap{margin-top:.65rem;flex-wrap:wrap;gap:.5rem}
-  .under{grid-template-columns:1fr;gap:1.5rem;padding-top:1.15rem}
-  .spec{position:static}
-  .say p{max-width:none}
-  .refblk{margin-top:1.4rem}
-}
-@media(max-width:820px){
-  .nlinks{gap:1rem}
-  .nlinks .nl{display:none}
-  .tgrid{grid-template-columns:1fr;gap:.7rem}
-  .fr{padding:1.15rem 1.1rem 1rem;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:.2rem .8rem}
-  .fn{margin-bottom:0}
-  .fk{margin-bottom:0}
-  .fl{width:100%;margin-top:.9rem;padding-top:.7rem}
-  .fr:hover{transform:none}
-}
-@media(max-width:520px){
-  .navin{gap:.75rem}
-  .bd{font-size:var(--ms-1);letter-spacing:.1em;line-height:1.35}
-  .nc{padding:.6rem .85rem;letter-spacing:.07em;white-space:nowrap}
-  .stats{grid-template-columns:1fr;gap:.9rem}
-  .chip{white-space:normal}
-}
+.about{display:grid;grid-template-columns:1fr 1.7fr;gap:clamp(24px,5vw,58px);align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr;gap:20px}}
+.about p{margin-bottom:16px;max-width:60ch;color:var(--mute)}
+.about p:last-child{margin-bottom:0}
 
-/* ---- about ---- */
-.about{padding:1.2rem 0 4.6rem;border-top:1px solid var(--rule);margin-top:1.4rem;scroll-margin-top:88px}
-.abgrid{display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
-.abtext h2{font-size:clamp(1.55rem,3vw,2.25rem);font-weight:800;letter-spacing:-.04em;line-height:1.07;
-  color:var(--ink);max-width:20ch;margin:0 0 1.4rem}
-.abtext h2 em{font-style:normal;color:var(--mar)}
-.abtext p{font-size:1.01rem;line-height:1.76;color:var(--mute);max-width:62ch;margin:0 0 1rem}
-.abspec{position:static}
-.abspec .srow:last-of-type{border-bottom:1px solid var(--rule)}
-.abpers{padding:1rem}
-.abpers .chiplab{margin-bottom:.65rem}
-.abpers .chips{gap:.35rem}
-.abpers .chip{font-size:var(--ms-2)}
-@media(max-width:900px){
-  .about{padding:.8rem 0 3rem}
-  .abgrid{grid-template-columns:1fr;gap:1.8rem}
-}
-
-.abface{border-bottom:1px solid var(--rule);background:var(--sunk)}
-.abface img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 18%;
-  filter:grayscale(.24) contrast(1.03)}
-
-
-.abtext p b{font-weight:650;color:var(--ink)}
-
-/* ================= MOBILE PASS ================= */
-@media(max-width:900px){
-  /* hero figure becomes a business card row instead of a tall plate */
-  .hshot{max-width:none;display:flex;align-items:stretch;background:var(--white);
-    border:1px solid var(--rule);border-top:3px solid var(--mar);box-shadow:var(--sh-2)}
-  .shotwrap{border:0;box-shadow:none;padding:0;flex:0 0 116px;background:transparent}
-  .shotwrap img{aspect-ratio:1/1;height:100%;object-position:50% 18%}
-  .hshot figcaption{flex:1;border:0;border-left:1px solid var(--rule);box-shadow:none;
-    padding:.8rem .9rem;display:flex;flex-direction:column;justify-content:center}
-  .hshot .nm{padding-bottom:.4rem;margin-bottom:.4rem}
-  .hshot .rl{line-height:1.6}
-  .hshot .fo{margin-top:.45rem;padding-top:.45rem}
-  .hshot .fo br{display:none}
-
-  /* stats: tighter, two-up, less vertical cost */
-  .stats{grid-template-columns:1fr 1fr;gap:.9rem 1.4rem;margin-top:1.5rem;padding-top:1.15rem;max-width:none}
-  .st dt{font-size:1rem;padding-bottom:.34rem;margin-bottom:.34rem}
-  .st dd{line-height:1.5}
-
-  /* about: avatar row, never a cropped face */
-  .abface{display:flex;align-items:center;gap:.85rem;padding:.7rem .8rem;
-    border-bottom:1px solid var(--rule);background:var(--sunk)}
-  .abface img{width:64px;height:64px;flex:0 0 64px;aspect-ratio:1/1;object-position:50% 16%;
-    border:1px solid var(--rule)}
-  .abface::after{content:'Nathan Harris';font-family:var(--m);font-size:var(--ms-1);font-weight:600;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
-  .abtext h2{max-width:none}
-  .abtext p{max-width:none}
-  .abpers .chip{white-space:normal}
-}
-@media(max-width:520px){
-  .stats{grid-template-columns:1fr;gap:.85rem}
-  .st dt{font-size:.95rem}
-  .hshot .rl{font-size:.66rem;letter-spacing:.06em}
-  .shotwrap{flex:0 0 96px}
-  .srow{grid-template-columns:74px 1fr;gap:.7rem}
-  .sk{font-size:.6rem;letter-spacing:.1em}
-}
-
-.bd{display:inline-flex;align-items:center;gap:.6rem}
-.mk{height:22px;width:22px;display:block;flex:0 0 auto}
-.fmk{height:40px;width:40px;display:block;margin-bottom:.9rem}
-@media(max-width:520px){.mk{height:19px;width:19px}.bd{gap:.45rem}}
-
-/* mark as section-rule marker */
-.rhead{display:flex;align-items:center;gap:.75rem}
-.rmk{height:17px;width:17px;display:block;flex:0 0 auto;opacity:.9}
-
-/* ghosted mark behind the about block */
-.about{position:relative;overflow:hidden}
-.abwm{position:absolute;right:-30px;top:56px;width:300px;height:300px;pointer-events:none;z-index:0;
-  background:url('/logo.svg') no-repeat center/contain;opacity:.06}
-.about .w{position:relative;z-index:1}
-@media(max-width:900px){.abwm{display:none}}
-
-/* discipline drawing tiles */
-.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
-.dt{margin:0;background:var(--white);border:1px solid var(--rule);border-top:2px solid #C5828D}
-.dt svg{display:block;width:100%;height:auto;padding:.35rem .35rem 0}
-.dt figcaption{font-family:var(--m);font-size:.715rem;font-weight:600;letter-spacing:.015em;line-height:1.42;
-  color:var(--ink);border-top:1px solid var(--rule-l);padding:.55rem .5rem .6rem;text-align:center}
-@media(max-width:1000px){.dgrid{grid-template-columns:repeat(4,1fr);gap:.45rem}.dt figcaption{font-size:.655rem;padding:.5rem .35rem .55rem}}
-@media(max-width:900px){.dgrid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:520px){.dgrid{grid-template-columns:repeat(2,1fr)}.dt figcaption{font-size:.7rem}}
+.brand{display:inline-flex;align-items:center;gap:9px}
+.brand .mk{display:block;border-radius:4px}
+.me img{display:block;width:100%;max-width:252px;height:auto;aspect-ratio:1/1;object-fit:cover;
+  border-radius:11px;border:1px solid var(--rule);margin-bottom:20px;
+  box-shadow:0 1px 2px rgba(20,22,26,.05),0 14px 30px -20px rgba(20,22,26,.3)}
+.me h2{margin:0}
+.me .role{margin-top:7px;font-size:15.5px;color:var(--soft)}
+@media(max-width:760px){.me img{max-width:168px}}
+.fbrand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:600}
+.fbrand .fmk{display:block}
+footer{border-top:1px solid var(--rule);padding:34px 0 46px;font-size:15px;color:var(--soft)}
+.fl{display:flex;gap:24px;flex-wrap:wrap;margin-top:12px}
+.fl a{color:var(--mute);text-decoration:none}
+.fl a:hover{color:var(--ink);text-decoration:underline}
 </style>
 </head>
 <body>
 
-<nav class="nav"><div class="navin">
-  <a class="bd" href="/"><img class="mk" src="/logo.svg" alt="" width="32" height="32">Left Brain <i>/ Nathan Harris</i></a>
-  <div class="nlinks">
-    <a class="nl" href="/filter">The Filter</a>
-    <a class="nl" href="#r02">Fractional</a>
-    <a class="nl" href="#about">About</a>
-    <a class="nc" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
-  </div>
-</div></nav>
-
-<header class="hero">
-  <div class="w heroin">
-    <div class="hleft">
-      <span class="badge">Left Brain Consulting &middot; Nathan Harris</span>
-      <h1>Connect your boardroom to <em>what&#8217;s actually changing on the ground floor.</em></h1>
-      <p class="lede">Installed in 10 working days, or your money back. One ranked list of everything competing for your people, scored by the teams carrying the work rather than the person presenting it, on criteria your leadership agrees to before they see the results. Owners named, against real capacity.</p>
-      <p class="qual">Knowledge-work environments preferred &mdash; software, professional services, tech-enabled operations. Where the constraint is cross-functional and the capacity is people.</p>
-      <dl class="stats">
-        <div class="st"><dt>8 yrs</dt><dd>Inside Fortune 50 and Fortune 275 transformations</dd></div>
-        <div class="st"><dt>50+</dt><dd>Application teams under one change control board</dd></div>
-        <div class="st"><dt>$200M</dt><dd>Program governed, plus an enterprise PMO built from nothing</dd></div>
-        <div class="st"><dt>0</dt><dd>Critical defects on the rollback of a failed ERP migration, $15B ARR environment</dd></div>
-      </dl>
-    </div>
-    <figure class="hshot">
-      <div class="shotwrap"><img src="/NHeadshot.jpeg" alt="Nathan Harris" loading="eager" width="640" height="800"></div>
-      <figcaption>
-        <span class="nm">Nathan Harris</span>
-        <span class="rl">Founder &amp; Principal</span>
-        <span class="rl">Denver &middot; Boulder, CO</span>
-        <span class="rl fo">For B2B SaaS &middot; Professional &amp;<br>tech-enabled services</span>
-      </figcaption>
-    </figure>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><img class="mk" src="/logo.svg" alt="" width="28" height="28">Left Brain <span>/ Nathan Harris</span></a>
+    <span class="gap"></span>
+    <a class="lnk" href="#why">Why AI stalls</a>
+    <a class="lnk" href="#ready">Readiness</a>
+    <a class="lnk" href="#install">The install</a>
+    <a class="lnk" href="#proof">Proof</a>
+    <a class="btn sm solid" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
   </div>
 </header>
 
+<main>
 
+<section class="hero">
+  <div class="wrap">
+    <h1>Most AI projects fail before<br>anyone writes a line of code.</h1>
+    <p class="sub">They get picked because someone asked loudly, aimed at a process nobody has written down, and staffed from a team that was already full. None of that is a technology problem. All of it is fixable in ten working days.</p>
 
-
-<section class="seats">
-  <div class="w">
-    <div class="rhead"><img class="rmk" src="/logo.svg" alt="" width="32" height="32">Two seats &middot; One list</div>
-    <div class="sgrid">
-      <article class="seat">
-        <span class="skick">From the board seat</span>
-        <h3>Your advice has nowhere to land.</h3>
-        <p>Board input almost always arrives as a project. It gets agreed in the room, then competes invisibly with everything already in flight. Six months later it either happened or it didn&#8217;t, and nobody can tell you why.</p>
-        <ul class="slist">
-          <li>What is actually active, scored by the people carrying it rather than the person presenting it.</li>
-          <li>Committed work measured against real capacity, so a plan you approve is one that can be staffed.</li>
-          <li>Somewhere for your input to land, ranked against everything else already running.</li>
-        </ul>
-      </article>
-      <article class="seat">
-        <span class="skick">From the operating seat</span>
-        <h3>Good ideas keep arriving. Nothing tells you which ones fit.</h3>
-        <p>Every function is right about its own priorities, and every request lands as an argument rather than something you can compare. So sequence gets set by whoever escalates hardest, and your best people carry the difference.</p>
-        <ul class="slist">
-          <li>One front door for change requests, so what arrives is comparable instead of an argument.</li>
-          <li>Criteria agreed before anyone sees a score, so the call holds up months later.</li>
-          <li>Capacity visible before you commit, and what falls below the line becomes a hiring case instead of a broken promise.</li>
-        </ul>
-      </article>
+    <div class="list" aria-label="Example ranked AI portfolio">
+      <div class="li"><span class="rk n">1</span><span class="nm">Automate the monthly close package<em>Finance · process already standardised</em></span><span class="sc n">13.0</span></div>
+      <div class="li"><span class="rk n">2</span><span class="nm">Churn signals from support tickets<em>Customer Success · data exists, unowned</em></span><span class="sc n">12.0</span></div>
+      <div class="li"><span class="rk n">3</span><span class="nm">Proposal drafting from the CRM<em>Sales · needs one standard first</em></span><span class="sc n">10.0</span></div>
+      <div class="cut"><span class="bar"></span><span>What your teams can actually carry at once</span></div>
+      <div class="li under"><span class="rk n">4</span><span class="nm">Agent for onboarding handoffs</span><span class="sc n">8.0</span></div>
+      <div class="li under"><span class="rk n">5</span><span class="nm">Ticket triage and routing</span><span class="sc n">8.0</span></div>
+      <div class="li under"><span class="rk n">6</span><span class="nm">Automated QBR preparation</span><span class="sc n">6.2</span></div>
+      <div class="li under"><span class="rk n">7</span><span class="nm">Meeting notes into the CRM</span><span class="sc n">5.0</span></div>
     </div>
-    <p class="sjoin">One install. Both seats end up reading the same list &mdash; usually for the first time.</p>
+
+    <div class="btns">
+      <a class="btn solid" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
+      <a class="btn" href="#why">Why they stall</a>
+    </div>
+    <p class="fine">Bring the AI list you haven't started. We'll rank it together in under thirty minutes.</p>
   </div>
 </section>
 
-<section class="triad">
-  <div class="w">
-    <div class="tgrid">
-      <a class="fr f1" href="#r01">
-        <span class="fn">01</span>
-        <span class="fk">The Filter</span>
-        <span class="ft">10&#8209;Day Functional Reset</span>
-        <span class="fs">Money-back guarantee</span>
-        <span class="fl">Jump to section <i>&darr;</i></span>
-      </a>
-      <a class="fr f2" href="#r02">
-        <span class="fn">02</span>
-        <span class="fk">Fractional Operator</span>
-        <span class="ft">Project &amp; Scoped Fixes</span>
-        <span class="fs">Fixed price &middot; No retainer</span>
-        <span class="fl">Jump to section <i>&darr;</i></span>
-      </a>
-      
+<section id="why">
+  <div class="wrap">
+    <p class="kicker">Why AI stalls</p>
+    <h2>The model was never<br>the hard part.</h2>
+    <p class="lede" style="margin-top:20px">Building an agent is a weekend. Getting a company to run on one is a year — and almost everything that goes wrong in between is organisational.</p>
+
+    <div class="strip">
+      <div class="stat"><b>95%</b><span>of AI pilots show no measurable P&amp;L impact</span></div>
+      <div class="stat"><b>40%</b><span>of agentic projects cancelled by end of 2027</span></div>
+      <div class="stat"><b>7%</b><span>of companies say their data is actually ready</span></div>
+    </div>
+
+    <div class="grid" style="margin-top:44px">
+      <div class="cd"><h3>Nobody picked</h3>
+        <p>Twelve things started because twelve people asked. The three that mattered are competing for the same four people, and none of them will finish.</p></div>
+      <div class="cd"><h3>The process underneath was never written down</h3>
+        <p>You can't automate a process that runs differently depending on who's doing it. Most AI projects discover this in month three.</p></div>
+      <div class="cd"><h3>Nobody owns it</h3>
+        <p>It crosses IT, ops, security and a department. No single budget line, no single name, so it dies in committee rather than in production.</p></div>
+      <div class="cd"><h3>The build was sized, the readiness wasn't</h3>
+        <p>Everyone estimates the model work. Nobody estimates the six weeks of defining and standardising that has to happen first.</p></div>
+      <div class="cd"><h3>It was built for people who never asked</h3>
+        <p>A central team ships something to a department that didn't want it. Adoption becomes a change programme instead of a non-event.</p></div>
+      <div class="cd dark"><h3>So the second one is harder to fund than the first</h3>
+        <p>A pilot that produced a nice demo and no number makes the next approval slower. That's how AI budgets quietly die.</p></div>
+    </div>
+    <p class="after">Every one of those is a decision failure, and none of them is fixed by buying another tool.</p>
+  </div>
+</section>
+
+<section id="ready">
+  <div class="wrap">
+    <p class="kicker">The part nobody scores</p>
+    <h2>An AI project isn't one job.<br>It's a jump between stages.</h2>
+    <p class="lede" style="margin-top:20px">Every process sits somewhere on this track. What makes an AI initiative big or small isn't the model — it's how many stages it has to cross before an agent can run against it.</p>
+
+    <div class="track">
+      <div class="tk"><span class="s">Stage 1</span><h3>Undefined</h3><p>Nobody has written down how this actually works today.</p></div>
+      <div class="tk"><span class="s">Stage 2</span><h3>Documented</h3><p>Written down, but still done differently by different people.</p></div>
+      <div class="tk"><span class="s">Stage 3</span><h3>Standardised</h3><p>One way of doing it. The exceptions are named rather than improvised.</p></div>
+      <div class="tk"><span class="s">Stage 4</span><h3>Instrumented</h3><p>It produces a record something else can actually read.</p></div>
+      <div class="tk hot"><span class="s">Stage 5</span><h3>Automatable</h3><p>An agent can run against it, and you'd trust the output.</p></div>
+    </div>
+
+    <p class="after">Every initiative gets a current stage and a target stage. That single pair is the difference between a six-week project and an eighteen-month one — and it's the number that turns an ambition into a bandwidth conversation.</p>
+
+    <div class="jump">
+      <div class="jr ok"><span class="t">Automate the monthly close</span><span class="g">Standardised → Automatable</span><span class="v">One stage. Six weeks.</span></div>
+      <div class="jr warn"><span class="t">Proposal drafting from the CRM</span><span class="g">Documented → Automatable</span><span class="v">Three stages. Split it.</span></div>
+      <div class="jr bad"><span class="t">Agent for onboarding handoffs</span><span class="g">Undefined → Automatable</span><span class="v">Four stages. Not an AI project yet.</span></div>
+    </div>
+
+    <p class="after">This is where the room gets a third option. Not yes or no — approve the first move only. Take it to Standardised this quarter and revisit automating it when it actually is. Nobody loses face and the capacity cost drops to something real.</p>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <p class="kicker">What gets installed</p>
+    <h2>Ten working days.<br>You own all of it.</h2>
+    <p class="lede" style="margin-top:20px">Your initiative portfolio doesn't exist as data anywhere — it lives in decks, heads and Slack threads. That's the real reason nothing can run on it.</p>
+
+    <div class="grid">
+      <div class="cd"><h3>One intake</h3>
+        <p>A single door for every request that changes how the business operates — a tool, a process, an agent, a fix. Nothing becomes business as usual without coming through it.</p></div>
+      <div class="cd"><h3>One scoring standard</h3>
+        <p>Impact, urgency and who's asking, on a fixed scale. Departments argue on one scale instead of five, and the guide defines what each level means.</p></div>
+      <div class="cd"><h3>Reasoning kept with the score</h3>
+        <p>Every score carries the sentence that justifies it. It's why the ranking can be audited six months later, and why inflation gets caught.</p></div>
+      <div class="cd"><h3>Readiness staging</h3>
+        <p>Current stage and target stage on every initiative, so effort reflects the work that actually has to happen rather than the build alone.</p></div>
+      <div class="cd"><h3>An honest capacity limit</h3>
+        <p>What each team can absorb while still doing its day job, and who is already past it. One line, and the room goes quiet.</p></div>
+      <div class="cd dark"><h3>A decision log</h3>
+        <p>What was decided, when, by whom, and why. The record your board asks for and almost nobody has — and the reason a no costs nothing to defend.</p></div>
+    </div>
+    <p class="after">You keep the standard, the data and the cadence. It runs without the person who built it.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">How it pays for itself</p>
+    <h2>You don't need budget.<br>You need to stop something.</h2>
+    <p class="lede" style="margin-top:20px">Duplicated, stalled and unowned work is already on the payroll. It just isn't producing anything. That's where the hours for the AI work come from.</p>
+
+    <div class="steps">
+      <div class="stp"><span class="i">Step 1</span><h3>Stop the waste</h3><p>Work nobody owns and nobody finished is already being paid for.</p></div>
+      <div class="stp"><span class="i">Step 2</span><h3>Hours come back</h3><p>Not a budget request. A reallocation of money you already spend.</p></div>
+      <div class="stp"><span class="i">Step 3</span><h3>Point it at the right build</h3><p>The people who run the process define what it has to do. Engineers make it production-ready. Neither half works alone.</p></div>
+      <div class="stp last"><span class="i">Step 4</span><h3>That frees more hours</h3><p>Which funds the next one. People who automate a process pick up the next.</p></div>
+    </div>
+    <p class="after">Nobody has to find money. Somebody has to decide out loud to stop something — which is a different, and much easier, conversation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">What I need from you</p>
+    <h2>Four things. None of them<br>need system access.</h2>
+    <dl class="rows">
+      <div class="row"><dt>Your AI list</dt><dd>However it exists. A spreadsheet, a board slide, an export, or three people's memory.</dd></div>
+      <div class="row"><dt>Who leads each one</dt><dd>Names, not teams. One person quietly carrying five things is invisible at the team level.</dd></div>
+      <div class="row"><dt>One number per lead</dt><dd>Roughly what share of their week is already taken by running the business. A thirty-second estimate is enough.</dd></div>
+      <div class="row"><dt>What's been tried and died</dt><dd>Ten minutes of conversation. It tells me where the failure pattern is before I see a single record.</dd></div>
+    </dl>
+    <p class="after">Enterprise process tools need event logs from your ERP and six months of data hygiene before they say anything. I need a spreadsheet and four conversations.</p>
+  </div>
+</section>
+
+<section class="gtee">
+  <div class="wrap">
+    <p class="k">The guarantee</p>
+    <h2>In ten working days I'll find more change spend going to duplicated, stalled or unowned work than this costs.</h2>
+    <p class="big">If I don't, you don't pay.</p>
+    <p>Over 25% of effort was duplicated across initiatives at the thousand-person enterprise below. In any company running fifteen or more initiatives at once, one merged duplicate covers the fee.</p>
+    <p class="fine">Scoped honestly: the guarantee is on finding it and putting a number on it. Acting on it is your decision, not mine.</p>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <p class="kicker">Proof</p>
+    <h2>Restoring commercial stability</h2>
+    <p class="lede" style="margin-top:20px">A thousand-person, $100M ARR enterprise. Automation, IT, process, data and compliance work all entering through different doors, with no shared intake and no prioritisation.</p>
+
+    <div class="case">
+      <h3>I was brought in to modernise performance reporting.</h3>
+      <p style="margin-top:12px;color:var(--mute);max-width:60ch">The assessment said otherwise: you cannot measure performance if you don't control how work enters the system. Another dashboard would have codified the dysfunction. So I built one intake, one review board, one release calendar, and standards ahead of execution — and left the reporting until last.</p>
+      <div class="strip">
+        <div class="stat"><b>$5M</b><span>reallocated — 10% of a $50M expense base</span></div>
+        <div class="stat"><b>$45M</b><span>remaining spend delivered against a coordinated plan</span></div>
+        <div class="stat"><b>Zero</b><span>duplicated work across operational-change projects</span></div>
+      </div>
+      <blockquote>Leadership regained confidence — not because the dashboards improved, but because execution did.</blockquote>
+      <p style="margin-top:24px;font-size:15px;color:var(--soft)">Installed while I was an employee, leading the data side of a business unit turnaround. Now delivered independently, from the outside, in ten working days.</p>
     </div>
   </div>
 </section>
 
-<main class="routes">
-  <div class="w">
-    <div class="rhead"><img class="rmk" src="/logo.svg" alt="" width="32" height="32">Survey the building &middot; Repair the floor</div>
-    <article class="scene lead" id="r01">
-      <div class="top">
-        <span class="kick"><i>01</i>The strategic timeout</span>
-        <h2>Everything feels like a priority, so nothing is.</h2>
-      </div>
-      <div class="plate "><svg viewBox="0 0 960 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A survey drawing: scattered initiatives measured onto one sheet as a ranked schedule against capacity.">
-  <g stroke="#C9C4BA" stroke-width=".9" opacity=".85"><line x1="90" y1="83" x2="168" y2="83"/><line x1="124" y1="125" x2="168" y2="125"/><line x1="94" y1="167" x2="168" y2="167"/><line x1="122" y1="209" x2="168" y2="209"/></g>
-  <g fill="#F7F6F3" stroke="#8B1A2E" stroke-width="1.6"><rect x="6" y="74" width="84" height="19" transform="rotate(-10 48.0 83.5)"/><rect x="58" y="116" width="66" height="19" transform="rotate(8 91.0 125.5)"/><rect x="2" y="158" width="92" height="19" transform="rotate(5 48.0 167.5)"/><rect x="48" y="200" width="74" height="19" transform="rotate(-7 85.0 209.5)"/><rect x="14" y="242" width="80" height="19" transform="rotate(7 54.0 251.5)"/><rect x="62" y="286" width="70" height="19" transform="rotate(-6 97.0 295.5)"/><rect x="4" y="326" width="88" height="19" transform="rotate(4 48.0 335.5)"/></g>
-  <rect x="150" y="18" width="792" height="364" fill="#FFFFFF" stroke="#14161A" stroke-width="1.6"/>
-  <rect x="159" y="27" width="774" height="346" fill="none" stroke="#DCD8D0" stroke-width="1"/>
-  <rect x="214" y="104.0" width="138" height="26.8" fill="none" stroke="#8B1A2E" stroke-width="1" opacity="0.5"/><rect x="214" y="130.8" width="138" height="26.8" fill="none" stroke="#8B1A2E" stroke-width="1" opacity="0.5"/><rect x="214" y="157.5" width="138" height="26.8" fill="none" stroke="#8B1A2E" stroke-width="1" opacity="0.5"/><rect x="214" y="184.2" width="138" height="26.8" fill="none" stroke="#8B1A2E" stroke-width="1" opacity="0.5"/><rect x="214" y="211.0" width="138" height="26.8" fill="none" stroke="#8B1A2E" stroke-width="1" opacity="0.5"/><rect x="214" y="237.8" width="138" height="26.8" fill="none" stroke="#8B1A2E" stroke-width="1.9" opacity="1"/><rect x="214" y="264.5" width="138" height="26.8" fill="none" stroke="#8B1A2E" stroke-width="1" opacity="0.5"/><rect x="214" y="291.2" width="138" height="26.8" fill="none" stroke="#8B1A2E" stroke-width="1" opacity="0.5"/><rect x="208" y="93" width="150" height="11" fill="none" stroke="#8B1A2E" stroke-width="1" opacity=".5"/><rect x="214" y="237.8" width="138" height="26.8" fill="#8B1A2E" opacity=".12"/>
-  <g stroke="#C9C4BA" stroke-width="1">
-    <line x1="184" y1="104" x2="184" y2="318"/>
-    <line x1="177" y1="104" x2="191" y2="104"/><line x1="177" y1="318" x2="191" y2="318"/>
-    <line x1="214" y1="334" x2="352" y2="334"/>
-    <line x1="214" y1="327" x2="214" y2="341"/><line x1="352" y1="327" x2="352" y2="341"/>
-  </g>
-  <line x1="360" y1="251.1" x2="408" y2="251.1" stroke="#8B1A2E" stroke-width="1" opacity=".6"/>
-  <line x1="430" y1="96" x2="730" y2="96" stroke="#8B1A2E" stroke-width="1.4"/><text x="430" y="88" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" letter-spacing="1.4" fill="#4B4D54">SCHEDULE &#183; RANKED</text><rect x="430" y="112" width="252" height="20" fill="#8B1A2E"/><text x="692" y="127" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#4B4D54">9.2</text><line x1="430" y1="138" x2="730" y2="138" stroke="#E4E0D8" stroke-width="1"/><rect x="430" y="146" width="234" height="20" fill="#8B1A2E"/><text x="674" y="161" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#4B4D54">8.7</text><line x1="430" y1="172" x2="730" y2="172" stroke="#E4E0D8" stroke-width="1"/><rect x="430" y="180" width="192" height="20" fill="#C5828D"/><text x="632" y="195" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#4B4D54">7.1</text><line x1="430" y1="206" x2="730" y2="206" stroke="#E4E0D8" stroke-width="1"/><rect x="430" y="214" width="152" height="20" fill="#C5828D"/><text x="592" y="229" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#4B4D54">5.5</text><line x1="430" y1="240" x2="730" y2="240" stroke="#E4E0D8" stroke-width="1"/><rect x="430" y="248" width="106" height="20" fill="#D8D3CA"/><text x="546" y="263" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#4B4D54">3.1</text><line x1="430" y1="274" x2="730" y2="274" stroke="#E4E0D8" stroke-width="1"/><text x="430" y="308" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" letter-spacing="1.4" fill="#4B4D54">CAPACITY</text><rect x="430" y="316" width="264" height="11" fill="#EDEBE5"/><rect x="430" y="316" width="264" height="11" fill="#8B1A2E"/><line x1="606" y1="309" x2="606" y2="334" stroke="#14161A" stroke-width="1.8"/><text x="430" y="352" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="600" letter-spacing="1.3" fill="#8B1A2E">LOAD 9 / 6 &#183; OVERLOADED</text>
-  <rect x="736" y="310" width="197" height="63" fill="#F7F6F3" stroke="#14161A" stroke-width="1.2"/>
-  <line x1="736" y1="332" x2="933" y2="332" stroke="#14161A" stroke-width="1"/>
-  <text x="746" y="325" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" letter-spacing="1.6" fill="#14161A">THE FILTER</text>
-  <text x="746" y="349" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="500" letter-spacing="1.2" fill="#4B4D54">SURVEY OF EXISTING</text>
-  <text x="746" y="363" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="500" letter-spacing="1.2" fill="#4B4D54">SHEET 01 &#183; 10 WORKING DAYS</text>
-  <text x="20" y="392" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="600" letter-spacing="1.3" fill="#4B4D54">AS FOUND</text>
-  <text x="214" y="76" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="600" letter-spacing="1.4" fill="#4B4D54">STRATEGY</text>
-  <text x="352" y="344" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="600" letter-spacing="1.4" fill="#4B4D54">EXECUTION</text>
-</svg></div>
-      <p class="figcap"><i>Fig. 01</i> Scattered initiatives measured onto one sheet, ranked against real capacity</p>
-      <div class="under">
-        <div class="say">
-          <p>In ten working days you see the whole portfolio &mdash; active work and backlog &mdash; ranked against real capacity, with a decision on every item. The timeout that keeps the next one from being needed.</p>
-          <p class="tight">A diagnostic that keeps diagnosing &mdash; about an hour a week to stay current. Every structural gap it finds becomes a defensible business case for headcount.</p>
-          <div class="chipwrap"><span class="chiplab">What exists on Day 10</span><div class="chips"><span class="chip">One ranked portfolio</span><span class="chip">A decision on every item</span><span class="chip">A system you own forever</span></div></div>
-          <div class="refblk"><span class="reflab">Proof</span><p class="refp">Reallocated <b class="n">$5M</b> of a <b class="n">$50M</b> expense base to protect EBITDA inside a <b class="n">$100M ARR</b> business unit &mdash; and it survived a change in leadership at the top with nobody in the room to defend it.</p></div>
-        </div>
-        <aside class="spec">
-          <div class="spechd">Terms</div>
-          <div class="srow"><span class="sk">Fee</span><span class="sv"><b>$20K</b> founding rate<br><s>$35K</s> list price</span></div>
-          <div class="srow"><span class="sk">In exchange</span><span class="sv">A testimonial, and a referral if there&#8217;s one to make.</span></div>
-          <div class="srow"><span class="sk">Guarantee</span><span class="sv">All three deliverables by Day&nbsp;10, or a full refund.</span></div>
-          <div class="srow"><span class="sk">Your time</span><span class="sv">Two meetings with the full room. One hour per team.</span></div>
-          <div class="sact"><a class="cta solid" href="/filter">See the install</a></div>
-        </aside>
-      </div>
-      
-    </article>
-    <article class="scene mid" id="r02">
-      <div class="top">
-        <span class="kick"><i>02</i>Targeted repair</span>
-        <h2>You already know what&#8217;s keeping you up at night.</h2>
-      </div>
-      <div class="plate "><svg viewBox="0 0 960 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A building with eight floors. Seven are fine. One is scaffolded and under repair.">
-  <g stroke="#C9C4BA" stroke-width=".9"><line x1="40" y1="356" x2="920" y2="356"/><line x1="60" y1="356" x2="75" y2="371"/><line x1="102" y1="356" x2="117" y2="371"/><line x1="144" y1="356" x2="159" y2="371"/><line x1="186" y1="356" x2="201" y2="371"/><line x1="228" y1="356" x2="243" y2="371"/><line x1="270" y1="356" x2="285" y2="371"/><line x1="312" y1="356" x2="327" y2="371"/><line x1="354" y1="356" x2="369" y2="371"/><line x1="396" y1="356" x2="411" y2="371"/><line x1="438" y1="356" x2="453" y2="371"/><line x1="480" y1="356" x2="495" y2="371"/><line x1="522" y1="356" x2="537" y2="371"/><line x1="564" y1="356" x2="579" y2="371"/><line x1="606" y1="356" x2="621" y2="371"/><line x1="648" y1="356" x2="663" y2="371"/><line x1="690" y1="356" x2="705" y2="371"/><line x1="732" y1="356" x2="747" y2="371"/><line x1="774" y1="356" x2="789" y2="371"/><line x1="816" y1="356" x2="831" y2="371"/><line x1="858" y1="356" x2="873" y2="371"/></g>
-  <rect x="320" y="52.0" width="320" height="38.0" fill="#FFFFFF" stroke="#14161A" stroke-width="1.4"/><rect x="346" y="63.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="400" y="63.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="454" y="63.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="508" y="63.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="562" y="63.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="320" y="90.0" width="320" height="38.0" fill="#FFFFFF" stroke="#14161A" stroke-width="1.4"/><rect x="346" y="101.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="400" y="101.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="454" y="101.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="508" y="101.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="562" y="101.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="320" y="128.0" width="320" height="38.0" fill="#FFFFFF" stroke="#14161A" stroke-width="1.4"/><rect x="346" y="139.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="400" y="139.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="454" y="139.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="508" y="139.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="562" y="139.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="320" y="166.0" width="320" height="38.0" fill="#FFFFFF" stroke="#14161A" stroke-width="1.4"/><rect x="346" y="177.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="400" y="177.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="454" y="177.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="508" y="177.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="562" y="177.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="320" y="204.0" width="320" height="38.0" fill="#FFFFFF" stroke="#14161A" stroke-width="1.4"/><rect x="346" y="215.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="400" y="215.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="454" y="215.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="508" y="215.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="562" y="215.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="320" y="242.0" width="320" height="38.0" fill="#8B1A2E" stroke="#14161A" stroke-width="2.6"/><rect x="346" y="253.0" width="30" height="16.0" fill="#F7F6F3" stroke="#F7F6F3" stroke-width="1"/><rect x="400" y="253.0" width="30" height="16.0" fill="#F7F6F3" stroke="#F7F6F3" stroke-width="1"/><rect x="454" y="253.0" width="30" height="16.0" fill="#F7F6F3" stroke="#F7F6F3" stroke-width="1"/><rect x="508" y="253.0" width="30" height="16.0" fill="#F7F6F3" stroke="#F7F6F3" stroke-width="1"/><rect x="562" y="253.0" width="30" height="16.0" fill="#F7F6F3" stroke="#F7F6F3" stroke-width="1"/><rect x="320" y="280.0" width="320" height="38.0" fill="#FFFFFF" stroke="#14161A" stroke-width="1.4"/><rect x="346" y="291.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="400" y="291.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="454" y="291.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="508" y="291.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="562" y="291.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="320" y="318.0" width="320" height="38.0" fill="#FFFFFF" stroke="#14161A" stroke-width="1.4"/><rect x="346" y="329.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="400" y="329.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="454" y="329.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="508" y="329.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/><rect x="562" y="329.0" width="30" height="16.0" fill="#EDEBE5" stroke="#C9C4BA" stroke-width="1"/>
-  <rect x="312" y="38" width="336" height="14" fill="#EDEBE5" stroke="#14161A" stroke-width="1.6"/>
-  <path d="M448 356 L448 314 A32 32 0 0 1 512 314 L512 356" fill="#EDEBE5" stroke="#14161A" stroke-width="2"/>
-  
-<g stroke="#8B1A2E" stroke-width="2" fill="none">
-  <line x1="286" y1="216.0" x2="286" y2="306.0"/>
-  <line x1="304" y1="216.0" x2="304" y2="306.0"/>
-  <line x1="656" y1="216.0" x2="656" y2="306.0"/>
-  <line x1="674" y1="216.0" x2="674" y2="306.0"/>
-  <line x1="280" y1="230.0" x2="680" y2="230.0"/>
-  <line x1="280" y1="292.0" x2="680" y2="292.0"/>
-  <path d="M286 230.0 L304 292.0"/>
-  <path d="M304 230.0 L286 292.0"/>
-  <path d="M656 230.0 L674 292.0"/>
-  <path d="M674 230.0 L656 292.0"/>
-</g>
-  <g stroke="#4B4D54" stroke-width="1">
-    <line x1="710" y1="242.0" x2="710" y2="280.0"/>
-    <line x1="702" y1="242.0" x2="718" y2="242.0"/>
-    <line x1="702" y1="280.0" x2="718" y2="280.0"/>
-    <line x1="680" y1="261.0" x2="710" y2="261.0"/>
-  </g>
-  <text x="728" y="258.0" font-family="IBM Plex Mono, monospace" font-size="11.5" font-weight="600" letter-spacing="1.4" fill="#8B1A2E">ONE FLOOR</text>
-  <text x="728" y="276.0" font-family="IBM Plex Mono, monospace" font-size="11.5" font-weight="600" letter-spacing="1.4" fill="#8B1A2E">SCOPED</text>
-  <g stroke="#C9C4BA" stroke-width="1">
-    <line x1="268" y1="52" x2="268" y2="356"/>
-    <line x1="260" y1="52" x2="276" y2="52"/>
-    <line x1="260" y1="356" x2="276" y2="356"/>
-  </g>
-  <text x="250" y="200" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="600" letter-spacing="1.3" fill="#4B4D54">THE REST OF</text>
-  <text x="250" y="217" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="600" letter-spacing="1.3" fill="#4B4D54">IT IS FINE</text>
-</svg></div>
-      <p class="figcap"><i>Fig. 02</i> Eight floors. Seven are fine. One is scaffolded and under repair</p>
-      <div class="under">
-        <div class="say">
-          <p>No diagnostic needed. We agree what done looks like before I start &mdash; in writing, with a date. Then I&#8217;m on the ground driving it with your team until it&#8217;s met, not advising from the side. If specialist build work is needed, I bring the person in and hold them to the same definition.</p>
-          <p class="tight">If more than one of these is true at once, that&#8217;s a timeout, not a fix.</p>
-          <div class="chipwrap"><span class="chiplab">Sounds like this</span><ul class="slist">
-            <li>Two teams shipping into the same system with no agreed release order.</li>
-            <li>An acquisition closed and nothing got absorbed. Two of everything, and no one will pick.</li>
-            <li>A program that has slipped three times and nobody can say what actually caused it.</li>
-            <li>A build with no agreed definition of done, so it never quite ships.</li>
-            <li>A function that exists on the org chart but has no front door, no review, no escalation path.</li>
-          </ul></div>
-          <div class="chipwrap"><span class="chiplab">What exists at the end</span><div class="chips"><span class="chip">The constraint, cleared</span><span class="chip">A written definition of done</span><span class="chip">A cadence with named owners</span></div></div>
-          <div class="chipwrap"><span class="chiplab">Where it applies</span><div class="dgrid"><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Performance management"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
-<line x1="30" y1="72" x2="170" y2="72" stroke="#8B1A2E" stroke-width="2.4" stroke-dasharray="7 5"/>
-<text x="170" y="66" text-anchor="end" font-family="IBM Plex Mono" font-size="9" font-weight="600" fill="#8B1A2E">TARGET</text>
-<rect x="92" y="40" width="16" height="128" fill="none" stroke="#14161A" stroke-width="2.2"/>
-<line x1="92" y1="52" x2="108" y2="52" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="64" x2="102" y2="64" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="76" x2="108" y2="76" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="88" x2="102" y2="88" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="100" x2="108" y2="100" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="112" x2="102" y2="112" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="124" x2="108" y2="124" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="136" x2="102" y2="136" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="148" x2="108" y2="148" stroke="#14161A" stroke-width="1.1"/><line x1="92" y1="160" x2="102" y2="160" stroke="#14161A" stroke-width="1.1"/>
-<rect x="76" y="100" width="48" height="14" fill="#EAE7E0" stroke="#14161A" stroke-width="1.8"/>
-<path d="M124 107 L136 107" stroke="#14161A" stroke-width="1.6"/><path d="M132 103 L138 107 L132 111" fill="none" stroke="#14161A" stroke-width="1.6"/>
-<g stroke="#4B4D54" stroke-width="1"><line x1="52" y1="72" x2="52" y2="107"/><line x1="47" y1="72" x2="57" y2="72"/><line x1="47" y1="107" x2="57" y2="107"/></g></svg><figcaption>Performance management</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capacity planning"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
-<rect x="84" y="112" width="32" height="56" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/>
-<rect x="77" y="96" width="46" height="15" fill="#F7F6F3" stroke="#14161A" stroke-width="1.7"/><rect x="77" y="79" width="46" height="15" fill="#F7F6F3" stroke="#14161A" stroke-width="1.7"/><rect x="77" y="62" width="46" height="15" fill="#F7F6F3" stroke="#14161A" stroke-width="1.7"/><rect x="77" y="45" width="46" height="15" fill="#F7F6F3" stroke="#14161A" stroke-width="1.7"/>
-<line x1="34" y1="79" x2="166" y2="79" stroke="#8B1A2E" stroke-width="2.6"/>
-<text x="166" y="73" text-anchor="end" font-family="IBM Plex Mono" font-size="9" font-weight="600" fill="#8B1A2E">RATED LOAD</text>
-<g stroke="#8B1A2E" stroke-width="1.2" stroke-dasharray="3 3"><line x1="60" y1="45" x2="60" y2="79"/></g>
-<text x="52" y="58" text-anchor="end" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#8B1A2E">OVER</text></svg><figcaption>Capacity planning</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Planning and exec cadence"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
-<line x1="24" y1="54" x2="176" y2="54" stroke="#14161A" stroke-width="3.4"/>
-<rect x="32" y="54" width="13" height="114" fill="#EAE7E0" stroke="#14161A" stroke-width="2"/><rect x="68" y="54" width="13" height="114" fill="#EAE7E0" stroke="#14161A" stroke-width="2"/><rect x="104" y="54" width="13" height="114" fill="#EAE7E0" stroke="#14161A" stroke-width="2"/><rect x="140" y="54" width="13" height="114" fill="#EAE7E0" stroke="#14161A" stroke-width="2"/>
-<path d="M45 74 Q56.5 62 68 74" fill="none" stroke="#8B1A2E" stroke-width="2"/><path d="M81 74 Q92.5 62 104 74" fill="none" stroke="#8B1A2E" stroke-width="2"/><path d="M117 74 Q128.5 62 140 74" fill="none" stroke="#8B1A2E" stroke-width="2"/>
-<g stroke="#4B4D54" stroke-width="1"><line x1="38" y1="40" x2="146" y2="40"/>
-<line x1="38" y1="35" x2="38" y2="45"/><line x1="74" y1="35" x2="74" y2="45"/><line x1="110" y1="35" x2="110" y2="45"/><line x1="146" y1="35" x2="146" y2="45"/></g>
-<text x="92" y="30" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#4B4D54">EQUAL BAYS</text></svg><figcaption>Planning &amp; exec cadence</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI governance"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
-<g stroke="#8B1A2E" stroke-width="2" fill="none">
-  <path d="M18 66 H48 V90 H74"/><path d="M18 104 H40 V128 H74"/><path d="M18 140 H62 V116 H74"/>
-</g>
-<g fill="#8B1A2E"><circle cx="18" cy="66" r="3.4"/><circle cx="18" cy="104" r="3.4"/><circle cx="18" cy="140" r="3.4"/></g>
-<rect x="86" y="52" width="82" height="116" fill="#EAE7E0" stroke="#14161A" stroke-width="2.4"/>
-<rect x="74" y="82" width="12" height="56" fill="#F7F6F3" stroke="#14161A" stroke-width="2"/>
-<line x1="80" y1="82" x2="80" y2="138" stroke="#8B1A2E" stroke-width="2.2"/>
-<line x1="96" y1="70" x2="158" y2="70" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="88" x2="158" y2="88" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="106" x2="158" y2="106" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="124" x2="158" y2="124" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="142" x2="158" y2="142" stroke="#14161A" stroke-width="1.1" opacity=".45"/><line x1="96" y1="158" x2="158" y2="158" stroke="#14161A" stroke-width="1.1" opacity=".45"/>
-<text x="127" y="44" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#14161A">ONE GATE</text></svg><figcaption>AI governance</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Change management"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
-<rect x="112" y="34" width="30" height="134" fill="#EAE7E0" stroke="#14161A" stroke-width="2.4"/>
-<line x1="112" y1="56" x2="142" y2="56" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="112" y1="78" x2="142" y2="78" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="112" y1="100" x2="142" y2="100" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="112" y1="122" x2="142" y2="122" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="112" y1="144" x2="142" y2="144" stroke="#14161A" stroke-width="1" opacity=".4"/>
-<g stroke="#8B1A2E" stroke-width="2.6" fill="none">
-  <path d="M112 62 L54 168"/><path d="M112 96 L74 168"/><path d="M112 130 L94 168"/>
-</g>
-<line x1="46" y1="168" x2="102" y2="168" stroke="#8B1A2E" stroke-width="3.4"/>
-<g stroke="#8B1A2E" stroke-width="1.4"><line x1="83" y1="80" x2="60" y2="122"/></g>
-<text x="66" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#8B1A2E">SHORED</text></svg><figcaption>Change management</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Post-sale and CS"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
-<path d="M66 168 L66 82 A34 34 0 0 1 134 82 L134 168" fill="#EAE7E0" stroke="#14161A" stroke-width="2.6"/>
-<path d="M58 168 L58 79 A42 42 0 0 1 142 79 L142 168" fill="none" stroke="#14161A" stroke-width="1" opacity=".35"/>
-<rect x="74" y="160" width="52" height="8" fill="none" stroke="#8B1A2E" stroke-width="1.8"/><rect x="69" y="152" width="62" height="8" fill="none" stroke="#8B1A2E" stroke-width="1.8"/><rect x="64" y="144" width="72" height="8" fill="none" stroke="#8B1A2E" stroke-width="1.8"/>
-<line x1="100" y1="96" x2="100" y2="136" stroke="#8B1A2E" stroke-width="2.6"/>
-<path d="M92 128 L100 138 L108 128" fill="none" stroke="#8B1A2E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="100" y="42" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#14161A">THRESHOLD</text></svg><figcaption>Post-sale &amp; CS</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MandA integration"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
-<rect x="16" y="86" width="56" height="82" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/>
-<rect x="128" y="66" width="56" height="102" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/>
-<line x1="24" y1="100" x2="64" y2="100" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="24" y1="118" x2="64" y2="118" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="24" y1="136" x2="64" y2="136" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="24" y1="154" x2="64" y2="154" stroke="#14161A" stroke-width="1" opacity=".4"/>
-<line x1="136" y1="82" x2="176" y2="82" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="136" y1="102" x2="176" y2="102" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="136" y1="122" x2="176" y2="122" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="136" y1="142" x2="176" y2="142" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="136" y1="162" x2="176" y2="162" stroke="#14161A" stroke-width="1" opacity=".4"/>
-<line x1="72" y1="106" x2="128" y2="106" stroke="#8B1A2E" stroke-width="3.4"/>
-<line x1="72" y1="126" x2="128" y2="126" stroke="#8B1A2E" stroke-width="3.4"/>
-<line x1="86" y1="106" x2="86" y2="126" stroke="#8B1A2E" stroke-width="1.6"/><line x1="100" y1="106" x2="100" y2="126" stroke="#8B1A2E" stroke-width="1.6"/><line x1="114" y1="106" x2="114" y2="126" stroke="#8B1A2E" stroke-width="1.6"/>
-<text x="100" y="96" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#8B1A2E">LINK</text></svg><figcaption>M&amp;A integration</figcaption></figure><figure class="dt"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Delivery standards"><g stroke="#C9C4BA" stroke-width=".9"><line x1="14" y1="168" x2="186" y2="168"/><line x1="14.0" y1="168" x2="23.0" y2="177"/><line x1="33.111111111111114" y1="168" x2="42.111111111111114" y2="177"/><line x1="52.22222222222222" y1="168" x2="61.22222222222222" y2="177"/><line x1="71.33333333333333" y1="168" x2="80.33333333333333" y2="177"/><line x1="90.44444444444444" y1="168" x2="99.44444444444444" y2="177"/><line x1="109.55555555555556" y1="168" x2="118.55555555555556" y2="177"/><line x1="128.66666666666666" y1="168" x2="137.66666666666666" y2="177"/><line x1="147.77777777777777" y1="168" x2="156.77777777777777" y2="177"/><line x1="166.88888888888889" y1="168" x2="175.88888888888889" y2="177"/></g>
-<g><rect x="18" y="76" width="40" height="92" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/><path d="M18 76 L38 56 L58 76" fill="none" stroke="#14161A" stroke-width="2.2"/><line x1="28" y1="104" x2="48" y2="104" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="28" y1="128" x2="48" y2="128" stroke="#14161A" stroke-width="1" opacity=".4"/></g><g><rect x="80" y="76" width="40" height="92" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/><path d="M80 76 L100 56 L120 76" fill="none" stroke="#14161A" stroke-width="2.2"/><line x1="90" y1="104" x2="110" y2="104" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="90" y1="128" x2="110" y2="128" stroke="#14161A" stroke-width="1" opacity=".4"/></g><g><rect x="142" y="76" width="40" height="92" fill="#EAE7E0" stroke="#14161A" stroke-width="2.2"/><path d="M142 76 L162 56 L182 76" fill="none" stroke="#14161A" stroke-width="2.2"/><line x1="152" y1="104" x2="172" y2="104" stroke="#14161A" stroke-width="1" opacity=".4"/><line x1="152" y1="128" x2="172" y2="128" stroke="#14161A" stroke-width="1" opacity=".4"/></g>
-<g stroke="#8B1A2E" stroke-width="1.4">
-  <line x1="58" y1="42" x2="80" y2="42"/><line x1="58" y1="36" x2="58" y2="48"/><line x1="80" y1="36" x2="80" y2="48"/>
-  <line x1="120" y1="42" x2="142" y2="42"/><line x1="120" y1="36" x2="120" y2="48"/><line x1="142" y1="36" x2="142" y2="48"/>
-</g>
-<text x="100" y="30" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" font-weight="600" fill="#8B1A2E">SAME EVERY BAY</text></svg><figcaption>Delivery standards</figcaption></figure></div></div>
-          <div class="refblk"><span class="reflab">Proof</span><p class="refp">The delivery standards behind every one of these were built and pressure-tested alongside <b>EY, IBM, Infosys and Cognizant</b>, and with <b>C-suite and SVP leadership inside Fortune 50 and Fortune 275</b> organizations. Fitted to how you already operate, not the other way around.</p></div>
-        </div>
-        <aside class="spec">
-          <div class="spechd">Terms</div>
-          <div class="srow"><span class="sk">Scope</span><span class="sv">Fixed, with an end date set before it starts.</span></div>
-          <div class="srow"><span class="sk">Price</span><span class="sv">One number agreed in advance. No hourly, no retainer.</span></div>
-          <div class="srow"><span class="sk">Handover</span><span class="sv">Built to run without me. Whoever owns it after sits in everything.</span></div>
-          <div class="sact"><a class="cta" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a></div>
-        </aside>
-      </div>
-      
-    </article>
-    
+<section>
+  <div class="wrap">
+    <h2>Whether this is for you</h2>
+    <div class="two">
+      <div><h3>It works when</h3>
+        <ul class="ul">
+          <li>You have eight or more initiatives running at once</li>
+          <li>More than one team is competing for the same delivery people</li>
+          <li>Somebody senior will enforce the decisions afterwards</li>
+          <li>You'd struggle to name what's in flight without opening a file</li>
+        </ul></div>
+      <div><h3>It doesn't when</h3>
+        <ul class="ul no">
+          <li>You're under about fifty people and one person holds it all</li>
+          <li>You want a tool rather than a way of deciding</li>
+          <li>You want someone to run delivery for you — different job</li>
+          <li>Nobody above the room is willing to say no to anything</li>
+        </ul></div>
+    </div>
+    <p class="after">If the first list doesn't describe you, I'll say so on the call rather than sell you an install you don't need.</p>
   </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="me">
+      <img src="/NHeadshot.jpeg" alt="Nathan Harris" loading="lazy" width="600" height="600">
+      <h2>Nathan Harris</h2>
+      <p class="role">Founder, Left Brain Consulting</p>
+    </div>
+    <div>
+      <p>Eight years of enterprise transformation at MetLife and IQVIA — ERP migration recovery, PMO buildouts, and executive change control boards. Fortune 50 and Fortune 275 scale, which mostly taught me that change fails for organisational reasons rather than technical ones.</p>
+      <p>I'm not an AI consultant. I don't build your agents and I won't tell you which model to use. I make sure the thing you build is the right one, that the people who need it asked for it, and that there's room in the week to actually finish it.</p>
+      <p>Left Brain Consulting is an independent practice based outside Denver. I take a small number of installs at a time, which is the honest reason the founding rate exists.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Bring the AI list you haven't started.</h2>
+    <p class="lede" style="margin-top:20px">Thirty minutes, your real initiatives, ranked against one standard and against what your teams can carry. You'll know by the end of the call whether the install is worth having.</p>
+    <div class="btns">
+      <a class="btn solid" href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
+      <a class="btn" href="mailto:nathan@leftbrainconsult.com">Email me instead</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<section class="about" id="about"><span class="abwm" aria-hidden="true"></span>
-  <div class="w">
-    <div class="rhead"><img class="rmk" src="/logo.svg" alt="" width="32" height="32">Who you&#8217;d be working with</div>
-    <div class="abgrid">
-      <div class="abtext">
-        <h2><em>Nathan Harris.</em></h2>
-
-        <p>I was put inside a Fortune 50 turnaround at 23 and handed the change control board &mdash; 50+ application development teams, 1,000+ executive change requests, on a $200M program overhauling a $2B business unit.</p>
-
-        <p>Then I became the audit point of contact for that program, which meant seeing how every team actually operated against the standard rather than how they described it. Most operators know one function deeply. That year I got the cross-section &mdash; and <b>that vantage point is the whole thing</b>. I know how functions fail against each other, where decisions actually get made, and what has to exist before execution can hold. That&#8217;s why I work at both altitudes. In the executive room, turning strategy into a sequence the business can run. On the floor with the teams carrying it, clearing what&#8217;s in the way and pulling them up to the standard I was auditing against.</p>
-
-        <p>Eight years, five promotions, Associate Director by 25. A $125M budget covering every enterprise system at a $15B company. A failed ERP consolidation I got handed the rollback of, delivered with zero critical defects. A $100M ARR business unit running as multiple silos that I put behind one front door &mdash; <b>still running today after the leadership that sponsored it turned over</b>.</p>
-
-        <div class="refblk">
-          <span class="reflab">The short version</span>
-          <p class="refp">I build the layer that decides — and I build it to run without me. That constraint &mdash; that it has to survive without me &mdash; is what shaped every method on this page.</p>
-        </div>
-      </div>
-
-      <aside class="spec abspec">
-        <div class="abface"><img src="/NHeadshot.jpeg" alt="Nathan Harris" loading="lazy" width="600" height="600"></div>
-        <div class="spechd">Background</div>
-        <div class="srow"><span class="sk">Then</span><span class="sv">MetLife &middot; Fortune ~50<br>IQVIA &middot; Fortune ~275</span></div>
-        <div class="srow"><span class="sk">Now</span><span class="sv">Left Brain Consulting.<br>Co-founder, Blotto.</span></div>
-        <div class="srow"><span class="sk">Based</span><span class="sv">Westminster, Colorado.<br>Remote, and on-site when it earns the trip.</span></div>
-        <div class="abpers">
-          <span class="chiplab">Away from the work</span>
-          <div class="chips">
-            <span class="chip">Husband &amp; father</span>
-            <span class="chip">Jiu jitsu</span>
-            <span class="chip">Colorado trails</span>
-            <span class="chip">Border Collie</span>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<footer class="foot">
-  <div class="w footin">
-    <div>
-      <img class="fmk" src="/logo.svg" alt="Left Brain Consulting" width="64" height="64">
-      <div class="lbl">Left Brain Consulting <i>·</i> leftbrainconsult.com</div>
-    </div>
-    <div>
+<footer>
+  <div class="wrap">
+    <div class="fbrand"><img class="fmk" src="/logo.svg" alt="Left Brain Consulting" width="30" height="30"><span>Left Brain Consulting</span></div>
+    <div class="fl">
       <a href="mailto:nathan@leftbrainconsult.com">nathan@leftbrainconsult.com</a>
-      <a href="https://calendly.com/nathan-leftbrainconsult">calendly.com/nathan-leftbrainconsult</a>
-      <a href="https://linkedin.com/in/nathan-harris13">linkedin.com/in/nathan-harris13</a>
+      <a href="https://calendly.com/nathan-leftbrainconsult">Book a call</a>
+      <a href="https://linkedin.com/in/nathan-harris13">LinkedIn</a>
     </div>
   </div>
-  <div class="w"><details class="legal"><summary>Trademarks &amp; non-affiliation</summary><p>Company names appearing on this site refer to organizations where Nathan Harris was previously employed or with whom he worked in the course of that employment. They are referenced for identification only. All trademarks and trade names are the property of their respective owners. No affiliation, sponsorship, endorsement, or ongoing relationship with Left Brain Consulting is stated or implied. Metrics describe work performed while employed and do not include confidential or proprietary information.</p></details></div>
 </footer>
 
 </body>
